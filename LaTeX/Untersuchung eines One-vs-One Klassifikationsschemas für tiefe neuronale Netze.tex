@@ -1,0 +1,93 @@
+%---------------------------------------------------------------------------
+%
+%                          Vorlage der Arbeitsgruppe
+%             Computer Vision and Pattern Recognition Group (CVPR)
+%                           der Universität Münster
+%                         http://cvpr.uni-muenster.de
+%
+%---------------------------------------------------------------------------
+% Geeignet für:
+%  - Seminararbeiten
+%  - Bachelorarbeiten
+%  - Masterarbeiten
+%---------------------------------------------------------------------------
+% Autoren:
+%  - Daniel Tenbrinck
+%  - Fabian Gigengack
+%  - Michael Schmeing
+%  - Lucas Franek
+%  - Andreas Nienkötter
+%---------------------------------------------------------------------------
+% Version:
+%  - 1.0.3 (05.10.2016)
+%	 - Ersetzung von veralteten Befehlen durch Aktuelle
+%	 - Einige ausführlichere Beispiele
+%    - Einführung von listings
+%    - Aktuelle Version der Eidesstattlichen Erklärung
+%  - 1.0.2 (09.09.2011)
+%    - Titelblatt um Matrikelnummer und Studiengang ergänzt
+%  - 1.0.1 (05.07.2011)
+%---------------------------------------------------------------------------
+% 
+% "THE BEER-WARE LICENSE" (Revision 42):
+% The above mentioned authors wrote this file. As long as you retain this
+% notice you can do whatever you want with this stuff. If we meet some day,
+% and you think this stuff is worth it, you can buy us a beer in return.
+%  --------------------------------------------------------------------------
+
+\documentclass[a4paper, twoside, 12pt, ngerman]{scrbook} % Layout-Einstellungen für das Dokument
+
+\usepackage[utf8]{inputenc} % UTF-8 Codierung
+\usepackage[ngerman]{babel} % Deutsche Beschriftung
+\usepackage{graphicx} % Um Bilder einzufügen
+\usepackage{subfigure} % Um mehrere Bilder in eine figure einzufügen
+\usepackage{amssymb, amsmath} % Für Mengensymbole und über Gleichheitszeichen schreiben
+\usepackage{verbatim} % Um Quellcode in das Dokument einzufügen.
+\usepackage{xcolor} % Für Farben
+\usepackage[linkbordercolor=blue]{hyperref} % Für Links im Dokument
+\usepackage{algorithmic} % Für Pseudo-Code
+\usepackage{algorithm} % Wrapper für Pseudo-Code
+\usepackage[font={small}, labelfont=bf]{caption} % kleine Bildunterschriften
+\usepackage{geometry} % Für Feinanpassungen des Layouts
+\usepackage{csquotes} % Um Text in Anführungszeichen zu setzen (\enquote{})
+\usepackage{svg} %.svg Bilder einbinden
+\usepackage{todonotes} % ToDo-Notizen einfügen
+\usepackage{listings} % Für Code-Listings
+%\usepackage[style=authortitle-icomp, backend=bibtex]{biblatex}
+\renewcommand{\lstlistingname}{Quelltext} %Ändert die Überschrift von Listing nach Quelltext
+
+% Einstellungen für Abstand an den Rändern
+\geometry{a4paper,left=35mm,right=35mm,top=20mm,bottom=20mm, includeheadfoot}
+
+\begin{document}
+\pagenumbering{roman}
+\listoftodos
+% Titelblatt
+\begin{titlepage}
+\include{chapter/Titelblatt}
+\end{titlepage}
+% Inhaltsverzeichnis
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Die Hauptkapitel der Arbeit
+\include{chapter/Einleitung}
+
+\include{chapter/Methodik}
+
+\include{chapter/Ergebnisse}
+
+\include{chapter/Diskussion}
+
+\include{chapter/Fazit}
+
+% Literaturverzeichnis
+\bibliographystyle{unsrtdin}
+\bibliography{Quellen}
+
+% Eidesstattliche Erklärung
+\include{chapter/EidesstattlicheErklaerung}
+
+\end{document}
