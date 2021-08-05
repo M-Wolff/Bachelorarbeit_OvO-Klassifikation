@@ -8,9 +8,9 @@ from distutils.dir_util import copy_tree
 
 _VERBOSE = True  # gibt detaillierte Infos aus
 
-# _WORK_DIR = Path("G://Bachelorarbeit")
+_WORK_DIR = Path("G://Bachelorarbeit")
 # _WORK_DIR = Path("D://Bachelorarbeit/")
-_WORK_DIR = Path("/scratch/tmp/m_wolf37/Bachelorarbeit")
+#_WORK_DIR = Path("/scratch/tmp/m_wolf37/Bachelorarbeit")
 
 
 def check_fold_file(file: Path, folds: list):
@@ -89,7 +89,7 @@ def visualize_folds(directory: Path):
     fig, ax = plt.subplots()
     for split in ["train_100", "test"]:  # Gehe erst alle Trainsplits durch, dann Testsplits (sieht schöner aus im Graph)
         for fold in fold_dirs:  # Gehe alle Folds durch
-            groups.append(str(fold.name) + " " + str(split))  # Füge den Gruppennamen zu 'groups' hinzu
+            groups.append(str(fold.name) + " " + str(split.split("_")[0]))  # Füge den Gruppennamen zu 'groups' hinzu
             for class_folder in (fold / split).iterdir():  # Gehe alle Klassen durch
                 num_files_in_class = len(os.listdir(class_folder))  # Zähle Dateien
                 # Füge die Dateianzahl an das Ende der Liste im zugehörigen Dictionary Eintrag hinzu
@@ -114,7 +114,7 @@ def visualize_folds(directory: Path):
     for i in range(groups.__len__()):  # Füge Beschriftung hinzu (gesamte Dateianzahl oberhalb von Balken je Gruppe)
         ax.text(i - 0.05, bottom_y[i] * 1.02, bottom_y[i], weight='bold')
     ax.legend()
-    plt.title(directory.name)
+    plt.title(directory.parent.name)
     plt.show()
 
 
@@ -314,23 +314,24 @@ def draw_random_trainsize(src: Path, dst: Path, train_size: int):
 # ---------------------------------------------------------------------------------------------------------------------
 # Aufteilung in Folds und Train/Test visualisieren
 
-# visualize_folds(_WORK_DIR / "datasets_exps/pawara-tropic10")
-# visualize_folds(_WORK_DIR / "datasets_exps/pawara-monkey10")
-# visualize_folds(_WORK_DIR / "datasets_exps/pawara-umonkey10" / "exps")
-# visualize_folds(_WORK_DIR / "datasets_exps" / "tropic20" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps/pawara-tropic10" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps/pawara-monkey10" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps/pawara-umonkey10" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps" / "tropic20" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "tropic10" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "tropic5" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "tropic3" / "exps")
 
-# visualize_folds(_WORK_DIR / "datasets_exps" / "swedishLeaves3folds15" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps" / "swedishLeaves3folds15" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "swedishLeaves3folds10" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "swedishLeaves3folds5" / "exps")
 # visualize_folds(_WORK_DIR / "datasets_exps" / "swedishLeaves3folds3" / "exps")
 
-# visualize_folds(_WORK_DIR / "datasets_exps" / "agrilPlant10" / "exps")
-# visualize_folds(_WORK_DIR / "datasets_exps" / "agrilPlant5" / "exps")
-# visualize_folds(_WORK_DIR / "datasets_exps" / "agrilPlant3" / "exps")
+visualize_folds(_WORK_DIR / "datasets_exps" / "agrilplant10" / "exps")
+# visualize_folds(_WORK_DIR / "datasets_exps" / "agrilplant5" / "exps")
+# visualize_folds(_WORK_DIR / "datasets_exps" / "agrilplant3" / "exps")
 
+visualize_folds(_WORK_DIR / "datasets_exps" / "cifar10" / "exps")
 # ---------------------------------------------------------------------------------------------------------------------
 # erstellte Folds auf Gültigkeit überprüfen
 
