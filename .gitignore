@@ -1,6 +1,11 @@
+.idea
+
 *.aux
 *.log
 *.out
 *.tdo
 *.toc
-.idea
+
+*.bbl
+*.bcf
+*.blg
