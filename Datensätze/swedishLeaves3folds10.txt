@@ -1,0 +1,4529 @@
+swedishLeaves3folds10/
+├── exps
+│   ├── exp1
+│   │   ├── test
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr001.tif
+│   │   │   │   ├── l1nr002.tif
+│   │   │   │   ├── l1nr003.tif
+│   │   │   │   ├── l1nr005.tif
+│   │   │   │   ├── l1nr007.tif
+│   │   │   │   ├── l1nr012.tif
+│   │   │   │   ├── l1nr013.tif
+│   │   │   │   ├── l1nr018.tif
+│   │   │   │   ├── l1nr020.tif
+│   │   │   │   ├── l1nr021.tif
+│   │   │   │   ├── l1nr023.tif
+│   │   │   │   ├── l1nr026.tif
+│   │   │   │   ├── l1nr027.tif
+│   │   │   │   ├── l1nr028.tif
+│   │   │   │   ├── l1nr029.tif
+│   │   │   │   ├── l1nr031.tif
+│   │   │   │   ├── l1nr032.tif
+│   │   │   │   ├── l1nr033.tif
+│   │   │   │   ├── l1nr034.tif
+│   │   │   │   ├── l1nr035.tif
+│   │   │   │   ├── l1nr036.tif
+│   │   │   │   ├── l1nr038.tif
+│   │   │   │   ├── l1nr040.tif
+│   │   │   │   ├── l1nr041.tif
+│   │   │   │   ├── l1nr043.tif
+│   │   │   │   ├── l1nr045.tif
+│   │   │   │   ├── l1nr046.tif
+│   │   │   │   ├── l1nr047.tif
+│   │   │   │   ├── l1nr048.tif
+│   │   │   │   ├── l1nr049.tif
+│   │   │   │   ├── l1nr051.tif
+│   │   │   │   ├── l1nr053.tif
+│   │   │   │   ├── l1nr054.tif
+│   │   │   │   ├── l1nr055.tif
+│   │   │   │   ├── l1nr056.tif
+│   │   │   │   ├── l1nr058.tif
+│   │   │   │   ├── l1nr059.tif
+│   │   │   │   ├── l1nr062.tif
+│   │   │   │   ├── l1nr063.tif
+│   │   │   │   ├── l1nr064.tif
+│   │   │   │   ├── l1nr066.tif
+│   │   │   │   ├── l1nr067.tif
+│   │   │   │   ├── l1nr068.tif
+│   │   │   │   ├── l1nr069.tif
+│   │   │   │   ├── l1nr070.tif
+│   │   │   │   ├── l1nr071.tif
+│   │   │   │   ├── l1nr072.tif
+│   │   │   │   ├── l1nr073.tif
+│   │   │   │   ├── l1nr074.tif
+│   │   │   │   └── l1nr075.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr001.tif
+│   │   │   │   ├── l10nr003.tif
+│   │   │   │   ├── l10nr004.tif
+│   │   │   │   ├── l10nr005.tif
+│   │   │   │   ├── l10nr006.tif
+│   │   │   │   ├── l10nr007.tif
+│   │   │   │   ├── l10nr008.tif
+│   │   │   │   ├── l10nr009.tif
+│   │   │   │   ├── l10nr011.tif
+│   │   │   │   ├── l10nr012.tif
+│   │   │   │   ├── l10nr013.tif
+│   │   │   │   ├── l10nr017.tif
+│   │   │   │   ├── l10nr019.tif
+│   │   │   │   ├── l10nr020.tif
+│   │   │   │   ├── l10nr021.tif
+│   │   │   │   ├── l10nr022.tif
+│   │   │   │   ├── l10nr024.tif
+│   │   │   │   ├── l10nr028.tif
+│   │   │   │   ├── l10nr029.tif
+│   │   │   │   ├── l10nr030.tif
+│   │   │   │   ├── l10nr032.tif
+│   │   │   │   ├── l10nr034.tif
+│   │   │   │   ├── l10nr035.tif
+│   │   │   │   ├── l10nr036.tif
+│   │   │   │   ├── l10nr037.tif
+│   │   │   │   ├── l10nr038.tif
+│   │   │   │   ├── l10nr040.tif
+│   │   │   │   ├── l10nr041.tif
+│   │   │   │   ├── l10nr042.tif
+│   │   │   │   ├── l10nr043.tif
+│   │   │   │   ├── l10nr044.tif
+│   │   │   │   ├── l10nr045.tif
+│   │   │   │   ├── l10nr046.tif
+│   │   │   │   ├── l10nr047.tif
+│   │   │   │   ├── l10nr048.tif
+│   │   │   │   ├── l10nr051.tif
+│   │   │   │   ├── l10nr054.tif
+│   │   │   │   ├── l10nr055.tif
+│   │   │   │   ├── l10nr057.tif
+│   │   │   │   ├── l10nr059.tif
+│   │   │   │   ├── l10nr060.tif
+│   │   │   │   ├── l10nr063.tif
+│   │   │   │   ├── l10nr064.tif
+│   │   │   │   ├── l10nr067.tif
+│   │   │   │   ├── l10nr068.tif
+│   │   │   │   ├── l10nr069.tif
+│   │   │   │   ├── l10nr071.tif
+│   │   │   │   ├── l10nr072.tif
+│   │   │   │   ├── l10nr073.tif
+│   │   │   │   └── l10nr074.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr001.tif
+│   │   │   │   ├── l2nr002.tif
+│   │   │   │   ├── l2nr003.tif
+│   │   │   │   ├── l2nr004.tif
+│   │   │   │   ├── l2nr005.tif
+│   │   │   │   ├── l2nr006.tif
+│   │   │   │   ├── l2nr007.tif
+│   │   │   │   ├── l2nr009.tif
+│   │   │   │   ├── l2nr011.tif
+│   │   │   │   ├── l2nr012.tif
+│   │   │   │   ├── l2nr013.tif
+│   │   │   │   ├── l2nr014.tif
+│   │   │   │   ├── l2nr015.tif
+│   │   │   │   ├── l2nr016.tif
+│   │   │   │   ├── l2nr017.tif
+│   │   │   │   ├── l2nr019.tif
+│   │   │   │   ├── l2nr020.tif
+│   │   │   │   ├── l2nr021.tif
+│   │   │   │   ├── l2nr022.tif
+│   │   │   │   ├── l2nr024.tif
+│   │   │   │   ├── l2nr025.tif
+│   │   │   │   ├── l2nr026.tif
+│   │   │   │   ├── l2nr028.tif
+│   │   │   │   ├── l2nr029.tif
+│   │   │   │   ├── l2nr032.tif
+│   │   │   │   ├── l2nr034.tif
+│   │   │   │   ├── l2nr036.tif
+│   │   │   │   ├── l2nr038.tif
+│   │   │   │   ├── l2nr041.tif
+│   │   │   │   ├── l2nr043.tif
+│   │   │   │   ├── l2nr045.tif
+│   │   │   │   ├── l2nr046.tif
+│   │   │   │   ├── l2nr047.tif
+│   │   │   │   ├── l2nr049.tif
+│   │   │   │   ├── l2nr050.tif
+│   │   │   │   ├── l2nr051.tif
+│   │   │   │   ├── l2nr052.tif
+│   │   │   │   ├── l2nr053.tif
+│   │   │   │   ├── l2nr056.tif
+│   │   │   │   ├── l2nr057.tif
+│   │   │   │   ├── l2nr058.tif
+│   │   │   │   ├── l2nr059.tif
+│   │   │   │   ├── l2nr061.tif
+│   │   │   │   ├── l2nr064.tif
+│   │   │   │   ├── l2nr069.tif
+│   │   │   │   ├── l2nr070.tif
+│   │   │   │   ├── l2nr071.tif
+│   │   │   │   ├── l2nr072.tif
+│   │   │   │   ├── l2nr073.tif
+│   │   │   │   └── l2nr075.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr001.tif
+│   │   │   │   ├── l3nr002.tif
+│   │   │   │   ├── l3nr004.tif
+│   │   │   │   ├── l3nr007.tif
+│   │   │   │   ├── l3nr009.tif
+│   │   │   │   ├── l3nr010.tif
+│   │   │   │   ├── l3nr012.tif
+│   │   │   │   ├── l3nr014.tif
+│   │   │   │   ├── l3nr016.tif
+│   │   │   │   ├── l3nr017.tif
+│   │   │   │   ├── l3nr020.tif
+│   │   │   │   ├── l3nr021.tif
+│   │   │   │   ├── l3nr022.tif
+│   │   │   │   ├── l3nr025.tif
+│   │   │   │   ├── l3nr028.tif
+│   │   │   │   ├── l3nr029.tif
+│   │   │   │   ├── l3nr030.tif
+│   │   │   │   ├── l3nr031.tif
+│   │   │   │   ├── l3nr032.tif
+│   │   │   │   ├── l3nr033.tif
+│   │   │   │   ├── l3nr034.tif
+│   │   │   │   ├── l3nr037.tif
+│   │   │   │   ├── l3nr038.tif
+│   │   │   │   ├── l3nr039.tif
+│   │   │   │   ├── l3nr040.tif
+│   │   │   │   ├── l3nr041.tif
+│   │   │   │   ├── l3nr042.tif
+│   │   │   │   ├── l3nr043.tif
+│   │   │   │   ├── l3nr044.tif
+│   │   │   │   ├── l3nr045.tif
+│   │   │   │   ├── l3nr046.tif
+│   │   │   │   ├── l3nr047.tif
+│   │   │   │   ├── l3nr049.tif
+│   │   │   │   ├── l3nr051.tif
+│   │   │   │   ├── l3nr052.tif
+│   │   │   │   ├── l3nr053.tif
+│   │   │   │   ├── l3nr054.tif
+│   │   │   │   ├── l3nr055.tif
+│   │   │   │   ├── l3nr056.tif
+│   │   │   │   ├── l3nr057.tif
+│   │   │   │   ├── l3nr061.tif
+│   │   │   │   ├── l3nr062.tif
+│   │   │   │   ├── l3nr063.tif
+│   │   │   │   ├── l3nr065.tif
+│   │   │   │   ├── l3nr067.tif
+│   │   │   │   ├── l3nr069.tif
+│   │   │   │   ├── l3nr070.tif
+│   │   │   │   ├── l3nr072.tif
+│   │   │   │   ├── l3nr073.tif
+│   │   │   │   └── l3nr075.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr001.tif
+│   │   │   │   ├── l4nr003.tif
+│   │   │   │   ├── l4nr006.tif
+│   │   │   │   ├── l4nr007.tif
+│   │   │   │   ├── l4nr008.tif
+│   │   │   │   ├── l4nr009.tif
+│   │   │   │   ├── l4nr012.tif
+│   │   │   │   ├── l4nr015.tif
+│   │   │   │   ├── l4nr016.tif
+│   │   │   │   ├── l4nr017.tif
+│   │   │   │   ├── l4nr019.tif
+│   │   │   │   ├── l4nr021.tif
+│   │   │   │   ├── l4nr022.tif
+│   │   │   │   ├── l4nr023.tif
+│   │   │   │   ├── l4nr033.tif
+│   │   │   │   ├── l4nr034.tif
+│   │   │   │   ├── l4nr035.tif
+│   │   │   │   ├── l4nr036.tif
+│   │   │   │   ├── l4nr037.tif
+│   │   │   │   ├── l4nr038.tif
+│   │   │   │   ├── l4nr039.tif
+│   │   │   │   ├── l4nr040.tif
+│   │   │   │   ├── l4nr041.tif
+│   │   │   │   ├── l4nr042.tif
+│   │   │   │   ├── l4nr043.tif
+│   │   │   │   ├── l4nr044.tif
+│   │   │   │   ├── l4nr045.tif
+│   │   │   │   ├── l4nr046.tif
+│   │   │   │   ├── l4nr047.tif
+│   │   │   │   ├── l4nr048.tif
+│   │   │   │   ├── l4nr051.tif
+│   │   │   │   ├── l4nr052.tif
+│   │   │   │   ├── l4nr054.tif
+│   │   │   │   ├── l4nr055.tif
+│   │   │   │   ├── l4nr056.tif
+│   │   │   │   ├── l4nr058.tif
+│   │   │   │   ├── l4nr059.tif
+│   │   │   │   ├── l4nr060.tif
+│   │   │   │   ├── l4nr062.tif
+│   │   │   │   ├── l4nr064.tif
+│   │   │   │   ├── l4nr065.tif
+│   │   │   │   ├── l4nr066.tif
+│   │   │   │   ├── l4nr068.tif
+│   │   │   │   ├── l4nr069.tif
+│   │   │   │   ├── l4nr070.tif
+│   │   │   │   ├── l4nr071.tif
+│   │   │   │   ├── l4nr072.tif
+│   │   │   │   ├── l4nr073.tif
+│   │   │   │   ├── l4nr074.tif
+│   │   │   │   └── l4nr075.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr001.tif
+│   │   │   │   ├── l5nr002.tif
+│   │   │   │   ├── l5nr003.tif
+│   │   │   │   ├── l5nr005.tif
+│   │   │   │   ├── l5nr006.tif
+│   │   │   │   ├── l5nr007.tif
+│   │   │   │   ├── l5nr008.tif
+│   │   │   │   ├── l5nr009.tif
+│   │   │   │   ├── l5nr010.tif
+│   │   │   │   ├── l5nr011.tif
+│   │   │   │   ├── l5nr013.tif
+│   │   │   │   ├── l5nr014.tif
+│   │   │   │   ├── l5nr015.tif
+│   │   │   │   ├── l5nr018.tif
+│   │   │   │   ├── l5nr021.tif
+│   │   │   │   ├── l5nr023.tif
+│   │   │   │   ├── l5nr028.tif
+│   │   │   │   ├── l5nr030.tif
+│   │   │   │   ├── l5nr032.tif
+│   │   │   │   ├── l5nr034.tif
+│   │   │   │   ├── l5nr036.tif
+│   │   │   │   ├── l5nr037.tif
+│   │   │   │   ├── l5nr038.tif
+│   │   │   │   ├── l5nr041.tif
+│   │   │   │   ├── l5nr042.tif
+│   │   │   │   ├── l5nr044.tif
+│   │   │   │   ├── l5nr045.tif
+│   │   │   │   ├── l5nr046.tif
+│   │   │   │   ├── l5nr047.tif
+│   │   │   │   ├── l5nr048.tif
+│   │   │   │   ├── l5nr049.tif
+│   │   │   │   ├── l5nr050.tif
+│   │   │   │   ├── l5nr051.tif
+│   │   │   │   ├── l5nr053.tif
+│   │   │   │   ├── l5nr055.tif
+│   │   │   │   ├── l5nr056.tif
+│   │   │   │   ├── l5nr057.tif
+│   │   │   │   ├── l5nr058.tif
+│   │   │   │   ├── l5nr059.tif
+│   │   │   │   ├── l5nr060.tif
+│   │   │   │   ├── l5nr061.tif
+│   │   │   │   ├── l5nr062.tif
+│   │   │   │   ├── l5nr063.tif
+│   │   │   │   ├── l5nr067.tif
+│   │   │   │   ├── l5nr068.tif
+│   │   │   │   ├── l5nr069.tif
+│   │   │   │   ├── l5nr071.tif
+│   │   │   │   ├── l5nr072.tif
+│   │   │   │   ├── l5nr074.tif
+│   │   │   │   └── l5nr075.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr002.tif
+│   │   │   │   ├── l6nr003.tif
+│   │   │   │   ├── l6nr005.tif
+│   │   │   │   ├── l6nr006.tif
+│   │   │   │   ├── l6nr007.tif
+│   │   │   │   ├── l6nr008.tif
+│   │   │   │   ├── l6nr009.tif
+│   │   │   │   ├── l6nr011.tif
+│   │   │   │   ├── l6nr013.tif
+│   │   │   │   ├── l6nr014.tif
+│   │   │   │   ├── l6nr015.tif
+│   │   │   │   ├── l6nr017.tif
+│   │   │   │   ├── l6nr019.tif
+│   │   │   │   ├── l6nr020.tif
+│   │   │   │   ├── l6nr022.tif
+│   │   │   │   ├── l6nr024.tif
+│   │   │   │   ├── l6nr025.tif
+│   │   │   │   ├── l6nr026.tif
+│   │   │   │   ├── l6nr027.tif
+│   │   │   │   ├── l6nr028.tif
+│   │   │   │   ├── l6nr029.tif
+│   │   │   │   ├── l6nr033.tif
+│   │   │   │   ├── l6nr034.tif
+│   │   │   │   ├── l6nr035.tif
+│   │   │   │   ├── l6nr036.tif
+│   │   │   │   ├── l6nr037.tif
+│   │   │   │   ├── l6nr038.tif
+│   │   │   │   ├── l6nr040.tif
+│   │   │   │   ├── l6nr046.tif
+│   │   │   │   ├── l6nr047.tif
+│   │   │   │   ├── l6nr050.tif
+│   │   │   │   ├── l6nr052.tif
+│   │   │   │   ├── l6nr055.tif
+│   │   │   │   ├── l6nr056.tif
+│   │   │   │   ├── l6nr058.tif
+│   │   │   │   ├── l6nr059.tif
+│   │   │   │   ├── l6nr060.tif
+│   │   │   │   ├── l6nr061.tif
+│   │   │   │   ├── l6nr062.tif
+│   │   │   │   ├── l6nr063.tif
+│   │   │   │   ├── l6nr064.tif
+│   │   │   │   ├── l6nr065.tif
+│   │   │   │   ├── l6nr066.tif
+│   │   │   │   ├── l6nr067.tif
+│   │   │   │   ├── l6nr068.tif
+│   │   │   │   ├── l6nr070.tif
+│   │   │   │   ├── l6nr071.tif
+│   │   │   │   ├── l6nr072.tif
+│   │   │   │   ├── l6nr073.tif
+│   │   │   │   └── l6nr075.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr002.tif
+│   │   │   │   ├── l7nr004.tif
+│   │   │   │   ├── l7nr006.tif
+│   │   │   │   ├── l7nr008.tif
+│   │   │   │   ├── l7nr009.tif
+│   │   │   │   ├── l7nr010.tif
+│   │   │   │   ├── l7nr011.tif
+│   │   │   │   ├── l7nr012.tif
+│   │   │   │   ├── l7nr013.tif
+│   │   │   │   ├── l7nr014.tif
+│   │   │   │   ├── l7nr017.tif
+│   │   │   │   ├── l7nr018.tif
+│   │   │   │   ├── l7nr019.tif
+│   │   │   │   ├── l7nr021.tif
+│   │   │   │   ├── l7nr023.tif
+│   │   │   │   ├── l7nr024.tif
+│   │   │   │   ├── l7nr025.tif
+│   │   │   │   ├── l7nr026.tif
+│   │   │   │   ├── l7nr028.tif
+│   │   │   │   ├── l7nr029.tif
+│   │   │   │   ├── l7nr031.tif
+│   │   │   │   ├── l7nr032.tif
+│   │   │   │   ├── l7nr033.tif
+│   │   │   │   ├── l7nr035.tif
+│   │   │   │   ├── l7nr036.tif
+│   │   │   │   ├── l7nr038.tif
+│   │   │   │   ├── l7nr039.tif
+│   │   │   │   ├── l7nr044.tif
+│   │   │   │   ├── l7nr046.tif
+│   │   │   │   ├── l7nr049.tif
+│   │   │   │   ├── l7nr050.tif
+│   │   │   │   ├── l7nr051.tif
+│   │   │   │   ├── l7nr052.tif
+│   │   │   │   ├── l7nr054.tif
+│   │   │   │   ├── l7nr056.tif
+│   │   │   │   ├── l7nr057.tif
+│   │   │   │   ├── l7nr058.tif
+│   │   │   │   ├── l7nr060.tif
+│   │   │   │   ├── l7nr062.tif
+│   │   │   │   ├── l7nr064.tif
+│   │   │   │   ├── l7nr065.tif
+│   │   │   │   ├── l7nr066.tif
+│   │   │   │   ├── l7nr067.tif
+│   │   │   │   ├── l7nr068.tif
+│   │   │   │   ├── l7nr069.tif
+│   │   │   │   ├── l7nr070.tif
+│   │   │   │   ├── l7nr071.tif
+│   │   │   │   ├── l7nr072.tif
+│   │   │   │   ├── l7nr074.tif
+│   │   │   │   └── l7nr075.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr001.tif
+│   │   │   │   ├── l8nr002.tif
+│   │   │   │   ├── l8nr003.tif
+│   │   │   │   ├── l8nr004.tif
+│   │   │   │   ├── l8nr005.tif
+│   │   │   │   ├── l8nr006.tif
+│   │   │   │   ├── l8nr008.tif
+│   │   │   │   ├── l8nr009.tif
+│   │   │   │   ├── l8nr010.tif
+│   │   │   │   ├── l8nr013.tif
+│   │   │   │   ├── l8nr014.tif
+│   │   │   │   ├── l8nr015.tif
+│   │   │   │   ├── l8nr016.tif
+│   │   │   │   ├── l8nr018.tif
+│   │   │   │   ├── l8nr020.tif
+│   │   │   │   ├── l8nr021.tif
+│   │   │   │   ├── l8nr022.tif
+│   │   │   │   ├── l8nr023.tif
+│   │   │   │   ├── l8nr024.tif
+│   │   │   │   ├── l8nr029.tif
+│   │   │   │   ├── l8nr030.tif
+│   │   │   │   ├── l8nr031.tif
+│   │   │   │   ├── l8nr032.tif
+│   │   │   │   ├── l8nr035.tif
+│   │   │   │   ├── l8nr036.tif
+│   │   │   │   ├── l8nr038.tif
+│   │   │   │   ├── l8nr039.tif
+│   │   │   │   ├── l8nr040.tif
+│   │   │   │   ├── l8nr044.tif
+│   │   │   │   ├── l8nr046.tif
+│   │   │   │   ├── l8nr047.tif
+│   │   │   │   ├── l8nr048.tif
+│   │   │   │   ├── l8nr049.tif
+│   │   │   │   ├── l8nr050.tif
+│   │   │   │   ├── l8nr053.tif
+│   │   │   │   ├── l8nr055.tif
+│   │   │   │   ├── l8nr057.tif
+│   │   │   │   ├── l8nr058.tif
+│   │   │   │   ├── l8nr059.tif
+│   │   │   │   ├── l8nr060.tif
+│   │   │   │   ├── l8nr062.tif
+│   │   │   │   ├── l8nr063.tif
+│   │   │   │   ├── l8nr064.tif
+│   │   │   │   ├── l8nr065.tif
+│   │   │   │   ├── l8nr066.tif
+│   │   │   │   ├── l8nr068.tif
+│   │   │   │   ├── l8nr070.tif
+│   │   │   │   ├── l8nr071.tif
+│   │   │   │   ├── l8nr073.tif
+│   │   │   │   └── l8nr074.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr001.tif
+│   │   │       ├── l9nr002.tif
+│   │   │       ├── l9nr004.tif
+│   │   │       ├── l9nr009.tif
+│   │   │       ├── l9nr011.tif
+│   │   │       ├── l9nr013.tif
+│   │   │       ├── l9nr014.tif
+│   │   │       ├── l9nr015.tif
+│   │   │       ├── l9nr016.tif
+│   │   │       ├── l9nr017.tif
+│   │   │       ├── l9nr018.tif
+│   │   │       ├── l9nr021.tif
+│   │   │       ├── l9nr022.tif
+│   │   │       ├── l9nr023.tif
+│   │   │       ├── l9nr024.tif
+│   │   │       ├── l9nr025.tif
+│   │   │       ├── l9nr026.tif
+│   │   │       ├── l9nr027.tif
+│   │   │       ├── l9nr029.tif
+│   │   │       ├── l9nr030.tif
+│   │   │       ├── l9nr031.tif
+│   │   │       ├── l9nr032.tif
+│   │   │       ├── l9nr033.tif
+│   │   │       ├── l9nr034.tif
+│   │   │       ├── l9nr038.tif
+│   │   │       ├── l9nr039.tif
+│   │   │       ├── l9nr040.tif
+│   │   │       ├── l9nr041.tif
+│   │   │       ├── l9nr042.tif
+│   │   │       ├── l9nr043.tif
+│   │   │       ├── l9nr044.tif
+│   │   │       ├── l9nr045.tif
+│   │   │       ├── l9nr047.tif
+│   │   │       ├── l9nr048.tif
+│   │   │       ├── l9nr049.tif
+│   │   │       ├── l9nr051.tif
+│   │   │       ├── l9nr052.tif
+│   │   │       ├── l9nr054.tif
+│   │   │       ├── l9nr055.tif
+│   │   │       ├── l9nr056.tif
+│   │   │       ├── l9nr059.tif
+│   │   │       ├── l9nr060.tif
+│   │   │       ├── l9nr061.tif
+│   │   │       ├── l9nr064.tif
+│   │   │       ├── l9nr065.tif
+│   │   │       ├── l9nr068.tif
+│   │   │       ├── l9nr069.tif
+│   │   │       ├── l9nr070.tif
+│   │   │       ├── l9nr073.tif
+│   │   │       └── l9nr075.tif
+│   │   ├── train_10
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr025.tif
+│   │   │   │   ├── l1nr050.tif
+│   │   │   │   └── l1nr061.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr016.tif
+│   │   │   │   ├── l10nr031.tif
+│   │   │   │   └── l10nr050.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr031.tif
+│   │   │   │   ├── l2nr062.tif
+│   │   │   │   └── l2nr068.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr024.tif
+│   │   │   │   ├── l3nr048.tif
+│   │   │   │   └── l3nr068.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr013.tif
+│   │   │   │   ├── l4nr027.tif
+│   │   │   │   └── l4nr028.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr012.tif
+│   │   │   │   ├── l5nr022.tif
+│   │   │   │   └── l5nr033.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr004.tif
+│   │   │   │   ├── l6nr041.tif
+│   │   │   │   └── l6nr053.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr030.tif
+│   │   │   │   ├── l7nr042.tif
+│   │   │   │   └── l7nr059.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr027.tif
+│   │   │   │   ├── l8nr028.tif
+│   │   │   │   └── l8nr056.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr028.tif
+│   │   │       ├── l9nr062.tif
+│   │   │       └── l9nr066.tif
+│   │   ├── train_100
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr004.tif
+│   │   │   │   ├── l1nr006.tif
+│   │   │   │   ├── l1nr008.tif
+│   │   │   │   ├── l1nr009.tif
+│   │   │   │   ├── l1nr010.tif
+│   │   │   │   ├── l1nr011.tif
+│   │   │   │   ├── l1nr014.tif
+│   │   │   │   ├── l1nr015.tif
+│   │   │   │   ├── l1nr016.tif
+│   │   │   │   ├── l1nr017.tif
+│   │   │   │   ├── l1nr019.tif
+│   │   │   │   ├── l1nr022.tif
+│   │   │   │   ├── l1nr024.tif
+│   │   │   │   ├── l1nr025.tif
+│   │   │   │   ├── l1nr030.tif
+│   │   │   │   ├── l1nr037.tif
+│   │   │   │   ├── l1nr039.tif
+│   │   │   │   ├── l1nr042.tif
+│   │   │   │   ├── l1nr044.tif
+│   │   │   │   ├── l1nr050.tif
+│   │   │   │   ├── l1nr052.tif
+│   │   │   │   ├── l1nr057.tif
+│   │   │   │   ├── l1nr060.tif
+│   │   │   │   ├── l1nr061.tif
+│   │   │   │   └── l1nr065.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr002.tif
+│   │   │   │   ├── l10nr010.tif
+│   │   │   │   ├── l10nr014.tif
+│   │   │   │   ├── l10nr015.tif
+│   │   │   │   ├── l10nr016.tif
+│   │   │   │   ├── l10nr018.tif
+│   │   │   │   ├── l10nr023.tif
+│   │   │   │   ├── l10nr025.tif
+│   │   │   │   ├── l10nr026.tif
+│   │   │   │   ├── l10nr027.tif
+│   │   │   │   ├── l10nr031.tif
+│   │   │   │   ├── l10nr033.tif
+│   │   │   │   ├── l10nr039.tif
+│   │   │   │   ├── l10nr049.tif
+│   │   │   │   ├── l10nr050.tif
+│   │   │   │   ├── l10nr052.tif
+│   │   │   │   ├── l10nr053.tif
+│   │   │   │   ├── l10nr056.tif
+│   │   │   │   ├── l10nr058.tif
+│   │   │   │   ├── l10nr061.tif
+│   │   │   │   ├── l10nr062.tif
+│   │   │   │   ├── l10nr065.tif
+│   │   │   │   ├── l10nr066.tif
+│   │   │   │   ├── l10nr070.tif
+│   │   │   │   └── l10nr075.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr008.tif
+│   │   │   │   ├── l2nr010.tif
+│   │   │   │   ├── l2nr018.tif
+│   │   │   │   ├── l2nr023.tif
+│   │   │   │   ├── l2nr027.tif
+│   │   │   │   ├── l2nr030.tif
+│   │   │   │   ├── l2nr031.tif
+│   │   │   │   ├── l2nr033.tif
+│   │   │   │   ├── l2nr035.tif
+│   │   │   │   ├── l2nr037.tif
+│   │   │   │   ├── l2nr039.tif
+│   │   │   │   ├── l2nr040.tif
+│   │   │   │   ├── l2nr042.tif
+│   │   │   │   ├── l2nr044.tif
+│   │   │   │   ├── l2nr048.tif
+│   │   │   │   ├── l2nr054.tif
+│   │   │   │   ├── l2nr055.tif
+│   │   │   │   ├── l2nr060.tif
+│   │   │   │   ├── l2nr062.tif
+│   │   │   │   ├── l2nr063.tif
+│   │   │   │   ├── l2nr065.tif
+│   │   │   │   ├── l2nr066.tif
+│   │   │   │   ├── l2nr067.tif
+│   │   │   │   ├── l2nr068.tif
+│   │   │   │   └── l2nr074.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr003.tif
+│   │   │   │   ├── l3nr005.tif
+│   │   │   │   ├── l3nr006.tif
+│   │   │   │   ├── l3nr008.tif
+│   │   │   │   ├── l3nr011.tif
+│   │   │   │   ├── l3nr013.tif
+│   │   │   │   ├── l3nr015.tif
+│   │   │   │   ├── l3nr018.tif
+│   │   │   │   ├── l3nr019.tif
+│   │   │   │   ├── l3nr023.tif
+│   │   │   │   ├── l3nr024.tif
+│   │   │   │   ├── l3nr026.tif
+│   │   │   │   ├── l3nr027.tif
+│   │   │   │   ├── l3nr035.tif
+│   │   │   │   ├── l3nr036.tif
+│   │   │   │   ├── l3nr048.tif
+│   │   │   │   ├── l3nr050.tif
+│   │   │   │   ├── l3nr058.tif
+│   │   │   │   ├── l3nr059.tif
+│   │   │   │   ├── l3nr060.tif
+│   │   │   │   ├── l3nr064.tif
+│   │   │   │   ├── l3nr066.tif
+│   │   │   │   ├── l3nr068.tif
+│   │   │   │   ├── l3nr071.tif
+│   │   │   │   └── l3nr074.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr002.tif
+│   │   │   │   ├── l4nr004.tif
+│   │   │   │   ├── l4nr005.tif
+│   │   │   │   ├── l4nr010.tif
+│   │   │   │   ├── l4nr011.tif
+│   │   │   │   ├── l4nr013.tif
+│   │   │   │   ├── l4nr014.tif
+│   │   │   │   ├── l4nr018.tif
+│   │   │   │   ├── l4nr020.tif
+│   │   │   │   ├── l4nr024.tif
+│   │   │   │   ├── l4nr025.tif
+│   │   │   │   ├── l4nr026.tif
+│   │   │   │   ├── l4nr027.tif
+│   │   │   │   ├── l4nr028.tif
+│   │   │   │   ├── l4nr029.tif
+│   │   │   │   ├── l4nr030.tif
+│   │   │   │   ├── l4nr031.tif
+│   │   │   │   ├── l4nr032.tif
+│   │   │   │   ├── l4nr049.tif
+│   │   │   │   ├── l4nr050.tif
+│   │   │   │   ├── l4nr053.tif
+│   │   │   │   ├── l4nr057.tif
+│   │   │   │   ├── l4nr061.tif
+│   │   │   │   ├── l4nr063.tif
+│   │   │   │   └── l4nr067.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr004.tif
+│   │   │   │   ├── l5nr012.tif
+│   │   │   │   ├── l5nr016.tif
+│   │   │   │   ├── l5nr017.tif
+│   │   │   │   ├── l5nr019.tif
+│   │   │   │   ├── l5nr020.tif
+│   │   │   │   ├── l5nr022.tif
+│   │   │   │   ├── l5nr024.tif
+│   │   │   │   ├── l5nr025.tif
+│   │   │   │   ├── l5nr026.tif
+│   │   │   │   ├── l5nr027.tif
+│   │   │   │   ├── l5nr029.tif
+│   │   │   │   ├── l5nr031.tif
+│   │   │   │   ├── l5nr033.tif
+│   │   │   │   ├── l5nr035.tif
+│   │   │   │   ├── l5nr039.tif
+│   │   │   │   ├── l5nr040.tif
+│   │   │   │   ├── l5nr043.tif
+│   │   │   │   ├── l5nr052.tif
+│   │   │   │   ├── l5nr054.tif
+│   │   │   │   ├── l5nr064.tif
+│   │   │   │   ├── l5nr065.tif
+│   │   │   │   ├── l5nr066.tif
+│   │   │   │   ├── l5nr070.tif
+│   │   │   │   └── l5nr073.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr001.tif
+│   │   │   │   ├── l6nr004.tif
+│   │   │   │   ├── l6nr010.tif
+│   │   │   │   ├── l6nr012.tif
+│   │   │   │   ├── l6nr016.tif
+│   │   │   │   ├── l6nr018.tif
+│   │   │   │   ├── l6nr021.tif
+│   │   │   │   ├── l6nr023.tif
+│   │   │   │   ├── l6nr030.tif
+│   │   │   │   ├── l6nr031.tif
+│   │   │   │   ├── l6nr032.tif
+│   │   │   │   ├── l6nr039.tif
+│   │   │   │   ├── l6nr041.tif
+│   │   │   │   ├── l6nr042.tif
+│   │   │   │   ├── l6nr043.tif
+│   │   │   │   ├── l6nr044.tif
+│   │   │   │   ├── l6nr045.tif
+│   │   │   │   ├── l6nr048.tif
+│   │   │   │   ├── l6nr049.tif
+│   │   │   │   ├── l6nr051.tif
+│   │   │   │   ├── l6nr053.tif
+│   │   │   │   ├── l6nr054.tif
+│   │   │   │   ├── l6nr057.tif
+│   │   │   │   ├── l6nr069.tif
+│   │   │   │   └── l6nr074.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr001.tif
+│   │   │   │   ├── l7nr003.tif
+│   │   │   │   ├── l7nr005.tif
+│   │   │   │   ├── l7nr007.tif
+│   │   │   │   ├── l7nr015.tif
+│   │   │   │   ├── l7nr016.tif
+│   │   │   │   ├── l7nr020.tif
+│   │   │   │   ├── l7nr022.tif
+│   │   │   │   ├── l7nr027.tif
+│   │   │   │   ├── l7nr030.tif
+│   │   │   │   ├── l7nr034.tif
+│   │   │   │   ├── l7nr037.tif
+│   │   │   │   ├── l7nr040.tif
+│   │   │   │   ├── l7nr041.tif
+│   │   │   │   ├── l7nr042.tif
+│   │   │   │   ├── l7nr043.tif
+│   │   │   │   ├── l7nr045.tif
+│   │   │   │   ├── l7nr047.tif
+│   │   │   │   ├── l7nr048.tif
+│   │   │   │   ├── l7nr053.tif
+│   │   │   │   ├── l7nr055.tif
+│   │   │   │   ├── l7nr059.tif
+│   │   │   │   ├── l7nr061.tif
+│   │   │   │   ├── l7nr063.tif
+│   │   │   │   └── l7nr073.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr007.tif
+│   │   │   │   ├── l8nr011.tif
+│   │   │   │   ├── l8nr012.tif
+│   │   │   │   ├── l8nr017.tif
+│   │   │   │   ├── l8nr019.tif
+│   │   │   │   ├── l8nr025.tif
+│   │   │   │   ├── l8nr026.tif
+│   │   │   │   ├── l8nr027.tif
+│   │   │   │   ├── l8nr028.tif
+│   │   │   │   ├── l8nr033.tif
+│   │   │   │   ├── l8nr034.tif
+│   │   │   │   ├── l8nr037.tif
+│   │   │   │   ├── l8nr041.tif
+│   │   │   │   ├── l8nr042.tif
+│   │   │   │   ├── l8nr043.tif
+│   │   │   │   ├── l8nr045.tif
+│   │   │   │   ├── l8nr051.tif
+│   │   │   │   ├── l8nr052.tif
+│   │   │   │   ├── l8nr054.tif
+│   │   │   │   ├── l8nr056.tif
+│   │   │   │   ├── l8nr061.tif
+│   │   │   │   ├── l8nr067.tif
+│   │   │   │   ├── l8nr069.tif
+│   │   │   │   ├── l8nr072.tif
+│   │   │   │   └── l8nr075.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr003.tif
+│   │   │       ├── l9nr005.tif
+│   │   │       ├── l9nr006.tif
+│   │   │       ├── l9nr007.tif
+│   │   │       ├── l9nr008.tif
+│   │   │       ├── l9nr010.tif
+│   │   │       ├── l9nr012.tif
+│   │   │       ├── l9nr019.tif
+│   │   │       ├── l9nr020.tif
+│   │   │       ├── l9nr028.tif
+│   │   │       ├── l9nr035.tif
+│   │   │       ├── l9nr036.tif
+│   │   │       ├── l9nr037.tif
+│   │   │       ├── l9nr046.tif
+│   │   │       ├── l9nr050.tif
+│   │   │       ├── l9nr053.tif
+│   │   │       ├── l9nr057.tif
+│   │   │       ├── l9nr058.tif
+│   │   │       ├── l9nr062.tif
+│   │   │       ├── l9nr063.tif
+│   │   │       ├── l9nr066.tif
+│   │   │       ├── l9nr067.tif
+│   │   │       ├── l9nr071.tif
+│   │   │       ├── l9nr072.tif
+│   │   │       └── l9nr074.tif
+│   │   ├── train_20
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr004.tif
+│   │   │   │   ├── l1nr022.tif
+│   │   │   │   ├── l1nr024.tif
+│   │   │   │   ├── l1nr025.tif
+│   │   │   │   ├── l1nr037.tif
+│   │   │   │   └── l1nr060.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr026.tif
+│   │   │   │   ├── l10nr031.tif
+│   │   │   │   ├── l10nr049.tif
+│   │   │   │   ├── l10nr058.tif
+│   │   │   │   ├── l10nr061.tif
+│   │   │   │   └── l10nr065.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr008.tif
+│   │   │   │   ├── l2nr018.tif
+│   │   │   │   ├── l2nr027.tif
+│   │   │   │   ├── l2nr055.tif
+│   │   │   │   ├── l2nr062.tif
+│   │   │   │   └── l2nr066.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr023.tif
+│   │   │   │   ├── l3nr024.tif
+│   │   │   │   ├── l3nr048.tif
+│   │   │   │   ├── l3nr059.tif
+│   │   │   │   ├── l3nr066.tif
+│   │   │   │   └── l3nr071.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr004.tif
+│   │   │   │   ├── l4nr018.tif
+│   │   │   │   ├── l4nr025.tif
+│   │   │   │   ├── l4nr031.tif
+│   │   │   │   ├── l4nr050.tif
+│   │   │   │   └── l4nr053.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr020.tif
+│   │   │   │   ├── l5nr022.tif
+│   │   │   │   ├── l5nr026.tif
+│   │   │   │   ├── l5nr031.tif
+│   │   │   │   ├── l5nr065.tif
+│   │   │   │   └── l5nr073.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr010.tif
+│   │   │   │   ├── l6nr018.tif
+│   │   │   │   ├── l6nr049.tif
+│   │   │   │   ├── l6nr053.tif
+│   │   │   │   ├── l6nr057.tif
+│   │   │   │   └── l6nr069.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr001.tif
+│   │   │   │   ├── l7nr022.tif
+│   │   │   │   ├── l7nr027.tif
+│   │   │   │   ├── l7nr030.tif
+│   │   │   │   ├── l7nr037.tif
+│   │   │   │   └── l7nr061.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr027.tif
+│   │   │   │   ├── l8nr041.tif
+│   │   │   │   ├── l8nr043.tif
+│   │   │   │   ├── l8nr051.tif
+│   │   │   │   ├── l8nr067.tif
+│   │   │   │   └── l8nr072.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr005.tif
+│   │   │       ├── l9nr006.tif
+│   │   │       ├── l9nr008.tif
+│   │   │       ├── l9nr046.tif
+│   │   │       ├── l9nr062.tif
+│   │   │       └── l9nr072.tif
+│   │   ├── train_50
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr004.tif
+│   │   │   │   ├── l1nr010.tif
+│   │   │   │   ├── l1nr011.tif
+│   │   │   │   ├── l1nr016.tif
+│   │   │   │   ├── l1nr022.tif
+│   │   │   │   ├── l1nr024.tif
+│   │   │   │   ├── l1nr030.tif
+│   │   │   │   ├── l1nr037.tif
+│   │   │   │   ├── l1nr039.tif
+│   │   │   │   ├── l1nr042.tif
+│   │   │   │   ├── l1nr044.tif
+│   │   │   │   ├── l1nr050.tif
+│   │   │   │   └── l1nr052.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr002.tif
+│   │   │   │   ├── l10nr010.tif
+│   │   │   │   ├── l10nr016.tif
+│   │   │   │   ├── l10nr018.tif
+│   │   │   │   ├── l10nr023.tif
+│   │   │   │   ├── l10nr027.tif
+│   │   │   │   ├── l10nr031.tif
+│   │   │   │   ├── l10nr039.tif
+│   │   │   │   ├── l10nr049.tif
+│   │   │   │   ├── l10nr050.tif
+│   │   │   │   ├── l10nr056.tif
+│   │   │   │   ├── l10nr058.tif
+│   │   │   │   └── l10nr075.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr018.tif
+│   │   │   │   ├── l2nr023.tif
+│   │   │   │   ├── l2nr027.tif
+│   │   │   │   ├── l2nr030.tif
+│   │   │   │   ├── l2nr037.tif
+│   │   │   │   ├── l2nr040.tif
+│   │   │   │   ├── l2nr042.tif
+│   │   │   │   ├── l2nr044.tif
+│   │   │   │   ├── l2nr055.tif
+│   │   │   │   ├── l2nr062.tif
+│   │   │   │   ├── l2nr063.tif
+│   │   │   │   ├── l2nr067.tif
+│   │   │   │   └── l2nr068.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr005.tif
+│   │   │   │   ├── l3nr006.tif
+│   │   │   │   ├── l3nr011.tif
+│   │   │   │   ├── l3nr013.tif
+│   │   │   │   ├── l3nr018.tif
+│   │   │   │   ├── l3nr019.tif
+│   │   │   │   ├── l3nr023.tif
+│   │   │   │   ├── l3nr027.tif
+│   │   │   │   ├── l3nr036.tif
+│   │   │   │   ├── l3nr048.tif
+│   │   │   │   ├── l3nr050.tif
+│   │   │   │   ├── l3nr060.tif
+│   │   │   │   └── l3nr074.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr004.tif
+│   │   │   │   ├── l4nr005.tif
+│   │   │   │   ├── l4nr011.tif
+│   │   │   │   ├── l4nr014.tif
+│   │   │   │   ├── l4nr018.tif
+│   │   │   │   ├── l4nr024.tif
+│   │   │   │   ├── l4nr028.tif
+│   │   │   │   ├── l4nr029.tif
+│   │   │   │   ├── l4nr030.tif
+│   │   │   │   ├── l4nr050.tif
+│   │   │   │   ├── l4nr061.tif
+│   │   │   │   ├── l4nr063.tif
+│   │   │   │   └── l4nr067.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr019.tif
+│   │   │   │   ├── l5nr022.tif
+│   │   │   │   ├── l5nr024.tif
+│   │   │   │   ├── l5nr025.tif
+│   │   │   │   ├── l5nr026.tif
+│   │   │   │   ├── l5nr029.tif
+│   │   │   │   ├── l5nr039.tif
+│   │   │   │   ├── l5nr040.tif
+│   │   │   │   ├── l5nr043.tif
+│   │   │   │   ├── l5nr052.tif
+│   │   │   │   ├── l5nr064.tif
+│   │   │   │   ├── l5nr065.tif
+│   │   │   │   └── l5nr070.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr001.tif
+│   │   │   │   ├── l6nr004.tif
+│   │   │   │   ├── l6nr010.tif
+│   │   │   │   ├── l6nr021.tif
+│   │   │   │   ├── l6nr030.tif
+│   │   │   │   ├── l6nr043.tif
+│   │   │   │   ├── l6nr044.tif
+│   │   │   │   ├── l6nr045.tif
+│   │   │   │   ├── l6nr048.tif
+│   │   │   │   ├── l6nr049.tif
+│   │   │   │   ├── l6nr051.tif
+│   │   │   │   ├── l6nr057.tif
+│   │   │   │   └── l6nr069.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr001.tif
+│   │   │   │   ├── l7nr003.tif
+│   │   │   │   ├── l7nr005.tif
+│   │   │   │   ├── l7nr015.tif
+│   │   │   │   ├── l7nr020.tif
+│   │   │   │   ├── l7nr022.tif
+│   │   │   │   ├── l7nr027.tif
+│   │   │   │   ├── l7nr030.tif
+│   │   │   │   ├── l7nr034.tif
+│   │   │   │   ├── l7nr040.tif
+│   │   │   │   ├── l7nr042.tif
+│   │   │   │   ├── l7nr048.tif
+│   │   │   │   └── l7nr061.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr011.tif
+│   │   │   │   ├── l8nr017.tif
+│   │   │   │   ├── l8nr019.tif
+│   │   │   │   ├── l8nr026.tif
+│   │   │   │   ├── l8nr028.tif
+│   │   │   │   ├── l8nr034.tif
+│   │   │   │   ├── l8nr042.tif
+│   │   │   │   ├── l8nr051.tif
+│   │   │   │   ├── l8nr052.tif
+│   │   │   │   ├── l8nr056.tif
+│   │   │   │   ├── l8nr067.tif
+│   │   │   │   ├── l8nr072.tif
+│   │   │   │   └── l8nr075.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr005.tif
+│   │   │       ├── l9nr007.tif
+│   │   │       ├── l9nr008.tif
+│   │   │       ├── l9nr010.tif
+│   │   │       ├── l9nr012.tif
+│   │   │       ├── l9nr019.tif
+│   │   │       ├── l9nr020.tif
+│   │   │       ├── l9nr028.tif
+│   │   │       ├── l9nr036.tif
+│   │   │       ├── l9nr057.tif
+│   │   │       ├── l9nr063.tif
+│   │   │       ├── l9nr067.tif
+│   │   │       └── l9nr074.tif
+│   │   └── train_80
+│   │       ├── leaf1
+│   │       │   ├── l1nr006.tif
+│   │       │   ├── l1nr008.tif
+│   │       │   ├── l1nr009.tif
+│   │       │   ├── l1nr010.tif
+│   │       │   ├── l1nr011.tif
+│   │       │   ├── l1nr014.tif
+│   │       │   ├── l1nr015.tif
+│   │       │   ├── l1nr016.tif
+│   │       │   ├── l1nr017.tif
+│   │       │   ├── l1nr019.tif
+│   │       │   ├── l1nr022.tif
+│   │       │   ├── l1nr024.tif
+│   │       │   ├── l1nr025.tif
+│   │       │   ├── l1nr030.tif
+│   │       │   ├── l1nr039.tif
+│   │       │   ├── l1nr044.tif
+│   │       │   ├── l1nr050.tif
+│   │       │   ├── l1nr057.tif
+│   │       │   ├── l1nr060.tif
+│   │       │   ├── l1nr061.tif
+│   │       │   └── l1nr065.tif
+│   │       ├── leaf10
+│   │       │   ├── l10nr002.tif
+│   │       │   ├── l10nr010.tif
+│   │       │   ├── l10nr014.tif
+│   │       │   ├── l10nr015.tif
+│   │       │   ├── l10nr016.tif
+│   │       │   ├── l10nr018.tif
+│   │       │   ├── l10nr023.tif
+│   │       │   ├── l10nr025.tif
+│   │       │   ├── l10nr026.tif
+│   │       │   ├── l10nr031.tif
+│   │       │   ├── l10nr033.tif
+│   │       │   ├── l10nr049.tif
+│   │       │   ├── l10nr052.tif
+│   │       │   ├── l10nr053.tif
+│   │       │   ├── l10nr056.tif
+│   │       │   ├── l10nr058.tif
+│   │       │   ├── l10nr061.tif
+│   │       │   ├── l10nr062.tif
+│   │       │   ├── l10nr065.tif
+│   │       │   ├── l10nr066.tif
+│   │       │   └── l10nr075.tif
+│   │       ├── leaf2
+│   │       │   ├── l2nr008.tif
+│   │       │   ├── l2nr010.tif
+│   │       │   ├── l2nr018.tif
+│   │       │   ├── l2nr023.tif
+│   │       │   ├── l2nr027.tif
+│   │       │   ├── l2nr030.tif
+│   │       │   ├── l2nr033.tif
+│   │       │   ├── l2nr035.tif
+│   │       │   ├── l2nr039.tif
+│   │       │   ├── l2nr040.tif
+│   │       │   ├── l2nr042.tif
+│   │       │   ├── l2nr044.tif
+│   │       │   ├── l2nr048.tif
+│   │       │   ├── l2nr054.tif
+│   │       │   ├── l2nr055.tif
+│   │       │   ├── l2nr060.tif
+│   │       │   ├── l2nr062.tif
+│   │       │   ├── l2nr065.tif
+│   │       │   ├── l2nr067.tif
+│   │       │   ├── l2nr068.tif
+│   │       │   └── l2nr074.tif
+│   │       ├── leaf3
+│   │       │   ├── l3nr003.tif
+│   │       │   ├── l3nr006.tif
+│   │       │   ├── l3nr008.tif
+│   │       │   ├── l3nr011.tif
+│   │       │   ├── l3nr013.tif
+│   │       │   ├── l3nr015.tif
+│   │       │   ├── l3nr018.tif
+│   │       │   ├── l3nr019.tif
+│   │       │   ├── l3nr024.tif
+│   │       │   ├── l3nr026.tif
+│   │       │   ├── l3nr027.tif
+│   │       │   ├── l3nr035.tif
+│   │       │   ├── l3nr036.tif
+│   │       │   ├── l3nr048.tif
+│   │       │   ├── l3nr050.tif
+│   │       │   ├── l3nr058.tif
+│   │       │   ├── l3nr059.tif
+│   │       │   ├── l3nr060.tif
+│   │       │   ├── l3nr064.tif
+│   │       │   ├── l3nr071.tif
+│   │       │   └── l3nr074.tif
+│   │       ├── leaf4
+│   │       │   ├── l4nr002.tif
+│   │       │   ├── l4nr004.tif
+│   │       │   ├── l4nr005.tif
+│   │       │   ├── l4nr010.tif
+│   │       │   ├── l4nr011.tif
+│   │       │   ├── l4nr014.tif
+│   │       │   ├── l4nr018.tif
+│   │       │   ├── l4nr020.tif
+│   │       │   ├── l4nr024.tif
+│   │       │   ├── l4nr025.tif
+│   │       │   ├── l4nr027.tif
+│   │       │   ├── l4nr028.tif
+│   │       │   ├── l4nr029.tif
+│   │       │   ├── l4nr030.tif
+│   │       │   ├── l4nr032.tif
+│   │       │   ├── l4nr049.tif
+│   │       │   ├── l4nr050.tif
+│   │       │   ├── l4nr053.tif
+│   │       │   ├── l4nr057.tif
+│   │       │   ├── l4nr063.tif
+│   │       │   └── l4nr067.tif
+│   │       ├── leaf5
+│   │       │   ├── l5nr004.tif
+│   │       │   ├── l5nr012.tif
+│   │       │   ├── l5nr016.tif
+│   │       │   ├── l5nr017.tif
+│   │       │   ├── l5nr020.tif
+│   │       │   ├── l5nr022.tif
+│   │       │   ├── l5nr025.tif
+│   │       │   ├── l5nr026.tif
+│   │       │   ├── l5nr027.tif
+│   │       │   ├── l5nr029.tif
+│   │       │   ├── l5nr031.tif
+│   │       │   ├── l5nr033.tif
+│   │       │   ├── l5nr035.tif
+│   │       │   ├── l5nr043.tif
+│   │       │   ├── l5nr052.tif
+│   │       │   ├── l5nr054.tif
+│   │       │   ├── l5nr064.tif
+│   │       │   ├── l5nr065.tif
+│   │       │   ├── l5nr066.tif
+│   │       │   ├── l5nr070.tif
+│   │       │   └── l5nr073.tif
+│   │       ├── leaf6
+│   │       │   ├── l6nr004.tif
+│   │       │   ├── l6nr010.tif
+│   │       │   ├── l6nr012.tif
+│   │       │   ├── l6nr018.tif
+│   │       │   ├── l6nr021.tif
+│   │       │   ├── l6nr023.tif
+│   │       │   ├── l6nr030.tif
+│   │       │   ├── l6nr031.tif
+│   │       │   ├── l6nr032.tif
+│   │       │   ├── l6nr041.tif
+│   │       │   ├── l6nr042.tif
+│   │       │   ├── l6nr043.tif
+│   │       │   ├── l6nr044.tif
+│   │       │   ├── l6nr045.tif
+│   │       │   ├── l6nr049.tif
+│   │       │   ├── l6nr051.tif
+│   │       │   ├── l6nr053.tif
+│   │       │   ├── l6nr054.tif
+│   │       │   ├── l6nr057.tif
+│   │       │   ├── l6nr069.tif
+│   │       │   └── l6nr074.tif
+│   │       ├── leaf7
+│   │       │   ├── l7nr003.tif
+│   │       │   ├── l7nr005.tif
+│   │       │   ├── l7nr007.tif
+│   │       │   ├── l7nr015.tif
+│   │       │   ├── l7nr016.tif
+│   │       │   ├── l7nr020.tif
+│   │       │   ├── l7nr022.tif
+│   │       │   ├── l7nr027.tif
+│   │       │   ├── l7nr030.tif
+│   │       │   ├── l7nr034.tif
+│   │       │   ├── l7nr037.tif
+│   │       │   ├── l7nr040.tif
+│   │       │   ├── l7nr041.tif
+│   │       │   ├── l7nr042.tif
+│   │       │   ├── l7nr043.tif
+│   │       │   ├── l7nr045.tif
+│   │       │   ├── l7nr047.tif
+│   │       │   ├── l7nr055.tif
+│   │       │   ├── l7nr059.tif
+│   │       │   ├── l7nr061.tif
+│   │       │   └── l7nr063.tif
+│   │       ├── leaf8
+│   │       │   ├── l8nr007.tif
+│   │       │   ├── l8nr011.tif
+│   │       │   ├── l8nr017.tif
+│   │       │   ├── l8nr019.tif
+│   │       │   ├── l8nr025.tif
+│   │       │   ├── l8nr026.tif
+│   │       │   ├── l8nr027.tif
+│   │       │   ├── l8nr028.tif
+│   │       │   ├── l8nr033.tif
+│   │       │   ├── l8nr034.tif
+│   │       │   ├── l8nr037.tif
+│   │       │   ├── l8nr041.tif
+│   │       │   ├── l8nr042.tif
+│   │       │   ├── l8nr045.tif
+│   │       │   ├── l8nr051.tif
+│   │       │   ├── l8nr052.tif
+│   │       │   ├── l8nr054.tif
+│   │       │   ├── l8nr056.tif
+│   │       │   ├── l8nr061.tif
+│   │       │   ├── l8nr067.tif
+│   │       │   └── l8nr072.tif
+│   │       └── leaf9
+│   │           ├── l9nr003.tif
+│   │           ├── l9nr005.tif
+│   │           ├── l9nr006.tif
+│   │           ├── l9nr008.tif
+│   │           ├── l9nr010.tif
+│   │           ├── l9nr019.tif
+│   │           ├── l9nr020.tif
+│   │           ├── l9nr028.tif
+│   │           ├── l9nr035.tif
+│   │           ├── l9nr036.tif
+│   │           ├── l9nr037.tif
+│   │           ├── l9nr050.tif
+│   │           ├── l9nr053.tif
+│   │           ├── l9nr057.tif
+│   │           ├── l9nr058.tif
+│   │           ├── l9nr062.tif
+│   │           ├── l9nr063.tif
+│   │           ├── l9nr066.tif
+│   │           ├── l9nr067.tif
+│   │           ├── l9nr071.tif
+│   │           └── l9nr072.tif
+│   ├── exp2
+│   │   ├── test
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr004.tif
+│   │   │   │   ├── l1nr005.tif
+│   │   │   │   ├── l1nr006.tif
+│   │   │   │   ├── l1nr007.tif
+│   │   │   │   ├── l1nr008.tif
+│   │   │   │   ├── l1nr009.tif
+│   │   │   │   ├── l1nr010.tif
+│   │   │   │   ├── l1nr011.tif
+│   │   │   │   ├── l1nr013.tif
+│   │   │   │   ├── l1nr014.tif
+│   │   │   │   ├── l1nr015.tif
+│   │   │   │   ├── l1nr016.tif
+│   │   │   │   ├── l1nr017.tif
+│   │   │   │   ├── l1nr018.tif
+│   │   │   │   ├── l1nr019.tif
+│   │   │   │   ├── l1nr022.tif
+│   │   │   │   ├── l1nr023.tif
+│   │   │   │   ├── l1nr024.tif
+│   │   │   │   ├── l1nr025.tif
+│   │   │   │   ├── l1nr026.tif
+│   │   │   │   ├── l1nr029.tif
+│   │   │   │   ├── l1nr030.tif
+│   │   │   │   ├── l1nr031.tif
+│   │   │   │   ├── l1nr032.tif
+│   │   │   │   ├── l1nr033.tif
+│   │   │   │   ├── l1nr034.tif
+│   │   │   │   ├── l1nr036.tif
+│   │   │   │   ├── l1nr037.tif
+│   │   │   │   ├── l1nr039.tif
+│   │   │   │   ├── l1nr040.tif
+│   │   │   │   ├── l1nr041.tif
+│   │   │   │   ├── l1nr042.tif
+│   │   │   │   ├── l1nr044.tif
+│   │   │   │   ├── l1nr045.tif
+│   │   │   │   ├── l1nr047.tif
+│   │   │   │   ├── l1nr048.tif
+│   │   │   │   ├── l1nr050.tif
+│   │   │   │   ├── l1nr052.tif
+│   │   │   │   ├── l1nr053.tif
+│   │   │   │   ├── l1nr057.tif
+│   │   │   │   ├── l1nr060.tif
+│   │   │   │   ├── l1nr061.tif
+│   │   │   │   ├── l1nr062.tif
+│   │   │   │   ├── l1nr065.tif
+│   │   │   │   ├── l1nr066.tif
+│   │   │   │   ├── l1nr067.tif
+│   │   │   │   ├── l1nr069.tif
+│   │   │   │   ├── l1nr070.tif
+│   │   │   │   ├── l1nr072.tif
+│   │   │   │   └── l1nr074.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr002.tif
+│   │   │   │   ├── l10nr010.tif
+│   │   │   │   ├── l10nr013.tif
+│   │   │   │   ├── l10nr014.tif
+│   │   │   │   ├── l10nr015.tif
+│   │   │   │   ├── l10nr016.tif
+│   │   │   │   ├── l10nr017.tif
+│   │   │   │   ├── l10nr018.tif
+│   │   │   │   ├── l10nr019.tif
+│   │   │   │   ├── l10nr020.tif
+│   │   │   │   ├── l10nr021.tif
+│   │   │   │   ├── l10nr022.tif
+│   │   │   │   ├── l10nr023.tif
+│   │   │   │   ├── l10nr025.tif
+│   │   │   │   ├── l10nr026.tif
+│   │   │   │   ├── l10nr027.tif
+│   │   │   │   ├── l10nr028.tif
+│   │   │   │   ├── l10nr029.tif
+│   │   │   │   ├── l10nr031.tif
+│   │   │   │   ├── l10nr032.tif
+│   │   │   │   ├── l10nr033.tif
+│   │   │   │   ├── l10nr034.tif
+│   │   │   │   ├── l10nr036.tif
+│   │   │   │   ├── l10nr037.tif
+│   │   │   │   ├── l10nr039.tif
+│   │   │   │   ├── l10nr041.tif
+│   │   │   │   ├── l10nr044.tif
+│   │   │   │   ├── l10nr047.tif
+│   │   │   │   ├── l10nr048.tif
+│   │   │   │   ├── l10nr049.tif
+│   │   │   │   ├── l10nr050.tif
+│   │   │   │   ├── l10nr051.tif
+│   │   │   │   ├── l10nr052.tif
+│   │   │   │   ├── l10nr053.tif
+│   │   │   │   ├── l10nr055.tif
+│   │   │   │   ├── l10nr056.tif
+│   │   │   │   ├── l10nr058.tif
+│   │   │   │   ├── l10nr060.tif
+│   │   │   │   ├── l10nr061.tif
+│   │   │   │   ├── l10nr062.tif
+│   │   │   │   ├── l10nr063.tif
+│   │   │   │   ├── l10nr064.tif
+│   │   │   │   ├── l10nr065.tif
+│   │   │   │   ├── l10nr066.tif
+│   │   │   │   ├── l10nr067.tif
+│   │   │   │   ├── l10nr069.tif
+│   │   │   │   ├── l10nr070.tif
+│   │   │   │   ├── l10nr072.tif
+│   │   │   │   ├── l10nr074.tif
+│   │   │   │   └── l10nr075.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr001.tif
+│   │   │   │   ├── l2nr002.tif
+│   │   │   │   ├── l2nr004.tif
+│   │   │   │   ├── l2nr008.tif
+│   │   │   │   ├── l2nr010.tif
+│   │   │   │   ├── l2nr011.tif
+│   │   │   │   ├── l2nr012.tif
+│   │   │   │   ├── l2nr013.tif
+│   │   │   │   ├── l2nr014.tif
+│   │   │   │   ├── l2nr015.tif
+│   │   │   │   ├── l2nr017.tif
+│   │   │   │   ├── l2nr018.tif
+│   │   │   │   ├── l2nr020.tif
+│   │   │   │   ├── l2nr022.tif
+│   │   │   │   ├── l2nr023.tif
+│   │   │   │   ├── l2nr024.tif
+│   │   │   │   ├── l2nr025.tif
+│   │   │   │   ├── l2nr026.tif
+│   │   │   │   ├── l2nr027.tif
+│   │   │   │   ├── l2nr030.tif
+│   │   │   │   ├── l2nr031.tif
+│   │   │   │   ├── l2nr032.tif
+│   │   │   │   ├── l2nr033.tif
+│   │   │   │   ├── l2nr035.tif
+│   │   │   │   ├── l2nr036.tif
+│   │   │   │   ├── l2nr037.tif
+│   │   │   │   ├── l2nr038.tif
+│   │   │   │   ├── l2nr039.tif
+│   │   │   │   ├── l2nr040.tif
+│   │   │   │   ├── l2nr041.tif
+│   │   │   │   ├── l2nr042.tif
+│   │   │   │   ├── l2nr044.tif
+│   │   │   │   ├── l2nr045.tif
+│   │   │   │   ├── l2nr046.tif
+│   │   │   │   ├── l2nr048.tif
+│   │   │   │   ├── l2nr051.tif
+│   │   │   │   ├── l2nr054.tif
+│   │   │   │   ├── l2nr055.tif
+│   │   │   │   ├── l2nr056.tif
+│   │   │   │   ├── l2nr059.tif
+│   │   │   │   ├── l2nr060.tif
+│   │   │   │   ├── l2nr062.tif
+│   │   │   │   ├── l2nr063.tif
+│   │   │   │   ├── l2nr065.tif
+│   │   │   │   ├── l2nr066.tif
+│   │   │   │   ├── l2nr067.tif
+│   │   │   │   ├── l2nr068.tif
+│   │   │   │   ├── l2nr070.tif
+│   │   │   │   ├── l2nr071.tif
+│   │   │   │   └── l2nr074.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr002.tif
+│   │   │   │   ├── l3nr003.tif
+│   │   │   │   ├── l3nr005.tif
+│   │   │   │   ├── l3nr006.tif
+│   │   │   │   ├── l3nr008.tif
+│   │   │   │   ├── l3nr009.tif
+│   │   │   │   ├── l3nr010.tif
+│   │   │   │   ├── l3nr011.tif
+│   │   │   │   ├── l3nr012.tif
+│   │   │   │   ├── l3nr013.tif
+│   │   │   │   ├── l3nr014.tif
+│   │   │   │   ├── l3nr015.tif
+│   │   │   │   ├── l3nr016.tif
+│   │   │   │   ├── l3nr018.tif
+│   │   │   │   ├── l3nr019.tif
+│   │   │   │   ├── l3nr020.tif
+│   │   │   │   ├── l3nr021.tif
+│   │   │   │   ├── l3nr023.tif
+│   │   │   │   ├── l3nr024.tif
+│   │   │   │   ├── l3nr025.tif
+│   │   │   │   ├── l3nr026.tif
+│   │   │   │   ├── l3nr027.tif
+│   │   │   │   ├── l3nr029.tif
+│   │   │   │   ├── l3nr030.tif
+│   │   │   │   ├── l3nr033.tif
+│   │   │   │   ├── l3nr035.tif
+│   │   │   │   ├── l3nr036.tif
+│   │   │   │   ├── l3nr039.tif
+│   │   │   │   ├── l3nr042.tif
+│   │   │   │   ├── l3nr043.tif
+│   │   │   │   ├── l3nr044.tif
+│   │   │   │   ├── l3nr046.tif
+│   │   │   │   ├── l3nr047.tif
+│   │   │   │   ├── l3nr048.tif
+│   │   │   │   ├── l3nr050.tif
+│   │   │   │   ├── l3nr051.tif
+│   │   │   │   ├── l3nr055.tif
+│   │   │   │   ├── l3nr056.tif
+│   │   │   │   ├── l3nr058.tif
+│   │   │   │   ├── l3nr059.tif
+│   │   │   │   ├── l3nr060.tif
+│   │   │   │   ├── l3nr062.tif
+│   │   │   │   ├── l3nr064.tif
+│   │   │   │   ├── l3nr066.tif
+│   │   │   │   ├── l3nr067.tif
+│   │   │   │   ├── l3nr068.tif
+│   │   │   │   ├── l3nr069.tif
+│   │   │   │   ├── l3nr070.tif
+│   │   │   │   ├── l3nr071.tif
+│   │   │   │   └── l3nr074.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr002.tif
+│   │   │   │   ├── l4nr004.tif
+│   │   │   │   ├── l4nr005.tif
+│   │   │   │   ├── l4nr010.tif
+│   │   │   │   ├── l4nr011.tif
+│   │   │   │   ├── l4nr012.tif
+│   │   │   │   ├── l4nr013.tif
+│   │   │   │   ├── l4nr014.tif
+│   │   │   │   ├── l4nr015.tif
+│   │   │   │   ├── l4nr018.tif
+│   │   │   │   ├── l4nr019.tif
+│   │   │   │   ├── l4nr020.tif
+│   │   │   │   ├── l4nr022.tif
+│   │   │   │   ├── l4nr024.tif
+│   │   │   │   ├── l4nr025.tif
+│   │   │   │   ├── l4nr026.tif
+│   │   │   │   ├── l4nr027.tif
+│   │   │   │   ├── l4nr028.tif
+│   │   │   │   ├── l4nr029.tif
+│   │   │   │   ├── l4nr030.tif
+│   │   │   │   ├── l4nr031.tif
+│   │   │   │   ├── l4nr032.tif
+│   │   │   │   ├── l4nr034.tif
+│   │   │   │   ├── l4nr035.tif
+│   │   │   │   ├── l4nr037.tif
+│   │   │   │   ├── l4nr041.tif
+│   │   │   │   ├── l4nr042.tif
+│   │   │   │   ├── l4nr043.tif
+│   │   │   │   ├── l4nr047.tif
+│   │   │   │   ├── l4nr048.tif
+│   │   │   │   ├── l4nr049.tif
+│   │   │   │   ├── l4nr050.tif
+│   │   │   │   ├── l4nr052.tif
+│   │   │   │   ├── l4nr053.tif
+│   │   │   │   ├── l4nr055.tif
+│   │   │   │   ├── l4nr056.tif
+│   │   │   │   ├── l4nr057.tif
+│   │   │   │   ├── l4nr058.tif
+│   │   │   │   ├── l4nr059.tif
+│   │   │   │   ├── l4nr060.tif
+│   │   │   │   ├── l4nr061.tif
+│   │   │   │   ├── l4nr063.tif
+│   │   │   │   ├── l4nr064.tif
+│   │   │   │   ├── l4nr065.tif
+│   │   │   │   ├── l4nr066.tif
+│   │   │   │   ├── l4nr067.tif
+│   │   │   │   ├── l4nr068.tif
+│   │   │   │   ├── l4nr071.tif
+│   │   │   │   ├── l4nr073.tif
+│   │   │   │   └── l4nr075.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr001.tif
+│   │   │   │   ├── l5nr004.tif
+│   │   │   │   ├── l5nr006.tif
+│   │   │   │   ├── l5nr008.tif
+│   │   │   │   ├── l5nr012.tif
+│   │   │   │   ├── l5nr013.tif
+│   │   │   │   ├── l5nr014.tif
+│   │   │   │   ├── l5nr015.tif
+│   │   │   │   ├── l5nr016.tif
+│   │   │   │   ├── l5nr017.tif
+│   │   │   │   ├── l5nr019.tif
+│   │   │   │   ├── l5nr020.tif
+│   │   │   │   ├── l5nr021.tif
+│   │   │   │   ├── l5nr022.tif
+│   │   │   │   ├── l5nr024.tif
+│   │   │   │   ├── l5nr025.tif
+│   │   │   │   ├── l5nr026.tif
+│   │   │   │   ├── l5nr027.tif
+│   │   │   │   ├── l5nr028.tif
+│   │   │   │   ├── l5nr029.tif
+│   │   │   │   ├── l5nr030.tif
+│   │   │   │   ├── l5nr031.tif
+│   │   │   │   ├── l5nr032.tif
+│   │   │   │   ├── l5nr033.tif
+│   │   │   │   ├── l5nr035.tif
+│   │   │   │   ├── l5nr037.tif
+│   │   │   │   ├── l5nr038.tif
+│   │   │   │   ├── l5nr039.tif
+│   │   │   │   ├── l5nr040.tif
+│   │   │   │   ├── l5nr041.tif
+│   │   │   │   ├── l5nr043.tif
+│   │   │   │   ├── l5nr044.tif
+│   │   │   │   ├── l5nr047.tif
+│   │   │   │   ├── l5nr050.tif
+│   │   │   │   ├── l5nr052.tif
+│   │   │   │   ├── l5nr054.tif
+│   │   │   │   ├── l5nr055.tif
+│   │   │   │   ├── l5nr058.tif
+│   │   │   │   ├── l5nr059.tif
+│   │   │   │   ├── l5nr062.tif
+│   │   │   │   ├── l5nr063.tif
+│   │   │   │   ├── l5nr064.tif
+│   │   │   │   ├── l5nr065.tif
+│   │   │   │   ├── l5nr066.tif
+│   │   │   │   ├── l5nr067.tif
+│   │   │   │   ├── l5nr070.tif
+│   │   │   │   ├── l5nr071.tif
+│   │   │   │   ├── l5nr072.tif
+│   │   │   │   ├── l5nr073.tif
+│   │   │   │   └── l5nr075.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr001.tif
+│   │   │   │   ├── l6nr003.tif
+│   │   │   │   ├── l6nr004.tif
+│   │   │   │   ├── l6nr005.tif
+│   │   │   │   ├── l6nr007.tif
+│   │   │   │   ├── l6nr009.tif
+│   │   │   │   ├── l6nr010.tif
+│   │   │   │   ├── l6nr011.tif
+│   │   │   │   ├── l6nr012.tif
+│   │   │   │   ├── l6nr013.tif
+│   │   │   │   ├── l6nr015.tif
+│   │   │   │   ├── l6nr016.tif
+│   │   │   │   ├── l6nr017.tif
+│   │   │   │   ├── l6nr018.tif
+│   │   │   │   ├── l6nr019.tif
+│   │   │   │   ├── l6nr021.tif
+│   │   │   │   ├── l6nr023.tif
+│   │   │   │   ├── l6nr024.tif
+│   │   │   │   ├── l6nr026.tif
+│   │   │   │   ├── l6nr030.tif
+│   │   │   │   ├── l6nr031.tif
+│   │   │   │   ├── l6nr032.tif
+│   │   │   │   ├── l6nr034.tif
+│   │   │   │   ├── l6nr037.tif
+│   │   │   │   ├── l6nr039.tif
+│   │   │   │   ├── l6nr041.tif
+│   │   │   │   ├── l6nr042.tif
+│   │   │   │   ├── l6nr043.tif
+│   │   │   │   ├── l6nr044.tif
+│   │   │   │   ├── l6nr045.tif
+│   │   │   │   ├── l6nr048.tif
+│   │   │   │   ├── l6nr049.tif
+│   │   │   │   ├── l6nr050.tif
+│   │   │   │   ├── l6nr051.tif
+│   │   │   │   ├── l6nr052.tif
+│   │   │   │   ├── l6nr053.tif
+│   │   │   │   ├── l6nr054.tif
+│   │   │   │   ├── l6nr055.tif
+│   │   │   │   ├── l6nr057.tif
+│   │   │   │   ├── l6nr060.tif
+│   │   │   │   ├── l6nr061.tif
+│   │   │   │   ├── l6nr063.tif
+│   │   │   │   ├── l6nr065.tif
+│   │   │   │   ├── l6nr068.tif
+│   │   │   │   ├── l6nr069.tif
+│   │   │   │   ├── l6nr070.tif
+│   │   │   │   ├── l6nr071.tif
+│   │   │   │   ├── l6nr072.tif
+│   │   │   │   ├── l6nr074.tif
+│   │   │   │   └── l6nr075.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr001.tif
+│   │   │   │   ├── l7nr002.tif
+│   │   │   │   ├── l7nr003.tif
+│   │   │   │   ├── l7nr005.tif
+│   │   │   │   ├── l7nr006.tif
+│   │   │   │   ├── l7nr007.tif
+│   │   │   │   ├── l7nr008.tif
+│   │   │   │   ├── l7nr009.tif
+│   │   │   │   ├── l7nr010.tif
+│   │   │   │   ├── l7nr013.tif
+│   │   │   │   ├── l7nr014.tif
+│   │   │   │   ├── l7nr015.tif
+│   │   │   │   ├── l7nr016.tif
+│   │   │   │   ├── l7nr017.tif
+│   │   │   │   ├── l7nr020.tif
+│   │   │   │   ├── l7nr022.tif
+│   │   │   │   ├── l7nr024.tif
+│   │   │   │   ├── l7nr025.tif
+│   │   │   │   ├── l7nr026.tif
+│   │   │   │   ├── l7nr027.tif
+│   │   │   │   ├── l7nr028.tif
+│   │   │   │   ├── l7nr030.tif
+│   │   │   │   ├── l7nr033.tif
+│   │   │   │   ├── l7nr034.tif
+│   │   │   │   ├── l7nr035.tif
+│   │   │   │   ├── l7nr036.tif
+│   │   │   │   ├── l7nr037.tif
+│   │   │   │   ├── l7nr039.tif
+│   │   │   │   ├── l7nr040.tif
+│   │   │   │   ├── l7nr041.tif
+│   │   │   │   ├── l7nr042.tif
+│   │   │   │   ├── l7nr043.tif
+│   │   │   │   ├── l7nr045.tif
+│   │   │   │   ├── l7nr046.tif
+│   │   │   │   ├── l7nr047.tif
+│   │   │   │   ├── l7nr048.tif
+│   │   │   │   ├── l7nr053.tif
+│   │   │   │   ├── l7nr054.tif
+│   │   │   │   ├── l7nr055.tif
+│   │   │   │   ├── l7nr056.tif
+│   │   │   │   ├── l7nr057.tif
+│   │   │   │   ├── l7nr058.tif
+│   │   │   │   ├── l7nr059.tif
+│   │   │   │   ├── l7nr061.tif
+│   │   │   │   ├── l7nr063.tif
+│   │   │   │   ├── l7nr064.tif
+│   │   │   │   ├── l7nr067.tif
+│   │   │   │   ├── l7nr069.tif
+│   │   │   │   ├── l7nr072.tif
+│   │   │   │   └── l7nr073.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr006.tif
+│   │   │   │   ├── l8nr007.tif
+│   │   │   │   ├── l8nr010.tif
+│   │   │   │   ├── l8nr011.tif
+│   │   │   │   ├── l8nr012.tif
+│   │   │   │   ├── l8nr013.tif
+│   │   │   │   ├── l8nr014.tif
+│   │   │   │   ├── l8nr015.tif
+│   │   │   │   ├── l8nr017.tif
+│   │   │   │   ├── l8nr018.tif
+│   │   │   │   ├── l8nr019.tif
+│   │   │   │   ├── l8nr023.tif
+│   │   │   │   ├── l8nr025.tif
+│   │   │   │   ├── l8nr026.tif
+│   │   │   │   ├── l8nr027.tif
+│   │   │   │   ├── l8nr028.tif
+│   │   │   │   ├── l8nr031.tif
+│   │   │   │   ├── l8nr032.tif
+│   │   │   │   ├── l8nr033.tif
+│   │   │   │   ├── l8nr034.tif
+│   │   │   │   ├── l8nr036.tif
+│   │   │   │   ├── l8nr037.tif
+│   │   │   │   ├── l8nr038.tif
+│   │   │   │   ├── l8nr040.tif
+│   │   │   │   ├── l8nr041.tif
+│   │   │   │   ├── l8nr042.tif
+│   │   │   │   ├── l8nr043.tif
+│   │   │   │   ├── l8nr044.tif
+│   │   │   │   ├── l8nr045.tif
+│   │   │   │   ├── l8nr046.tif
+│   │   │   │   ├── l8nr049.tif
+│   │   │   │   ├── l8nr051.tif
+│   │   │   │   ├── l8nr052.tif
+│   │   │   │   ├── l8nr054.tif
+│   │   │   │   ├── l8nr055.tif
+│   │   │   │   ├── l8nr056.tif
+│   │   │   │   ├── l8nr057.tif
+│   │   │   │   ├── l8nr058.tif
+│   │   │   │   ├── l8nr059.tif
+│   │   │   │   ├── l8nr060.tif
+│   │   │   │   ├── l8nr061.tif
+│   │   │   │   ├── l8nr063.tif
+│   │   │   │   ├── l8nr064.tif
+│   │   │   │   ├── l8nr067.tif
+│   │   │   │   ├── l8nr069.tif
+│   │   │   │   ├── l8nr071.tif
+│   │   │   │   ├── l8nr072.tif
+│   │   │   │   ├── l8nr073.tif
+│   │   │   │   ├── l8nr074.tif
+│   │   │   │   └── l8nr075.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr001.tif
+│   │   │       ├── l9nr003.tif
+│   │   │       ├── l9nr004.tif
+│   │   │       ├── l9nr005.tif
+│   │   │       ├── l9nr006.tif
+│   │   │       ├── l9nr007.tif
+│   │   │       ├── l9nr008.tif
+│   │   │       ├── l9nr010.tif
+│   │   │       ├── l9nr012.tif
+│   │   │       ├── l9nr014.tif
+│   │   │       ├── l9nr016.tif
+│   │   │       ├── l9nr017.tif
+│   │   │       ├── l9nr018.tif
+│   │   │       ├── l9nr019.tif
+│   │   │       ├── l9nr020.tif
+│   │   │       ├── l9nr021.tif
+│   │   │       ├── l9nr023.tif
+│   │   │       ├── l9nr024.tif
+│   │   │       ├── l9nr028.tif
+│   │   │       ├── l9nr035.tif
+│   │   │       ├── l9nr036.tif
+│   │   │       ├── l9nr037.tif
+│   │   │       ├── l9nr038.tif
+│   │   │       ├── l9nr039.tif
+│   │   │       ├── l9nr041.tif
+│   │   │       ├── l9nr042.tif
+│   │   │       ├── l9nr043.tif
+│   │   │       ├── l9nr044.tif
+│   │   │       ├── l9nr045.tif
+│   │   │       ├── l9nr046.tif
+│   │   │       ├── l9nr050.tif
+│   │   │       ├── l9nr052.tif
+│   │   │       ├── l9nr053.tif
+│   │   │       ├── l9nr054.tif
+│   │   │       ├── l9nr055.tif
+│   │   │       ├── l9nr056.tif
+│   │   │       ├── l9nr057.tif
+│   │   │       ├── l9nr058.tif
+│   │   │       ├── l9nr059.tif
+│   │   │       ├── l9nr061.tif
+│   │   │       ├── l9nr062.tif
+│   │   │       ├── l9nr063.tif
+│   │   │       ├── l9nr066.tif
+│   │   │       ├── l9nr067.tif
+│   │   │       ├── l9nr069.tif
+│   │   │       ├── l9nr070.tif
+│   │   │       ├── l9nr071.tif
+│   │   │       ├── l9nr072.tif
+│   │   │       ├── l9nr073.tif
+│   │   │       └── l9nr074.tif
+│   │   ├── train_10
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr038.tif
+│   │   │   │   ├── l1nr058.tif
+│   │   │   │   └── l1nr059.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr038.tif
+│   │   │   │   ├── l10nr059.tif
+│   │   │   │   └── l10nr071.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr047.tif
+│   │   │   │   ├── l2nr052.tif
+│   │   │   │   └── l2nr057.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr037.tif
+│   │   │   │   ├── l3nr049.tif
+│   │   │   │   └── l3nr063.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr001.tif
+│   │   │   │   ├── l4nr016.tif
+│   │   │   │   └── l4nr046.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr042.tif
+│   │   │   │   ├── l5nr053.tif
+│   │   │   │   └── l5nr061.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr038.tif
+│   │   │   │   ├── l6nr046.tif
+│   │   │   │   └── l6nr062.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr019.tif
+│   │   │   │   ├── l7nr066.tif
+│   │   │   │   └── l7nr074.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr001.tif
+│   │   │   │   ├── l8nr022.tif
+│   │   │   │   └── l8nr050.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr029.tif
+│   │   │       ├── l9nr033.tif
+│   │   │       └── l9nr075.tif
+│   │   ├── train_100
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr001.tif
+│   │   │   │   ├── l1nr002.tif
+│   │   │   │   ├── l1nr003.tif
+│   │   │   │   ├── l1nr012.tif
+│   │   │   │   ├── l1nr020.tif
+│   │   │   │   ├── l1nr021.tif
+│   │   │   │   ├── l1nr027.tif
+│   │   │   │   ├── l1nr028.tif
+│   │   │   │   ├── l1nr035.tif
+│   │   │   │   ├── l1nr038.tif
+│   │   │   │   ├── l1nr043.tif
+│   │   │   │   ├── l1nr046.tif
+│   │   │   │   ├── l1nr049.tif
+│   │   │   │   ├── l1nr051.tif
+│   │   │   │   ├── l1nr054.tif
+│   │   │   │   ├── l1nr055.tif
+│   │   │   │   ├── l1nr056.tif
+│   │   │   │   ├── l1nr058.tif
+│   │   │   │   ├── l1nr059.tif
+│   │   │   │   ├── l1nr063.tif
+│   │   │   │   ├── l1nr064.tif
+│   │   │   │   ├── l1nr068.tif
+│   │   │   │   ├── l1nr071.tif
+│   │   │   │   ├── l1nr073.tif
+│   │   │   │   └── l1nr075.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr001.tif
+│   │   │   │   ├── l10nr003.tif
+│   │   │   │   ├── l10nr004.tif
+│   │   │   │   ├── l10nr005.tif
+│   │   │   │   ├── l10nr006.tif
+│   │   │   │   ├── l10nr007.tif
+│   │   │   │   ├── l10nr008.tif
+│   │   │   │   ├── l10nr009.tif
+│   │   │   │   ├── l10nr011.tif
+│   │   │   │   ├── l10nr012.tif
+│   │   │   │   ├── l10nr024.tif
+│   │   │   │   ├── l10nr030.tif
+│   │   │   │   ├── l10nr035.tif
+│   │   │   │   ├── l10nr038.tif
+│   │   │   │   ├── l10nr040.tif
+│   │   │   │   ├── l10nr042.tif
+│   │   │   │   ├── l10nr043.tif
+│   │   │   │   ├── l10nr045.tif
+│   │   │   │   ├── l10nr046.tif
+│   │   │   │   ├── l10nr054.tif
+│   │   │   │   ├── l10nr057.tif
+│   │   │   │   ├── l10nr059.tif
+│   │   │   │   ├── l10nr068.tif
+│   │   │   │   ├── l10nr071.tif
+│   │   │   │   └── l10nr073.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr003.tif
+│   │   │   │   ├── l2nr005.tif
+│   │   │   │   ├── l2nr006.tif
+│   │   │   │   ├── l2nr007.tif
+│   │   │   │   ├── l2nr009.tif
+│   │   │   │   ├── l2nr016.tif
+│   │   │   │   ├── l2nr019.tif
+│   │   │   │   ├── l2nr021.tif
+│   │   │   │   ├── l2nr028.tif
+│   │   │   │   ├── l2nr029.tif
+│   │   │   │   ├── l2nr034.tif
+│   │   │   │   ├── l2nr043.tif
+│   │   │   │   ├── l2nr047.tif
+│   │   │   │   ├── l2nr049.tif
+│   │   │   │   ├── l2nr050.tif
+│   │   │   │   ├── l2nr052.tif
+│   │   │   │   ├── l2nr053.tif
+│   │   │   │   ├── l2nr057.tif
+│   │   │   │   ├── l2nr058.tif
+│   │   │   │   ├── l2nr061.tif
+│   │   │   │   ├── l2nr064.tif
+│   │   │   │   ├── l2nr069.tif
+│   │   │   │   ├── l2nr072.tif
+│   │   │   │   ├── l2nr073.tif
+│   │   │   │   └── l2nr075.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr001.tif
+│   │   │   │   ├── l3nr004.tif
+│   │   │   │   ├── l3nr007.tif
+│   │   │   │   ├── l3nr017.tif
+│   │   │   │   ├── l3nr022.tif
+│   │   │   │   ├── l3nr028.tif
+│   │   │   │   ├── l3nr031.tif
+│   │   │   │   ├── l3nr032.tif
+│   │   │   │   ├── l3nr034.tif
+│   │   │   │   ├── l3nr037.tif
+│   │   │   │   ├── l3nr038.tif
+│   │   │   │   ├── l3nr040.tif
+│   │   │   │   ├── l3nr041.tif
+│   │   │   │   ├── l3nr045.tif
+│   │   │   │   ├── l3nr049.tif
+│   │   │   │   ├── l3nr052.tif
+│   │   │   │   ├── l3nr053.tif
+│   │   │   │   ├── l3nr054.tif
+│   │   │   │   ├── l3nr057.tif
+│   │   │   │   ├── l3nr061.tif
+│   │   │   │   ├── l3nr063.tif
+│   │   │   │   ├── l3nr065.tif
+│   │   │   │   ├── l3nr072.tif
+│   │   │   │   ├── l3nr073.tif
+│   │   │   │   └── l3nr075.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr001.tif
+│   │   │   │   ├── l4nr003.tif
+│   │   │   │   ├── l4nr006.tif
+│   │   │   │   ├── l4nr007.tif
+│   │   │   │   ├── l4nr008.tif
+│   │   │   │   ├── l4nr009.tif
+│   │   │   │   ├── l4nr016.tif
+│   │   │   │   ├── l4nr017.tif
+│   │   │   │   ├── l4nr021.tif
+│   │   │   │   ├── l4nr023.tif
+│   │   │   │   ├── l4nr033.tif
+│   │   │   │   ├── l4nr036.tif
+│   │   │   │   ├── l4nr038.tif
+│   │   │   │   ├── l4nr039.tif
+│   │   │   │   ├── l4nr040.tif
+│   │   │   │   ├── l4nr044.tif
+│   │   │   │   ├── l4nr045.tif
+│   │   │   │   ├── l4nr046.tif
+│   │   │   │   ├── l4nr051.tif
+│   │   │   │   ├── l4nr054.tif
+│   │   │   │   ├── l4nr062.tif
+│   │   │   │   ├── l4nr069.tif
+│   │   │   │   ├── l4nr070.tif
+│   │   │   │   ├── l4nr072.tif
+│   │   │   │   └── l4nr074.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr002.tif
+│   │   │   │   ├── l5nr003.tif
+│   │   │   │   ├── l5nr005.tif
+│   │   │   │   ├── l5nr007.tif
+│   │   │   │   ├── l5nr009.tif
+│   │   │   │   ├── l5nr010.tif
+│   │   │   │   ├── l5nr011.tif
+│   │   │   │   ├── l5nr018.tif
+│   │   │   │   ├── l5nr023.tif
+│   │   │   │   ├── l5nr034.tif
+│   │   │   │   ├── l5nr036.tif
+│   │   │   │   ├── l5nr042.tif
+│   │   │   │   ├── l5nr045.tif
+│   │   │   │   ├── l5nr046.tif
+│   │   │   │   ├── l5nr048.tif
+│   │   │   │   ├── l5nr049.tif
+│   │   │   │   ├── l5nr051.tif
+│   │   │   │   ├── l5nr053.tif
+│   │   │   │   ├── l5nr056.tif
+│   │   │   │   ├── l5nr057.tif
+│   │   │   │   ├── l5nr060.tif
+│   │   │   │   ├── l5nr061.tif
+│   │   │   │   ├── l5nr068.tif
+│   │   │   │   ├── l5nr069.tif
+│   │   │   │   └── l5nr074.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr002.tif
+│   │   │   │   ├── l6nr006.tif
+│   │   │   │   ├── l6nr008.tif
+│   │   │   │   ├── l6nr014.tif
+│   │   │   │   ├── l6nr020.tif
+│   │   │   │   ├── l6nr022.tif
+│   │   │   │   ├── l6nr025.tif
+│   │   │   │   ├── l6nr027.tif
+│   │   │   │   ├── l6nr028.tif
+│   │   │   │   ├── l6nr029.tif
+│   │   │   │   ├── l6nr033.tif
+│   │   │   │   ├── l6nr035.tif
+│   │   │   │   ├── l6nr036.tif
+│   │   │   │   ├── l6nr038.tif
+│   │   │   │   ├── l6nr040.tif
+│   │   │   │   ├── l6nr046.tif
+│   │   │   │   ├── l6nr047.tif
+│   │   │   │   ├── l6nr056.tif
+│   │   │   │   ├── l6nr058.tif
+│   │   │   │   ├── l6nr059.tif
+│   │   │   │   ├── l6nr062.tif
+│   │   │   │   ├── l6nr064.tif
+│   │   │   │   ├── l6nr066.tif
+│   │   │   │   ├── l6nr067.tif
+│   │   │   │   └── l6nr073.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr004.tif
+│   │   │   │   ├── l7nr011.tif
+│   │   │   │   ├── l7nr012.tif
+│   │   │   │   ├── l7nr018.tif
+│   │   │   │   ├── l7nr019.tif
+│   │   │   │   ├── l7nr021.tif
+│   │   │   │   ├── l7nr023.tif
+│   │   │   │   ├── l7nr029.tif
+│   │   │   │   ├── l7nr031.tif
+│   │   │   │   ├── l7nr032.tif
+│   │   │   │   ├── l7nr038.tif
+│   │   │   │   ├── l7nr044.tif
+│   │   │   │   ├── l7nr049.tif
+│   │   │   │   ├── l7nr050.tif
+│   │   │   │   ├── l7nr051.tif
+│   │   │   │   ├── l7nr052.tif
+│   │   │   │   ├── l7nr060.tif
+│   │   │   │   ├── l7nr062.tif
+│   │   │   │   ├── l7nr065.tif
+│   │   │   │   ├── l7nr066.tif
+│   │   │   │   ├── l7nr068.tif
+│   │   │   │   ├── l7nr070.tif
+│   │   │   │   ├── l7nr071.tif
+│   │   │   │   ├── l7nr074.tif
+│   │   │   │   └── l7nr075.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr001.tif
+│   │   │   │   ├── l8nr002.tif
+│   │   │   │   ├── l8nr003.tif
+│   │   │   │   ├── l8nr004.tif
+│   │   │   │   ├── l8nr005.tif
+│   │   │   │   ├── l8nr008.tif
+│   │   │   │   ├── l8nr009.tif
+│   │   │   │   ├── l8nr016.tif
+│   │   │   │   ├── l8nr020.tif
+│   │   │   │   ├── l8nr021.tif
+│   │   │   │   ├── l8nr022.tif
+│   │   │   │   ├── l8nr024.tif
+│   │   │   │   ├── l8nr029.tif
+│   │   │   │   ├── l8nr030.tif
+│   │   │   │   ├── l8nr035.tif
+│   │   │   │   ├── l8nr039.tif
+│   │   │   │   ├── l8nr047.tif
+│   │   │   │   ├── l8nr048.tif
+│   │   │   │   ├── l8nr050.tif
+│   │   │   │   ├── l8nr053.tif
+│   │   │   │   ├── l8nr062.tif
+│   │   │   │   ├── l8nr065.tif
+│   │   │   │   ├── l8nr066.tif
+│   │   │   │   ├── l8nr068.tif
+│   │   │   │   └── l8nr070.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr002.tif
+│   │   │       ├── l9nr009.tif
+│   │   │       ├── l9nr011.tif
+│   │   │       ├── l9nr013.tif
+│   │   │       ├── l9nr015.tif
+│   │   │       ├── l9nr022.tif
+│   │   │       ├── l9nr025.tif
+│   │   │       ├── l9nr026.tif
+│   │   │       ├── l9nr027.tif
+│   │   │       ├── l9nr029.tif
+│   │   │       ├── l9nr030.tif
+│   │   │       ├── l9nr031.tif
+│   │   │       ├── l9nr032.tif
+│   │   │       ├── l9nr033.tif
+│   │   │       ├── l9nr034.tif
+│   │   │       ├── l9nr040.tif
+│   │   │       ├── l9nr047.tif
+│   │   │       ├── l9nr048.tif
+│   │   │       ├── l9nr049.tif
+│   │   │       ├── l9nr051.tif
+│   │   │       ├── l9nr060.tif
+│   │   │       ├── l9nr064.tif
+│   │   │       ├── l9nr065.tif
+│   │   │       ├── l9nr068.tif
+│   │   │       └── l9nr075.tif
+│   │   ├── train_20
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr035.tif
+│   │   │   │   ├── l1nr038.tif
+│   │   │   │   ├── l1nr049.tif
+│   │   │   │   ├── l1nr055.tif
+│   │   │   │   ├── l1nr063.tif
+│   │   │   │   └── l1nr064.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr001.tif
+│   │   │   │   ├── l10nr004.tif
+│   │   │   │   ├── l10nr006.tif
+│   │   │   │   ├── l10nr008.tif
+│   │   │   │   ├── l10nr009.tif
+│   │   │   │   └── l10nr038.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr005.tif
+│   │   │   │   ├── l2nr029.tif
+│   │   │   │   ├── l2nr043.tif
+│   │   │   │   ├── l2nr049.tif
+│   │   │   │   ├── l2nr057.tif
+│   │   │   │   └── l2nr058.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr028.tif
+│   │   │   │   ├── l3nr031.tif
+│   │   │   │   ├── l3nr041.tif
+│   │   │   │   ├── l3nr054.tif
+│   │   │   │   ├── l3nr061.tif
+│   │   │   │   └── l3nr073.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr001.tif
+│   │   │   │   ├── l4nr008.tif
+│   │   │   │   ├── l4nr039.tif
+│   │   │   │   ├── l4nr054.tif
+│   │   │   │   ├── l4nr069.tif
+│   │   │   │   └── l4nr072.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr011.tif
+│   │   │   │   ├── l5nr048.tif
+│   │   │   │   ├── l5nr049.tif
+│   │   │   │   ├── l5nr056.tif
+│   │   │   │   ├── l5nr057.tif
+│   │   │   │   └── l5nr074.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr014.tif
+│   │   │   │   ├── l6nr027.tif
+│   │   │   │   ├── l6nr029.tif
+│   │   │   │   ├── l6nr038.tif
+│   │   │   │   ├── l6nr059.tif
+│   │   │   │   └── l6nr073.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr004.tif
+│   │   │   │   ├── l7nr011.tif
+│   │   │   │   ├── l7nr031.tif
+│   │   │   │   ├── l7nr051.tif
+│   │   │   │   ├── l7nr060.tif
+│   │   │   │   └── l7nr075.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr009.tif
+│   │   │   │   ├── l8nr021.tif
+│   │   │   │   ├── l8nr039.tif
+│   │   │   │   ├── l8nr047.tif
+│   │   │   │   ├── l8nr048.tif
+│   │   │   │   └── l8nr050.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr013.tif
+│   │   │       ├── l9nr022.tif
+│   │   │       ├── l9nr027.tif
+│   │   │       ├── l9nr031.tif
+│   │   │       ├── l9nr040.tif
+│   │   │       └── l9nr047.tif
+│   │   ├── train_50
+│   │   │   ├── leaf1
+│   │   │   │   ├── l1nr001.tif
+│   │   │   │   ├── l1nr003.tif
+│   │   │   │   ├── l1nr021.tif
+│   │   │   │   ├── l1nr027.tif
+│   │   │   │   ├── l1nr028.tif
+│   │   │   │   ├── l1nr035.tif
+│   │   │   │   ├── l1nr043.tif
+│   │   │   │   ├── l1nr051.tif
+│   │   │   │   ├── l1nr055.tif
+│   │   │   │   ├── l1nr056.tif
+│   │   │   │   ├── l1nr059.tif
+│   │   │   │   ├── l1nr064.tif
+│   │   │   │   └── l1nr075.tif
+│   │   │   ├── leaf10
+│   │   │   │   ├── l10nr008.tif
+│   │   │   │   ├── l10nr011.tif
+│   │   │   │   ├── l10nr012.tif
+│   │   │   │   ├── l10nr030.tif
+│   │   │   │   ├── l10nr035.tif
+│   │   │   │   ├── l10nr040.tif
+│   │   │   │   ├── l10nr043.tif
+│   │   │   │   ├── l10nr046.tif
+│   │   │   │   ├── l10nr054.tif
+│   │   │   │   ├── l10nr057.tif
+│   │   │   │   ├── l10nr059.tif
+│   │   │   │   ├── l10nr068.tif
+│   │   │   │   └── l10nr071.tif
+│   │   │   ├── leaf2
+│   │   │   │   ├── l2nr003.tif
+│   │   │   │   ├── l2nr006.tif
+│   │   │   │   ├── l2nr019.tif
+│   │   │   │   ├── l2nr021.tif
+│   │   │   │   ├── l2nr034.tif
+│   │   │   │   ├── l2nr043.tif
+│   │   │   │   ├── l2nr049.tif
+│   │   │   │   ├── l2nr050.tif
+│   │   │   │   ├── l2nr052.tif
+│   │   │   │   ├── l2nr053.tif
+│   │   │   │   ├── l2nr057.tif
+│   │   │   │   ├── l2nr061.tif
+│   │   │   │   └── l2nr064.tif
+│   │   │   ├── leaf3
+│   │   │   │   ├── l3nr007.tif
+│   │   │   │   ├── l3nr017.tif
+│   │   │   │   ├── l3nr028.tif
+│   │   │   │   ├── l3nr031.tif
+│   │   │   │   ├── l3nr032.tif
+│   │   │   │   ├── l3nr041.tif
+│   │   │   │   ├── l3nr049.tif
+│   │   │   │   ├── l3nr052.tif
+│   │   │   │   ├── l3nr057.tif
+│   │   │   │   ├── l3nr061.tif
+│   │   │   │   ├── l3nr063.tif
+│   │   │   │   ├── l3nr065.tif
+│   │   │   │   └── l3nr072.tif
+│   │   │   ├── leaf4
+│   │   │   │   ├── l4nr001.tif
+│   │   │   │   ├── l4nr003.tif
+│   │   │   │   ├── l4nr006.tif
+│   │   │   │   ├── l4nr007.tif
+│   │   │   │   ├── l4nr008.tif
+│   │   │   │   ├── l4nr009.tif
+│   │   │   │   ├── l4nr023.tif
+│   │   │   │   ├── l4nr038.tif
+│   │   │   │   ├── l4nr040.tif
+│   │   │   │   ├── l4nr045.tif
+│   │   │   │   ├── l4nr046.tif
+│   │   │   │   ├── l4nr062.tif
+│   │   │   │   └── l4nr072.tif
+│   │   │   ├── leaf5
+│   │   │   │   ├── l5nr002.tif
+│   │   │   │   ├── l5nr007.tif
+│   │   │   │   ├── l5nr010.tif
+│   │   │   │   ├── l5nr011.tif
+│   │   │   │   ├── l5nr018.tif
+│   │   │   │   ├── l5nr042.tif
+│   │   │   │   ├── l5nr048.tif
+│   │   │   │   ├── l5nr049.tif
+│   │   │   │   ├── l5nr053.tif
+│   │   │   │   ├── l5nr057.tif
+│   │   │   │   ├── l5nr060.tif
+│   │   │   │   ├── l5nr068.tif
+│   │   │   │   └── l5nr074.tif
+│   │   │   ├── leaf6
+│   │   │   │   ├── l6nr002.tif
+│   │   │   │   ├── l6nr020.tif
+│   │   │   │   ├── l6nr027.tif
+│   │   │   │   ├── l6nr028.tif
+│   │   │   │   ├── l6nr033.tif
+│   │   │   │   ├── l6nr035.tif
+│   │   │   │   ├── l6nr036.tif
+│   │   │   │   ├── l6nr038.tif
+│   │   │   │   ├── l6nr046.tif
+│   │   │   │   ├── l6nr047.tif
+│   │   │   │   ├── l6nr064.tif
+│   │   │   │   ├── l6nr066.tif
+│   │   │   │   └── l6nr073.tif
+│   │   │   ├── leaf7
+│   │   │   │   ├── l7nr004.tif
+│   │   │   │   ├── l7nr011.tif
+│   │   │   │   ├── l7nr019.tif
+│   │   │   │   ├── l7nr023.tif
+│   │   │   │   ├── l7nr031.tif
+│   │   │   │   ├── l7nr032.tif
+│   │   │   │   ├── l7nr044.tif
+│   │   │   │   ├── l7nr051.tif
+│   │   │   │   ├── l7nr052.tif
+│   │   │   │   ├── l7nr065.tif
+│   │   │   │   ├── l7nr068.tif
+│   │   │   │   ├── l7nr070.tif
+│   │   │   │   └── l7nr074.tif
+│   │   │   ├── leaf8
+│   │   │   │   ├── l8nr001.tif
+│   │   │   │   ├── l8nr002.tif
+│   │   │   │   ├── l8nr003.tif
+│   │   │   │   ├── l8nr004.tif
+│   │   │   │   ├── l8nr005.tif
+│   │   │   │   ├── l8nr009.tif
+│   │   │   │   ├── l8nr020.tif
+│   │   │   │   ├── l8nr047.tif
+│   │   │   │   ├── l8nr050.tif
+│   │   │   │   ├── l8nr053.tif
+│   │   │   │   ├── l8nr065.tif
+│   │   │   │   ├── l8nr068.tif
+│   │   │   │   └── l8nr070.tif
+│   │   │   └── leaf9
+│   │   │       ├── l9nr002.tif
+│   │   │       ├── l9nr011.tif
+│   │   │       ├── l9nr015.tif
+│   │   │       ├── l9nr026.tif
+│   │   │       ├── l9nr027.tif
+│   │   │       ├── l9nr030.tif
+│   │   │       ├── l9nr032.tif
+│   │   │       ├── l9nr047.tif
+│   │   │       ├── l9nr048.tif
+│   │   │       ├── l9nr064.tif
+│   │   │       ├── l9nr065.tif
+│   │   │       ├── l9nr068.tif
+│   │   │       └── l9nr075.tif
+│   │   └── train_80
+│   │       ├── leaf1
+│   │       │   ├── l1nr001.tif
+│   │       │   ├── l1nr002.tif
+│   │       │   ├── l1nr003.tif
+│   │       │   ├── l1nr012.tif
+│   │       │   ├── l1nr021.tif
+│   │       │   ├── l1nr028.tif
+│   │       │   ├── l1nr035.tif
+│   │       │   ├── l1nr038.tif
+│   │       │   ├── l1nr043.tif
+│   │       │   ├── l1nr046.tif
+│   │       │   ├── l1nr049.tif
+│   │       │   ├── l1nr051.tif
+│   │       │   ├── l1nr054.tif
+│   │       │   ├── l1nr055.tif
+│   │       │   ├── l1nr058.tif
+│   │       │   ├── l1nr059.tif
+│   │       │   ├── l1nr063.tif
+│   │       │   ├── l1nr064.tif
+│   │       │   ├── l1nr068.tif
+│   │       │   ├── l1nr071.tif
+│   │       │   └── l1nr075.tif
+│   │       ├── leaf10
+│   │       │   ├── l10nr001.tif
+│   │       │   ├── l10nr004.tif
+│   │       │   ├── l10nr005.tif
+│   │       │   ├── l10nr006.tif
+│   │       │   ├── l10nr008.tif
+│   │       │   ├── l10nr009.tif
+│   │       │   ├── l10nr011.tif
+│   │       │   ├── l10nr024.tif
+│   │       │   ├── l10nr030.tif
+│   │       │   ├── l10nr035.tif
+│   │       │   ├── l10nr038.tif
+│   │       │   ├── l10nr040.tif
+│   │       │   ├── l10nr043.tif
+│   │       │   ├── l10nr045.tif
+│   │       │   ├── l10nr046.tif
+│   │       │   ├── l10nr054.tif
+│   │       │   ├── l10nr057.tif
+│   │       │   ├── l10nr059.tif
+│   │       │   ├── l10nr068.tif
+│   │       │   ├── l10nr071.tif
+│   │       │   └── l10nr073.tif
+│   │       ├── leaf2
+│   │       │   ├── l2nr003.tif
+│   │       │   ├── l2nr005.tif
+│   │       │   ├── l2nr006.tif
+│   │       │   ├── l2nr007.tif
+│   │       │   ├── l2nr016.tif
+│   │       │   ├── l2nr021.tif
+│   │       │   ├── l2nr028.tif
+│   │       │   ├── l2nr029.tif
+│   │       │   ├── l2nr034.tif
+│   │       │   ├── l2nr047.tif
+│   │       │   ├── l2nr049.tif
+│   │       │   ├── l2nr050.tif
+│   │       │   ├── l2nr052.tif
+│   │       │   ├── l2nr053.tif
+│   │       │   ├── l2nr057.tif
+│   │       │   ├── l2nr058.tif
+│   │       │   ├── l2nr061.tif
+│   │       │   ├── l2nr064.tif
+│   │       │   ├── l2nr069.tif
+│   │       │   ├── l2nr072.tif
+│   │       │   └── l2nr073.tif
+│   │       ├── leaf3
+│   │       │   ├── l3nr004.tif
+│   │       │   ├── l3nr007.tif
+│   │       │   ├── l3nr017.tif
+│   │       │   ├── l3nr022.tif
+│   │       │   ├── l3nr028.tif
+│   │       │   ├── l3nr031.tif
+│   │       │   ├── l3nr032.tif
+│   │       │   ├── l3nr034.tif
+│   │       │   ├── l3nr037.tif
+│   │       │   ├── l3nr040.tif
+│   │       │   ├── l3nr041.tif
+│   │       │   ├── l3nr045.tif
+│   │       │   ├── l3nr049.tif
+│   │       │   ├── l3nr053.tif
+│   │       │   ├── l3nr054.tif
+│   │       │   ├── l3nr057.tif
+│   │       │   ├── l3nr061.tif
+│   │       │   ├── l3nr063.tif
+│   │       │   ├── l3nr065.tif
+│   │       │   ├── l3nr072.tif
+│   │       │   └── l3nr073.tif
+│   │       ├── leaf4
+│   │       │   ├── l4nr001.tif
+│   │       │   ├── l4nr003.tif
+│   │       │   ├── l4nr007.tif
+│   │       │   ├── l4nr008.tif
+│   │       │   ├── l4nr009.tif
+│   │       │   ├── l4nr017.tif
+│   │       │   ├── l4nr023.tif
+│   │       │   ├── l4nr033.tif
+│   │       │   ├── l4nr036.tif
+│   │       │   ├── l4nr038.tif
+│   │       │   ├── l4nr039.tif
+│   │       │   ├── l4nr040.tif
+│   │       │   ├── l4nr044.tif
+│   │       │   ├── l4nr046.tif
+│   │       │   ├── l4nr051.tif
+│   │       │   ├── l4nr054.tif
+│   │       │   ├── l4nr062.tif
+│   │       │   ├── l4nr069.tif
+│   │       │   ├── l4nr070.tif
+│   │       │   ├── l4nr072.tif
+│   │       │   └── l4nr074.tif
+│   │       ├── leaf5
+│   │       │   ├── l5nr002.tif
+│   │       │   ├── l5nr003.tif
+│   │       │   ├── l5nr007.tif
+│   │       │   ├── l5nr009.tif
+│   │       │   ├── l5nr010.tif
+│   │       │   ├── l5nr011.tif
+│   │       │   ├── l5nr018.tif
+│   │       │   ├── l5nr023.tif
+│   │       │   ├── l5nr034.tif
+│   │       │   ├── l5nr036.tif
+│   │       │   ├── l5nr042.tif
+│   │       │   ├── l5nr045.tif
+│   │       │   ├── l5nr046.tif
+│   │       │   ├── l5nr049.tif
+│   │       │   ├── l5nr051.tif
+│   │       │   ├── l5nr056.tif
+│   │       │   ├── l5nr060.tif
+│   │       │   ├── l5nr061.tif
+│   │       │   ├── l5nr068.tif
+│   │       │   ├── l5nr069.tif
+│   │       │   └── l5nr074.tif
+│   │       ├── leaf6
+│   │       │   ├── l6nr002.tif
+│   │       │   ├── l6nr006.tif
+│   │       │   ├── l6nr014.tif
+│   │       │   ├── l6nr020.tif
+│   │       │   ├── l6nr022.tif
+│   │       │   ├── l6nr029.tif
+│   │       │   ├── l6nr033.tif
+│   │       │   ├── l6nr035.tif
+│   │       │   ├── l6nr036.tif
+│   │       │   ├── l6nr038.tif
+│   │       │   ├── l6nr040.tif
+│   │       │   ├── l6nr046.tif
+│   │       │   ├── l6nr047.tif
+│   │       │   ├── l6nr056.tif
+│   │       │   ├── l6nr058.tif
+│   │       │   ├── l6nr059.tif
+│   │       │   ├── l6nr062.tif
+│   │       │   ├── l6nr064.tif
+│   │       │   ├── l6nr066.tif
+│   │       │   ├── l6nr067.tif
+│   │       │   └── l6nr073.tif
+│   │       ├── leaf7
+│   │       │   ├── l7nr011.tif
+│   │       │   ├── l7nr012.tif
+│   │       │   ├── l7nr018.tif
+│   │       │   ├── l7nr019.tif
+│   │       │   ├── l7nr021.tif
+│   │       │   ├── l7nr023.tif
+│   │       │   ├── l7nr029.tif
+│   │       │   ├── l7nr032.tif
+│   │       │   ├── l7nr038.tif
+│   │       │   ├── l7nr044.tif
+│   │       │   ├── l7nr049.tif
+│   │       │   ├── l7nr050.tif
+│   │       │   ├── l7nr051.tif
+│   │       │   ├── l7nr052.tif
+│   │       │   ├── l7nr060.tif
+│   │       │   ├── l7nr062.tif
+│   │       │   ├── l7nr065.tif
+│   │       │   ├── l7nr066.tif
+│   │       │   ├── l7nr070.tif
+│   │       │   ├── l7nr071.tif
+│   │       │   └── l7nr075.tif
+│   │       ├── leaf8
+│   │       │   ├── l8nr001.tif
+│   │       │   ├── l8nr002.tif
+│   │       │   ├── l8nr003.tif
+│   │       │   ├── l8nr004.tif
+│   │       │   ├── l8nr005.tif
+│   │       │   ├── l8nr008.tif
+│   │       │   ├── l8nr009.tif
+│   │       │   ├── l8nr022.tif
+│   │       │   ├── l8nr024.tif
+│   │       │   ├── l8nr029.tif
+│   │       │   ├── l8nr030.tif
+│   │       │   ├── l8nr035.tif
+│   │       │   ├── l8nr039.tif
+│   │       │   ├── l8nr047.tif
+│   │       │   ├── l8nr048.tif
+│   │       │   ├── l8nr050.tif
+│   │       │   ├── l8nr062.tif
+│   │       │   ├── l8nr065.tif
+│   │       │   ├── l8nr066.tif
+│   │       │   ├── l8nr068.tif
+│   │       │   └── l8nr070.tif
+│   │       └── leaf9
+│   │           ├── l9nr009.tif
+│   │           ├── l9nr011.tif
+│   │           ├── l9nr013.tif
+│   │           ├── l9nr022.tif
+│   │           ├── l9nr025.tif
+│   │           ├── l9nr026.tif
+│   │           ├── l9nr027.tif
+│   │           ├── l9nr029.tif
+│   │           ├── l9nr030.tif
+│   │           ├── l9nr031.tif
+│   │           ├── l9nr032.tif
+│   │           ├── l9nr033.tif
+│   │           ├── l9nr040.tif
+│   │           ├── l9nr047.tif
+│   │           ├── l9nr048.tif
+│   │           ├── l9nr049.tif
+│   │           ├── l9nr051.tif
+│   │           ├── l9nr060.tif
+│   │           ├── l9nr064.tif
+│   │           ├── l9nr065.tif
+│   │           └── l9nr075.tif
+│   └── exp3
+│       ├── test
+│       │   ├── leaf1
+│       │   │   ├── l1nr001.tif
+│       │   │   ├── l1nr002.tif
+│       │   │   ├── l1nr003.tif
+│       │   │   ├── l1nr004.tif
+│       │   │   ├── l1nr006.tif
+│       │   │   ├── l1nr008.tif
+│       │   │   ├── l1nr009.tif
+│       │   │   ├── l1nr010.tif
+│       │   │   ├── l1nr011.tif
+│       │   │   ├── l1nr012.tif
+│       │   │   ├── l1nr014.tif
+│       │   │   ├── l1nr015.tif
+│       │   │   ├── l1nr016.tif
+│       │   │   ├── l1nr017.tif
+│       │   │   ├── l1nr019.tif
+│       │   │   ├── l1nr020.tif
+│       │   │   ├── l1nr021.tif
+│       │   │   ├── l1nr022.tif
+│       │   │   ├── l1nr024.tif
+│       │   │   ├── l1nr025.tif
+│       │   │   ├── l1nr027.tif
+│       │   │   ├── l1nr028.tif
+│       │   │   ├── l1nr030.tif
+│       │   │   ├── l1nr035.tif
+│       │   │   ├── l1nr037.tif
+│       │   │   ├── l1nr038.tif
+│       │   │   ├── l1nr039.tif
+│       │   │   ├── l1nr042.tif
+│       │   │   ├── l1nr043.tif
+│       │   │   ├── l1nr044.tif
+│       │   │   ├── l1nr046.tif
+│       │   │   ├── l1nr049.tif
+│       │   │   ├── l1nr050.tif
+│       │   │   ├── l1nr051.tif
+│       │   │   ├── l1nr052.tif
+│       │   │   ├── l1nr054.tif
+│       │   │   ├── l1nr055.tif
+│       │   │   ├── l1nr056.tif
+│       │   │   ├── l1nr057.tif
+│       │   │   ├── l1nr058.tif
+│       │   │   ├── l1nr059.tif
+│       │   │   ├── l1nr060.tif
+│       │   │   ├── l1nr061.tif
+│       │   │   ├── l1nr063.tif
+│       │   │   ├── l1nr064.tif
+│       │   │   ├── l1nr065.tif
+│       │   │   ├── l1nr068.tif
+│       │   │   ├── l1nr071.tif
+│       │   │   ├── l1nr073.tif
+│       │   │   └── l1nr075.tif
+│       │   ├── leaf10
+│       │   │   ├── l10nr001.tif
+│       │   │   ├── l10nr002.tif
+│       │   │   ├── l10nr003.tif
+│       │   │   ├── l10nr004.tif
+│       │   │   ├── l10nr005.tif
+│       │   │   ├── l10nr006.tif
+│       │   │   ├── l10nr007.tif
+│       │   │   ├── l10nr008.tif
+│       │   │   ├── l10nr009.tif
+│       │   │   ├── l10nr010.tif
+│       │   │   ├── l10nr011.tif
+│       │   │   ├── l10nr012.tif
+│       │   │   ├── l10nr014.tif
+│       │   │   ├── l10nr015.tif
+│       │   │   ├── l10nr016.tif
+│       │   │   ├── l10nr018.tif
+│       │   │   ├── l10nr023.tif
+│       │   │   ├── l10nr024.tif
+│       │   │   ├── l10nr025.tif
+│       │   │   ├── l10nr026.tif
+│       │   │   ├── l10nr027.tif
+│       │   │   ├── l10nr030.tif
+│       │   │   ├── l10nr031.tif
+│       │   │   ├── l10nr033.tif
+│       │   │   ├── l10nr035.tif
+│       │   │   ├── l10nr038.tif
+│       │   │   ├── l10nr039.tif
+│       │   │   ├── l10nr040.tif
+│       │   │   ├── l10nr042.tif
+│       │   │   ├── l10nr043.tif
+│       │   │   ├── l10nr045.tif
+│       │   │   ├── l10nr046.tif
+│       │   │   ├── l10nr049.tif
+│       │   │   ├── l10nr050.tif
+│       │   │   ├── l10nr052.tif
+│       │   │   ├── l10nr053.tif
+│       │   │   ├── l10nr054.tif
+│       │   │   ├── l10nr056.tif
+│       │   │   ├── l10nr057.tif
+│       │   │   ├── l10nr058.tif
+│       │   │   ├── l10nr059.tif
+│       │   │   ├── l10nr061.tif
+│       │   │   ├── l10nr062.tif
+│       │   │   ├── l10nr065.tif
+│       │   │   ├── l10nr066.tif
+│       │   │   ├── l10nr068.tif
+│       │   │   ├── l10nr070.tif
+│       │   │   ├── l10nr071.tif
+│       │   │   ├── l10nr073.tif
+│       │   │   └── l10nr075.tif
+│       │   ├── leaf2
+│       │   │   ├── l2nr003.tif
+│       │   │   ├── l2nr005.tif
+│       │   │   ├── l2nr006.tif
+│       │   │   ├── l2nr007.tif
+│       │   │   ├── l2nr008.tif
+│       │   │   ├── l2nr009.tif
+│       │   │   ├── l2nr010.tif
+│       │   │   ├── l2nr016.tif
+│       │   │   ├── l2nr018.tif
+│       │   │   ├── l2nr019.tif
+│       │   │   ├── l2nr021.tif
+│       │   │   ├── l2nr023.tif
+│       │   │   ├── l2nr027.tif
+│       │   │   ├── l2nr028.tif
+│       │   │   ├── l2nr029.tif
+│       │   │   ├── l2nr030.tif
+│       │   │   ├── l2nr031.tif
+│       │   │   ├── l2nr033.tif
+│       │   │   ├── l2nr034.tif
+│       │   │   ├── l2nr035.tif
+│       │   │   ├── l2nr037.tif
+│       │   │   ├── l2nr039.tif
+│       │   │   ├── l2nr040.tif
+│       │   │   ├── l2nr042.tif
+│       │   │   ├── l2nr043.tif
+│       │   │   ├── l2nr044.tif
+│       │   │   ├── l2nr047.tif
+│       │   │   ├── l2nr048.tif
+│       │   │   ├── l2nr049.tif
+│       │   │   ├── l2nr050.tif
+│       │   │   ├── l2nr052.tif
+│       │   │   ├── l2nr053.tif
+│       │   │   ├── l2nr054.tif
+│       │   │   ├── l2nr055.tif
+│       │   │   ├── l2nr057.tif
+│       │   │   ├── l2nr058.tif
+│       │   │   ├── l2nr060.tif
+│       │   │   ├── l2nr061.tif
+│       │   │   ├── l2nr062.tif
+│       │   │   ├── l2nr063.tif
+│       │   │   ├── l2nr064.tif
+│       │   │   ├── l2nr065.tif
+│       │   │   ├── l2nr066.tif
+│       │   │   ├── l2nr067.tif
+│       │   │   ├── l2nr068.tif
+│       │   │   ├── l2nr069.tif
+│       │   │   ├── l2nr072.tif
+│       │   │   ├── l2nr073.tif
+│       │   │   ├── l2nr074.tif
+│       │   │   └── l2nr075.tif
+│       │   ├── leaf3
+│       │   │   ├── l3nr001.tif
+│       │   │   ├── l3nr003.tif
+│       │   │   ├── l3nr004.tif
+│       │   │   ├── l3nr005.tif
+│       │   │   ├── l3nr006.tif
+│       │   │   ├── l3nr007.tif
+│       │   │   ├── l3nr008.tif
+│       │   │   ├── l3nr011.tif
+│       │   │   ├── l3nr013.tif
+│       │   │   ├── l3nr015.tif
+│       │   │   ├── l3nr017.tif
+│       │   │   ├── l3nr018.tif
+│       │   │   ├── l3nr019.tif
+│       │   │   ├── l3nr022.tif
+│       │   │   ├── l3nr023.tif
+│       │   │   ├── l3nr024.tif
+│       │   │   ├── l3nr026.tif
+│       │   │   ├── l3nr027.tif
+│       │   │   ├── l3nr028.tif
+│       │   │   ├── l3nr031.tif
+│       │   │   ├── l3nr032.tif
+│       │   │   ├── l3nr034.tif
+│       │   │   ├── l3nr035.tif
+│       │   │   ├── l3nr036.tif
+│       │   │   ├── l3nr037.tif
+│       │   │   ├── l3nr038.tif
+│       │   │   ├── l3nr040.tif
+│       │   │   ├── l3nr041.tif
+│       │   │   ├── l3nr045.tif
+│       │   │   ├── l3nr048.tif
+│       │   │   ├── l3nr049.tif
+│       │   │   ├── l3nr050.tif
+│       │   │   ├── l3nr052.tif
+│       │   │   ├── l3nr053.tif
+│       │   │   ├── l3nr054.tif
+│       │   │   ├── l3nr057.tif
+│       │   │   ├── l3nr058.tif
+│       │   │   ├── l3nr059.tif
+│       │   │   ├── l3nr060.tif
+│       │   │   ├── l3nr061.tif
+│       │   │   ├── l3nr063.tif
+│       │   │   ├── l3nr064.tif
+│       │   │   ├── l3nr065.tif
+│       │   │   ├── l3nr066.tif
+│       │   │   ├── l3nr068.tif
+│       │   │   ├── l3nr071.tif
+│       │   │   ├── l3nr072.tif
+│       │   │   ├── l3nr073.tif
+│       │   │   ├── l3nr074.tif
+│       │   │   └── l3nr075.tif
+│       │   ├── leaf4
+│       │   │   ├── l4nr001.tif
+│       │   │   ├── l4nr002.tif
+│       │   │   ├── l4nr003.tif
+│       │   │   ├── l4nr004.tif
+│       │   │   ├── l4nr005.tif
+│       │   │   ├── l4nr006.tif
+│       │   │   ├── l4nr007.tif
+│       │   │   ├── l4nr008.tif
+│       │   │   ├── l4nr009.tif
+│       │   │   ├── l4nr010.tif
+│       │   │   ├── l4nr011.tif
+│       │   │   ├── l4nr013.tif
+│       │   │   ├── l4nr014.tif
+│       │   │   ├── l4nr016.tif
+│       │   │   ├── l4nr017.tif
+│       │   │   ├── l4nr018.tif
+│       │   │   ├── l4nr020.tif
+│       │   │   ├── l4nr021.tif
+│       │   │   ├── l4nr023.tif
+│       │   │   ├── l4nr024.tif
+│       │   │   ├── l4nr025.tif
+│       │   │   ├── l4nr026.tif
+│       │   │   ├── l4nr027.tif
+│       │   │   ├── l4nr028.tif
+│       │   │   ├── l4nr029.tif
+│       │   │   ├── l4nr030.tif
+│       │   │   ├── l4nr031.tif
+│       │   │   ├── l4nr032.tif
+│       │   │   ├── l4nr033.tif
+│       │   │   ├── l4nr036.tif
+│       │   │   ├── l4nr038.tif
+│       │   │   ├── l4nr039.tif
+│       │   │   ├── l4nr040.tif
+│       │   │   ├── l4nr044.tif
+│       │   │   ├── l4nr045.tif
+│       │   │   ├── l4nr046.tif
+│       │   │   ├── l4nr049.tif
+│       │   │   ├── l4nr050.tif
+│       │   │   ├── l4nr051.tif
+│       │   │   ├── l4nr053.tif
+│       │   │   ├── l4nr054.tif
+│       │   │   ├── l4nr057.tif
+│       │   │   ├── l4nr061.tif
+│       │   │   ├── l4nr062.tif
+│       │   │   ├── l4nr063.tif
+│       │   │   ├── l4nr067.tif
+│       │   │   ├── l4nr069.tif
+│       │   │   ├── l4nr070.tif
+│       │   │   ├── l4nr072.tif
+│       │   │   └── l4nr074.tif
+│       │   ├── leaf5
+│       │   │   ├── l5nr002.tif
+│       │   │   ├── l5nr003.tif
+│       │   │   ├── l5nr004.tif
+│       │   │   ├── l5nr005.tif
+│       │   │   ├── l5nr007.tif
+│       │   │   ├── l5nr009.tif
+│       │   │   ├── l5nr010.tif
+│       │   │   ├── l5nr011.tif
+│       │   │   ├── l5nr012.tif
+│       │   │   ├── l5nr016.tif
+│       │   │   ├── l5nr017.tif
+│       │   │   ├── l5nr018.tif
+│       │   │   ├── l5nr019.tif
+│       │   │   ├── l5nr020.tif
+│       │   │   ├── l5nr022.tif
+│       │   │   ├── l5nr023.tif
+│       │   │   ├── l5nr024.tif
+│       │   │   ├── l5nr025.tif
+│       │   │   ├── l5nr026.tif
+│       │   │   ├── l5nr027.tif
+│       │   │   ├── l5nr029.tif
+│       │   │   ├── l5nr031.tif
+│       │   │   ├── l5nr033.tif
+│       │   │   ├── l5nr034.tif
+│       │   │   ├── l5nr035.tif
+│       │   │   ├── l5nr036.tif
+│       │   │   ├── l5nr039.tif
+│       │   │   ├── l5nr040.tif
+│       │   │   ├── l5nr042.tif
+│       │   │   ├── l5nr043.tif
+│       │   │   ├── l5nr045.tif
+│       │   │   ├── l5nr046.tif
+│       │   │   ├── l5nr048.tif
+│       │   │   ├── l5nr049.tif
+│       │   │   ├── l5nr051.tif
+│       │   │   ├── l5nr052.tif
+│       │   │   ├── l5nr053.tif
+│       │   │   ├── l5nr054.tif
+│       │   │   ├── l5nr056.tif
+│       │   │   ├── l5nr057.tif
+│       │   │   ├── l5nr060.tif
+│       │   │   ├── l5nr061.tif
+│       │   │   ├── l5nr064.tif
+│       │   │   ├── l5nr065.tif
+│       │   │   ├── l5nr066.tif
+│       │   │   ├── l5nr068.tif
+│       │   │   ├── l5nr069.tif
+│       │   │   ├── l5nr070.tif
+│       │   │   ├── l5nr073.tif
+│       │   │   └── l5nr074.tif
+│       │   ├── leaf6
+│       │   │   ├── l6nr001.tif
+│       │   │   ├── l6nr002.tif
+│       │   │   ├── l6nr004.tif
+│       │   │   ├── l6nr006.tif
+│       │   │   ├── l6nr008.tif
+│       │   │   ├── l6nr010.tif
+│       │   │   ├── l6nr012.tif
+│       │   │   ├── l6nr014.tif
+│       │   │   ├── l6nr016.tif
+│       │   │   ├── l6nr018.tif
+│       │   │   ├── l6nr020.tif
+│       │   │   ├── l6nr021.tif
+│       │   │   ├── l6nr022.tif
+│       │   │   ├── l6nr023.tif
+│       │   │   ├── l6nr025.tif
+│       │   │   ├── l6nr027.tif
+│       │   │   ├── l6nr028.tif
+│       │   │   ├── l6nr029.tif
+│       │   │   ├── l6nr030.tif
+│       │   │   ├── l6nr031.tif
+│       │   │   ├── l6nr032.tif
+│       │   │   ├── l6nr033.tif
+│       │   │   ├── l6nr035.tif
+│       │   │   ├── l6nr036.tif
+│       │   │   ├── l6nr038.tif
+│       │   │   ├── l6nr039.tif
+│       │   │   ├── l6nr040.tif
+│       │   │   ├── l6nr041.tif
+│       │   │   ├── l6nr042.tif
+│       │   │   ├── l6nr043.tif
+│       │   │   ├── l6nr044.tif
+│       │   │   ├── l6nr045.tif
+│       │   │   ├── l6nr046.tif
+│       │   │   ├── l6nr047.tif
+│       │   │   ├── l6nr048.tif
+│       │   │   ├── l6nr049.tif
+│       │   │   ├── l6nr051.tif
+│       │   │   ├── l6nr053.tif
+│       │   │   ├── l6nr054.tif
+│       │   │   ├── l6nr056.tif
+│       │   │   ├── l6nr057.tif
+│       │   │   ├── l6nr058.tif
+│       │   │   ├── l6nr059.tif
+│       │   │   ├── l6nr062.tif
+│       │   │   ├── l6nr064.tif
+│       │   │   ├── l6nr066.tif
+│       │   │   ├── l6nr067.tif
+│       │   │   ├── l6nr069.tif
+│       │   │   ├── l6nr073.tif
+│       │   │   └── l6nr074.tif
+│       │   ├── leaf7
+│       │   │   ├── l7nr001.tif
+│       │   │   ├── l7nr003.tif
+│       │   │   ├── l7nr004.tif
+│       │   │   ├── l7nr005.tif
+│       │   │   ├── l7nr007.tif
+│       │   │   ├── l7nr011.tif
+│       │   │   ├── l7nr012.tif
+│       │   │   ├── l7nr015.tif
+│       │   │   ├── l7nr016.tif
+│       │   │   ├── l7nr018.tif
+│       │   │   ├── l7nr019.tif
+│       │   │   ├── l7nr020.tif
+│       │   │   ├── l7nr021.tif
+│       │   │   ├── l7nr022.tif
+│       │   │   ├── l7nr023.tif
+│       │   │   ├── l7nr027.tif
+│       │   │   ├── l7nr029.tif
+│       │   │   ├── l7nr030.tif
+│       │   │   ├── l7nr031.tif
+│       │   │   ├── l7nr032.tif
+│       │   │   ├── l7nr034.tif
+│       │   │   ├── l7nr037.tif
+│       │   │   ├── l7nr038.tif
+│       │   │   ├── l7nr040.tif
+│       │   │   ├── l7nr041.tif
+│       │   │   ├── l7nr042.tif
+│       │   │   ├── l7nr043.tif
+│       │   │   ├── l7nr044.tif
+│       │   │   ├── l7nr045.tif
+│       │   │   ├── l7nr047.tif
+│       │   │   ├── l7nr048.tif
+│       │   │   ├── l7nr049.tif
+│       │   │   ├── l7nr050.tif
+│       │   │   ├── l7nr051.tif
+│       │   │   ├── l7nr052.tif
+│       │   │   ├── l7nr053.tif
+│       │   │   ├── l7nr055.tif
+│       │   │   ├── l7nr059.tif
+│       │   │   ├── l7nr060.tif
+│       │   │   ├── l7nr061.tif
+│       │   │   ├── l7nr062.tif
+│       │   │   ├── l7nr063.tif
+│       │   │   ├── l7nr065.tif
+│       │   │   ├── l7nr066.tif
+│       │   │   ├── l7nr068.tif
+│       │   │   ├── l7nr070.tif
+│       │   │   ├── l7nr071.tif
+│       │   │   ├── l7nr073.tif
+│       │   │   ├── l7nr074.tif
+│       │   │   └── l7nr075.tif
+│       │   ├── leaf8
+│       │   │   ├── l8nr001.tif
+│       │   │   ├── l8nr002.tif
+│       │   │   ├── l8nr003.tif
+│       │   │   ├── l8nr004.tif
+│       │   │   ├── l8nr005.tif
+│       │   │   ├── l8nr007.tif
+│       │   │   ├── l8nr008.tif
+│       │   │   ├── l8nr009.tif
+│       │   │   ├── l8nr011.tif
+│       │   │   ├── l8nr012.tif
+│       │   │   ├── l8nr016.tif
+│       │   │   ├── l8nr017.tif
+│       │   │   ├── l8nr019.tif
+│       │   │   ├── l8nr020.tif
+│       │   │   ├── l8nr021.tif
+│       │   │   ├── l8nr022.tif
+│       │   │   ├── l8nr024.tif
+│       │   │   ├── l8nr025.tif
+│       │   │   ├── l8nr026.tif
+│       │   │   ├── l8nr027.tif
+│       │   │   ├── l8nr028.tif
+│       │   │   ├── l8nr029.tif
+│       │   │   ├── l8nr030.tif
+│       │   │   ├── l8nr033.tif
+│       │   │   ├── l8nr034.tif
+│       │   │   ├── l8nr035.tif
+│       │   │   ├── l8nr037.tif
+│       │   │   ├── l8nr039.tif
+│       │   │   ├── l8nr041.tif
+│       │   │   ├── l8nr042.tif
+│       │   │   ├── l8nr043.tif
+│       │   │   ├── l8nr045.tif
+│       │   │   ├── l8nr047.tif
+│       │   │   ├── l8nr048.tif
+│       │   │   ├── l8nr050.tif
+│       │   │   ├── l8nr051.tif
+│       │   │   ├── l8nr052.tif
+│       │   │   ├── l8nr053.tif
+│       │   │   ├── l8nr054.tif
+│       │   │   ├── l8nr056.tif
+│       │   │   ├── l8nr061.tif
+│       │   │   ├── l8nr062.tif
+│       │   │   ├── l8nr065.tif
+│       │   │   ├── l8nr066.tif
+│       │   │   ├── l8nr067.tif
+│       │   │   ├── l8nr068.tif
+│       │   │   ├── l8nr069.tif
+│       │   │   ├── l8nr070.tif
+│       │   │   ├── l8nr072.tif
+│       │   │   └── l8nr075.tif
+│       │   └── leaf9
+│       │       ├── l9nr002.tif
+│       │       ├── l9nr003.tif
+│       │       ├── l9nr005.tif
+│       │       ├── l9nr006.tif
+│       │       ├── l9nr007.tif
+│       │       ├── l9nr008.tif
+│       │       ├── l9nr009.tif
+│       │       ├── l9nr010.tif
+│       │       ├── l9nr011.tif
+│       │       ├── l9nr012.tif
+│       │       ├── l9nr013.tif
+│       │       ├── l9nr015.tif
+│       │       ├── l9nr019.tif
+│       │       ├── l9nr020.tif
+│       │       ├── l9nr022.tif
+│       │       ├── l9nr025.tif
+│       │       ├── l9nr026.tif
+│       │       ├── l9nr027.tif
+│       │       ├── l9nr028.tif
+│       │       ├── l9nr029.tif
+│       │       ├── l9nr030.tif
+│       │       ├── l9nr031.tif
+│       │       ├── l9nr032.tif
+│       │       ├── l9nr033.tif
+│       │       ├── l9nr034.tif
+│       │       ├── l9nr035.tif
+│       │       ├── l9nr036.tif
+│       │       ├── l9nr037.tif
+│       │       ├── l9nr040.tif
+│       │       ├── l9nr046.tif
+│       │       ├── l9nr047.tif
+│       │       ├── l9nr048.tif
+│       │       ├── l9nr049.tif
+│       │       ├── l9nr050.tif
+│       │       ├── l9nr051.tif
+│       │       ├── l9nr053.tif
+│       │       ├── l9nr057.tif
+│       │       ├── l9nr058.tif
+│       │       ├── l9nr060.tif
+│       │       ├── l9nr062.tif
+│       │       ├── l9nr063.tif
+│       │       ├── l9nr064.tif
+│       │       ├── l9nr065.tif
+│       │       ├── l9nr066.tif
+│       │       ├── l9nr067.tif
+│       │       ├── l9nr068.tif
+│       │       ├── l9nr071.tif
+│       │       ├── l9nr072.tif
+│       │       ├── l9nr074.tif
+│       │       └── l9nr075.tif
+│       ├── train_10
+│       │   ├── leaf1
+│       │   │   ├── l1nr047.tif
+│       │   │   ├── l1nr048.tif
+│       │   │   └── l1nr062.tif
+│       │   ├── leaf10
+│       │   │   ├── l10nr013.tif
+│       │   │   ├── l10nr032.tif
+│       │   │   └── l10nr064.tif
+│       │   ├── leaf2
+│       │   │   ├── l2nr001.tif
+│       │   │   ├── l2nr038.tif
+│       │   │   └── l2nr070.tif
+│       │   ├── leaf3
+│       │   │   ├── l3nr014.tif
+│       │   │   ├── l3nr051.tif
+│       │   │   └── l3nr067.tif
+│       │   ├── leaf4
+│       │   │   ├── l4nr019.tif
+│       │   │   ├── l4nr035.tif
+│       │   │   └── l4nr043.tif
+│       │   ├── leaf5
+│       │   │   ├── l5nr021.tif
+│       │   │   ├── l5nr058.tif
+│       │   │   └── l5nr062.tif
+│       │   ├── leaf6
+│       │   │   ├── l6nr003.tif
+│       │   │   ├── l6nr019.tif
+│       │   │   └── l6nr063.tif
+│       │   ├── leaf7
+│       │   │   ├── l7nr008.tif
+│       │   │   ├── l7nr026.tif
+│       │   │   └── l7nr067.tif
+│       │   ├── leaf8
+│       │   │   ├── l8nr013.tif
+│       │   │   ├── l8nr058.tif
+│       │   │   └── l8nr064.tif
+│       │   └── leaf9
+│       │       ├── l9nr004.tif
+│       │       ├── l9nr014.tif
+│       │       └── l9nr056.tif
+│       ├── train_100
+│       │   ├── leaf1
+│       │   │   ├── l1nr005.tif
+│       │   │   ├── l1nr007.tif
+│       │   │   ├── l1nr013.tif
+│       │   │   ├── l1nr018.tif
+│       │   │   ├── l1nr023.tif
+│       │   │   ├── l1nr026.tif
+│       │   │   ├── l1nr029.tif
+│       │   │   ├── l1nr031.tif
+│       │   │   ├── l1nr032.tif
+│       │   │   ├── l1nr033.tif
+│       │   │   ├── l1nr034.tif
+│       │   │   ├── l1nr036.tif
+│       │   │   ├── l1nr040.tif
+│       │   │   ├── l1nr041.tif
+│       │   │   ├── l1nr045.tif
+│       │   │   ├── l1nr047.tif
+│       │   │   ├── l1nr048.tif
+│       │   │   ├── l1nr053.tif
+│       │   │   ├── l1nr062.tif
+│       │   │   ├── l1nr066.tif
+│       │   │   ├── l1nr067.tif
+│       │   │   ├── l1nr069.tif
+│       │   │   ├── l1nr070.tif
+│       │   │   ├── l1nr072.tif
+│       │   │   └── l1nr074.tif
+│       │   ├── leaf10
+│       │   │   ├── l10nr013.tif
+│       │   │   ├── l10nr017.tif
+│       │   │   ├── l10nr019.tif
+│       │   │   ├── l10nr020.tif
+│       │   │   ├── l10nr021.tif
+│       │   │   ├── l10nr022.tif
+│       │   │   ├── l10nr028.tif
+│       │   │   ├── l10nr029.tif
+│       │   │   ├── l10nr032.tif
+│       │   │   ├── l10nr034.tif
+│       │   │   ├── l10nr036.tif
+│       │   │   ├── l10nr037.tif
+│       │   │   ├── l10nr041.tif
+│       │   │   ├── l10nr044.tif
+│       │   │   ├── l10nr047.tif
+│       │   │   ├── l10nr048.tif
+│       │   │   ├── l10nr051.tif
+│       │   │   ├── l10nr055.tif
+│       │   │   ├── l10nr060.tif
+│       │   │   ├── l10nr063.tif
+│       │   │   ├── l10nr064.tif
+│       │   │   ├── l10nr067.tif
+│       │   │   ├── l10nr069.tif
+│       │   │   ├── l10nr072.tif
+│       │   │   └── l10nr074.tif
+│       │   ├── leaf2
+│       │   │   ├── l2nr001.tif
+│       │   │   ├── l2nr002.tif
+│       │   │   ├── l2nr004.tif
+│       │   │   ├── l2nr011.tif
+│       │   │   ├── l2nr012.tif
+│       │   │   ├── l2nr013.tif
+│       │   │   ├── l2nr014.tif
+│       │   │   ├── l2nr015.tif
+│       │   │   ├── l2nr017.tif
+│       │   │   ├── l2nr020.tif
+│       │   │   ├── l2nr022.tif
+│       │   │   ├── l2nr024.tif
+│       │   │   ├── l2nr025.tif
+│       │   │   ├── l2nr026.tif
+│       │   │   ├── l2nr032.tif
+│       │   │   ├── l2nr036.tif
+│       │   │   ├── l2nr038.tif
+│       │   │   ├── l2nr041.tif
+│       │   │   ├── l2nr045.tif
+│       │   │   ├── l2nr046.tif
+│       │   │   ├── l2nr051.tif
+│       │   │   ├── l2nr056.tif
+│       │   │   ├── l2nr059.tif
+│       │   │   ├── l2nr070.tif
+│       │   │   └── l2nr071.tif
+│       │   ├── leaf3
+│       │   │   ├── l3nr002.tif
+│       │   │   ├── l3nr009.tif
+│       │   │   ├── l3nr010.tif
+│       │   │   ├── l3nr012.tif
+│       │   │   ├── l3nr014.tif
+│       │   │   ├── l3nr016.tif
+│       │   │   ├── l3nr020.tif
+│       │   │   ├── l3nr021.tif
+│       │   │   ├── l3nr025.tif
+│       │   │   ├── l3nr029.tif
+│       │   │   ├── l3nr030.tif
+│       │   │   ├── l3nr033.tif
+│       │   │   ├── l3nr039.tif
+│       │   │   ├── l3nr042.tif
+│       │   │   ├── l3nr043.tif
+│       │   │   ├── l3nr044.tif
+│       │   │   ├── l3nr046.tif
+│       │   │   ├── l3nr047.tif
+│       │   │   ├── l3nr051.tif
+│       │   │   ├── l3nr055.tif
+│       │   │   ├── l3nr056.tif
+│       │   │   ├── l3nr062.tif
+│       │   │   ├── l3nr067.tif
+│       │   │   ├── l3nr069.tif
+│       │   │   └── l3nr070.tif
+│       │   ├── leaf4
+│       │   │   ├── l4nr012.tif
+│       │   │   ├── l4nr015.tif
+│       │   │   ├── l4nr019.tif
+│       │   │   ├── l4nr022.tif
+│       │   │   ├── l4nr034.tif
+│       │   │   ├── l4nr035.tif
+│       │   │   ├── l4nr037.tif
+│       │   │   ├── l4nr041.tif
+│       │   │   ├── l4nr042.tif
+│       │   │   ├── l4nr043.tif
+│       │   │   ├── l4nr047.tif
+│       │   │   ├── l4nr048.tif
+│       │   │   ├── l4nr052.tif
+│       │   │   ├── l4nr055.tif
+│       │   │   ├── l4nr056.tif
+│       │   │   ├── l4nr058.tif
+│       │   │   ├── l4nr059.tif
+│       │   │   ├── l4nr060.tif
+│       │   │   ├── l4nr064.tif
+│       │   │   ├── l4nr065.tif
+│       │   │   ├── l4nr066.tif
+│       │   │   ├── l4nr068.tif
+│       │   │   ├── l4nr071.tif
+│       │   │   ├── l4nr073.tif
+│       │   │   └── l4nr075.tif
+│       │   ├── leaf5
+│       │   │   ├── l5nr001.tif
+│       │   │   ├── l5nr006.tif
+│       │   │   ├── l5nr008.tif
+│       │   │   ├── l5nr013.tif
+│       │   │   ├── l5nr014.tif
+│       │   │   ├── l5nr015.tif
+│       │   │   ├── l5nr021.tif
+│       │   │   ├── l5nr028.tif
+│       │   │   ├── l5nr030.tif
+│       │   │   ├── l5nr032.tif
+│       │   │   ├── l5nr037.tif
+│       │   │   ├── l5nr038.tif
+│       │   │   ├── l5nr041.tif
+│       │   │   ├── l5nr044.tif
+│       │   │   ├── l5nr047.tif
+│       │   │   ├── l5nr050.tif
+│       │   │   ├── l5nr055.tif
+│       │   │   ├── l5nr058.tif
+│       │   │   ├── l5nr059.tif
+│       │   │   ├── l5nr062.tif
+│       │   │   ├── l5nr063.tif
+│       │   │   ├── l5nr067.tif
+│       │   │   ├── l5nr071.tif
+│       │   │   ├── l5nr072.tif
+│       │   │   └── l5nr075.tif
+│       │   ├── leaf6
+│       │   │   ├── l6nr003.tif
+│       │   │   ├── l6nr005.tif
+│       │   │   ├── l6nr007.tif
+│       │   │   ├── l6nr009.tif
+│       │   │   ├── l6nr011.tif
+│       │   │   ├── l6nr013.tif
+│       │   │   ├── l6nr015.tif
+│       │   │   ├── l6nr017.tif
+│       │   │   ├── l6nr019.tif
+│       │   │   ├── l6nr024.tif
+│       │   │   ├── l6nr026.tif
+│       │   │   ├── l6nr034.tif
+│       │   │   ├── l6nr037.tif
+│       │   │   ├── l6nr050.tif
+│       │   │   ├── l6nr052.tif
+│       │   │   ├── l6nr055.tif
+│       │   │   ├── l6nr060.tif
+│       │   │   ├── l6nr061.tif
+│       │   │   ├── l6nr063.tif
+│       │   │   ├── l6nr065.tif
+│       │   │   ├── l6nr068.tif
+│       │   │   ├── l6nr070.tif
+│       │   │   ├── l6nr071.tif
+│       │   │   ├── l6nr072.tif
+│       │   │   └── l6nr075.tif
+│       │   ├── leaf7
+│       │   │   ├── l7nr002.tif
+│       │   │   ├── l7nr006.tif
+│       │   │   ├── l7nr008.tif
+│       │   │   ├── l7nr009.tif
+│       │   │   ├── l7nr010.tif
+│       │   │   ├── l7nr013.tif
+│       │   │   ├── l7nr014.tif
+│       │   │   ├── l7nr017.tif
+│       │   │   ├── l7nr024.tif
+│       │   │   ├── l7nr025.tif
+│       │   │   ├── l7nr026.tif
+│       │   │   ├── l7nr028.tif
+│       │   │   ├── l7nr033.tif
+│       │   │   ├── l7nr035.tif
+│       │   │   ├── l7nr036.tif
+│       │   │   ├── l7nr039.tif
+│       │   │   ├── l7nr046.tif
+│       │   │   ├── l7nr054.tif
+│       │   │   ├── l7nr056.tif
+│       │   │   ├── l7nr057.tif
+│       │   │   ├── l7nr058.tif
+│       │   │   ├── l7nr064.tif
+│       │   │   ├── l7nr067.tif
+│       │   │   ├── l7nr069.tif
+│       │   │   └── l7nr072.tif
+│       │   ├── leaf8
+│       │   │   ├── l8nr006.tif
+│       │   │   ├── l8nr010.tif
+│       │   │   ├── l8nr013.tif
+│       │   │   ├── l8nr014.tif
+│       │   │   ├── l8nr015.tif
+│       │   │   ├── l8nr018.tif
+│       │   │   ├── l8nr023.tif
+│       │   │   ├── l8nr031.tif
+│       │   │   ├── l8nr032.tif
+│       │   │   ├── l8nr036.tif
+│       │   │   ├── l8nr038.tif
+│       │   │   ├── l8nr040.tif
+│       │   │   ├── l8nr044.tif
+│       │   │   ├── l8nr046.tif
+│       │   │   ├── l8nr049.tif
+│       │   │   ├── l8nr055.tif
+│       │   │   ├── l8nr057.tif
+│       │   │   ├── l8nr058.tif
+│       │   │   ├── l8nr059.tif
+│       │   │   ├── l8nr060.tif
+│       │   │   ├── l8nr063.tif
+│       │   │   ├── l8nr064.tif
+│       │   │   ├── l8nr071.tif
+│       │   │   ├── l8nr073.tif
+│       │   │   └── l8nr074.tif
+│       │   └── leaf9
+│       │       ├── l9nr001.tif
+│       │       ├── l9nr004.tif
+│       │       ├── l9nr014.tif
+│       │       ├── l9nr016.tif
+│       │       ├── l9nr017.tif
+│       │       ├── l9nr018.tif
+│       │       ├── l9nr021.tif
+│       │       ├── l9nr023.tif
+│       │       ├── l9nr024.tif
+│       │       ├── l9nr038.tif
+│       │       ├── l9nr039.tif
+│       │       ├── l9nr041.tif
+│       │       ├── l9nr042.tif
+│       │       ├── l9nr043.tif
+│       │       ├── l9nr044.tif
+│       │       ├── l9nr045.tif
+│       │       ├── l9nr052.tif
+│       │       ├── l9nr054.tif
+│       │       ├── l9nr055.tif
+│       │       ├── l9nr056.tif
+│       │       ├── l9nr059.tif
+│       │       ├── l9nr061.tif
+│       │       ├── l9nr069.tif
+│       │       ├── l9nr070.tif
+│       │       └── l9nr073.tif
+│       ├── train_20
+│       │   ├── leaf1
+│       │   │   ├── l1nr007.tif
+│       │   │   ├── l1nr026.tif
+│       │   │   ├── l1nr031.tif
+│       │   │   ├── l1nr062.tif
+│       │   │   ├── l1nr067.tif
+│       │   │   └── l1nr072.tif
+│       │   ├── leaf10
+│       │   │   ├── l10nr028.tif
+│       │   │   ├── l10nr036.tif
+│       │   │   ├── l10nr041.tif
+│       │   │   ├── l10nr044.tif
+│       │   │   ├── l10nr055.tif
+│       │   │   └── l10nr063.tif
+│       │   ├── leaf2
+│       │   │   ├── l2nr004.tif
+│       │   │   ├── l2nr013.tif
+│       │   │   ├── l2nr017.tif
+│       │   │   ├── l2nr022.tif
+│       │   │   ├── l2nr026.tif
+│       │   │   └── l2nr051.tif
+│       │   ├── leaf3
+│       │   │   ├── l3nr029.tif
+│       │   │   ├── l3nr033.tif
+│       │   │   ├── l3nr039.tif
+│       │   │   ├── l3nr047.tif
+│       │   │   ├── l3nr055.tif
+│       │   │   └── l3nr056.tif
+│       │   ├── leaf4
+│       │   │   ├── l4nr012.tif
+│       │   │   ├── l4nr041.tif
+│       │   │   ├── l4nr042.tif
+│       │   │   ├── l4nr043.tif
+│       │   │   ├── l4nr056.tif
+│       │   │   └── l4nr068.tif
+│       │   ├── leaf5
+│       │   │   ├── l5nr001.tif
+│       │   │   ├── l5nr037.tif
+│       │   │   ├── l5nr044.tif
+│       │   │   ├── l5nr058.tif
+│       │   │   ├── l5nr059.tif
+│       │   │   └── l5nr075.tif
+│       │   ├── leaf6
+│       │   │   ├── l6nr005.tif
+│       │   │   ├── l6nr037.tif
+│       │   │   ├── l6nr055.tif
+│       │   │   ├── l6nr061.tif
+│       │   │   ├── l6nr070.tif
+│       │   │   └── l6nr071.tif
+│       │   ├── leaf7
+│       │   │   ├── l7nr008.tif
+│       │   │   ├── l7nr026.tif
+│       │   │   ├── l7nr035.tif
+│       │   │   ├── l7nr056.tif
+│       │   │   ├── l7nr069.tif
+│       │   │   └── l7nr072.tif
+│       │   ├── leaf8
+│       │   │   ├── l8nr015.tif
+│       │   │   ├── l8nr032.tif
+│       │   │   ├── l8nr044.tif
+│       │   │   ├── l8nr046.tif
+│       │   │   ├── l8nr049.tif
+│       │   │   └── l8nr064.tif
+│       │   └── leaf9
+│       │       ├── l9nr017.tif
+│       │       ├── l9nr018.tif
+│       │       ├── l9nr021.tif
+│       │       ├── l9nr038.tif
+│       │       ├── l9nr052.tif
+│       │       └── l9nr061.tif
+│       ├── train_50
+│       │   ├── leaf1
+│       │   │   ├── l1nr018.tif
+│       │   │   ├── l1nr023.tif
+│       │   │   ├── l1nr026.tif
+│       │   │   ├── l1nr033.tif
+│       │   │   ├── l1nr034.tif
+│       │   │   ├── l1nr040.tif
+│       │   │   ├── l1nr045.tif
+│       │   │   ├── l1nr048.tif
+│       │   │   ├── l1nr053.tif
+│       │   │   ├── l1nr066.tif
+│       │   │   ├── l1nr067.tif
+│       │   │   ├── l1nr070.tif
+│       │   │   └── l1nr074.tif
+│       │   ├── leaf10
+│       │   │   ├── l10nr019.tif
+│       │   │   ├── l10nr020.tif
+│       │   │   ├── l10nr021.tif
+│       │   │   ├── l10nr022.tif
+│       │   │   ├── l10nr028.tif
+│       │   │   ├── l10nr029.tif
+│       │   │   ├── l10nr036.tif
+│       │   │   ├── l10nr047.tif
+│       │   │   ├── l10nr048.tif
+│       │   │   ├── l10nr055.tif
+│       │   │   ├── l10nr060.tif
+│       │   │   ├── l10nr063.tif
+│       │   │   └── l10nr064.tif
+│       │   ├── leaf2
+│       │   │   ├── l2nr001.tif
+│       │   │   ├── l2nr002.tif
+│       │   │   ├── l2nr011.tif
+│       │   │   ├── l2nr012.tif
+│       │   │   ├── l2nr014.tif
+│       │   │   ├── l2nr015.tif
+│       │   │   ├── l2nr017.tif
+│       │   │   ├── l2nr024.tif
+│       │   │   ├── l2nr025.tif
+│       │   │   ├── l2nr038.tif
+│       │   │   ├── l2nr046.tif
+│       │   │   ├── l2nr056.tif
+│       │   │   └── l2nr071.tif
+│       │   ├── leaf3
+│       │   │   ├── l3nr009.tif
+│       │   │   ├── l3nr010.tif
+│       │   │   ├── l3nr014.tif
+│       │   │   ├── l3nr021.tif
+│       │   │   ├── l3nr025.tif
+│       │   │   ├── l3nr030.tif
+│       │   │   ├── l3nr043.tif
+│       │   │   ├── l3nr044.tif
+│       │   │   ├── l3nr046.tif
+│       │   │   ├── l3nr055.tif
+│       │   │   ├── l3nr062.tif
+│       │   │   ├── l3nr067.tif
+│       │   │   └── l3nr070.tif
+│       │   ├── leaf4
+│       │   │   ├── l4nr012.tif
+│       │   │   ├── l4nr034.tif
+│       │   │   ├── l4nr037.tif
+│       │   │   ├── l4nr042.tif
+│       │   │   ├── l4nr043.tif
+│       │   │   ├── l4nr047.tif
+│       │   │   ├── l4nr052.tif
+│       │   │   ├── l4nr055.tif
+│       │   │   ├── l4nr056.tif
+│       │   │   ├── l4nr066.tif
+│       │   │   ├── l4nr068.tif
+│       │   │   ├── l4nr071.tif
+│       │   │   └── l4nr075.tif
+│       │   ├── leaf5
+│       │   │   ├── l5nr001.tif
+│       │   │   ├── l5nr006.tif
+│       │   │   ├── l5nr008.tif
+│       │   │   ├── l5nr013.tif
+│       │   │   ├── l5nr021.tif
+│       │   │   ├── l5nr028.tif
+│       │   │   ├── l5nr030.tif
+│       │   │   ├── l5nr037.tif
+│       │   │   ├── l5nr044.tif
+│       │   │   ├── l5nr055.tif
+│       │   │   ├── l5nr059.tif
+│       │   │   ├── l5nr071.tif
+│       │   │   └── l5nr075.tif
+│       │   ├── leaf6
+│       │   │   ├── l6nr003.tif
+│       │   │   ├── l6nr005.tif
+│       │   │   ├── l6nr013.tif
+│       │   │   ├── l6nr024.tif
+│       │   │   ├── l6nr026.tif
+│       │   │   ├── l6nr034.tif
+│       │   │   ├── l6nr050.tif
+│       │   │   ├── l6nr060.tif
+│       │   │   ├── l6nr065.tif
+│       │   │   ├── l6nr068.tif
+│       │   │   ├── l6nr071.tif
+│       │   │   ├── l6nr072.tif
+│       │   │   └── l6nr075.tif
+│       │   ├── leaf7
+│       │   │   ├── l7nr002.tif
+│       │   │   ├── l7nr006.tif
+│       │   │   ├── l7nr010.tif
+│       │   │   ├── l7nr013.tif
+│       │   │   ├── l7nr014.tif
+│       │   │   ├── l7nr024.tif
+│       │   │   ├── l7nr025.tif
+│       │   │   ├── l7nr028.tif
+│       │   │   ├── l7nr056.tif
+│       │   │   ├── l7nr058.tif
+│       │   │   ├── l7nr064.tif
+│       │   │   ├── l7nr069.tif
+│       │   │   └── l7nr072.tif
+│       │   ├── leaf8
+│       │   │   ├── l8nr006.tif
+│       │   │   ├── l8nr010.tif
+│       │   │   ├── l8nr013.tif
+│       │   │   ├── l8nr014.tif
+│       │   │   ├── l8nr015.tif
+│       │   │   ├── l8nr038.tif
+│       │   │   ├── l8nr040.tif
+│       │   │   ├── l8nr055.tif
+│       │   │   ├── l8nr058.tif
+│       │   │   ├── l8nr060.tif
+│       │   │   ├── l8nr064.tif
+│       │   │   ├── l8nr073.tif
+│       │   │   └── l8nr074.tif
+│       │   └── leaf9
+│       │       ├── l9nr001.tif
+│       │       ├── l9nr004.tif
+│       │       ├── l9nr014.tif
+│       │       ├── l9nr016.tif
+│       │       ├── l9nr017.tif
+│       │       ├── l9nr018.tif
+│       │       ├── l9nr024.tif
+│       │       ├── l9nr038.tif
+│       │       ├── l9nr044.tif
+│       │       ├── l9nr056.tif
+│       │       ├── l9nr061.tif
+│       │       ├── l9nr070.tif
+│       │       └── l9nr073.tif
+│       └── train_80
+│           ├── leaf1
+│           │   ├── l1nr007.tif
+│           │   ├── l1nr018.tif
+│           │   ├── l1nr023.tif
+│           │   ├── l1nr026.tif
+│           │   ├── l1nr029.tif
+│           │   ├── l1nr031.tif
+│           │   ├── l1nr032.tif
+│           │   ├── l1nr034.tif
+│           │   ├── l1nr036.tif
+│           │   ├── l1nr040.tif
+│           │   ├── l1nr041.tif
+│           │   ├── l1nr045.tif
+│           │   ├── l1nr047.tif
+│           │   ├── l1nr048.tif
+│           │   ├── l1nr053.tif
+│           │   ├── l1nr062.tif
+│           │   ├── l1nr066.tif
+│           │   ├── l1nr067.tif
+│           │   ├── l1nr069.tif
+│           │   ├── l1nr070.tif
+│           │   └── l1nr074.tif
+│           ├── leaf10
+│           │   ├── l10nr013.tif
+│           │   ├── l10nr017.tif
+│           │   ├── l10nr019.tif
+│           │   ├── l10nr020.tif
+│           │   ├── l10nr022.tif
+│           │   ├── l10nr028.tif
+│           │   ├── l10nr029.tif
+│           │   ├── l10nr032.tif
+│           │   ├── l10nr036.tif
+│           │   ├── l10nr037.tif
+│           │   ├── l10nr041.tif
+│           │   ├── l10nr044.tif
+│           │   ├── l10nr047.tif
+│           │   ├── l10nr048.tif
+│           │   ├── l10nr051.tif
+│           │   ├── l10nr060.tif
+│           │   ├── l10nr064.tif
+│           │   ├── l10nr067.tif
+│           │   ├── l10nr069.tif
+│           │   ├── l10nr072.tif
+│           │   └── l10nr074.tif
+│           ├── leaf2
+│           │   ├── l2nr001.tif
+│           │   ├── l2nr002.tif
+│           │   ├── l2nr004.tif
+│           │   ├── l2nr011.tif
+│           │   ├── l2nr013.tif
+│           │   ├── l2nr014.tif
+│           │   ├── l2nr015.tif
+│           │   ├── l2nr017.tif
+│           │   ├── l2nr020.tif
+│           │   ├── l2nr022.tif
+│           │   ├── l2nr024.tif
+│           │   ├── l2nr025.tif
+│           │   ├── l2nr026.tif
+│           │   ├── l2nr032.tif
+│           │   ├── l2nr036.tif
+│           │   ├── l2nr038.tif
+│           │   ├── l2nr051.tif
+│           │   ├── l2nr056.tif
+│           │   ├── l2nr059.tif
+│           │   ├── l2nr070.tif
+│           │   └── l2nr071.tif
+│           ├── leaf3
+│           │   ├── l3nr002.tif
+│           │   ├── l3nr009.tif
+│           │   ├── l3nr012.tif
+│           │   ├── l3nr014.tif
+│           │   ├── l3nr020.tif
+│           │   ├── l3nr021.tif
+│           │   ├── l3nr025.tif
+│           │   ├── l3nr029.tif
+│           │   ├── l3nr030.tif
+│           │   ├── l3nr033.tif
+│           │   ├── l3nr039.tif
+│           │   ├── l3nr042.tif
+│           │   ├── l3nr043.tif
+│           │   ├── l3nr044.tif
+│           │   ├── l3nr047.tif
+│           │   ├── l3nr051.tif
+│           │   ├── l3nr055.tif
+│           │   ├── l3nr056.tif
+│           │   ├── l3nr062.tif
+│           │   ├── l3nr067.tif
+│           │   └── l3nr070.tif
+│           ├── leaf4
+│           │   ├── l4nr012.tif
+│           │   ├── l4nr015.tif
+│           │   ├── l4nr019.tif
+│           │   ├── l4nr022.tif
+│           │   ├── l4nr037.tif
+│           │   ├── l4nr041.tif
+│           │   ├── l4nr042.tif
+│           │   ├── l4nr043.tif
+│           │   ├── l4nr047.tif
+│           │   ├── l4nr048.tif
+│           │   ├── l4nr052.tif
+│           │   ├── l4nr055.tif
+│           │   ├── l4nr056.tif
+│           │   ├── l4nr059.tif
+│           │   ├── l4nr060.tif
+│           │   ├── l4nr064.tif
+│           │   ├── l4nr065.tif
+│           │   ├── l4nr066.tif
+│           │   ├── l4nr068.tif
+│           │   ├── l4nr073.tif
+│           │   └── l4nr075.tif
+│           ├── leaf5
+│           │   ├── l5nr001.tif
+│           │   ├── l5nr006.tif
+│           │   ├── l5nr008.tif
+│           │   ├── l5nr013.tif
+│           │   ├── l5nr015.tif
+│           │   ├── l5nr021.tif
+│           │   ├── l5nr028.tif
+│           │   ├── l5nr030.tif
+│           │   ├── l5nr032.tif
+│           │   ├── l5nr037.tif
+│           │   ├── l5nr038.tif
+│           │   ├── l5nr041.tif
+│           │   ├── l5nr044.tif
+│           │   ├── l5nr047.tif
+│           │   ├── l5nr050.tif
+│           │   ├── l5nr058.tif
+│           │   ├── l5nr059.tif
+│           │   ├── l5nr063.tif
+│           │   ├── l5nr067.tif
+│           │   ├── l5nr072.tif
+│           │   └── l5nr075.tif
+│           ├── leaf6
+│           │   ├── l6nr003.tif
+│           │   ├── l6nr007.tif
+│           │   ├── l6nr009.tif
+│           │   ├── l6nr011.tif
+│           │   ├── l6nr013.tif
+│           │   ├── l6nr017.tif
+│           │   ├── l6nr019.tif
+│           │   ├── l6nr024.tif
+│           │   ├── l6nr026.tif
+│           │   ├── l6nr034.tif
+│           │   ├── l6nr050.tif
+│           │   ├── l6nr052.tif
+│           │   ├── l6nr055.tif
+│           │   ├── l6nr060.tif
+│           │   ├── l6nr061.tif
+│           │   ├── l6nr063.tif
+│           │   ├── l6nr065.tif
+│           │   ├── l6nr068.tif
+│           │   ├── l6nr070.tif
+│           │   ├── l6nr071.tif
+│           │   └── l6nr075.tif
+│           ├── leaf7
+│           │   ├── l7nr002.tif
+│           │   ├── l7nr006.tif
+│           │   ├── l7nr009.tif
+│           │   ├── l7nr010.tif
+│           │   ├── l7nr013.tif
+│           │   ├── l7nr014.tif
+│           │   ├── l7nr017.tif
+│           │   ├── l7nr024.tif
+│           │   ├── l7nr025.tif
+│           │   ├── l7nr026.tif
+│           │   ├── l7nr028.tif
+│           │   ├── l7nr033.tif
+│           │   ├── l7nr035.tif
+│           │   ├── l7nr036.tif
+│           │   ├── l7nr039.tif
+│           │   ├── l7nr046.tif
+│           │   ├── l7nr056.tif
+│           │   ├── l7nr057.tif
+│           │   ├── l7nr058.tif
+│           │   ├── l7nr067.tif
+│           │   └── l7nr072.tif
+│           ├── leaf8
+│           │   ├── l8nr006.tif
+│           │   ├── l8nr010.tif
+│           │   ├── l8nr015.tif
+│           │   ├── l8nr018.tif
+│           │   ├── l8nr023.tif
+│           │   ├── l8nr031.tif
+│           │   ├── l8nr032.tif
+│           │   ├── l8nr036.tif
+│           │   ├── l8nr038.tif
+│           │   ├── l8nr040.tif
+│           │   ├── l8nr046.tif
+│           │   ├── l8nr049.tif
+│           │   ├── l8nr055.tif
+│           │   ├── l8nr057.tif
+│           │   ├── l8nr058.tif
+│           │   ├── l8nr059.tif
+│           │   ├── l8nr060.tif
+│           │   ├── l8nr063.tif
+│           │   ├── l8nr071.tif
+│           │   ├── l8nr073.tif
+│           │   └── l8nr074.tif
+│           └── leaf9
+│               ├── l9nr001.tif
+│               ├── l9nr004.tif
+│               ├── l9nr014.tif
+│               ├── l9nr016.tif
+│               ├── l9nr017.tif
+│               ├── l9nr018.tif
+│               ├── l9nr021.tif
+│               ├── l9nr023.tif
+│               ├── l9nr038.tif
+│               ├── l9nr039.tif
+│               ├── l9nr042.tif
+│               ├── l9nr043.tif
+│               ├── l9nr044.tif
+│               ├── l9nr045.tif
+│               ├── l9nr052.tif
+│               ├── l9nr055.tif
+│               ├── l9nr059.tif
+│               ├── l9nr061.tif
+│               ├── l9nr069.tif
+│               ├── l9nr070.tif
+│               └── l9nr073.tif
+└── single_folds
+    ├── fold1
+    │   ├── leaf1
+    │   │   ├── l1nr004.tif
+    │   │   ├── l1nr006.tif
+    │   │   ├── l1nr008.tif
+    │   │   ├── l1nr009.tif
+    │   │   ├── l1nr010.tif
+    │   │   ├── l1nr011.tif
+    │   │   ├── l1nr014.tif
+    │   │   ├── l1nr015.tif
+    │   │   ├── l1nr016.tif
+    │   │   ├── l1nr017.tif
+    │   │   ├── l1nr019.tif
+    │   │   ├── l1nr022.tif
+    │   │   ├── l1nr024.tif
+    │   │   ├── l1nr025.tif
+    │   │   ├── l1nr030.tif
+    │   │   ├── l1nr037.tif
+    │   │   ├── l1nr039.tif
+    │   │   ├── l1nr042.tif
+    │   │   ├── l1nr044.tif
+    │   │   ├── l1nr050.tif
+    │   │   ├── l1nr052.tif
+    │   │   ├── l1nr057.tif
+    │   │   ├── l1nr060.tif
+    │   │   ├── l1nr061.tif
+    │   │   └── l1nr065.tif
+    │   ├── leaf10
+    │   │   ├── l10nr002.tif
+    │   │   ├── l10nr010.tif
+    │   │   ├── l10nr014.tif
+    │   │   ├── l10nr015.tif
+    │   │   ├── l10nr016.tif
+    │   │   ├── l10nr018.tif
+    │   │   ├── l10nr023.tif
+    │   │   ├── l10nr025.tif
+    │   │   ├── l10nr026.tif
+    │   │   ├── l10nr027.tif
+    │   │   ├── l10nr031.tif
+    │   │   ├── l10nr033.tif
+    │   │   ├── l10nr039.tif
+    │   │   ├── l10nr049.tif
+    │   │   ├── l10nr050.tif
+    │   │   ├── l10nr052.tif
+    │   │   ├── l10nr053.tif
+    │   │   ├── l10nr056.tif
+    │   │   ├── l10nr058.tif
+    │   │   ├── l10nr061.tif
+    │   │   ├── l10nr062.tif
+    │   │   ├── l10nr065.tif
+    │   │   ├── l10nr066.tif
+    │   │   ├── l10nr070.tif
+    │   │   └── l10nr075.tif
+    │   ├── leaf2
+    │   │   ├── l2nr008.tif
+    │   │   ├── l2nr010.tif
+    │   │   ├── l2nr018.tif
+    │   │   ├── l2nr023.tif
+    │   │   ├── l2nr027.tif
+    │   │   ├── l2nr030.tif
+    │   │   ├── l2nr031.tif
+    │   │   ├── l2nr033.tif
+    │   │   ├── l2nr035.tif
+    │   │   ├── l2nr037.tif
+    │   │   ├── l2nr039.tif
+    │   │   ├── l2nr040.tif
+    │   │   ├── l2nr042.tif
+    │   │   ├── l2nr044.tif
+    │   │   ├── l2nr048.tif
+    │   │   ├── l2nr054.tif
+    │   │   ├── l2nr055.tif
+    │   │   ├── l2nr060.tif
+    │   │   ├── l2nr062.tif
+    │   │   ├── l2nr063.tif
+    │   │   ├── l2nr065.tif
+    │   │   ├── l2nr066.tif
+    │   │   ├── l2nr067.tif
+    │   │   ├── l2nr068.tif
+    │   │   └── l2nr074.tif
+    │   ├── leaf3
+    │   │   ├── l3nr003.tif
+    │   │   ├── l3nr005.tif
+    │   │   ├── l3nr006.tif
+    │   │   ├── l3nr008.tif
+    │   │   ├── l3nr011.tif
+    │   │   ├── l3nr013.tif
+    │   │   ├── l3nr015.tif
+    │   │   ├── l3nr018.tif
+    │   │   ├── l3nr019.tif
+    │   │   ├── l3nr023.tif
+    │   │   ├── l3nr024.tif
+    │   │   ├── l3nr026.tif
+    │   │   ├── l3nr027.tif
+    │   │   ├── l3nr035.tif
+    │   │   ├── l3nr036.tif
+    │   │   ├── l3nr048.tif
+    │   │   ├── l3nr050.tif
+    │   │   ├── l3nr058.tif
+    │   │   ├── l3nr059.tif
+    │   │   ├── l3nr060.tif
+    │   │   ├── l3nr064.tif
+    │   │   ├── l3nr066.tif
+    │   │   ├── l3nr068.tif
+    │   │   ├── l3nr071.tif
+    │   │   └── l3nr074.tif
+    │   ├── leaf4
+    │   │   ├── l4nr002.tif
+    │   │   ├── l4nr004.tif
+    │   │   ├── l4nr005.tif
+    │   │   ├── l4nr010.tif
+    │   │   ├── l4nr011.tif
+    │   │   ├── l4nr013.tif
+    │   │   ├── l4nr014.tif
+    │   │   ├── l4nr018.tif
+    │   │   ├── l4nr020.tif
+    │   │   ├── l4nr024.tif
+    │   │   ├── l4nr025.tif
+    │   │   ├── l4nr026.tif
+    │   │   ├── l4nr027.tif
+    │   │   ├── l4nr028.tif
+    │   │   ├── l4nr029.tif
+    │   │   ├── l4nr030.tif
+    │   │   ├── l4nr031.tif
+    │   │   ├── l4nr032.tif
+    │   │   ├── l4nr049.tif
+    │   │   ├── l4nr050.tif
+    │   │   ├── l4nr053.tif
+    │   │   ├── l4nr057.tif
+    │   │   ├── l4nr061.tif
+    │   │   ├── l4nr063.tif
+    │   │   └── l4nr067.tif
+    │   ├── leaf5
+    │   │   ├── l5nr004.tif
+    │   │   ├── l5nr012.tif
+    │   │   ├── l5nr016.tif
+    │   │   ├── l5nr017.tif
+    │   │   ├── l5nr019.tif
+    │   │   ├── l5nr020.tif
+    │   │   ├── l5nr022.tif
+    │   │   ├── l5nr024.tif
+    │   │   ├── l5nr025.tif
+    │   │   ├── l5nr026.tif
+    │   │   ├── l5nr027.tif
+    │   │   ├── l5nr029.tif
+    │   │   ├── l5nr031.tif
+    │   │   ├── l5nr033.tif
+    │   │   ├── l5nr035.tif
+    │   │   ├── l5nr039.tif
+    │   │   ├── l5nr040.tif
+    │   │   ├── l5nr043.tif
+    │   │   ├── l5nr052.tif
+    │   │   ├── l5nr054.tif
+    │   │   ├── l5nr064.tif
+    │   │   ├── l5nr065.tif
+    │   │   ├── l5nr066.tif
+    │   │   ├── l5nr070.tif
+    │   │   └── l5nr073.tif
+    │   ├── leaf6
+    │   │   ├── l6nr001.tif
+    │   │   ├── l6nr004.tif
+    │   │   ├── l6nr010.tif
+    │   │   ├── l6nr012.tif
+    │   │   ├── l6nr016.tif
+    │   │   ├── l6nr018.tif
+    │   │   ├── l6nr021.tif
+    │   │   ├── l6nr023.tif
+    │   │   ├── l6nr030.tif
+    │   │   ├── l6nr031.tif
+    │   │   ├── l6nr032.tif
+    │   │   ├── l6nr039.tif
+    │   │   ├── l6nr041.tif
+    │   │   ├── l6nr042.tif
+    │   │   ├── l6nr043.tif
+    │   │   ├── l6nr044.tif
+    │   │   ├── l6nr045.tif
+    │   │   ├── l6nr048.tif
+    │   │   ├── l6nr049.tif
+    │   │   ├── l6nr051.tif
+    │   │   ├── l6nr053.tif
+    │   │   ├── l6nr054.tif
+    │   │   ├── l6nr057.tif
+    │   │   ├── l6nr069.tif
+    │   │   └── l6nr074.tif
+    │   ├── leaf7
+    │   │   ├── l7nr001.tif
+    │   │   ├── l7nr003.tif
+    │   │   ├── l7nr005.tif
+    │   │   ├── l7nr007.tif
+    │   │   ├── l7nr015.tif
+    │   │   ├── l7nr016.tif
+    │   │   ├── l7nr020.tif
+    │   │   ├── l7nr022.tif
+    │   │   ├── l7nr027.tif
+    │   │   ├── l7nr030.tif
+    │   │   ├── l7nr034.tif
+    │   │   ├── l7nr037.tif
+    │   │   ├── l7nr040.tif
+    │   │   ├── l7nr041.tif
+    │   │   ├── l7nr042.tif
+    │   │   ├── l7nr043.tif
+    │   │   ├── l7nr045.tif
+    │   │   ├── l7nr047.tif
+    │   │   ├── l7nr048.tif
+    │   │   ├── l7nr053.tif
+    │   │   ├── l7nr055.tif
+    │   │   ├── l7nr059.tif
+    │   │   ├── l7nr061.tif
+    │   │   ├── l7nr063.tif
+    │   │   └── l7nr073.tif
+    │   ├── leaf8
+    │   │   ├── l8nr007.tif
+    │   │   ├── l8nr011.tif
+    │   │   ├── l8nr012.tif
+    │   │   ├── l8nr017.tif
+    │   │   ├── l8nr019.tif
+    │   │   ├── l8nr025.tif
+    │   │   ├── l8nr026.tif
+    │   │   ├── l8nr027.tif
+    │   │   ├── l8nr028.tif
+    │   │   ├── l8nr033.tif
+    │   │   ├── l8nr034.tif
+    │   │   ├── l8nr037.tif
+    │   │   ├── l8nr041.tif
+    │   │   ├── l8nr042.tif
+    │   │   ├── l8nr043.tif
+    │   │   ├── l8nr045.tif
+    │   │   ├── l8nr051.tif
+    │   │   ├── l8nr052.tif
+    │   │   ├── l8nr054.tif
+    │   │   ├── l8nr056.tif
+    │   │   ├── l8nr061.tif
+    │   │   ├── l8nr067.tif
+    │   │   ├── l8nr069.tif
+    │   │   ├── l8nr072.tif
+    │   │   └── l8nr075.tif
+    │   └── leaf9
+    │       ├── l9nr003.tif
+    │       ├── l9nr005.tif
+    │       ├── l9nr006.tif
+    │       ├── l9nr007.tif
+    │       ├── l9nr008.tif
+    │       ├── l9nr010.tif
+    │       ├── l9nr012.tif
+    │       ├── l9nr019.tif
+    │       ├── l9nr020.tif
+    │       ├── l9nr028.tif
+    │       ├── l9nr035.tif
+    │       ├── l9nr036.tif
+    │       ├── l9nr037.tif
+    │       ├── l9nr046.tif
+    │       ├── l9nr050.tif
+    │       ├── l9nr053.tif
+    │       ├── l9nr057.tif
+    │       ├── l9nr058.tif
+    │       ├── l9nr062.tif
+    │       ├── l9nr063.tif
+    │       ├── l9nr066.tif
+    │       ├── l9nr067.tif
+    │       ├── l9nr071.tif
+    │       ├── l9nr072.tif
+    │       └── l9nr074.tif
+    ├── fold2
+    │   ├── leaf1
+    │   │   ├── l1nr001.tif
+    │   │   ├── l1nr002.tif
+    │   │   ├── l1nr003.tif
+    │   │   ├── l1nr012.tif
+    │   │   ├── l1nr020.tif
+    │   │   ├── l1nr021.tif
+    │   │   ├── l1nr027.tif
+    │   │   ├── l1nr028.tif
+    │   │   ├── l1nr035.tif
+    │   │   ├── l1nr038.tif
+    │   │   ├── l1nr043.tif
+    │   │   ├── l1nr046.tif
+    │   │   ├── l1nr049.tif
+    │   │   ├── l1nr051.tif
+    │   │   ├── l1nr054.tif
+    │   │   ├── l1nr055.tif
+    │   │   ├── l1nr056.tif
+    │   │   ├── l1nr058.tif
+    │   │   ├── l1nr059.tif
+    │   │   ├── l1nr063.tif
+    │   │   ├── l1nr064.tif
+    │   │   ├── l1nr068.tif
+    │   │   ├── l1nr071.tif
+    │   │   ├── l1nr073.tif
+    │   │   └── l1nr075.tif
+    │   ├── leaf10
+    │   │   ├── l10nr001.tif
+    │   │   ├── l10nr003.tif
+    │   │   ├── l10nr004.tif
+    │   │   ├── l10nr005.tif
+    │   │   ├── l10nr006.tif
+    │   │   ├── l10nr007.tif
+    │   │   ├── l10nr008.tif
+    │   │   ├── l10nr009.tif
+    │   │   ├── l10nr011.tif
+    │   │   ├── l10nr012.tif
+    │   │   ├── l10nr024.tif
+    │   │   ├── l10nr030.tif
+    │   │   ├── l10nr035.tif
+    │   │   ├── l10nr038.tif
+    │   │   ├── l10nr040.tif
+    │   │   ├── l10nr042.tif
+    │   │   ├── l10nr043.tif
+    │   │   ├── l10nr045.tif
+    │   │   ├── l10nr046.tif
+    │   │   ├── l10nr054.tif
+    │   │   ├── l10nr057.tif
+    │   │   ├── l10nr059.tif
+    │   │   ├── l10nr068.tif
+    │   │   ├── l10nr071.tif
+    │   │   └── l10nr073.tif
+    │   ├── leaf2
+    │   │   ├── l2nr003.tif
+    │   │   ├── l2nr005.tif
+    │   │   ├── l2nr006.tif
+    │   │   ├── l2nr007.tif
+    │   │   ├── l2nr009.tif
+    │   │   ├── l2nr016.tif
+    │   │   ├── l2nr019.tif
+    │   │   ├── l2nr021.tif
+    │   │   ├── l2nr028.tif
+    │   │   ├── l2nr029.tif
+    │   │   ├── l2nr034.tif
+    │   │   ├── l2nr043.tif
+    │   │   ├── l2nr047.tif
+    │   │   ├── l2nr049.tif
+    │   │   ├── l2nr050.tif
+    │   │   ├── l2nr052.tif
+    │   │   ├── l2nr053.tif
+    │   │   ├── l2nr057.tif
+    │   │   ├── l2nr058.tif
+    │   │   ├── l2nr061.tif
+    │   │   ├── l2nr064.tif
+    │   │   ├── l2nr069.tif
+    │   │   ├── l2nr072.tif
+    │   │   ├── l2nr073.tif
+    │   │   └── l2nr075.tif
+    │   ├── leaf3
+    │   │   ├── l3nr001.tif
+    │   │   ├── l3nr004.tif
+    │   │   ├── l3nr007.tif
+    │   │   ├── l3nr017.tif
+    │   │   ├── l3nr022.tif
+    │   │   ├── l3nr028.tif
+    │   │   ├── l3nr031.tif
+    │   │   ├── l3nr032.tif
+    │   │   ├── l3nr034.tif
+    │   │   ├── l3nr037.tif
+    │   │   ├── l3nr038.tif
+    │   │   ├── l3nr040.tif
+    │   │   ├── l3nr041.tif
+    │   │   ├── l3nr045.tif
+    │   │   ├── l3nr049.tif
+    │   │   ├── l3nr052.tif
+    │   │   ├── l3nr053.tif
+    │   │   ├── l3nr054.tif
+    │   │   ├── l3nr057.tif
+    │   │   ├── l3nr061.tif
+    │   │   ├── l3nr063.tif
+    │   │   ├── l3nr065.tif
+    │   │   ├── l3nr072.tif
+    │   │   ├── l3nr073.tif
+    │   │   └── l3nr075.tif
+    │   ├── leaf4
+    │   │   ├── l4nr001.tif
+    │   │   ├── l4nr003.tif
+    │   │   ├── l4nr006.tif
+    │   │   ├── l4nr007.tif
+    │   │   ├── l4nr008.tif
+    │   │   ├── l4nr009.tif
+    │   │   ├── l4nr016.tif
+    │   │   ├── l4nr017.tif
+    │   │   ├── l4nr021.tif
+    │   │   ├── l4nr023.tif
+    │   │   ├── l4nr033.tif
+    │   │   ├── l4nr036.tif
+    │   │   ├── l4nr038.tif
+    │   │   ├── l4nr039.tif
+    │   │   ├── l4nr040.tif
+    │   │   ├── l4nr044.tif
+    │   │   ├── l4nr045.tif
+    │   │   ├── l4nr046.tif
+    │   │   ├── l4nr051.tif
+    │   │   ├── l4nr054.tif
+    │   │   ├── l4nr062.tif
+    │   │   ├── l4nr069.tif
+    │   │   ├── l4nr070.tif
+    │   │   ├── l4nr072.tif
+    │   │   └── l4nr074.tif
+    │   ├── leaf5
+    │   │   ├── l5nr002.tif
+    │   │   ├── l5nr003.tif
+    │   │   ├── l5nr005.tif
+    │   │   ├── l5nr007.tif
+    │   │   ├── l5nr009.tif
+    │   │   ├── l5nr010.tif
+    │   │   ├── l5nr011.tif
+    │   │   ├── l5nr018.tif
+    │   │   ├── l5nr023.tif
+    │   │   ├── l5nr034.tif
+    │   │   ├── l5nr036.tif
+    │   │   ├── l5nr042.tif
+    │   │   ├── l5nr045.tif
+    │   │   ├── l5nr046.tif
+    │   │   ├── l5nr048.tif
+    │   │   ├── l5nr049.tif
+    │   │   ├── l5nr051.tif
+    │   │   ├── l5nr053.tif
+    │   │   ├── l5nr056.tif
+    │   │   ├── l5nr057.tif
+    │   │   ├── l5nr060.tif
+    │   │   ├── l5nr061.tif
+    │   │   ├── l5nr068.tif
+    │   │   ├── l5nr069.tif
+    │   │   └── l5nr074.tif
+    │   ├── leaf6
+    │   │   ├── l6nr002.tif
+    │   │   ├── l6nr006.tif
+    │   │   ├── l6nr008.tif
+    │   │   ├── l6nr014.tif
+    │   │   ├── l6nr020.tif
+    │   │   ├── l6nr022.tif
+    │   │   ├── l6nr025.tif
+    │   │   ├── l6nr027.tif
+    │   │   ├── l6nr028.tif
+    │   │   ├── l6nr029.tif
+    │   │   ├── l6nr033.tif
+    │   │   ├── l6nr035.tif
+    │   │   ├── l6nr036.tif
+    │   │   ├── l6nr038.tif
+    │   │   ├── l6nr040.tif
+    │   │   ├── l6nr046.tif
+    │   │   ├── l6nr047.tif
+    │   │   ├── l6nr056.tif
+    │   │   ├── l6nr058.tif
+    │   │   ├── l6nr059.tif
+    │   │   ├── l6nr062.tif
+    │   │   ├── l6nr064.tif
+    │   │   ├── l6nr066.tif
+    │   │   ├── l6nr067.tif
+    │   │   └── l6nr073.tif
+    │   ├── leaf7
+    │   │   ├── l7nr004.tif
+    │   │   ├── l7nr011.tif
+    │   │   ├── l7nr012.tif
+    │   │   ├── l7nr018.tif
+    │   │   ├── l7nr019.tif
+    │   │   ├── l7nr021.tif
+    │   │   ├── l7nr023.tif
+    │   │   ├── l7nr029.tif
+    │   │   ├── l7nr031.tif
+    │   │   ├── l7nr032.tif
+    │   │   ├── l7nr038.tif
+    │   │   ├── l7nr044.tif
+    │   │   ├── l7nr049.tif
+    │   │   ├── l7nr050.tif
+    │   │   ├── l7nr051.tif
+    │   │   ├── l7nr052.tif
+    │   │   ├── l7nr060.tif
+    │   │   ├── l7nr062.tif
+    │   │   ├── l7nr065.tif
+    │   │   ├── l7nr066.tif
+    │   │   ├── l7nr068.tif
+    │   │   ├── l7nr070.tif
+    │   │   ├── l7nr071.tif
+    │   │   ├── l7nr074.tif
+    │   │   └── l7nr075.tif
+    │   ├── leaf8
+    │   │   ├── l8nr001.tif
+    │   │   ├── l8nr002.tif
+    │   │   ├── l8nr003.tif
+    │   │   ├── l8nr004.tif
+    │   │   ├── l8nr005.tif
+    │   │   ├── l8nr008.tif
+    │   │   ├── l8nr009.tif
+    │   │   ├── l8nr016.tif
+    │   │   ├── l8nr020.tif
+    │   │   ├── l8nr021.tif
+    │   │   ├── l8nr022.tif
+    │   │   ├── l8nr024.tif
+    │   │   ├── l8nr029.tif
+    │   │   ├── l8nr030.tif
+    │   │   ├── l8nr035.tif
+    │   │   ├── l8nr039.tif
+    │   │   ├── l8nr047.tif
+    │   │   ├── l8nr048.tif
+    │   │   ├── l8nr050.tif
+    │   │   ├── l8nr053.tif
+    │   │   ├── l8nr062.tif
+    │   │   ├── l8nr065.tif
+    │   │   ├── l8nr066.tif
+    │   │   ├── l8nr068.tif
+    │   │   └── l8nr070.tif
+    │   └── leaf9
+    │       ├── l9nr002.tif
+    │       ├── l9nr009.tif
+    │       ├── l9nr011.tif
+    │       ├── l9nr013.tif
+    │       ├── l9nr015.tif
+    │       ├── l9nr022.tif
+    │       ├── l9nr025.tif
+    │       ├── l9nr026.tif
+    │       ├── l9nr027.tif
+    │       ├── l9nr029.tif
+    │       ├── l9nr030.tif
+    │       ├── l9nr031.tif
+    │       ├── l9nr032.tif
+    │       ├── l9nr033.tif
+    │       ├── l9nr034.tif
+    │       ├── l9nr040.tif
+    │       ├── l9nr047.tif
+    │       ├── l9nr048.tif
+    │       ├── l9nr049.tif
+    │       ├── l9nr051.tif
+    │       ├── l9nr060.tif
+    │       ├── l9nr064.tif
+    │       ├── l9nr065.tif
+    │       ├── l9nr068.tif
+    │       └── l9nr075.tif
+    └── fold3
+        ├── leaf1
+        │   ├── l1nr005.tif
+        │   ├── l1nr007.tif
+        │   ├── l1nr013.tif
+        │   ├── l1nr018.tif
+        │   ├── l1nr023.tif
+        │   ├── l1nr026.tif
+        │   ├── l1nr029.tif
+        │   ├── l1nr031.tif
+        │   ├── l1nr032.tif
+        │   ├── l1nr033.tif
+        │   ├── l1nr034.tif
+        │   ├── l1nr036.tif
+        │   ├── l1nr040.tif
+        │   ├── l1nr041.tif
+        │   ├── l1nr045.tif
+        │   ├── l1nr047.tif
+        │   ├── l1nr048.tif
+        │   ├── l1nr053.tif
+        │   ├── l1nr062.tif
+        │   ├── l1nr066.tif
+        │   ├── l1nr067.tif
+        │   ├── l1nr069.tif
+        │   ├── l1nr070.tif
+        │   ├── l1nr072.tif
+        │   └── l1nr074.tif
+        ├── leaf10
+        │   ├── l10nr013.tif
+        │   ├── l10nr017.tif
+        │   ├── l10nr019.tif
+        │   ├── l10nr020.tif
+        │   ├── l10nr021.tif
+        │   ├── l10nr022.tif
+        │   ├── l10nr028.tif
+        │   ├── l10nr029.tif
+        │   ├── l10nr032.tif
+        │   ├── l10nr034.tif
+        │   ├── l10nr036.tif
+        │   ├── l10nr037.tif
+        │   ├── l10nr041.tif
+        │   ├── l10nr044.tif
+        │   ├── l10nr047.tif
+        │   ├── l10nr048.tif
+        │   ├── l10nr051.tif
+        │   ├── l10nr055.tif
+        │   ├── l10nr060.tif
+        │   ├── l10nr063.tif
+        │   ├── l10nr064.tif
+        │   ├── l10nr067.tif
+        │   ├── l10nr069.tif
+        │   ├── l10nr072.tif
+        │   └── l10nr074.tif
+        ├── leaf2
+        │   ├── l2nr001.tif
+        │   ├── l2nr002.tif
+        │   ├── l2nr004.tif
+        │   ├── l2nr011.tif
+        │   ├── l2nr012.tif
+        │   ├── l2nr013.tif
+        │   ├── l2nr014.tif
+        │   ├── l2nr015.tif
+        │   ├── l2nr017.tif
+        │   ├── l2nr020.tif
+        │   ├── l2nr022.tif
+        │   ├── l2nr024.tif
+        │   ├── l2nr025.tif
+        │   ├── l2nr026.tif
+        │   ├── l2nr032.tif
+        │   ├── l2nr036.tif
+        │   ├── l2nr038.tif
+        │   ├── l2nr041.tif
+        │   ├── l2nr045.tif
+        │   ├── l2nr046.tif
+        │   ├── l2nr051.tif
+        │   ├── l2nr056.tif
+        │   ├── l2nr059.tif
+        │   ├── l2nr070.tif
+        │   └── l2nr071.tif
+        ├── leaf3
+        │   ├── l3nr002.tif
+        │   ├── l3nr009.tif
+        │   ├── l3nr010.tif
+        │   ├── l3nr012.tif
+        │   ├── l3nr014.tif
+        │   ├── l3nr016.tif
+        │   ├── l3nr020.tif
+        │   ├── l3nr021.tif
+        │   ├── l3nr025.tif
+        │   ├── l3nr029.tif
+        │   ├── l3nr030.tif
+        │   ├── l3nr033.tif
+        │   ├── l3nr039.tif
+        │   ├── l3nr042.tif
+        │   ├── l3nr043.tif
+        │   ├── l3nr044.tif
+        │   ├── l3nr046.tif
+        │   ├── l3nr047.tif
+        │   ├── l3nr051.tif
+        │   ├── l3nr055.tif
+        │   ├── l3nr056.tif
+        │   ├── l3nr062.tif
+        │   ├── l3nr067.tif
+        │   ├── l3nr069.tif
+        │   └── l3nr070.tif
+        ├── leaf4
+        │   ├── l4nr012.tif
+        │   ├── l4nr015.tif
+        │   ├── l4nr019.tif
+        │   ├── l4nr022.tif
+        │   ├── l4nr034.tif
+        │   ├── l4nr035.tif
+        │   ├── l4nr037.tif
+        │   ├── l4nr041.tif
+        │   ├── l4nr042.tif
+        │   ├── l4nr043.tif
+        │   ├── l4nr047.tif
+        │   ├── l4nr048.tif
+        │   ├── l4nr052.tif
+        │   ├── l4nr055.tif
+        │   ├── l4nr056.tif
+        │   ├── l4nr058.tif
+        │   ├── l4nr059.tif
+        │   ├── l4nr060.tif
+        │   ├── l4nr064.tif
+        │   ├── l4nr065.tif
+        │   ├── l4nr066.tif
+        │   ├── l4nr068.tif
+        │   ├── l4nr071.tif
+        │   ├── l4nr073.tif
+        │   └── l4nr075.tif
+        ├── leaf5
+        │   ├── l5nr001.tif
+        │   ├── l5nr006.tif
+        │   ├── l5nr008.tif
+        │   ├── l5nr013.tif
+        │   ├── l5nr014.tif
+        │   ├── l5nr015.tif
+        │   ├── l5nr021.tif
+        │   ├── l5nr028.tif
+        │   ├── l5nr030.tif
+        │   ├── l5nr032.tif
+        │   ├── l5nr037.tif
+        │   ├── l5nr038.tif
+        │   ├── l5nr041.tif
+        │   ├── l5nr044.tif
+        │   ├── l5nr047.tif
+        │   ├── l5nr050.tif
+        │   ├── l5nr055.tif
+        │   ├── l5nr058.tif
+        │   ├── l5nr059.tif
+        │   ├── l5nr062.tif
+        │   ├── l5nr063.tif
+        │   ├── l5nr067.tif
+        │   ├── l5nr071.tif
+        │   ├── l5nr072.tif
+        │   └── l5nr075.tif
+        ├── leaf6
+        │   ├── l6nr003.tif
+        │   ├── l6nr005.tif
+        │   ├── l6nr007.tif
+        │   ├── l6nr009.tif
+        │   ├── l6nr011.tif
+        │   ├── l6nr013.tif
+        │   ├── l6nr015.tif
+        │   ├── l6nr017.tif
+        │   ├── l6nr019.tif
+        │   ├── l6nr024.tif
+        │   ├── l6nr026.tif
+        │   ├── l6nr034.tif
+        │   ├── l6nr037.tif
+        │   ├── l6nr050.tif
+        │   ├── l6nr052.tif
+        │   ├── l6nr055.tif
+        │   ├── l6nr060.tif
+        │   ├── l6nr061.tif
+        │   ├── l6nr063.tif
+        │   ├── l6nr065.tif
+        │   ├── l6nr068.tif
+        │   ├── l6nr070.tif
+        │   ├── l6nr071.tif
+        │   ├── l6nr072.tif
+        │   └── l6nr075.tif
+        ├── leaf7
+        │   ├── l7nr002.tif
+        │   ├── l7nr006.tif
+        │   ├── l7nr008.tif
+        │   ├── l7nr009.tif
+        │   ├── l7nr010.tif
+        │   ├── l7nr013.tif
+        │   ├── l7nr014.tif
+        │   ├── l7nr017.tif
+        │   ├── l7nr024.tif
+        │   ├── l7nr025.tif
+        │   ├── l7nr026.tif
+        │   ├── l7nr028.tif
+        │   ├── l7nr033.tif
+        │   ├── l7nr035.tif
+        │   ├── l7nr036.tif
+        │   ├── l7nr039.tif
+        │   ├── l7nr046.tif
+        │   ├── l7nr054.tif
+        │   ├── l7nr056.tif
+        │   ├── l7nr057.tif
+        │   ├── l7nr058.tif
+        │   ├── l7nr064.tif
+        │   ├── l7nr067.tif
+        │   ├── l7nr069.tif
+        │   └── l7nr072.tif
+        ├── leaf8
+        │   ├── l8nr006.tif
+        │   ├── l8nr010.tif
+        │   ├── l8nr013.tif
+        │   ├── l8nr014.tif
+        │   ├── l8nr015.tif
+        │   ├── l8nr018.tif
+        │   ├── l8nr023.tif
+        │   ├── l8nr031.tif
+        │   ├── l8nr032.tif
+        │   ├── l8nr036.tif
+        │   ├── l8nr038.tif
+        │   ├── l8nr040.tif
+        │   ├── l8nr044.tif
+        │   ├── l8nr046.tif
+        │   ├── l8nr049.tif
+        │   ├── l8nr055.tif
+        │   ├── l8nr057.tif
+        │   ├── l8nr058.tif
+        │   ├── l8nr059.tif
+        │   ├── l8nr060.tif
+        │   ├── l8nr063.tif
+        │   ├── l8nr064.tif
+        │   ├── l8nr071.tif
+        │   ├── l8nr073.tif
+        │   └── l8nr074.tif
+        └── leaf9
+            ├── l9nr001.tif
+            ├── l9nr004.tif
+            ├── l9nr014.tif
+            ├── l9nr016.tif
+            ├── l9nr017.tif
+            ├── l9nr018.tif
+            ├── l9nr021.tif
+            ├── l9nr023.tif
+            ├── l9nr024.tif
+            ├── l9nr038.tif
+            ├── l9nr039.tif
+            ├── l9nr041.tif
+            ├── l9nr042.tif
+            ├── l9nr043.tif
+            ├── l9nr044.tif
+            ├── l9nr045.tif
+            ├── l9nr052.tif
+            ├── l9nr054.tif
+            ├── l9nr055.tif
+            ├── l9nr056.tif
+            ├── l9nr059.tif
+            ├── l9nr061.tif
+            ├── l9nr069.tif
+            ├── l9nr070.tif
+            └── l9nr073.tif
+
+236 directories, 4290 files
