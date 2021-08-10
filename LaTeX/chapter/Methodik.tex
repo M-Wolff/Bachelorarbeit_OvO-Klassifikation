@@ -1,10 +1,34 @@
 \chapter{Methodik}
 \label{ch:methodik}
-\todo{deutlich machen, was ich anders gemacht habe als Pawara und wieso}
-\todo{generelles Verfahren in eigenen Worten beschreiben}
 
-\section{OvO-Kodierung}
+\section{Kodierung}
 \label{ch:methodik_kodierung}
+\subsection{OvA-Kodierung}
+Bei der standardmäßig verwendeten One-vs-All Kodierung befindet sich am Ende des Netzes eine \textit{Softmax}-Schicht, die bei $K$ Klassen $K$ Ausgabewerte produziert.
+
+Die Netzausgabe hat die Form $\overrightarrow{\widehat{y}_{OvA}} = \begin{bmatrix}
+\widehat{y}_1 & \widehat{y}_2 & ... & \widehat{y}_i & ... & \widehat{y}_{K-1} & \widehat{y}_K
+\end{bmatrix} $.\\
+
+Dabei summieren sich alle Werte im Ausgabevektor $\overrightarrow{\widehat{y}_{OvA}}$ zu $1$ auf 
+\[1 = \sum_{i=1}^K{\widehat{y}_i} \qquad \text{mit } \widehat{y}_i \in \overrightarrow{\widehat{y}_{OvA}}\]
+und bilden somit einen Wahrscheinlichkeitsvektor, bei dem der Wert $\widehat{y}_i$ die Wahrscheinlichkeit angibt, mit der das zu klassifizierende Bild der Klasse $i$ zugewiesen wird.\\
+
+Als Fehlerfunktion wird, wie meistens üblich, die \textit{Cross Entropy Loss} Funktion verwendet. Für den \textit{One-Hot}-kodierten Zielvektor $\overrightarrow{y_{OvA}} = \begin{bmatrix} y_1 & y_2 & ... & y_i & ... & y_{K-i} & y_K \end{bmatrix}$ der Klasse $k$ gilt, dass alle Elemente des Vektors $0$ sind außer dem einem Eintrag $y_k$ an der Stelle $k$, der den Wert $1$ besitzt.
+
+
+Der Cross Entropy Loss wird dann elementweise für den Zielvektor $\overrightarrow{y_{OvA}}$ und die Netzausgabe $\overrightarrow{\widehat{y}_{OvA}}$ berechnet und aufsummiert:
+\[L_{CE} = - \sum_{i=1}^K{y_i * \log{(\widehat{y}_i})} \qquad \text{mit } y_i \in \overrightarrow{y_{OvA}}, \quad \widehat{y}_i \in \overrightarrow{\widehat{y}_{OvA}}\]
+
+Da alle $y_i$ außer einem den Wert $0$ besitzen und somit alle Summanden bis auf einen einzigen $0$ betragen, lässt sich die Summe auflösen zu 
+\[L_{CE} = - y_k * \log{(\widehat{y}_k)} = -1 * \log{(\widehat{y}_k)} = - \log{(\widehat{y}_k)}\]
+mit $k$ als Klassennummer des Trainingsbeispiels, zu der es tatsächlich gehört.
+
+Da die Logarithmusfunktion zwischen 0 und 1 streng monoton steigt, aber in diesem Intervall einen negativen Wertebereich produziert und sich bei\\ $log(1)=0$ ihr Maximum in dem von der Softmax Funktion produzierten Wertebereich von $[0, 1]$ befindet, wird durch Minimierung der Fehlerfunktion $L_{CE}$ effektiv die Wahrscheinlichkeit $\widehat{y}_k$ für die tatsächliche Klasse $k$ maximiert.
+
+
+\subsection{OvO-Kodierung}
+\todo{generelles Verfahren in eigenen Worten beschreiben}
 \todo{Umsetzung: OvO Matrix, Kodierung, Klassifizierung, eigene Loss-Funktion, softmax vs tanh}
 \todo{Warum Datensätze mit 3 Klassen verwendet wurden}
 
@@ -184,6 +208,55 @@ Dadurch kann eine allgemeinere Aussage über die Vor- und Nachteile der OvO und 
 
 Außerdem kann durch die verschiedenen Trainingsparameter analysiert werden, in welchen Situationen die OvO Klassifikation seine theoretischen Vorteile in der Praxis besonders gut ausnutzen kann und wann sich eine Implementation des OvO Klassifikationsschemas eher nicht lohnt.
 
+
+\begin{figure}[H]
+\begin{tabular}{|c|c|c|}
+\hline 
+\multirow{2}{*}{\textbf{Parameter}} & \multirow{2}{*}{\textbf{mögliche Werte}} & \textbf{Anzahl} \\ 
+& & \textbf{möglicher Werte} \\
+\hline 
+Framework & \{TF1.13.1, TF2.4.1, torch\} & 3\\
+\hline
+Datensatz & s. Kapitel \ref{ch:methodik_datensaetze} & 15\\
+\hline 
+\multirow{2}{*}{Netztyp} & \{ResNet-50, InceptionV3, & \multirow{2}{*}{3} \\
+ & Pawara-InceptionV3\} & \\
+\hline
+Trainsize (\%) & \{10, 20, 50, 80, 100\}& 5 \\
+\hline
+Gewichte & \{Scratch, Finetune\} & 2 \\
+\hline
+5- bzw. 3-Fold & \multirow{2}{*}{\{exp1, exp2, ..., exp5\}} & \multirow{2}{*}{3 bzw. 5} \\
+Cross Validation & & \\
+\hline
+Klassifikationsschema & \{OvA, OvO\} & 2 \\
+\hline
+\end{tabular} 
+\caption{Übersicht über alle Trainingsparameter und deren mögliche Werte}
+\label{tab:parameterUebersicht}
+\end{figure}
+
+Für jede der beiden TensorFlow \cite{tensorflow} Versionen ergibt sich folgende Anzahl zu trainierender Netze:\\
+\begin{adjustbox}{width=\textwidth, center}
+10 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 5 Folds * 2 Klassifikationsschema = \textbf{3000} Netze\\
+\end{adjustbox}
+Zusätzlich dazu kommen die 4 SwedishLeaves \cite{swedishLeaves} Datensätze mit 3-Fold Cross Validation:\\
+\begin{adjustbox}{width=\textwidth, center}
+4 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 3 Folds * 2 Klassifikationsschema = \textbf{720} Netze\\
+\end{adjustbox}
+Außerdem wurde Cifar10 \cite{cifar10} nur auf Resnet-50 Scratch trainiert:\\
+\begin{adjustbox}{width=\textwidth, center}
+1 Datensatz * 1 Netztypen * 5 Trainsizes * 1 Gewicht (Scratch) * 5 Folds * 2 Klassifikationsschema = \textbf{50} Netze\\
+\end{adjustbox}
+\\
+Insgesamt gibt es pro TensorFlow \cite{tensorflow} Version also\\
+$3000 + 720 + 50 = \textbf{3770}$ zu trainierende Netze.\\\\
+
+Für Torch \cite{pytorch} werden nur 2 der insgesamt 3 Netztypen verwendet.\\
+Es müssen also $(3000 + 720) * \frac{2}{3} + 50 = \textbf{2530}$ Netze trainiert werden.\\
+
+Insgesamt ergeben sich also $2 * 3770 + 2530 = \textbf{10.070}$ verschiedene Kombinationen an Trainingsparametern um Netze zu trainieren.
+
 \subsection{Frameworks}
 Zu Beginn wurde das Training für diese Bachelorarbeit mit TensorFlow 2.4.1 \cite{tensorflow} durchgeführt. Jedoch wurde schnell deutlich, dass die Ergebnisse mit dieser Version von TensorFlow nicht den Erwartungen entsprechen und nicht mit den im Paper von Pawara et al. \cite{pawaraPaper} vorgestellten Ergebnissen übereinstimmen. Dabei sind die Abweichungen bei einigen Datensätzen und Kombinationen von Trainingsparametern deutlich größer als bei anderen (s. Kapitel \ref{ch:ergebnisse} und \ref{ch:diskussion}). \\
 
@@ -198,9 +271,9 @@ Damit soll sichergestellt werden, dass die Aussage über die Auswirkung der OvO 
 
 \subsection{Netztypen}
 \label{ch:methodik_netze}
-Für das Training werden die zwei beliebten Netzarchitekturen \textit{ResNet-50} und \textit{Inception V3} verwendet. Als Auflösung der Bilder für die Netze wurde bei \textit{ResNet-50} standardmäßig 224x224 Pixel und bei \textit{Inception V3} 299x299 Pixel verwendet. Größere oder kleinere Bilder in den Datensätzen wurden entsprechend skaliert.
+Für das Training werden die zwei beliebten Netzarchitekturen \textbf{ResNet-50} und \textbf{InceptionV3} verwendet. Als Auflösung der Bilder für die Netze wurde bei \textit{ResNet-50} standardmäßig 224x224 Pixel und bei \textit{InceptionV3} 299x299 Pixel verwendet. Größere oder kleinere Bilder in den Datensätzen wurden entsprechend skaliert.
 
-Für das Netz \textit{Inception V3} hat die Autorin in dem auf Ihrer Webseite zur Verfügung gestellten Quellcode \cite{pawaraWebsiteCode} einige Änderungen an den letzten Schichten des Netzes vorgenommen. So wird beispielsweise eine zusätzliche \textit{BatchNormalization}-Schicht und eine \textit{Dropout}-Schicht eingefügt, die es in der Standardimplementierung von \textit{Inception V3} nicht gibt (s. Abb. \ref{fig:inceptionAenderungen}).
+Für das Netz \textit{Inception V3} hat die Autorin in dem auf Ihrer Webseite zur Verfügung gestellten Quellcode \cite{pawaraWebsiteCode} einige Änderungen an den letzten Schichten des Netzes vorgenommen. So wird beispielsweise eine zusätzliche \textit{BatchNormalization}-Schicht und eine \textit{Dropout}-Schicht eingefügt, die es in der Standardimplementierung von \textit{InceptionV3} nicht gibt (s. Abb. \ref{fig:inceptionAenderungen}). Diese veränderte Version des \textit{InceptionV3} Netzes wird im weiteren Verlauf als \textbf{Pawara-InceptionV3} bezeichnet.
 
 Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wurde für OvO und OvA jeweils auf die entsprechende Anzahl an Klassifikatoren angepasst. Für die OvA Klassifikation hat das Netz genau so viele Ausgabewerte wie es Klassen gibt, für OvO gibt das Netz bei $k$ Klassen $\frac{k(k-1)}{2}$ Werte entsprechend des OvO Kodierungsschemas (s. Kapitel \ref{ch:methodik_kodierung}) aus.
 
@@ -227,16 +300,46 @@ Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wu
 
 
 \subsection{Trainsize}
+Um zu untersuchen, wie sich die Anzahl der zur Verfügung stehenden Trainingsdaten auf die Klassifikationsgenauigkeit der Netze auswirkt, wird für jede Kombination der anderen Parameter mit einer eingeschränkten Trainingsmenge von 10, 20, 50, 80 und 100 Prozent trainiert. Dabei werden die zur aktuellen Konfiguration der anderen Parameter gehörenden Testdaten unverändert verwendet, lediglich die Trainingsdaten werden auf eine Teilmenge eingeschränkt.\\
 
-\todo{deterministische Datensatz-Splits}
+Im Quellcode von Pawara et al. \cite{pawaraWebsiteCode} wird bei jedem Trainingsdurchlauf eine neue Teilmenge zufällig bestimmt, was zu zufällig auftretenden Ausreißern durch gut oder schlecht gewählte Teilmengen führt.
+Daher werden die Einteilungen in Teilmengen in dieser Bachelorarbeit einmalig zufällig bestimmt und für alle Trainingsdurchläufe in gleicher Form benutzt. So wird z.B. bei dem Training des \textit{ResNet-50} Netzes und einer 20-prozentigen Trainsize die gleiche Teilmenge des Datensatzes verwendet wie bei dem Training von \textit{Inception V3} mit 20 Prozent Trainsize. Die Vergleichbarkeit der Ergebnisse verschiedener Netze und der beiden Klassifikationsschemata ist daher hoch und es kommt nicht zu zufälligen Ausreißern.
 
-\subsection{Klassenanzahl}
 
 \subsection{vortrainierte Gewichte}
-\todo{Epochen, Learningrate}
+Als weiterer Trainingsparameter wird unterschieden, ob die Netze von Grund auf, also \textit{from \textbf{Scratch}}, oder mit bereits vorab trainierten Gewichten initialisiert werden und lediglich ein \textbf{Finetuning} stattfindet. Die vorab trainierten Gewichte wurden auf dem ImageNet Datensatz \cite{imagenet} trainiert.
+Dabei ist jedoch das OvA Klassifikationsschema im Vorteil, da die vorab auf ImageNet \cite{imagenet} trainierten Gewichte ebenfalls mit Hilfe eines OvA Klassifikationsschemas trainiert wurden.\\
+
+Die initiale Learning-Rate beträgt wie bei den Experimenten von Pawara et al. \cite{pawaraPaper} für das Training \textit{from Scratch} $0.001$ und für \textit{Finetuning} $0.0001$ und wird in beiden Fällen alle 50 Epochen um einen Faktor von $0.1$ verringert. Jedoch wird im Falle von \textit{Scratch} 200 Epochen lang trainiert, bei \textit{Finetuning} lediglich 100 Epochen lang.
+
 
 
 \section{Ausführung der Jobs auf Palma II}
 \label{ch:methodik_palma}
-\todo{Hardware auf Palma, Einteilung in Jobs, Logging, benutzte Grafikkarten, CPU Limits}
+Da durch die hohe Anzahl an verschiedenen Trainingsparametern (s. Kapitel \ref{ch:methodik_parameter}) sehr viele verschiedene Netze trainiert werden müssen, wurden für das Training die Grafikkarten (s. Tabelle \ref{tab:palmaGPUs}) des High-Performance-Computing Clusters \textit{Palma II} der Universität Münster \cite{palma2} verwendet.\\
+Auf Grund von laufenden Berechnungen anderer Benutzer und technischen Ausfällen waren nicht immer alle Grafikkarten verfügbar. So standen während meinen Experimenten wegen Hardwareproblemen beispielsweise leider nur die Hälfte der insgesamt 40 RTX 2080 Grafikkarten zur Verfügung.
+
+Außerdem konnten für die Experimente mit TensorFlow \cite{tensorflow} die Titan XP GPUs gar nicht verwendet werden, da der dort installierte Grafiktreiber nicht die erforderliche CUDA-Version unterstützt hat.
+
+\begin{figure}[H]
+\begin{tabular}{|c|c|}
+\hline 
+Grafikkarten-Modell & Anzahl \\ 
+\hline 
+NVIDIA Tesla V100-SXM2 16GB & 4 \\ 
+\hline 
+NVIDIA GeForce RTX 2080 Ti 11GB & bis zu 40\\
+\hline
+NVIDIA TITAN RTX 24GB & 4\\
+\hline
+NVIDIA TITAN Xp 12 GB & 8\\
+\hline
+\end{tabular} 
+\caption{Maximale Anzahl an zur Verfügung stehenden Grafikkarten auf Palma II \cite{palma2}.}
+\label{tab:palmaGPUs}
+\end{figure}
+
+Zum Training wurde für jede Kombination an Trainingsparametern (s. Kapitel \ref{ch:methodik_parameter}) ein Job mit Hilfe des Slurm Workload Managers \cite{slurm} gestartet, dem dann zum frühestmöglichen Zeitpunkt irgendeine der freien Grafikkarten zugewiesen wurde. Die zur Verfügung stehende Prozessorleistung von 6 Kernen pro Job war für alle Experimente ausreichend und stellte keinen limitierenden Faktor dar.
+
+Lediglich der benötigte Arbeitsspeicher war für die Experimente mit TensorFlow \cite{tensorflow} und Cifar10 \cite{cifar10} so hoch, dass nur wenige Jobs gleichzeitig ausgeführt werden konnten. Dadurch entstanden sehr lange Wartezeiten bis alle Jobs abgearbeitet worden sind, weshalb die Experimente mit Cifar10 \cite{cifar10} sich auf \textit{ResNet-50 Scratch} beschränken.
 
