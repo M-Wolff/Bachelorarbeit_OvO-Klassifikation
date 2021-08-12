@@ -3,7 +3,7 @@
 
 \section{Kodierung}
 \label{ch:methodik_kodierung}
-\subsection{OvA-Kodierung}
+\subsection{OvA Kodierung}
 Bei der standardmäßig verwendeten One-vs-All Kodierung befindet sich am Ende des Netzes eine \textit{Softmax}-Schicht, die bei $K$ Klassen $K$ Ausgabewerte produziert.
 
 Die Netzausgabe hat die Form $\overrightarrow{\widehat{y}_{OvA}} = \begin{bmatrix}
@@ -27,9 +27,89 @@ mit $k$ als Klassennummer des Trainingsbeispiels, zu der es tatsächlich gehört
 Da die Logarithmusfunktion zwischen 0 und 1 streng monoton steigt, aber in diesem Intervall einen negativen Wertebereich produziert und sich bei\\ $log(1)=0$ ihr Maximum in dem von der Softmax Funktion produzierten Wertebereich von $[0, 1]$ befindet, wird durch Minimierung der Fehlerfunktion $L_{CE}$ effektiv die Wahrscheinlichkeit $\widehat{y}_k$ für die tatsächliche Klasse $k$ maximiert.
 
 
-\subsection{OvO-Kodierung}
-\todo{generelles Verfahren in eigenen Worten beschreiben}
-\todo{Umsetzung: OvO Matrix, Kodierung, Klassifizierung, eigene Loss-Funktion, softmax vs tanh}
+\subsection{OvO Kodierung}
+Bei der OvO Klassifikation soll die Netzausgabe für $K$ Klassen folgende Form haben:
+\[\overrightarrow{\widehat{y}_{OvO}} = \begin{bmatrix}
+\widehat{y}_{1vs2} & \widehat{y}_{1vs3} & ... & \widehat{y}_{1vsK} & \widehat{y}_{2vs3} &... & \widehat{y}_{(K-2)vs K} & \widehat{y}_{(K-1)vsK}
+\end{bmatrix} \]
+Analog zu dem von Pawara et al. genannten Beispiel (s. \cite{pawaraPaper} Kapitel 2.2) mit $K=5$ Klassen produziert das Netz als Ausgabe einen Vektor mit $\frac{5*(5-1)}{2}=10$ Einträgen:
+\[\overrightarrow{\widehat{y}_{OvA}} = \begin{bmatrix}
+\widehat{y}_{1vs2} & \widehat{y}_{1vs3} & \widehat{y}_{1vs4} & \widehat{y}_{1vs5} & \widehat{y}_{2vs3} & \widehat{y}_{2vs4} & \widehat{y}_{2vs5} & \widehat{y}_{3vs4} & \widehat{y}_{3vs5} & \widehat{y}_{4vs5}
+\end{bmatrix} \]
+Dabei steht jeder Eintrag $\widehat{y}_{ivsj}$ in dem Vektor für das Klassifikationsergebnis des One-vs-One Klassifikators, der die Klasse $i$ von Klasse $j$ trennt.\\
+
+Der Zielvektor $\overrightarrow{y_{OvO}}$ besitzt die gleiche Form wie die Netzausgabe und repräsentiert das Klassenlabel in der OvO Kodierung. Für seine Einträge $y_{ivsj}$ gilt:
+\begin{figure}[H]
+\[
+y_{ivsj} = 
+\begin{cases}
+1 & \text{wenn das Klassifikationsbeispiel zu Klasse } i \text{ gehört}\\
+-1 & \text{wenn das Klassifikationsbeispiel zu Klasse } j \text{ gehört}\\
+0 & \text{sonst}\\
+\end{cases}
+\]
+\caption{Aufbau der Einträge des Zielvektors.}
+\label{gl:OvOZielvektor}
+\end{figure}
+
+Da bei dem OvO Klassifikationsschema kein Wahrscheinlichkeitsvektor, in dem sich alle Einträge zu $1$ aufsummieren, als Netzausgabe produziert werden soll, kann die \textit{Softmax}-Schicht nicht verwendet werden. Stattdessen wird die $\tanh$-Aktivierungsfunktion verwendet (s. Abb.\ref{fig:tanh}). Diese erzeugt einen Wertebereich zwischen $-1$ und $1$. Somit fällt jeder Wert in der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ in das Intervall $(-1, 1)$. Dass hier das offene Intervall $(-1, 1)$ produziert wird und nicht das abgeschlossene Intervall $[-1, 1]$ wie vom Zielvektor gefordert (s. Gl. \ref{gl:OvOZielvektor}) hat später bei der Berechnung der Loss-Funktion Vorteile.
+
+\begin{figure}[H]
+\begin{adjustbox}{width=.65\textwidth, center}
+\includesvg{img/2_tanh}
+\end{adjustbox}
+\caption{Tanh-Aktivierungsfunktion.}
+\label{fig:tanh}
+\end{figure}
+
+Da keine One-Hot Kodierung mehr verwendet wird, kann die \textit{Cross-Entropy Loss}-Funktion nicht mehr als Fehlerfunktion verwendet werden. Pawara et al. haben in ihrem Paper \cite{pawaraPaper} eine angepasste \textit{Cross-Entropy}-Funktion entwickelt. Für die Berechnung müssen zuerst die Einträge des Zielvektors $\overrightarrow{y_{OvO}}$ und der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ auf das Intervall $[0, 1]$ skaliert werden:
+\begin{figure}[H]
+\[y_{ivsj}^{'} = \frac{y_{ivsj} + 1}{2}\]
+\[\widehat{y}_{ivsj}^{'} = \frac{\widehat{y}_{ivsj} + 1}{2}\]
+\caption{Skalierung der Einträge in dem Zielvektor und der Netzausgabe (\cite{pawaraPaper} Kapitel 2.2 Gleichung 5).}
+\label{gl:pawaraSkalierung}
+\end{figure}
+
+Anschließend wird gemäß der Formel von Pawara et al. der Loss-Wert ausgerechnet (s. Gl. \ref{gl:pawaraLoss}).
+
+\begin{figure}[H]
+\[L_{OvO} = - \frac{1}{L} \sum_{l=1}^{L}((y_{l}^{'} * \log{(\widehat{y}_{l}^{'})}) + (1 - y_{l}^{'}) * \log{(1-\widehat{y}_{l}^{'})})\]
+mit\\
+$\boldsymbol{K}:$ Anzahl an Klassen\\
+
+$\boldsymbol{L}=\frac{K*(K-1)}{2}:$ Länge der Netzausgabe bzw. des Zielvektors\\
+
+$\boldsymbol{y_{l}^{'}}:$ auf $[0, 1]$ skalierter Eintrag des Zielvektors $\overrightarrow{y_{OvO}}$ an $l$-ter Stelle\\
+
+$\boldsymbol{\widehat{y}_{l}^{'}}:$ auf $[0, 1]$ skalierter Eintrag des Netzausgabe-Vektors $\overrightarrow{\widehat{y}_{OvO}}$ an $l$-ter Stelle\\
+
+
+\caption{Formel zur Berechnung der von Pawara et al. vorgestellten Loss-Funktion (\cite{pawaraPaper} Kapitel 2.2 Gleichung 6).}
+\label{gl:pawaraLoss}
+\end{figure}
+
+Es wird also für jeden Eintrag $\widehat{y}_{l}^{'}$ in dem Netzausgabe-Vektor mit Hilfe des zugehörigen Eintrages $y_{l}^{'}$ im Zielvektor ein Loss-Wert berechnet und über alle $L$ Einträge in den Vektoren gemittelt. Der Wertebereich der Einträge beider Vektoren liegt wegen der Skalierung (s. Gl. \ref{gl:pawaraSkalierung}) im Intervall $[0,1]$. Da dies jedoch zu numerischen Problemen führt, da z.B. $\log{(0)}$ nicht definiert ist, muss der Wertebereich auf $(0, 1)$ bzw. näherungsweise auf $[0.00001, 0.99999]$ beschränkt werden (vgl. \cite{pawaraPaper} Kapitel 2.2).
+In dem auf $[0, 1]$ skalierten Zielvektor sind daher abgesehen von der näherungsweisen Beschränkung des Wertebereichs Einträge mit folgenden Werten möglich:
+\[
+y_{ivsj}^{'}=
+\begin{cases}
+1 & \text{wenn das Klassifikationsbeispiel zu Klasse } i \text{ gehört}\\
+0 & \text{wenn das Klassifikationsbeispiel zu Klasse } j \text{ gehört}\\
+0.5 & \text{sonst}\\
+\end{cases}
+\]
+
+Für $y_{l}^{'} = 1$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
+\[-((\boldsymbol{1} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{1}) * \log{(1-\widehat{y}_{l}^{'})}) = -\log{(\widehat{y}_{l}^{'})}\]
+
+Für $y_{l}^{'} = 0$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
+\[-((\boldsymbol{0} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{0}) * \log{(1-\widehat{y}_{l}^{'})}) = -\log{(1-\widehat{y}_{l}^{'})}\]
+
+Für $y_{l}^{'} = 0.5$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
+\[-((\boldsymbol{0.5} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{0.5}) * \log{(1-\widehat{y}_{l}^{'})}) = - (0.5 * \log{(\widehat{y}_{l}^{'})} + 0.5 * \log{(1-\widehat{y}_{l}^{'})})\]
+
+\todo{Plots für die 3 Fälle einfügen (Dont Care's fließen mit ein!)}
+\todo{Umsetzung: OvO Matrix, Klassifizierung}
 \todo{Warum Datensätze mit 3 Klassen verwendet wurden}
 
 \subsection{Alternative Kodierungsmethoden}
