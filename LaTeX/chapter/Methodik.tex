@@ -36,7 +36,7 @@ Analog zu dem von Pawara et al. genannten Beispiel (s. \cite{pawaraPaper} Kapite
 \[\overrightarrow{\widehat{y}_{OvA}} = \begin{bmatrix}
 \widehat{y}_{1vs2} & \widehat{y}_{1vs3} & \widehat{y}_{1vs4} & \widehat{y}_{1vs5} & \widehat{y}_{2vs3} & \widehat{y}_{2vs4} & \widehat{y}_{2vs5} & \widehat{y}_{3vs4} & \widehat{y}_{3vs5} & \widehat{y}_{4vs5}
 \end{bmatrix} \]
-Dabei steht jeder Eintrag $\widehat{y}_{ivsj}$ in dem Vektor für das Klassifikationsergebnis des One-vs-One Klassifikators, der die Klasse $i$ von Klasse $j$ trennt.\\
+Dabei steht jeder Eintrag $\widehat{y}_{ivsj}$ in dem Vektor für das Klassifikationsergebnis des One-vs-One Klassifikators, der die Klasse $i$ von Klasse $j$ trennt. Alle $\frac{K*(K-1)}{2}$ Klassifikatoren befinden sich dabei innerhalb von einem einzigen zu trainierendem Netz.\\
 
 Der Zielvektor $\overrightarrow{y_{OvO}}$ besitzt die gleiche Form wie die Netzausgabe und repräsentiert das Klassenlabel in der OvO Kodierung. Für seine Einträge $y_{ivsj}$ gilt:
 \begin{figure}[H]
@@ -101,19 +101,87 @@ y_{ivsj}^{'}=
 
 Für $y_{l}^{'} = 1$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
 \[-((\boldsymbol{1} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{1}) * \log{(1-\widehat{y}_{l}^{'})}) = -\log{(\widehat{y}_{l}^{'})}\]
+und $\widehat{y}_{l}^{'}$ wird bei Minimierung der Loss Funktion ebenfalls in Richtung $\widehat{y}_{l}^{'}=1$ gedrängt, da sich dort das Minimum im Wertebereich $(0, 1)$ befindet (s. \ref{fig:OvOLoss-y1}).
 
-Für $y_{l}^{'} = 0$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
+Analog dazu reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} für $y_{l}^{'} = 0$ zu
 \[-((\boldsymbol{0} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{0}) * \log{(1-\widehat{y}_{l}^{'})}) = -\log{(1-\widehat{y}_{l}^{'})}\]
+und $\widehat{y}_{l}^{'}$ wird bei Minimierung der Loss Funktion zum linken Rand des Wertebereichs $(0, 1)$ in Richtung $\widehat{y}_{l}^{'}=0$  gedrängt (s. \ref{fig:OvOLoss-y0}).
 
-Für $y_{l}^{'} = 0.5$ reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
+Für $y_{l}^{'} = 0.5$, also für den Fall dass der aktuell betrachtete Klassifikator nicht zur Entscheidung über die Klassenzugehörigkeit beitragen soll, reduziert sich ein Summand der Summe aus Gl. \ref{gl:pawaraLoss} zu
 \[-((\boldsymbol{0.5} * \log{(\widehat{y}_{l}^{'})}) + (1 - \boldsymbol{0.5}) * \log{(1-\widehat{y}_{l}^{'})}) = - (0.5 * \log{(\widehat{y}_{l}^{'})} + 0.5 * \log{(1-\widehat{y}_{l}^{'})})\]
+und die Netzausgabe wird durch Minimierung der Loss Funktion zu $\widehat{y}_{l}^{'}=0.5$ (s. \ref{fig:OvOLoss-y05}).
 
-\todo{Plots für die 3 Fälle einfügen (Dont Care's fließen mit ein!)}
-\todo{Umsetzung: OvO Matrix, Klassifizierung}
-\todo{Warum Datensätze mit 3 Klassen verwendet wurden}
+Die Loss-Funktion erfüllt also ihren Zweck und sorgt dafür, dass sich die Netzausgabe $\widehat{y}_{l}^{'}$ durch Minimierung der Loss Funktion dem erwarteten Wert $y_{l}^{'}$ annähert (s. Abb. \ref{fig:OvOLoss}). Bemerkenswert hierbei ist, dass die von Pawara et al. entwickelte Loss Funktion \cite{pawaraPaper}, anders als die \textit{Cross Entropy} Loss Funktion, ebenfalls die sogenannten \textit{Don't Care Werte} für den Fall, dass der aktuell betrachtete Klassifikator zwischen Klasse $i$ und $j$ trennt aber das Trainingsbeispiel tatsächlich aus Klasse $m$ kommt mit $i\neq m \neq j$ mit einbezieht. Dadurch wird der aktuell betrachtete Klassifikator dazu gezwungen nur für Klassifikationsbeispiele aus einer der beiden Klassen zwischen denen er trennt eine unskalierte Ausgabe von $1$ bzw. $-1$ zu produzieren, ansonsten immer $0$.
 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.3\textwidth}
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/2_OvOLoss_y1}
+\end{adjustbox}
+\caption{$y_l^{'}=1$}
+\label{fig:OvOLoss-y1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/2_OvOLoss_y0}
+\end{adjustbox}
+\caption{$y_l^{'}=0$}
+\label{fig:OvOLoss-y0}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/2_OvOLoss_y05}
+\end{adjustbox}
+\caption{$y_l^{'}=0.5$}
+\label{fig:OvOLoss-y05}
+\end{subfigure}
+\caption{Wert eines Summanden der Loss Funktion für verschiedene $y_l^{'}$ in Abhängigkeit von der Netzausgabe $\widehat{y}_l^{'}$.}
+\label{fig:OvOLoss}
+\end{figure}
+
+Für die \textbf{Klassifikation} muss noch aus den Ausgaben der $\frac{K*(K-1)}{2}$ Klassifikatoren bzw. Werten in der Netzausgabeschicht eine Entscheidung getroffen werden, zu welcher Klasse das Klassifikationsbeispiel gehört.
+Dazu wird eine Kodierungsmatrix verwendet, die in der $i$-ten Zeile das OvO-kodierte Klassenlabel für Klasse $i$ besitzt:\\
+\[M_{OvO}=
+\begin{bmatrix}
+\text{OvO-kodiertes Klassenlabel für Klasse } 1 \\ 
+\text{OvO-kodiertes Klassenlabel für Klasse } 2 \\ 
+... \\
+\text{OvO-kodiertes Klassenlabel für Klasse } K-1 \\ 
+\text{OvO-kodiertes Klassenlabel für Klasse } K \\ 
+\end{bmatrix} 
+\]
+Analog zu dem Beispiel von Pawara et al. (s. \cite{pawaraPaper}, Kapitel 2.2) mit $K=5$ Klassen ergibt sich die Kodierungsmatrix:
+\[M_{OvO,5}=
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+-1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0 & -1 & 0 & 0 & 1 & 1 & 0\\
+0 & 0 & -1 & 0 & 0 & -1 & 0 & -1 & 0 & 1\\
+0 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & -1 & -1\\
+\end{bmatrix} 
+\]
+
+Durch Matrix-Vektor Multiplikation $\overrightarrow{z} = M_{OvO} * \overrightarrow{\widehat{y}}$ wird ein Ausgabevektor produziert, dessen Stelle des größten Eintrages die vorhergesagte Klasse angibt. Sie wird berechnet durch $\widehat{k} = argmax_l (z_l)$ (vgl. \cite{pawaraPaper}, Kapitel 2.2).\\
+
+
+Wenn beispielsweise die Netzausgabe \\
+ $\overrightarrow{\widehat{y}} = \begin{bmatrix}
+-0.8 & 0.1 & 0 & -0.1 & 0.9 & 0.85 & 0.95 & 0.1 & 0 & 0.05\\
+\end{bmatrix}
+$ \\
+lautet, wird durch $\overrightarrow{z} = M_{OvO} * \overrightarrow{\widehat{y}} = \begin{bmatrix}
+-0.8 & 3.5 & -0.9 & -0.9 & -0.9\\
+\end{bmatrix}$ und anschließendes Anwenden von $argmax$ die Klasse $2$ vorhergesagt, da in $\overrightarrow{z}$ an Stelle 2 der größte Eintrag steht.
+
+\newpage
 \subsection{Alternative Kodierungsmethoden}
-\todo{alternative Kodierungsmöglichkeiten beschreiben (s. Paper, z.B. Error correcting codes)}
+Als Alternative zu dem OvA und OvO Klassifikationsschema existiert das Verfahren des \textbf{Attribute Learning} \cite{attributeLearning, attributeLearningChinese}, bei dem die Klassifikationsbeispiele nicht in einzelne Klassen eingeteilt werden, sondern ihnen mehrere Attribute zugeschrieben werden. Dadurch steigt der Aufwand bei der Erstellung der Label für einen Datensatz, da die zum Training zu verwendenden Attribute sorgfältig ausgewählt werden müssen. Jedoch kann mit \textit{Attribute Learning} sehr gut generalisiert werden, da Attribute über verschiedene Klassen von Trainingsbeispielen hinweg erlernt werden. So können sich z.B. die Trainingsbeispiele für die Klassen \textit{Hund}, \textit{Katze} und \textit{Kaninchen} das Attribut \enquote{besitzt Fell} teilen und das neuronale Netz kann das Attribut \enquote{Fell} in verschiedenen Ausprägungsformen erlernen um es  später einer anderen Klasse von Klassifikationsbeispielen, wie z.B. \textit{Schaf}, die es vorher noch nie gesehen hat zuschreiben zu können (vgl. \cite{attributeLearning}). Dies ist besonders nützlich, wenn wie z.B. bei der Erkennung chinesischer Schriftzeichen mehrere zehntausend verschiedene Klassen existieren und eine One-Hot Kodierung all dieser Klassen nicht praktikabel ist (vgl. \cite{attributeLearningChinese}).\\
+
+Einen ähnlichen Ansatz stellen \textbf{Error-Correcting Output Codes} \cite{errorCorrectingCodes} dar. Bei ihnen werden Eigenschaften der Klassen festgelegt und ihr Vorhandensein in Binärform, also mit 1 oder 0, kodiert. Im Paper von Dietterich et al. \cite{errorCorrectingCodes} teilen sich 10 Klassen 6 Merkmale in verschiedenen Kombinationen (vgl. \cite{errorCorrectingCodes}, Table 1 \& 2). Durch die binäre Kodierung ergeben sich $2^6 = 64$ mögliche Merkmalskombinationen, von denen jedoch nur 10 Stück, eine pro Klasse, genutzt werden. Die 10 verschiedenen Klassen tragen als Label jeweils ein sogenanntes binäres \textit{Codeword} aus 6 Bit, die zueinander möglichst unterschiedlich sein sollen (vgl. \cite{errorCorrectingCodes}). Bei der Klassifikation produziert ein neuronales Netz ein binäres \textit{Codeword} aus 6 Bit und das Klassifikationsbeispiel wird zu der Klasse zugewiesen, dessen binäres 6-Bit \textit{Codeword}-Label nach einer Distanzfunktion am nächsten an der Netzausgabe liegt (vgl. \cite{errorCorrectingCodes}). Durch diesen Vergleich mittels Distanzfunktion können einige Fehler, die bei der Klassifikation entstehen können, ausgeglichen werden (vgl. \cite{errorCorrectingCodes}).\\
+
+
+Außerdem versprechen \textbf{hierarchische Herangehensweisen}, bei denen die Daten entlang eines binären Baumes an jedem Knoten durch jeweils einen Klassifikator in zwei Gruppen aufgeteilt werden, eine vergleichbare Genauigkeit bei teilweise deutlich kürzeren Rechenzeiten für die Klassifikation (vgl. \cite{hierarchischeMethoden}).
 
 \newpage
 \section{Datensätze}
@@ -122,6 +190,8 @@ Für die Experimente wurden 5 verschiedene Datensätze verwendet: Agrilplant \ci
 
 Für jeden Datensatz existieren Exemplare mit verschiedenen Anzahlen an Klassen (s. Abb. \ref{fig:DatensatzKlassen}), die zukünftig jeweils mit $<$Datensatzname$><$Klassenanzahl$>$ wie z.B. Agrilplant10 bezeichnet werden.
 Die Datensätze mit geringerer Klassenanzahl sind Teilmengen des gesamten Datensatzes, bei denen nur die ersten $k$ Klassen verwendet werden.
+
+Zusätzlich zu den im Paper von Pawara et al. \cite{pawaraPaper} verwendeten Teilmengen mit geringerer Klassenanzahl wird in dieser Bachelorarbeit mit einer Klassenanzahl von $K=3$ experimentiert, da dann für OvO und OvA die Ausgabeschichten mit $\frac{3*(3-1)}{2} = 3$ die gleiche Dimension haben. Die beiden Klassifikationsschemata unterscheiden sich dann lediglich in der Loss- und Aktivierungsfunktion der letzten Schicht und es ist zu erwarten, dass beide Ansätze gleich gute Ergebnisse liefern.
 
 Bei allen Datensätzen außer SwedishLeaves (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wird eine 5-Fold Cross Validation angewendet, es werden also 5 Aufteilungen in Train- und Testdaten im Verhältnis 80:20 erstellt, sodass sich jedes Bild genau in einem Fold im Testsplit und in 4 Folds im Trainsplit befindet.
 
@@ -150,19 +220,18 @@ Tropic & X & X & X & & X \\
 \subsection{Agrilplant}
 Der Agrilplant Datensatz \cite{pawaraWebsiteDatensaetze} besteht aus Bildern von Blüten, Früchten und Blättern von Agrarpflanzen.
 Es existieren 10 verschiedene Klassen: Apfel, Banane, Traube, Jackfruit, Orange, Papaya, Kaki, Ananas, Sonnenblume und Tulpe (vgl. \cite{pawaraWebsiteDatensaetze}).
+Zum Training wurden zusätzlich zu Agrilplant10 noch zwei weitere Teilmengen des Datensatzes, Agrilplant5 und Agrilplant3, verwendet.
+
+Der Datensatz Agrilplant10 besteht aus 300 Bildern mit einer Auflösung von ca. 200-500 Pixeln je Klasse, also insgesamt 3000 Bilder, und ist damit perfekt ausbalanciert (s. Abb. \ref{fig:Agrilplant10Zusammensetzung}).\\
+
 \begin{figure}[H]
 \includegraphics[scale=0.2]{img/2_agrilplant-image.jpg}
 \caption{Überblick über die verschiedenen Klassen des Agrilplant Datensatzes \cite{pawaraAgrilplant}.}
 \label{fig:agrilplantUeberblick}
 \end{figure}
 
-Zum Training wurden zusätzlich zu Agrilplant10 noch zwei weitere Teilmengen des Datensatzes, Agrilplant5 und Agrilplant3, verwendet.
-
-Der Datensatz Agrilplant10 besteht aus 300 Bildern mit einer Auflösung von ca. 200-500 Pixeln je Klasse, also insgesamt 3000 Bilder, und ist damit perfekt ausbalanciert (s. Abb. \ref{fig:Agrilplant10Zusammensetzung}).\\
-
-
 \begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
+\begin{adjustbox}{width=1.1\textwidth, center}
 \includesvg{img/2_agrilplant10_Zusammensetzung}
 \end{adjustbox}
 \caption{Aufteilung des Agrilplant10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
@@ -205,14 +274,14 @@ Im Gegensatz dazu ist der Datensatz Pawara-uMonkey10 weder in der Anzahl an Bild
 
 
 \begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
+\begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-monkey10_Zusammensetzung}
 \end{adjustbox}
 \caption{Aufteilung des Pawara-Monkey10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:Pawara-Monkey10Zusammensetzung}
 \end{figure}
 \begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
+\begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-umonkey10_Zusammensetzung}
 \end{adjustbox}
 \caption{Aufteilung des unbalancierten Pawara-uMonkey10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
@@ -247,7 +316,7 @@ Zusätzlich zu SwedishLeaves15 wurde mit drei weiteren Teilmengen des Datensatze
 \caption{Aufteilung des SwedishLeaves15 Datensatzes \cite{swedishLeaves} in Train- und Testsplits je Fold.}
 \label{fig:swedishLeavesZusammensetzung}
 \end{figure}
-
+\newpage
 \subsection{Tropic}
 In dem Tropic Datensatz \cite{pawaraWebsiteDatensaetze} befinden sich 20 Klassen mit Bildern tropischer Pflanzen und deren Blättern, Blüten und Früchten (s. Abb. \ref{fig:tropicUeberblick}). Da unterschiedliche Teile der Pflanzen aus verschiedenen Blickwinkeln vor vielfältigen Hintergründen wie z.B. Erde, Himmel, Straßen oder Häusern fotografiert wurden ist die Klassifikation im Vergleich zum SwedishLeaves Datensatz \cite{swedishLeaves} (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wesentlich anspruchsvoller.
 
@@ -266,14 +335,14 @@ Es wurden Teilmengen von diesem Datensatz mit 20, 10, 5 und 3 Klassen zum Vergle
 Zusätzlich existiert noch ein Tropic52 Datensatz \cite{pawaraWebsiteDatensaetze} mit 52 Klassen, der aber weder im Paper von Pawara et al. \cite{pawaraPaper} noch in dieser Bachelorarbeit behandelt wird.
 
 \begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
+\begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_tropic20_Zusammensetzung}
 \end{adjustbox}
 \caption{Aufteilung des Tropic20 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:tropic20Zusammensetzung}
 \end{figure}
 \begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
+\begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-tropic10_Zusammensetzung}
 \end{adjustbox}
 \caption{Aufteilung des Pawara-Tropic10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
@@ -340,7 +409,7 @@ Insgesamt ergeben sich also $2 * 3770 + 2530 = \textbf{10.070}$ verschiedene Kom
 \subsection{Frameworks}
 Zu Beginn wurde das Training für diese Bachelorarbeit mit TensorFlow 2.4.1 \cite{tensorflow} durchgeführt. Jedoch wurde schnell deutlich, dass die Ergebnisse mit dieser Version von TensorFlow nicht den Erwartungen entsprechen und nicht mit den im Paper von Pawara et al. \cite{pawaraPaper} vorgestellten Ergebnissen übereinstimmen. Dabei sind die Abweichungen bei einigen Datensätzen und Kombinationen von Trainingsparametern deutlich größer als bei anderen (s. Kapitel \ref{ch:ergebnisse} und \ref{ch:diskussion}). \\
 
-Die Autoren haben leider nicht angegeben, mit welcher Version von TensorFlow \cite{tensorflow} ihre Experimente durchgeführt wurden. Aber anhand des Veröffentlichungsdatums des Papers \cite{pawaraPaper} kann grob abgeschätzt werden, welche Version möglicherweise verwendet wurde.
+Die Autoren haben leider nicht angegeben, mit welcher Version von TensorFlow \cite{tensorflow} ihre Experimente durchgeführt wurden. Aber anhand des\\ Veröffentlichungsdatums des Papers \cite{pawaraPaper} kann grob abgeschätzt werden, welche Version möglicherweise verwendet wurde.
 
 Somit wurden zusätzlich die gleichen Experimente erneut mit der auf Palma II \cite{palma2} bereits vorinstallierten TensorFlow \cite{tensorflow} Version 1.13.1 durchgeführt.
 
@@ -355,7 +424,7 @@ Für das Training werden die zwei beliebten Netzarchitekturen \textbf{ResNet-50}
 
 Für das Netz \textit{Inception V3} hat die Autorin in dem auf Ihrer Webseite zur Verfügung gestellten Quellcode \cite{pawaraWebsiteCode} einige Änderungen an den letzten Schichten des Netzes vorgenommen. So wird beispielsweise eine zusätzliche \textit{BatchNormalization}-Schicht und eine \textit{Dropout}-Schicht eingefügt, die es in der Standardimplementierung von \textit{InceptionV3} nicht gibt (s. Abb. \ref{fig:inceptionAenderungen}). Diese veränderte Version des \textit{InceptionV3} Netzes wird im weiteren Verlauf als \textbf{Pawara-InceptionV3} bezeichnet.
 
-Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wurde für OvO und OvA jeweils auf die entsprechende Anzahl an Klassifikatoren angepasst. Für die OvA Klassifikation hat das Netz genau so viele Ausgabewerte wie es Klassen gibt, für OvO gibt das Netz bei $k$ Klassen $\frac{k(k-1)}{2}$ Werte entsprechend des OvO Kodierungsschemas (s. Kapitel \ref{ch:methodik_kodierung}) aus.
+Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wurde für OvO und OvA jeweils auf die entsprechende Anzahl an Klassifikatoren angepasst. Für die OvA Klassifikation hat das Netz genau so viele Ausgabewerte wie es Klassen gibt, für OvO gibt das Netz bei $K$ Klassen $\frac{K(K-1)}{2}$ Werte entsprechend des OvO Kodierungsschemas (s. Kapitel \ref{ch:methodik_kodierung}) aus.
 
 \begin{figure}[H]
 
@@ -374,7 +443,7 @@ Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wu
 
 \end{figure}
 \end{minipage}
-\caption{Standardmäßiger Aufbau des \textit{Inception V3} Netzes (links) und Änderungen an den letzten Schichten des \textit{Inception V3} Netzes von Pawara et al. \cite{pawaraWebsiteCode} (rechts).}
+\caption{Standardmäßiger Aufbau des \textit{Inception V3} Netzes (links) und Änderungen an den letzten Schichten des \textit{Inception V3} Netzes von Pawara et al. \cite{pawaraWebsiteCode, pawaraPaper} (rechts).}
 \label{fig:inceptionAenderungen}
 \end{figure}
 
@@ -384,7 +453,6 @@ Um zu untersuchen, wie sich die Anzahl der zur Verfügung stehenden Trainingsdat
 
 Im Quellcode von Pawara et al. \cite{pawaraWebsiteCode} wird bei jedem Trainingsdurchlauf eine neue Teilmenge zufällig bestimmt, was zu zufällig auftretenden Ausreißern durch gut oder schlecht gewählte Teilmengen führt.
 Daher werden die Einteilungen in Teilmengen in dieser Bachelorarbeit einmalig zufällig bestimmt und für alle Trainingsdurchläufe in gleicher Form benutzt. So wird z.B. bei dem Training des \textit{ResNet-50} Netzes und einer 20-prozentigen Trainsize die gleiche Teilmenge des Datensatzes verwendet wie bei dem Training von \textit{Inception V3} mit 20 Prozent Trainsize. Die Vergleichbarkeit der Ergebnisse verschiedener Netze und der beiden Klassifikationsschemata ist daher hoch und es kommt nicht zu zufälligen Ausreißern.
-
 
 \subsection{vortrainierte Gewichte}
 Als weiterer Trainingsparameter wird unterschieden, ob die Netze von Grund auf, also \textit{from \textbf{Scratch}}, oder mit bereits vorab trainierten Gewichten initialisiert werden und lediglich ein \textbf{Finetuning} stattfindet. Die vorab trainierten Gewichte wurden auf dem ImageNet Datensatz \cite{imagenet} trainiert.

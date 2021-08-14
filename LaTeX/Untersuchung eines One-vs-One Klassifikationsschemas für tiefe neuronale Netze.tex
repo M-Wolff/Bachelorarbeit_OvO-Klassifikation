@@ -40,7 +40,7 @@
 \usepackage[utf8]{inputenc} % UTF-8 Codierung
 \usepackage[ngerman]{babel} % Deutsche Beschriftung
 \usepackage{graphicx} % Um Bilder einzufügen
-\usepackage{subfigure} % Um mehrere Bilder in eine figure einzufügen
+\usepackage{subcaption} % Um mehrere Bilder in eine figure einzufügen - subfigure ist outdated
 \usepackage{amssymb, amsmath} % Für Mengensymbole und über Gleichheitszeichen schreiben
 \usepackage{verbatim} % Um Quellcode in das Dokument einzufügen.
 \usepackage{xcolor} % Für Farben
@@ -55,8 +55,11 @@
 \usepackage{listings} % Für Code-Listings
 \usepackage{adjustbox} % ähnlich wie ResizeBox (plus centering)
 \usepackage{multirow} %Tabellenfelder über 2 Zeilen
+\usepackage{appendix}
+\renewcommand{\appendixtocname}{Anhang}
 %\usepackage[style=authortitle-icomp, backend=bibtex]{biblatex}
 \renewcommand{\lstlistingname}{Quelltext} %Ändert die Überschrift von Listing nach Quelltext
+\newcommand{\plm}{$\pm$} % Für automatisch erzeugten LaTeX Code (Plus-Minus Zeichen als Abkürzung)
 
 % Einstellungen für Abstand an den Rändern
 \geometry{a4paper,left=35mm,right=35mm,top=20mm,bottom=20mm, includeheadfoot}
@@ -74,7 +77,6 @@
 \cleardoublepage
 \pagenumbering{arabic}
 
-\todo{GitHub Repository verlinken}
 \todo{Github TF-Issue Datum in Quellen anpassen}
 % Die Hauptkapitel der Arbeit
 \include{chapter/Einleitung}
@@ -92,6 +94,8 @@
 \bibliography{Quellen}
 
 % Anhang
+\appendix
+\addappheadtotoc
 \include{chapter/Anhang}
 
 % Eidesstattliche Erklärung
