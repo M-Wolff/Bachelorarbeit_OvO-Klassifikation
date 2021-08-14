@@ -1,3 +1,15 @@
-\chapter{Anhang}
-\label{ch:Anhang}
+% Platz vor Chapter-Überschrift verringern (damit auch auf die erste Seite 2 Tabellen untereinander passen)
+\makeatletter
+\let\savedchap\@makechapterhead
+\def\@makechapterhead{\vspace*{-2cm}\savedchap}
+\makeatletter
+% Seitenränder verringern (unten und oben)
+\newgeometry{top=0.5cm, bottom=0.5cm}
 
+
+\chapter{Tabellen mit Ergebnissen}
+\label{ch:Anhang_Tabellen}
+\input{chapter/AnhangTabellen/Tabellen.tex}
+
+\restoregeometry %Normale Seitenränder wiederherstellen
+\let\@makechapterhead\savedchap % Platz vor Chapter-Überschrift auf Standard zurücksetzen
