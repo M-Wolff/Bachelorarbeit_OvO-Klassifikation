@@ -208,14 +208,14 @@ def normalize_time_gpu(log):
 
     # 2080
     log.loc[(log.gpu == "GeForce RTX 2080 Ti") | (
-                log.gpu == "NVIDIA GeForce RTX 2080 Ti"), "dauer"] *= flops_2080 / normalize_to
+            log.gpu == "NVIDIA GeForce RTX 2080 Ti"), "dauer"] *= flops_2080 / normalize_to
     # TITAN XP
     log.loc[(log.gpu == "TITAN Xp") | (log.gpu == "NVIDIA TITAN Xp"), "dauer"] *= flops_titanxp / normalize_to
     # TITAN RTX
     log.loc[(log.gpu == "TITAN RTX") | (log.gpu == "NVIDIA TITAN RTX"), "dauer"] *= flops_titanrtx / normalize_to
     # V100
     log.loc[(log.gpu == "Tesla V100-SXM2-16GB") | (
-                log.gpu == "NVIDIA Tesla V100-SXM2-16GB"), "dauer"] *= flops_v100 / normalize_to
+            log.gpu == "NVIDIA Tesla V100-SXM2-16GB"), "dauer"] *= flops_v100 / normalize_to
     # Gebe normalisierten Log zurück
     return log
 
@@ -240,29 +240,45 @@ def boxplot(save_path: Path, netz: str, weights: str, key="val_acc", key_label="
                 "tropic3", "tropic5", "tropic10", "tropic20",
                 "swedishLeaves3folds3", "swedishLeaves3folds5", "swedishLeaves3folds10", "swedishLeaves3folds15",
                 "pawara-tropic10", "pawara-monkey10", "pawara-umonkey10"]
-    # Indizes, an die im 4x4 Raster geplottet werden soll (gleiche Reihenfolge wie `datasets`)
-    plot_indices = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (1, 3), (2, 0), (2, 1), (2, 2), (2, 3), (3, 0),
-                    (3, 1), (3, 2)]
+    # Indizes, an die im 8x2 Raster geplottet werden soll (gleiche Reihenfolge wie `datasets`)
+    plot_indices = [(0, 0), (1, 0), (1, 1), (2, 0), (3, 0), (4, 0), (5, 0), (2, 1), (3, 1), (4, 1), (5, 1), (6, 0),
+                    (7, 0), (7, 1)]
     # Frameworks, für die geplottet werden soll (torch kommt später dazu, wenn `netz` != "IP")
     # Tupel besteht aus (Framework, Marker-Typ, Marker-Size) für PyPlot
     frameworks = [("TF1-13-1-detTS", "v", 20), ("TF2-4-1-detTS", "^", 20)]
-    # Erstelle 4x4 Subplot Gitter
-    fig, axs = plt.subplots(nrows=4, ncols=4)
-    # Oben rechts werden die Achsen ausgeschaltet
-    # dieser Plot an Stelle (0,3) oben rechts wird später für die Erstellung der Legende zweckentfremdet
-    axs[0][3].axis("off")
+    # Erstelle 8x2 Subplot Gitter
+    fig, axs = plt.subplots(nrows=8, ncols=2)
+    # Färbe Tropic  Graphen leicht grau
+    axs[2][0].set_facecolor("#e6e6e6")
+    axs[3][0].set_facecolor("#e6e6e6")
+    axs[4][0].set_facecolor("#e6e6e6")
+    axs[5][0].set_facecolor("#e6e6e6")
+    axs[6][0].set_facecolor("#e6e6e6")
+    # Färbe swedishLeaves Graphen leicht grün
+    axs[2][1].set_facecolor("#ccffd9")
+    axs[3][1].set_facecolor("#ccffd9")
+    axs[4][1].set_facecolor("#ccffd9")
+    axs[5][1].set_facecolor("#ccffd9")
+    # Färbe Monkey Graphen leicht violett
+    axs[7][1].set_facecolor("#e6ccff")
+    axs[7][0].set_facecolor("#e6ccff")
+
     # Wenn mit Resnet Scratch geplottet wird existiert zusätzlich der Datensatz "Cifar10" und er soll unten rechts
     # geplottet werden
     if netz == "R" and weights == "S":
-        plot_indices.append((3, 3))
+        # Cifar10 hinzufügen
+        plot_indices.append((6, 1))
         datasets.append("cifar10")
-    else:  # Ansonsten mache unten rechts auch die Achsen aus (unsichtbarer Subplot)
-        axs[3][3].axis("off")
+        # Färbe Cifar10 leicht orange
+        axs[6][1].set_facecolor("#ffe6cc")
+    else:
+        # Ansonsten: plot für Cifar10 unsichtbar machen
+        axs[6][1].axis("off")
 
     # Wenn das Netz nicht "Inception-Pawara" ist, existieren Ergebnisse mit dem Framework "torch"
     if netz != "IP":
         # Tupel besteht aus (Framework, Marker-Typ, Marker-Size) für PyPlot
-        frameworks.append(("torch", "1", 40))
+        frameworks.append(("torch", "3", 40))
     # Passe Layout an (weniger Abstand zwischen Subplots)
     plt.subplots_adjust(top=0.92, hspace=0.4, wspace=0.1)
 
@@ -298,7 +314,7 @@ def boxplot(save_path: Path, netz: str, weights: str, key="val_acc", key_label="
                     values = current_row[key]  # Nehme Werte aus Spalte `key`
                     color = "orangered" if ovo_ova == "OvO" else "royalblue"  # OvO orange-rot, OvA royalblau
                     # Scattere die Einzelnen Ergebnisse (ein Ergebnis pro Fold) im Pixel-Stil
-                    current_plot.scatter(x=len(values) * [x_pos], y=list(values), marker=",", s=2, color=color,
+                    current_plot.scatter(x=len(values) * [x_pos], y=list(values), marker=",", s=1, color=color,
                                          alpha=0.2)
                     # Zeichne Mittelwert ein mit `marker_style` als Markierung und `marker_size` als Größe der
                     # Markierung (s. Tupel in der Liste der Frameworks)
@@ -342,23 +358,33 @@ def boxplot(save_path: Path, netz: str, weights: str, key="val_acc", key_label="
 
     # Legende basteln
     # Plot oben rechts zweckentfremden um Label-Symbole für Legende zu generieren
-    axs[0][3].scatter(0, 0, marker="x", s=2, color="orangered", alpha=0.2, label="einzelne Folds OvO")
-    axs[0][3].scatter(0, 0, marker="x", s=2, color="royalblue", alpha=0.2, label="einzelne Folds OvA")
+    legend_row = 0
+    legend_col = 1
+    # Oben rechts werden die Achsen ausgeschaltet
+    axs[legend_row][legend_col].axis("off")
+    axs[legend_row][legend_col].scatter(0, 0, marker="x", s=2, color="orangered", alpha=0.2, label="einzelne Folds OvO")
+    axs[legend_row][legend_col].scatter(0, 0, marker="x", s=2, color="royalblue", alpha=0.2, label="einzelne Folds OvA")
 
-    axs[0][3].scatter(x=0, y=0, marker="v", s=20, color="orangered", label="Mittelwert OvO TF 1.13.1")
-    axs[0][3].scatter(x=0, y=0, marker="v", s=20, color="royalblue", label="Mittelwert OvA TF 1.13.1")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="v", s=20, color="orangered", label="Mittelwert OvO TF 1.13.1")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="v", s=20, color="royalblue", label="Mittelwert OvA TF 1.13.1")
 
-    axs[0][3].scatter(x=0, y=0, marker="^", s=20, color="orangered", label="Mittelwert OvO TF 2.4.1")
-    axs[0][3].scatter(x=0, y=0, marker="^", s=20, color="royalblue", label="Mittelwert OvA TF 2.4.1")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="^", s=20, color="orangered", label="Mittelwert OvO TF 2.4.1")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="^", s=20, color="royalblue", label="Mittelwert OvA TF 2.4.1")
 
-    axs[0][3].scatter(x=0, y=0, marker="1", s=40, color="orangered", label="Mittelwert OvO Torch")
-    axs[0][3].scatter(x=0, y=0, marker="1", s=40, color="royalblue", label="Mittelwert OvA Torch")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="1", s=40, color="orangered", label="Mittelwert OvO Torch")
+    axs[legend_row][legend_col].scatter(x=0, y=0, marker="1", s=40, color="royalblue", label="Mittelwert OvA Torch")
     # Grenzen vom Plot (x-Achse) so legen, dass die Dummmy-Einträge nicht sichtbar sind
-    axs[0][3].set_xlim([1, 2])
+    axs[legend_row][legend_col].set_xlim([1, 2])
     # Legende (für alle Subplots) an der Stelle des (unsichtbaren) Plots anzeigen
-    axs[0][3].legend()
+    axs[legend_row][legend_col].legend(bbox_to_anchor=(0.7, 1.6))
 
-    plt.show()
+    # Speichere Plot ab unter 3_<Netztyp>-<Gewichte>.svg bzw. 3_<Netztyp>-<Gewichte>-<Key>.svg falls key!="val_acc"
+    fig.set_size_inches(12, 15)
+    filename = "3_" + netz + "-" + weights
+    if key != "val_acc":
+        filename += "-" + key
+    filename += ".svg"
+    plt.savefig(filename)
 
 
 def tables():
@@ -428,11 +454,140 @@ def plot_loss_graphs():
         plt.show()
 
 
+def plot_comparison():
+    """Plottet einen Graphen pro Framework, der die Mittelwert-Differenzen zwischen OvO und OvA visualisiert"""
+    # Lade Log-Datei (ohne Mittelwert-Bildung)
+    log = load_log(Path("G://Bachelorarbeit/Code/allModelsLog.txt"), average=False)
+
+    # verfügbare Frameworks (3 Subplots)
+    frameworks = ["TF1-13-1-detTS", "TF2-4-1-detTS", "torch"]
+    # Starte in subplot 0
+    subplot_index = 0
+    # Erstelle Subplot-Gitter mit 1 Zeile und 3 Spalten
+    fig, axs = plt.subplots(nrows=1, ncols=3)
+    # min und max Werte für die y-Achse (damit später ALLE 3 Subplots gleich skaliert werden können),
+    # initialisiert mit Werten die auf jeden Fall später überschrieben werden
+    min_ = 100  # ein sehr großer Wert für min_
+    max_ = -100  # ein sehr kleiner Wert max_
+
+    # Gehe alle Frameworks (und damit Subplots) durch
+    for framework in frameworks:
+        # Starte bei x=0
+        x = 0
+        # Hole aktuellen Subplot entsprechend des subplot_index aus axs
+        current_plot = axs[subplot_index]
+        # Wenn Subplot ganz links, beschrifte die Y-Achse
+        if subplot_index == 0:
+            current_plot.set_ylabel("Differenz (OvO - OvA)")
+        # Zähle subplot_index hoch für nächsten Durchlauf
+        subplot_index += 1
+        # Verfügbare Netztypen
+        networks = ["R", "I"]
+        # Falls nicht mit torch trainiert wurde
+        if framework != "torch":
+            # existiert zusätzlich "Inception-Pawara" als Netztyp
+            networks.append("IP")
+        # Gehe alle Netztypen durch
+        for network in networks:
+            # Gehe beide Gewicht-Initialisierungen durch (Scratch und Finetune)
+            for gewichte in ["S", "F"]:
+                # Gehe alle Train-Sizes durch
+                for train_size_num, train_size in enumerate([10, 20, 50, 80, 100]):
+                    # verfügbare Datensätze
+                    datasets = ["agrilplant3", "agrilplant5", "agrilplant10",
+                                "tropic3", "tropic5", "tropic10", "tropic20",
+                                "swedishLeaves3folds3", "swedishLeaves3folds5", "swedishLeaves3folds10",
+                                "swedishLeaves3folds15",
+                                "pawara-tropic10", "pawara-monkey10", "pawara-umonkey10"]
+                    # Für Resnet Scratch existiert zusätzlich der Datensatz Cifar10
+                    if network == "R" and gewichte == "S":
+                        datasets.append("cifar10")
+                    # Gehe alle Datensätze durch
+                    for dataset in datasets:
+                        # Filtere Log-Datei
+                        rows = filter_log(log, dataset, network, gewichte, framework)
+                        rows = rows[rows.trainpercent == train_size]
+                        # Ziehe Werte für OvA und OvO raus
+                        rows_ova = rows[rows.klassifikation == "OvA"]
+                        rows_ovo = rows[rows.klassifikation == "OvO"]
+                        # Bilde Mittelwert
+                        mean_ova = rows_ova["val_acc"].mean()
+                        mean_ovo = rows_ovo["val_acc"].mean()
+                        # Bilde Differenz (OvO-OvA)
+                        diff = mean_ovo - mean_ova
+                        # Passe ggf. min_ und max_ Werte an
+                        if diff < min_:
+                            min_ = diff
+                        if diff > max_:
+                            max_ = diff
+                        # Setze Farbe zum Plotten abhängig vom Netztypen
+                        if network == "R":
+                            color = "red"
+                        elif network == "I":
+                            color = "blue"
+                        else:
+                            color = "purple"
+                        # Plotte Differenz zwischen OvO und OvA als einen Datenpunkt mit oben gesetzter Farbe
+                        # und einer steigenden Durchsichtigkeit pro Train-Size (10% ist fett, 100% sehr durchsichtig)
+                        current_plot.scatter(x, diff, marker="x", s=8, color=color, alpha=-0.2 * (train_size_num - 5))
+                        # Zähle x ein bisschen hoch (damit nicht alles übereinander liegt)
+                        x += 0.3
+                    # Zwischen Train-Sizes ist eine 15er Lücke
+                    x += 15
+                # Zwischen Gewicht-Typen (S / F) ist zusätzlich eine 20er Lücke
+                x += 20
+        # Ziehe Linie bei y=0 um Ergebnisse nahe bei y=0 besser zu erkennen
+        current_plot.hlines(0, -20, x - 15, color="k")
+        # Baue Subplot-Titel (und erstelle Überschriften für Netztypen, grob mit Leertasten ausgerichtet)
+        if framework == "TF1-13-1-detTS":
+            framework_str = "TF 1.13.1\n\n" + 9 * " " + "ResNet" + 17 * " " + "Inception" + 10 * " " + "Inception-Pawara "
+        elif framework == "TF2-4-1-detTS":
+            framework_str = "TF 2.4.1\n\n" + 9 * " " + "ResNet" + 17 * " " + "Inception" + 10 * " " + "Inception-Pawara "
+        else:
+            framework_str = framework + "\n\n" + 10 * " " + "ResNet" + 32 * " " + "Inception" + 5 * " "
+        current_plot.set_title(framework_str)
+        # Beschränke X-Achse (sonst ist automatisch viel Rand vorhanden)
+        current_plot.set_xlim(-20, x - 15)
+    # Y-Achsen-Limitierung wird um +- 1.5 erweitert, damit man alles gut sieht
+    min_ -= 1.5
+    max_ += 1.5
+    axs[0].set_ylim(min_, max_)
+    axs[1].set_ylim(min_, max_)
+    axs[2].set_ylim(min_, max_)
+
+    for ax_id, ax in enumerate(axs):
+        # Ziehe Trennstriche zwischen Scratch und Finetune
+        # Jede 2. Linie ist dicker (S->F ist dünn, F->S ist dick)
+        ax.vlines(106, min_, max_, color="k", alpha=0.1)
+        ax.vlines(222, min_, max_, color="k", alpha=0.7)
+        ax.vlines(338, min_, max_, color="k", alpha=0.1)
+        if ax_id != 2:  # Nur ausführen, wenn Netztyp Inception-Pawara vorhanden (nicht beim letzen Subplot für Torch)
+            ax.vlines(454, min_, max_, color="k", alpha=0.7)
+            ax.vlines(550, min_, max_, color="k", alpha=0.1)
+            # X-Achsen Ticks und Label festlegen
+            ticks = [53, 106 + 53, 222 + 53, 338 + 53, 454 + 53, 570 + 53]
+            labels = ["S", "F", "S", "F", "S", "F"]
+        else:  # Nur für letzen Subplot (torch) ausführen
+            # X-Achsen Ticks und Label festlegen
+            ticks = [53, 106 + 53, 222 + 53, 338 + 53]
+            labels = ["S", "F", "S", "F"]
+        # Ticks und Label setzen
+        ax.set_xticks(ticks=ticks)
+        ax.set_xticklabels(labels=labels)
+    # Gesamttitel für Plot setzen
+    plt.suptitle("Differenz zwischen Accuracy-Mittelwerten von OvO und OvA")
+    # Plot anzeigen
+    plt.show()
+
+
 # Erstellt LaTeX-Tabellen aus der Log-Datei
 # tables()
 
 # Erstellt BoxPlots zu einer Log Datei
-boxplots()
+# boxplots()
 
 # Für die Loss-Graphen aus Kapitel 2.1.2
 # plot_loss_graphs()
+
+# Plottet die Differenzen zwischen OvO und OvA Mittelwerten sortiert nach Framework, Netztyp und Trainsizes
+plot_comparison()
