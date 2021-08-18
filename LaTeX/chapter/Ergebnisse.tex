@@ -78,26 +78,32 @@ Im Gegensatz zu InceptionV3 Finetune lässt sich hier jedoch beobachten, dass de
 Analog zu den in Kapitel \ref{ch:ergebnisseOvOOvA} gezeigten und beschriebenen Grafiken wird in diesem Kapitel die benötigte Trainingsdauer der verschiedenen Frameworks miteinander verglichen. Weitere Scatterplots neben Abbildung \ref{fig:ScatterplotRS-dauer} befinden sich im Anhang \ref{ch:Anhang_ScatterplotsDauer}.\\
 
 Die Rohwerte der Trainingsdauer sind nicht repräsentativ, da zum Training verschiedene Grafikkarten-Modelle mit jeweils verschiedenen Leistungsfähigkeiten zur Verfügung standen (s. Kapitel \ref{ch:methodik_palma}). Deswegen hängt die Trainingsdauer zudem von der zum Training verwendeten Grafikkarte ab.
-Um dem entgegen zu wirken und einen guten Vergleich zu ermöglichen, wurde die Trainingsdauer in den Scatterplots (s. Abb. \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}) auf das GPU-Modell \textit{RTX 2080} normalisiert. Dabei wird ein Faktor zur Normalisierung verwendet, der die Trainingsdauer von schnelleren Grafikkarten-Modellen länger macht und von langsameren Grafikkarten-Modellen verkürzt, sodass alle benötigten Trainingszeiten auf den Niveau einer RTX 2080 und damit miteinander vergleichbar sind (vgl. \ref{tab:GPUNormalisierung}).
-\begin{figure}[H]
+Um dem entgegen zu wirken und einen guten Vergleich zu ermöglichen, wurde die Trainingsdauer in den Scatterplots (s. Abb. \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}) auf das GPU-Modell \textit{RTX 2080} normalisiert. Dabei wird ein Faktor zur Normalisierung verwendet, der die Trainingsdauer von schnelleren Grafikkarten-Modellen länger macht und von langsameren Grafikkarten-Modellen verkürzt, sodass alle benötigten Trainingszeiten auf den Niveau einer RTX 2080 und damit miteinander vergleichbar sind (vgl. Tabelle \ref{tab:GPUNormalisierung}).
+\begin{table}
+\centering
 \begin{tabular}{|c|c|c|}
 \hline 
 GPU-Modell & GFLOPs (SP) & Normalisierungsfaktor\\
+& & \\
 \hline 
-RTX 2080 & 11750 & $\frac{11750}{11750}=1$ \\ 
+RTX 2080 & 11750 & $\frac{11750}{11750}=1$ \\
+& & \\
 \hline 
-V100 & 14899 & $\frac{14899}{11750}=1,268$ \\ 
+V100 & 14899 & $\frac{14899}{11750}=1,268$ \\
+& & \\
 \hline 
-Titan RTX & 12441 & $\frac{12441}{11750} \approx 1,059$ \\ 
+Titan RTX & 12441 & $\frac{12441}{11750} \approx 1,059$ \\
+& & \\
 \hline 
-Titan XP & 10790 & $\frac{10790}{11750}\approx 0,918$ \\ 
+Titan XP & 10790 & $\frac{10790}{11750}\approx 0,918$ \\
+& & \\
 \hline 
 \end{tabular} 
 \caption{Leistungsfähigkeit und Normalisierungsfaktor für alle verfügbaren GPU-Modelle \cite{palma2GPUs}}
 \label{tab:GPUNormalisierung}
-\end{figure}
+\end{table}
 
-Die Trainingsdauer steigt mit zunehmender Trainsize an, da dann mehr Trainingsdaten verarbeitet werden müssen.
+Die Trainingsdauer (s. Abb. \ref{fig:ScatterplotRS-dauer}) steigt mit zunehmender Trainsize an, da dann mehr Trainingsdaten verarbeitet werden müssen.
 Es fällt auf, dass beide Versionen von TensorFlow \cite{tensorflow} ziemlich genau gleich lange für das Training benötigen. Lediglich PyTorch \cite{pytorch} weicht teilweise stark von der Dauer der beiden TensorFlow \cite{tensorflow} Versionen ab. Bei sehr vielen Trainingsdaten ist PyTorch \cite{pytorch} wesentlich schneller als TensorFlow \cite{tensorflow}, bei wenigen Trainingsdaten dafür jedoch wesentlich langsamer.
 
 Die benötigte Trainingszeit für OvO und OvA ist je Framework nahezu identisch, es kommt bei den verwendeten Anzahlen an Klassen trotz der größeren Ausgabeschicht der Netze und damit größeren Anzahl an Parametern im Netz nicht zu einem erkennbaren Mehraufwand für das Training mit dem OvO Klassifikationsschema.
@@ -144,6 +150,7 @@ Es lässt sich somit festhalten, dass der OvO Ansatz für Scratch-Versuche, abge
 \end{figure}
 
 \section{Visualisierung des Trainingsverlaufes an einem konkreten Beispiel}
+\todo{Beispiel: I-S-Tropic10-TS10}
 \todo{Confusion-Matrix für ein Beispiel raussuchen}
 \todo{Trainingsverlauf exemplarisch plotten (Accuracy und Loss OvO vs OvA, evtl. für alle verschiedenen Frameworks)}
 

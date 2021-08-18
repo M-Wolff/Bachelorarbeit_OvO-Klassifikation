@@ -203,7 +203,8 @@ Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erst
 
 In allen Fällen wird Data-Augmentation verwendet. Dabei wird wie bei Pawara et al. \cite{pawaraPaper, pawaraWebsiteCode} zufällig bis zu 10 Prozent der Bildgröße nach oben und unten bzw. links und rechts verschoben und das Bild abhängig vom Zufall horizontal gespiegelt.
 
-\begin{figure}[H]
+\begin{table}
+\centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
 Anzahl an Klassen & 3 & 5 & 10 & 15 & 20 \\ 
@@ -217,7 +218,7 @@ Tropic & X & X & X & & X \\
 \end{tabular} 
 \caption{Zum Training verwendete Anzahl an Klassen je Datensatz}
 \label{fig:DatensatzKlassen}
-\end{figure}
+\end{table}
 
 \subsection{Agrilplant}
 Der Agrilplant Datensatz \cite{pawaraWebsiteDatensaetze} besteht aus Bildern von Blüten, Früchten und Blättern von Agrarpflanzen.
@@ -361,7 +362,8 @@ Dadurch kann eine allgemeinere Aussage über die Vor- und Nachteile der OvO und 
 Außerdem kann durch die verschiedenen Trainingsparameter analysiert werden, in welchen Situationen die OvO Klassifikation seine theoretischen Vorteile in der Praxis besonders gut ausnutzen kann und wann sich eine Implementation des OvO Klassifikationsschemas eher nicht lohnt.
 
 
-\begin{figure}[H]
+\begin{table}
+\centering
 \begin{tabular}{|c|c|c|}
 \hline 
 \multirow{2}{*}{\textbf{Parameter}} & \multirow{2}{*}{\textbf{mögliche Werte}} & \textbf{Anzahl} \\ 
@@ -386,7 +388,7 @@ Klassifikationsschema & \{OvA, OvO\} & 2 \\
 \end{tabular} 
 \caption{Übersicht über alle Trainingsparameter und deren mögliche Werte}
 \label{tab:parameterUebersicht}
-\end{figure}
+\end{table}
 
 Für jede der beiden TensorFlow \cite{tensorflow} Versionen ergibt sich folgende Anzahl zu trainierender Netze:\\
 \begin{adjustbox}{width=\textwidth, center}
@@ -472,7 +474,8 @@ Auf Grund von laufenden Berechnungen anderer Benutzer und technischen Ausfällen
 
 Außerdem konnten für die Experimente mit TensorFlow \cite{tensorflow} die Titan XP GPUs gar nicht verwendet werden, da der dort installierte Grafiktreiber nicht die erforderliche CUDA-Version unterstützt hat.
 
-\begin{figure}[H]
+\begin{table}
+\centering
 \begin{tabular}{|c|c|}
 \hline 
 Grafikkarten-Modell & Anzahl \\ 
@@ -488,7 +491,7 @@ NVIDIA TITAN Xp 12 GB & 8\\
 \end{tabular} 
 \caption{Maximale Anzahl an zur Verfügung stehenden Grafikkarten auf Palma II \cite{palma2}.}
 \label{tab:palmaGPUs}
-\end{figure}
+\end{table}
 
 Zum Training wurde für jede Kombination an Trainingsparametern (s. Kapitel \ref{ch:methodik_parameter}) ein Job mit Hilfe des Slurm Workload Managers \cite{slurm} gestartet, dem dann zum frühestmöglichen Zeitpunkt irgendeine der freien Grafikkarten zugewiesen wurde. Die zur Verfügung stehende Prozessorleistung von 6 Kernen pro Job war für alle Experimente ausreichend und stellte keinen limitierenden Faktor dar.
 
