@@ -478,7 +478,7 @@ def plot_comparison():
         current_plot = axs[subplot_index]
         # Wenn Subplot ganz links, beschrifte die Y-Achse
         if subplot_index == 0:
-            current_plot.set_ylabel("Differenz (OvO - OvA)")
+            current_plot.set_ylabel("Differenz (OvO - OvA)", fontsize=12)
         # Zähle subplot_index hoch für nächsten Durchlauf
         subplot_index += 1
         # Verfügbare Netztypen
@@ -545,7 +545,7 @@ def plot_comparison():
             framework_str = "TF 2.4.1\n\n" + 9 * " " + "ResNet" + 17 * " " + "Inception" + 10 * " " + "Inception-Pawara "
         else:
             framework_str = framework + "\n\n" + 10 * " " + "ResNet" + 32 * " " + "Inception" + 5 * " "
-        current_plot.set_title(framework_str)
+        current_plot.set_title(framework_str, fontsize=12)
         # Beschränke X-Achse (sonst ist automatisch viel Rand vorhanden)
         current_plot.set_xlim(-20, x - 15)
     # Y-Achsen-Limitierung wird um +- 1.5 erweitert, damit man alles gut sieht
@@ -573,9 +573,12 @@ def plot_comparison():
             labels = ["S", "F", "S", "F"]
         # Ticks und Label setzen
         ax.set_xticks(ticks=ticks)
-        ax.set_xticklabels(labels=labels)
+        ax.set_xticklabels(labels=labels, fontsize=12)
+        # Tick-Größe anpassen (man erkennt sonst kaum was)
+        ax.tick_params(axis="both", labelsize=12)
+
     # Gesamttitel für Plot setzen
-    plt.suptitle("Differenz zwischen Accuracy-Mittelwerten von OvO und OvA")
+    plt.suptitle("Differenz zwischen Accuracy-Mittelwerten von OvO und OvA", fontsize=20)
     # Plot anzeigen
     plt.show()
 
