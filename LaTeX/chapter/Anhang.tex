@@ -4,7 +4,7 @@
 \def\@makechapterhead{\vspace*{-2cm}\savedchap}
 \makeatletter
 % Seitenränder verringern (unten und oben)
-\newgeometry{top=0.5cm, bottom=0.5cm}
+\newgeometry{a4paper,left=35mm,right=35mm,top=5mm,bottom=5mm, includeheadfoot}
 
 
 \chapter{Tabellen mit Ergebnissen}
@@ -13,3 +13,77 @@
 
 \restoregeometry %Normale Seitenränder wiederherstellen
 \let\@makechapterhead\savedchap % Platz vor Chapter-Überschrift auf Standard zurücksetzen
+
+\chapter{Scatterplots}
+\label{ch:Anhang_Scatterplots}
+
+\section{Scatterplots der Accuracies}
+\label{ch:Anhang_ScatterplotsAccuracies}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_I-S}
+\end{adjustbox}
+\caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata in allen 3 Frameworks für Inception Scratch.}
+\label{fig:ScatterplotIS}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_I-F}
+\end{adjustbox}
+\caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata in allen 3 Frameworks für Inception Finetune.}
+\label{fig:ScatterplotIF}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_IP-S}
+\end{adjustbox}
+\caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata unter Verwendung von beiden TensorFlow \cite{tensorflow} Versionen für Inception-Pawara Scratch.}
+\label{fig:ScatterplotIPS}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_IP-F}
+\end{adjustbox}
+\caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata unter Verwendung von beiden TensorFlow \cite{tensorflow} Versionen für Inception-Pawara Finetune.}
+\label{fig:ScatterplotIPF}
+\end{figure}
+
+
+\section{Scatterplots für die Trainingsdauer}
+\label{ch:Anhang_ScatterplotsDauer}
+
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_R-F-dauer}
+\end{adjustbox}
+\caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata in allen 3 Frameworks für Resnet Finetune.}
+\label{fig:ScatterplotRF-dauer}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_I-S-dauer}
+\end{adjustbox}
+\caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata in allen 3 Frameworks für Inception Scratch.}
+\label{fig:ScatterplotIS-dauer}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_I-F-dauer}
+\end{adjustbox}
+\caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata in allen 3 Frameworks für Inception Finetune.}
+\label{fig:ScatterplotIF-dauer}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_IP-S-dauer}
+\end{adjustbox}
+\caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata unter Verwendung von beiden TensorFlow \cite{tensorflow} Versionen für Inception-Pawara Scratch.}
+\label{fig:ScatterplotIPS-dauer}
+\end{figure}
+\begin{figure}[H]
+\begin{adjustbox}{width=\textwidth, center}
+\includesvg{img/3_IP-F-dauer}
+\end{adjustbox}
+\caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata unter Verwendung von beiden TensorFlow \cite{tensorflow} Versionen für Inception-Pawara Finetune.}
+\label{fig:ScatterplotIPF-dauer}
+\end{figure}

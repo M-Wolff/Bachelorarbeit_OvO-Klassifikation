@@ -198,8 +198,10 @@ Bei allen Datensätzen außer SwedishLeaves (s. Kapitel \ref{ch:methodik_Swedish
 Für die Datensätze Tropic10 und Monkey10 stehen auf der Homepage der Autorin \cite{pawaraWebsiteDatensaetze} die von ihr verwendeten Einteilungen in 5 Folds zur Verfügung. Diese Datensätze, die mit der exakt gleichen Einteilung in 5 Folds verwendet wurden, werden im weiteren Verlauf dieser Arbeit mit dem Präfix\\ \enquote{Pawara-} kenntlich gemacht. Da die gleiche Einteilung in 5 Folds verwendet wurde wie im Paper von Pawara et al. \cite{pawaraPaper} ist die Vergleichbarkeit der reproduzierten Ergebnisse höher.
 
 Für alle anderen Datensätze musste die Einteilung in 5 bzw. für SwedishLeaves 3 Folds neu erstellt werden.
-Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erstellt, da die von der Autorin zur Verfügung gestellte Einteilung (s. \cite{pawaraWebsiteDatensaetze}) fehlerhaft ist. Ihre sogenannte 5-Fold Cross Validation besteht bei Tropic10 vermutlich aus fünfmaligem, zufälligem Ziehen eines Verhältnisses 70:30 für Trainings und Testdaten. Dies führt dazu, dass ein eventuell schwierig zu klassifizierendes Bild in mehr als einem Fold im Testsplit vorkommen und somit das Ergebnis abhängig vom Zufall beeinflussen kann.
-\todo{In Scatterplots schauen, inwiefern diese Aussage stimmt}
+Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erstellt, da die von der Autorin zur Verfügung gestellte Einteilung (s. \cite{pawaraWebsiteDatensaetze}) fehlerhaft ist. Ihre sogenannte 5-Fold Cross Validation besteht bei Tropic10 vermutlich aus fünfmaligem, zufälligem Ziehen eines Verhältnisses 70:30 für Trainings und Testdaten. Dies führt dazu, dass ein eventuell schwierig zu klassifizierendes Bild in mehr als einem Fold im Testsplit vorkommen und somit das Ergebnis abhängig vom Zufall beeinflussen kann. Außerdem gestaltet sich das Training bei einem Verhältnis von 70:30 schwieriger und es werden schlechtere Ergebnisse erwartet, da weniger Trainingsdaten zur Verfügung stehen als bei einem Verhältnis von 80:20 bei 5-Fold Cross Validation (s. Kapitel \ref{ch:ergebnisseOvOOvA}).
+
+
+In allen Fällen wird Data-Augmentation verwendet. Dabei wird wie bei Pawara et al. \cite{pawaraPaper, pawaraWebsiteCode} zufällig bis zu 10 Prozent der Bildgröße nach oben und unten bzw. links und rechts verschoben und das Bild abhängig vom Zufall horizontal gespiegelt.
 
 \begin{figure}[H]
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -240,12 +242,12 @@ Der Datensatz Agrilplant10 besteht aus 300 Bildern mit einer Auflösung von ca. 
 
 
 \subsection{Cifar}
+\label{ch:methodik_datensaetzeCifar10}
 Der Cifar10 Datensatz beinhaltet insgesamt 60.000 Bilder in einer sehr kleinen Auflösung von 32x32 Pixeln. Es existieren 10 Klassen: Flugzeug, Automobil, Vogel, Katze, Hirsch, Hund, Frosch, Pferd, Schiff, Lastkraftwagen (vgl. \cite{cifar10}).
 Die Aufteilung in Klassen ist perfekt ausbalanciert mit genau 6.000 Bildern pro Klasse (s. Abb. \ref{fig:Cifar10Zusammensetzung}).
 Da die zum Training verwendeten Netze für Bilder in einer Auflösung von 224 bzw. 299 Pixeln ausgelegt sind (vgl. \ref{ch:methodik_netze}) müssen die Bilder von diesem Datensatz ungefähr 8-fach vergrößert werden.\\
 
-Durch die große Anzahl an Bildern und die starke Hochskalierung benötigt das Training viel Zeit und Ressourcen, weshalb Cifar10 nur bei Resnet Scratch verwendet wird.
-\todo{Verlinkung setzen auf Trainingsdauer, Aussage wie viel länger als z.B. Tropic20}
+Durch die große Anzahl an Bildern und die starke Hochskalierung benötigt das Training sehr viel Zeit und Ressourcen, weshalb Cifar10 nur bei Resnet Scratch verwendet wird.
 
 Dieser Datensatz wurde zusätzlich zu den anderen ausgewählt um die Aussagekraft der Ergebnisse zu erhöhen, da sich die anderen Datensätze lediglich auf Pflanzen und Affen beschränken. Im wissenschaftlichen Paper von Pawara et al. \cite{pawaraPaper} wird dieser Datensatz nicht behandelt.
 
@@ -318,6 +320,7 @@ Zusätzlich zu SwedishLeaves15 wurde mit drei weiteren Teilmengen des Datensatze
 \end{figure}
 \newpage
 \subsection{Tropic}
+\label{ch:methodik_Tropic}
 In dem Tropic Datensatz \cite{pawaraWebsiteDatensaetze} befinden sich 20 Klassen mit Bildern tropischer Pflanzen und deren Blättern, Blüten und Früchten (s. Abb. \ref{fig:tropicUeberblick}). Da unterschiedliche Teile der Pflanzen aus verschiedenen Blickwinkeln vor vielfältigen Hintergründen wie z.B. Erde, Himmel, Straßen oder Häusern fotografiert wurden ist die Klassifikation im Vergleich zum SwedishLeaves Datensatz \cite{swedishLeaves} (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wesentlich anspruchsvoller.
 
 
@@ -387,15 +390,15 @@ Klassifikationsschema & \{OvA, OvO\} & 2 \\
 
 Für jede der beiden TensorFlow \cite{tensorflow} Versionen ergibt sich folgende Anzahl zu trainierender Netze:\\
 \begin{adjustbox}{width=\textwidth, center}
-10 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 5 Folds * 2 Klassifikationsschema = \textbf{3000} Netze\\
+10 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 5 Folds * 2 Klassifikationsschemata = \textbf{3000} Netze\\
 \end{adjustbox}
 Zusätzlich dazu kommen die 4 SwedishLeaves \cite{swedishLeaves} Datensätze mit 3-Fold Cross Validation:\\
 \begin{adjustbox}{width=\textwidth, center}
-4 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 3 Folds * 2 Klassifikationsschema = \textbf{720} Netze\\
+4 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 3 Folds * 2 Klassifikationsschemata = \textbf{720} Netze\\
 \end{adjustbox}
 Außerdem wurde Cifar10 \cite{cifar10} nur auf Resnet-50 Scratch trainiert:\\
 \begin{adjustbox}{width=\textwidth, center}
-1 Datensatz * 1 Netztypen * 5 Trainsizes * 1 Gewicht (Scratch) * 5 Folds * 2 Klassifikationsschema = \textbf{50} Netze\\
+1 Datensatz * 1 Netztypen * 5 Trainsizes * 1 Gewicht (Scratch) * 5 Folds * 2 Klassifikationsschemata = \textbf{50} Netze\\
 \end{adjustbox}
 \\
 Insgesamt gibt es pro TensorFlow \cite{tensorflow} Version also\\
