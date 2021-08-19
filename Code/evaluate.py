@@ -1,8 +1,10 @@
+import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas
 from pathlib import Path
 from statistics import mean
+import seaborn  # Heatmap (Confusion-Matrix) plotten
 
 
 def load_log(logfile: Path, average=True):
@@ -582,6 +584,151 @@ def plot_comparison():
     # Plot anzeigen
     plt.show()
 
+def load_pickle(file: Path):
+    """Lädt eine Pickle Datei `file`"""
+    with open(file, "rb") as picklefile:
+        res = pickle.load(picklefile)
+    return res
+
+def create_confusion_matrix(pred_labels, true_labels):
+    num_classes = max(max(pred_labels), max(true_labels)) + 1  # Label Starten bei 0
+    confusion_matrix = np.zeros((num_classes, num_classes), float)
+
+    assert len(pred_labels) == len(true_labels)
+    for i in range(len(pred_labels)):
+        pred_label = pred_labels[i]
+        true_label = true_labels[i]
+        confusion_matrix[true_label][pred_label] += 1
+    # Confusion-Matrix zeilenweise normalisieren
+    for row_id in range(len(confusion_matrix)):
+        summe = sum(confusion_matrix[row_id , :])
+        for col_id in range(len(confusion_matrix[row_id, :])):
+            confusion_matrix[row_id, col_id] = round(confusion_matrix[row_id, col_id] / summe, 2)
+
+    return confusion_matrix
+
+def plot_train_history():
+    """Erstellt Plots für ein paar konkrete Beispiele für den Trainingsverlauf (Loss und Accuracy
+    über die Epochen hinweg) und einer Confusion-Matrix"""
+    # Verzeichnisse setzen
+    BASE_PATH = Path ("G://Bachelorarbeit/Ergebnisse/Beispiele")
+    torch_path = BASE_PATH / "Torch"
+    tfAlt_path = BASE_PATH / "TF1-13-1"
+    tfNeu_path = BASE_PATH / "TF2-4-1"
+    # Mehrere Beispiele durchgehen
+    for beispiel in ["Inception-Scratch-Tropic10-10-Fold1", "Resnet-Scratch-swedishLeaves3Folds5-10-Fold1", "Resnet-Finetune-Agrilplant10-100-Fold1"]:
+        ### Trainingsverlauf plotten ###
+        fig, axs = plt.subplots(2, 3)
+        # Pfad zu gespeicherter History
+        torch_history_ovo = load_pickle(torch_path / beispiel / "OvO" / "historySave.dat")
+        torch_history_ova = load_pickle(torch_path / beispiel / "OvA" / "historySave.dat")
+        # In Torch stehen Prozentwerte in Accuracy
+        torch_history_ovo["val_acc"] = [acc/100 for acc in torch_history_ovo["val_acc"]]
+        torch_history_ova["val_acc"] = [acc / 100 for acc in torch_history_ova["val_acc"]]
+        axs[0,0].plot(range(len(torch_history_ovo["val_loss"])), torch_history_ovo["val_loss"], color="orangered")
+        axs[0,0].plot(range(len(torch_history_ova["val_loss"])), torch_history_ova["val_loss"], color="royalblue")
+        axs[1,0].plot(range(len(torch_history_ovo["val_acc"])), torch_history_ovo["val_acc"], color="orangered")
+        axs[1,0].plot(range(len(torch_history_ova["val_acc"])), torch_history_ova["val_acc"], color="royalblue")
+
+        tfAlt_history_ovo = load_pickle(tfAlt_path / beispiel / "OvO" / "historySave.dat")
+        tfAlt_history_ova = load_pickle(tfAlt_path / beispiel / "OvA" / "historySave.dat")
+        axs[0,1].plot(range(len(tfAlt_history_ovo["val_loss"])), tfAlt_history_ovo["val_loss"], color="orangered")
+        axs[0,1].plot(range(len(tfAlt_history_ova["val_loss"])), tfAlt_history_ova["val_loss"], color="royalblue")
+        axs[1,1].plot(range(len(tfAlt_history_ovo["val_ovo_accuracy_metric"])), tfAlt_history_ovo["val_ovo_accuracy_metric"], color="orangered")
+        axs[1,1].plot(range(len(tfAlt_history_ova["val_acc"])), tfAlt_history_ova["val_acc"], color="royalblue")
+
+        tfNeu_history_ovo = load_pickle(tfNeu_path / beispiel / "OvO" / "historySave.dat")
+        tfNeu_history_ova = load_pickle(tfNeu_path / beispiel / "OvA" / "historySave.dat")
+        axs[0, 2].plot(range(len(tfNeu_history_ovo["val_loss"])), tfNeu_history_ovo["val_loss"], color="orangered")
+        axs[0, 2].plot(range(len(tfNeu_history_ova["val_loss"])), tfNeu_history_ova["val_loss"], color="royalblue")
+        axs[1, 2].plot(range(len(tfNeu_history_ovo["val_ovo_accuracy_metric"])), tfNeu_history_ovo["val_ovo_accuracy_metric"], color="orangered")
+        axs[1, 2].plot(range(len(tfNeu_history_ova["val_acc"])), tfNeu_history_ova["val_acc"], color="royalblue")
+
+        axs[0,0].set_title("PyTorch 1.9.0 Loss", fontsize=12)
+        axs[1, 0].set_title("PyTorch 1.9.0 Accuracy", fontsize=12)
+        axs[0, 1].set_title("TensorFlow 1.13.1 Loss", fontsize=12)
+        axs[1, 1].set_title("TensorFlow 1.13.1 Accuracy", fontsize=12)
+        axs[0, 2].set_title("TensorFlow 2.4.1 Loss", fontsize=12)
+        axs[1, 2].set_title("TensorFlow 2.4.1 Accuracy", fontsize=12)
+        # Tick-Größe anpassen (man erkennt sonst kaum was) und Achsen beschriften
+        for row in range(2):
+            for col in range(3):
+                if row == 0:
+                    axs[row, col].set_ylabel("Validation Loss")
+                else:
+                    axs[row, col].set_ylabel("Validation Accuracy")
+                axs[row, col].set_xlabel("Epochen")
+                axs[row, col].tick_params(axis="both", labelsize=12)
+        plt.suptitle("Trainingsverlauf \n" + beispiel, fontsize=20)
+        plt.show()
+
+        ### Confusion-Matrix plotten ###
+        # Vorhergesagte und korrekte Label laden
+        torch_ova_pred_true = []
+        torch_ovo_pred_true = []
+        tfAlt_ova_pred_true = []
+        tfAlt_ovo_pred_true = []
+        tfNeu_ova_pred_true = []
+        tfNeu_ovo_pred_true = []
+
+        torch_ova_pred_true.append(np.load(torch_path / beispiel / "OvA" / "predicted_classes_test.npy"))
+        torch_ova_pred_true.append(np.load(torch_path / beispiel / "OvA" / "true_classes_test.npy"))
+        torch_ovo_pred_true.append(np.load(torch_path / beispiel / "OvO" / "predicted_classes_test.npy"))
+        torch_ovo_pred_true.append(np.load(torch_path / beispiel / "OvO" / "true_classes_test.npy"))
+
+        tfAlt_ova_pred_true.append(np.load(tfAlt_path / beispiel / "OvA" / "predicted_classes_test.npy"))
+        tfAlt_ova_pred_true.append(np.load(tfAlt_path / beispiel / "OvA" / "true_classes_test.npy"))
+        tfAlt_ovo_pred_true.append(np.load(tfAlt_path / beispiel / "OvO" / "predicted_classes_test.npy"))
+        tfAlt_ovo_pred_true.append(np.load(tfAlt_path / beispiel / "OvO" / "true_classes_test.npy"))
+
+        tfNeu_ova_pred_true.append(np.load(tfNeu_path / beispiel / "OvA" / "predicted_classes_test.npy"))
+        tfNeu_ova_pred_true.append(np.load(tfNeu_path / beispiel / "OvA" / "true_classes_test.npy"))
+        tfNeu_ovo_pred_true.append(np.load(tfNeu_path / beispiel / "OvO" / "predicted_classes_test.npy"))
+        tfNeu_ovo_pred_true.append(np.load(tfNeu_path / beispiel / "OvO" / "true_classes_test.npy"))
+
+
+        # Daraus jeweils eine Confusion-Matrix erstellen (NumPy Matrix, zeilenweise normalisiert)
+        torch_cm_ova = create_confusion_matrix(torch_ova_pred_true[0], torch_ova_pred_true[1])
+        torch_cm_ovo = create_confusion_matrix(torch_ovo_pred_true[0], torch_ovo_pred_true[1])
+
+        tfAlt_cm_ova = create_confusion_matrix(tfAlt_ova_pred_true[0], tfAlt_ova_pred_true[1])
+        tfAlt_cm_ovo = create_confusion_matrix(tfAlt_ovo_pred_true[0], tfAlt_ovo_pred_true[1])
+
+        tfNeu_cm_ova = create_confusion_matrix(tfNeu_ova_pred_true[0], tfNeu_ova_pred_true[1])
+        tfNeu_cm_ovo = create_confusion_matrix(tfNeu_ovo_pred_true[0], tfNeu_ovo_pred_true[1])
+
+
+        # Numpy-Matrizen mit seaborn als Heatmap plotten
+        fig, axs = plt.subplots(2,3)
+        cmap = "flare"
+        seaborn.heatmap(torch_cm_ova, annot=True, cmap=cmap, ax=axs[0, 0])
+        seaborn.heatmap(torch_cm_ovo, annot=True, cmap=cmap, ax=axs[1, 0])
+
+        seaborn.heatmap(tfAlt_cm_ova, annot=True, cmap=cmap, ax=axs[0, 1])
+        seaborn.heatmap(tfAlt_cm_ovo, annot=True, cmap=cmap, ax=axs[1, 1])
+
+        seaborn.heatmap(tfNeu_cm_ova, annot=True, cmap=cmap, ax=axs[0, 2])
+        seaborn.heatmap(tfNeu_cm_ovo, annot=True, cmap=cmap, ax=axs[1, 2])
+
+        # Beschriftungen hinzufügen
+        for row in range(len(axs)):
+            for col in range(len(axs[row])):
+                ax = axs[row, col]
+                ax.set_ylabel("True Class", fontsize=8)
+                ax.set_xlabel("Predicted Class", fontsize=8)
+        axs[0, 0].set_title("Torch OvA", fontsize=12)
+        axs[1, 0].set_title("Torch OvO", fontsize=12)
+
+        axs[0, 1].set_title("TF 1.13.1 OvA", fontsize=12)
+        axs[1, 1].set_title("TF 1.13.1 OvO", fontsize=12)
+
+        axs[0, 2].set_title("TF 2.4.1 OvA", fontsize=12)
+        axs[1, 2].set_title("TF 2.4.1 OvO", fontsize=12)
+        plt.suptitle("Confusion Matrizen \n" + beispiel, fontsize=20)
+        plt.show()
+
+
+
 
 # Erstellt LaTeX-Tabellen aus der Log-Datei
 # tables()
@@ -593,4 +740,7 @@ def plot_comparison():
 # plot_loss_graphs()
 
 # Plottet die Differenzen zwischen OvO und OvA Mittelwerten sortiert nach Framework, Netztyp und Trainsizes
-plot_comparison()
+#plot_comparison()
+
+# Plottet ein konkretes Beispiel (Trainingsverlauf und Confusion Matrix)
+plot_train_history()
