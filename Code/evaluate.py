@@ -625,24 +625,24 @@ def plot_train_history():
         # In Torch stehen Prozentwerte in Accuracy
         torch_history_ovo["val_acc"] = [acc/100 for acc in torch_history_ovo["val_acc"]]
         torch_history_ova["val_acc"] = [acc / 100 for acc in torch_history_ova["val_acc"]]
-        axs[0,0].plot(range(len(torch_history_ovo["val_loss"])), torch_history_ovo["val_loss"], color="orangered")
-        axs[0,0].plot(range(len(torch_history_ova["val_loss"])), torch_history_ova["val_loss"], color="royalblue")
-        axs[1,0].plot(range(len(torch_history_ovo["val_acc"])), torch_history_ovo["val_acc"], color="orangered")
-        axs[1,0].plot(range(len(torch_history_ova["val_acc"])), torch_history_ova["val_acc"], color="royalblue")
+        axs[0,0].plot(range(len(torch_history_ovo["val_loss"])), torch_history_ovo["val_loss"], color="orangered", label="OvO Loss")
+        axs[0,0].plot(range(len(torch_history_ova["val_loss"])), torch_history_ova["val_loss"], color="royalblue", label="OvA Loss")
+        axs[1,0].plot(range(len(torch_history_ovo["val_acc"])), torch_history_ovo["val_acc"], color="orangered", label="OvO Accuracy")
+        axs[1,0].plot(range(len(torch_history_ova["val_acc"])), torch_history_ova["val_acc"], color="royalblue", label="OvA Accuracy")
 
         tfAlt_history_ovo = load_pickle(tfAlt_path / beispiel / "OvO" / "historySave.dat")
         tfAlt_history_ova = load_pickle(tfAlt_path / beispiel / "OvA" / "historySave.dat")
-        axs[0,1].plot(range(len(tfAlt_history_ovo["val_loss"])), tfAlt_history_ovo["val_loss"], color="orangered")
-        axs[0,1].plot(range(len(tfAlt_history_ova["val_loss"])), tfAlt_history_ova["val_loss"], color="royalblue")
-        axs[1,1].plot(range(len(tfAlt_history_ovo["val_ovo_accuracy_metric"])), tfAlt_history_ovo["val_ovo_accuracy_metric"], color="orangered")
-        axs[1,1].plot(range(len(tfAlt_history_ova["val_acc"])), tfAlt_history_ova["val_acc"], color="royalblue")
+        axs[0,1].plot(range(len(tfAlt_history_ovo["val_loss"])), tfAlt_history_ovo["val_loss"], color="orangered", label="OvO Loss")
+        axs[0,1].plot(range(len(tfAlt_history_ova["val_loss"])), tfAlt_history_ova["val_loss"], color="royalblue", label="OvA Loss")
+        axs[1,1].plot(range(len(tfAlt_history_ovo["val_ovo_accuracy_metric"])), tfAlt_history_ovo["val_ovo_accuracy_metric"], color="orangered", label="OvO Accuracy")
+        axs[1,1].plot(range(len(tfAlt_history_ova["val_acc"])), tfAlt_history_ova["val_acc"], color="royalblue", label="OvA Accuracy")
 
         tfNeu_history_ovo = load_pickle(tfNeu_path / beispiel / "OvO" / "historySave.dat")
         tfNeu_history_ova = load_pickle(tfNeu_path / beispiel / "OvA" / "historySave.dat")
-        axs[0, 2].plot(range(len(tfNeu_history_ovo["val_loss"])), tfNeu_history_ovo["val_loss"], color="orangered")
-        axs[0, 2].plot(range(len(tfNeu_history_ova["val_loss"])), tfNeu_history_ova["val_loss"], color="royalblue")
-        axs[1, 2].plot(range(len(tfNeu_history_ovo["val_ovo_accuracy_metric"])), tfNeu_history_ovo["val_ovo_accuracy_metric"], color="orangered")
-        axs[1, 2].plot(range(len(tfNeu_history_ova["val_acc"])), tfNeu_history_ova["val_acc"], color="royalblue")
+        axs[0, 2].plot(range(len(tfNeu_history_ovo["val_loss"])), tfNeu_history_ovo["val_loss"], color="orangered", label="OvO Loss")
+        axs[0, 2].plot(range(len(tfNeu_history_ova["val_loss"])), tfNeu_history_ova["val_loss"], color="royalblue", label="OvA Loss")
+        axs[1, 2].plot(range(len(tfNeu_history_ovo["val_ovo_accuracy_metric"])), tfNeu_history_ovo["val_ovo_accuracy_metric"], color="orangered", label="OvO Accuracy")
+        axs[1, 2].plot(range(len(tfNeu_history_ova["val_acc"])), tfNeu_history_ova["val_acc"], color="royalblue", label="OvA Accuracy")
 
         axs[0,0].set_title("PyTorch 1.9.0 Loss", fontsize=12)
         axs[1, 0].set_title("PyTorch 1.9.0 Accuracy", fontsize=12)
@@ -659,6 +659,7 @@ def plot_train_history():
                     axs[row, col].set_ylabel("Validation Accuracy")
                 axs[row, col].set_xlabel("Epochen")
                 axs[row, col].tick_params(axis="both", labelsize=12)
+                axs[row, col].legend()
         plt.suptitle("Trainingsverlauf \n" + beispiel, fontsize=20)
         plt.show()
 
