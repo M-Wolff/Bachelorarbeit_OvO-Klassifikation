@@ -96,9 +96,11 @@
 % Anhang
 \appendix
 \addappheadtotoc
+\let\cleardoublepage\clearpage % Ansonsten werden zwischen Anhangkapiteln **2** aufeinanderfolgende Leerseiten, also ein beidseitig leeres Blatt, eingefügt.
 \include{chapter/Anhang}
 
 % Eidesstattliche Erklärung
+\todo{Kapitelstart und Eidesstattliche Erklärung auf gerade / ungerade Seitenzahl prüfen}
 \include{chapter/EidesstattlicheErklaerung}
 
 \end{document}

@@ -460,6 +460,7 @@ Im Quellcode von Pawara et al. \cite{pawaraWebsiteCode} wird bei jedem Trainings
 Daher werden die Einteilungen in Teilmengen in dieser Bachelorarbeit einmalig zufällig bestimmt und für alle Trainingsdurchläufe in gleicher Form benutzt. So wird z.B. bei dem Training des \textit{ResNet-50} Netzes und einer 20-prozentigen Trainsize die gleiche Teilmenge des Datensatzes verwendet wie bei dem Training von \textit{Inception V3} mit 20 Prozent Trainsize. Die Vergleichbarkeit der Ergebnisse verschiedener Netze und der beiden Klassifikationsschemata ist daher hoch und es kommt nicht zu zufälligen Ausreißern.
 
 \subsection{vortrainierte Gewichte}
+\label{ch:methodik_gewichte}
 Als weiterer Trainingsparameter wird unterschieden, ob die Netze von Grund auf, also \textit{from \textbf{Scratch}}, oder mit bereits vorab trainierten Gewichten initialisiert werden und lediglich ein \textbf{Finetuning} stattfindet. Die vorab trainierten Gewichte wurden auf dem ImageNet Datensatz \cite{imagenet} trainiert.
 Dabei ist jedoch das OvA Klassifikationsschema im Vorteil, da die vorab auf ImageNet \cite{imagenet} trainierten Gewichte ebenfalls mit Hilfe eines OvA Klassifikationsschemas trainiert wurden.\\
 
@@ -474,7 +475,7 @@ Auf Grund von laufenden Berechnungen anderer Benutzer und technischen Ausfällen
 
 Außerdem konnten für die Experimente mit TensorFlow \cite{tensorflow} die Titan XP GPUs gar nicht verwendet werden, da der dort installierte Grafiktreiber nicht die erforderliche CUDA-Version unterstützt hat.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
 \hline 
