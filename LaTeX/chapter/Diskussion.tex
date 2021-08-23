@@ -1,22 +1,84 @@
 \chapter{Diskussion}
 \label{ch:diskussion}
+In diesem Kapitel werden die in Kapitel \ref{ch:ergebnisse} vorgestellten Ergebnisse bewertet und die dort beschriebenen Auffälligkeiten begründet. Die Ergebnisse werden interpretiert und es werden generelle Aussagen über die Vor- und Nachteile der Anwendung eines OvO Klassifikationsschemas getroffen.
 
-\todo{Ergebnisse diskutieren, vergleichen, (erste) Aussage treffen}
-\todo{Auf zusammengefasste Ergebnisse eingehen}
-\todo{Erklärungen für Auffälligkeiten bei den Ergebnissen geben}
+Darüber hinaus werden die in dieser Arbeit erzielten Ergebnisse mit denen aus dem Paper von Pawara et al. \cite{pawaraPaper} verglichen und in Beziehung zueinander gesetzt.
 
-\section{OvO vs OvA}
-\todo{OvO ist fast immer besser als OvA?}
-\todo{S vs F}
+Die Ergebnisse deuten darauf hin, dass der OvO Ansatz für das Training \textit{from Scratch} durchaus eine vielversprechende Alternative zu dem herkömmlichen OvA Ansatz darstellt. Allerdings scheinen die Wahl des Frameworks zum Training und des verwendeten Netztyps einen ebenso großen Einfluss auf die Genauigkeit der Klassifikationsergebnisse zu nehmen. Bezüglich der Frameworks konnte PyTorch \cite{pytorch} vergleichbar gute bzw. teilweise sogar bessere Ergebnisse erzielen als TensorFlow \cite{tensorflow} und das bei einer deutlich geringeren Trainingszeit.
 
-\section{verschiedene Frameworks}
-\todo{TF Versionen und Torch vergleichen (besonders swedishLeaves)}
-\todo{Unterschiede in TF Versionen: OvA besser, OvO schlechter? andere Gewichte s. Issue}
-\todo{Trainingsdauer-Plot erklären, num Workers bei torch höher, Optimierungen}
-\todo{Probleme mit neuer TF Version, Github Issue}
 
-\section{Vergleich mit den Ergebnissen aus dem Paper von Pawara et al.}
-\todo{Signifikanzniveau beim Vergleich}
-\todo{Passen meine Ergebnisse zu denen aus dem Paper}
-\todo{schlechte Zahlen auf monkey (passt nicht zum Paper)}
-\todo{generell die Zahlen mit denen aus dem Paper in Bezug setzen, besonders auf den Datensätzen die identisch sein sollten (mit Ausnahme der zufälligen Subsets)}
+\section{OvO vs. OvA}
+\label{ch:diskussionOvOvsOvA}
+Um sicher zu stellen, dass die im Paper von Pawara et al. \cite{pawaraPaper} versprochenen Vorteile der Verwendung eines OvO Klassifikationsschemas auch tatsächlich von dem Klassifikationsschema und nicht von der geänderten Loss-Funktion oder Aktivierungsfunktion abhängen wurden, wie in Kapitel \ref{ch:methodik} bereits erwähnt, zusätzlich Experimente mit 3 Klassen durchgeführt.
+
+
+In diesem Fall mit $K=3$ Klassen haben die Netze für beide Klassifikationsschemata die gleichen Dimensionen und die gleiche Anzahl an Parametern, da die Ausgabeschicht in beiden Fällen aus $3$ Werten besteht. Sie unterscheiden sich lediglich in der verwendeten Aktivierungsfunktion und der Kodierung. Außerdem wird durch die niedrige Klassenanzahl das Training im Falle des OvA Klassifikationsschemas für jeden OvA Klassifikator innerhalb eines Netzes erleichtert, da er eine Klasse von nun nur noch zwei anderen Klassen trennen muss. Damit nähert sich das Verhalten des OvA Klassifikators dem eines OvO Klassifikators an und die beiden Ansätze sind ungefähr gleichwertig.
+
+
+Wie erwartet produzieren für $K=3$ Klassen beide Klassifikationsschemata, abgesehen von ein paar Schwankungen, ähnliche Ergebnisse (s. Abb. \ref{fig:ScatterplotRS}, \ref{fig:ScatterplotRF} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}). \\
+
+
+Experimente mit $K=2$ Klassen wurden nicht unternommen, da es sich dann nicht mehr um ein sogenanntes \textit{Multi-Class} Klassifikationsproblem sondern nur noch um ein binäres Klassifikationsproblem handeln würde.
+
+Insgesamt ist das Training mit dem OvO Ansatz stabiler als bei dem OvA Klassifikationsschema. So weist der Verlauf der Loss Werte während des Trainings mit dem OvO Klassifikationsschema im Gegensatz zu dem OvA Ansatz keine Spikes auf und ist sehr glatt und gleichmäßig (s. Abb. \ref{fig:TrainingsverlaufA}, \ref{fig:TrainingsverlaufB} und \ref{fig:TrainingsverlaufC}).
+
+\section{Scratch vs. Finetune}
+\label{ch:diskussionSvsF}
+In Abbildung \ref{fig:ScatterplotGesamt} wird deutlich, dass der OvO Ansatz hauptsächlich bei dem Training \textit{from Scratch} bessere Ergebnisse erzielt hat als das standardmäßig verwendete OvA Klassifikationsschema. Bei \textit{Finetune} Experimenten hat die Verwendung des OvO Klassifikationsschemas hingegen sogar einen überwiegend negativen Einfluss auf die Güte der Ergebnisse.\\
+
+
+Diese Auffälligkeit lässt sich, wie auch schon im Paper von Pawara et al. \cite{pawaraPaper}, damit erklären, dass bei Experimenten mit Finetune vor-trainierte Gewichte geladen werden und das Training von diesen vor-trainierten Gewichten lediglich fortgeführt wird. Diese vor-trainierten Gewichte stammen von Modellen, die auf dem ImageNet \cite{imagenet} Datensatz trainiert wurden. Dabei wurde für das Vor-Trainieren der standardmäßige OvA Ansatz verwendet, weshalb die Experimente, die das Training mit dem OvA Ansatz fortführen, bessere Ergebnisse produzieren im Vergleich zu Experimenten mit dem OvO Klassifikationsschema.
+
+
+Außerdem fällt auf, dass der Unterschied zwischen den Ergebnissen des OvO und OvA Klassifikationsschemas mit zunehmender Trainsize sinkt (s. Abb. \ref{fig:ScatterplotGesamt}). Das bedeutet, dass mit einer zunehmenden Anzahl an Bildern im Trainsplit sowohl der Vorteil bei der Verwendung eines OvO Klassifikationsschemas für Scratch Experimente, als auch der Vorteil des OvA Ansatzes bei Finetune Experimenten geringer ausfällt und sich die Ergebnisse beider Klassifikationsschemata einander nähern (s. Abb. \ref{fig:ScatterplotRS}, \ref{fig:ScatterplotRF}, \ref{fig:ScatterplotGesamt} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}).
+
+
+Daraus lässt sich schließen, dass das vorgestellte OvO Klassifikationsschema bei Scratch Experimenten besonders für Datensätze mit wenigen Trainingsbeispielen einen deutlichen Vorteil gegenüber dem standardmäßig verwendeten OvA Ansatz bringt. Bei Datensätzen mit einer größeren Anzahl an Bildern innerhalb des Trainsplits wird dieser Vorteil geringer und die Ergebnisse der beiden Klassifikationsschemata gleichen sich an.
+
+
+Falls mit vor-trainierten Gewichten weitergearbeitet werden soll ist es empfehlenswert das Klassifikationsschema nicht zu wechseln und mit dem vorher bereits verwendeten weiter zu trainieren, da bei Finetune Experimenten unter Verwendung des OvO Ansatzes, und dem damit Verbundenen Wechsel des Klassifikationsschemas, überwiegend schlechtere Ergebnisse produziert wurden.
+
+
+\section{Verschiedene Frameworks}
+\label{ch:diskussionFrameworks}
+
+Betrachtet man die Ergebnisse auf gleichen Datensätzen mit unterschiedlichen Frameworks (vgl. Kapitel \ref{ch:ergebnisseOvOOvA} Abb. \ref{fig:ScatterplotRS} und \ref{fig:ScatterplotRF} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}) fällt auf, dass bei höheren Trainsizes und vielen Bildern im Trainsplit alle 3 Frameworks annähernd identische Ergebnisse produzieren. Für geringere Trainsizes und Datensätze mit wenigen Bildern 
+produziert PyTorch \cite{pytorch} in etwa gleich gute oder sogar bessere Ergebnisse als TensorFlow 1.13.1 \cite{tensorflow}. 
+
+
+TensorFlow \cite{tensorflow} in der neueren Version 2.4.1 fällt hierbei komplett aus dem Muster und produziert sehr häufig starke Ausreißer nach unten. Besonders bei dem Datensatz SwedishLeaves \cite{swedishLeaves} werden merkwürdigerweise Ergebnisse produziert, die teilweise nicht besser sind als zufälliges Raten. Auch der Verlauf des Trainings weicht stark von dem der anderen beiden Frameworks ab, da der zu minimierende Loss-Wert im Verlauf des Trainings nahezu kontinuierlich ansteigt (vgl. Kapitel \ref{ch:BeispielC}).
+Zwischen den beiden Versionen von TensorFlow \cite{tensorflow} bestehen anscheinend erhebliche Unterschiede. So haben beispielsweise die zufällig erzeugten Gewichte in ResNet-50 in der alten Version einen dreimal größeren Wertebereich als in der neuen Version. Auch die OvA Netzausgabe eines solchen zufällig initialisierten Netzes unterscheidet sich mit $o_{alt}=\begin{bmatrix}
+0 & 0 & 1 & 0 & 0
+\end{bmatrix}$ und $o_{neu}=\begin{bmatrix}
+0.2 & 0.2 & 0.2 & 0.2 & 0.2
+\end{bmatrix}$ stark. Hierbei ist besonders verwunderlich, dass die neue Version die erwartete Netzausgabe eines zufällig initialisierten Netzes mit einer Wahrscheinlichkeit für jede Klasse von $\frac{1}{k}$ produziert und die alte Version nicht. Trotzdem treten ausschließlich bei der neuen Version starke Ausreißer nach unten auf. Auch sehr hohe Spikes in den Loss Werten von über 300 (s. Abb. \ref{fig:TrainingsverlaufA}) treten bei z.B. Inception Scratch auf Tropic10 mit 10 Prozent Trainsize (s. Kapitel \ref{ch:BeispielA}) für die exakt gleichen Daten nur in der neuen Version von TensorFlow \cite{tensorflow} auf, in der alten nicht.
+
+
+Ebenfalls bei der Abbildung mit den Differenzen zwischen OvO und OvA (s. Abb. \ref{fig:ScatterplotGesamt}) passt das Ergebnis für TensorFlow 2.4.1 \cite{tensorflow} besonders bei ResNet-50 nicht zu den Ergebnissen der anderen beiden Frameworks.\\
+
+
+Für diese ganzen Auffälligkeiten und die unerklärlichen Unterschiede bei den Ergebnissen habe ich ein Issue mit Beispielen im TensorFlow GitHub Repository erstellt \cite{githubTFIssue}. Aktuell (Stand 21.08.2021) kam dort seit über einem Monat keine Antwort mehr um dem Problem auf den Grund zu gehen.
+Nach heutigem Stand scheint es also ein durchaus vielversprechender Ansatz zu sein, bei schlechten Ergebnissen und besonders bei dem Training mit wenigen Trainingsdaten in TensorFlow 2.4.1 \cite{tensorflow}, den bis auf einige notwendige Anpassungen gleichen Quellcode auf den exakt gleichen Daten mit einer älteren Version wie z.B. 1.13.1 auszuführen und auf bessere Ergebnisse mit der älteren Version zu hoffen.
+\newpage
+Betrachtet man die benötigte Zeit für das Training je Framework (s. Kapitel \ref{ch:ergebnisseOvOOvA-Dauer} Abb. \ref{fig:ScatterplotRS-dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}) fällt auf, dass PyTorch \cite{pytorch} bei Datensätzen mit vielen Bildern wesentlich weniger Zeit für das Training benötigt als die anderen Frameworks. Bei Datensätzen mit eher wenigen Bildern benötigt PyTorch \cite{pytorch} dafür umso länger. Dies liegt daran, dass PyTorch \cite{pytorch} standardmäßig die benötigten Bilder bei Bedarf von der Festplatte nachlädt und erst dann eventuell nötige Transformationen wie z.B. eine Verkleinerung der Bildgröße anwendet. Bei vielen Bildern können die so zwangsweise entstehenden Wartezeiten zum Nachladen der Bilder durch eine gleichzeitige Bearbeitung des vorherigen Batches auf der GPU überbrückt werden, während bei wenigen Bildern die Wartezeiten schlechter versteckt werden können. Außerdem werden mehrere Threads zum Laden der Bilder verwendet.
+
+
+Bei der TensorFlow \cite{tensorflow} Implementierung hingegen werden alle Bilder zu Beginn des Trainings in den Arbeitsspeicher geladen und entsprechend skaliert, um dann von dort aus auf die Grafikkarte übertragen werden zu können. Dies führte besonders im Falle von Cifar10 \cite{cifar10} mit sehr vielen Bildern, die alle um einen Faktor von 7 bis 9 hoch-skaliert werden müssen, zu einem sehr hohen Bedarf an Arbeitsspeicher. Das Laden der Bilder mit mehreren Threads war aufgrund von Thread-safe Problemen leider nicht möglich.
+
+
+Insgesamt konnte beobachtet werden, dass die Auslastung der Grafikkarte für PyTorch \cite{pytorch} bei z.B. Cifar10 mit 100 Prozent Trainsize auf einer RTX 2080 bei ca. 92 \% lag mit 3 GB benötigtem Grafikspeicher und deutlich unter 10 GB Arbeitsspeicher. Im Gegensatz dazu benötigte TensorFlow \cite{tensorflow} 60 bis 70 GB Arbeitsspeicher, die gesamten 11 GB Grafikspeicher und lastete die Grafikkarte jedoch nur zu 50 bis 60 \% aus.
+Bei anderen Datensätzen war die Auslastung der Grafikkarte zwar etwas besser, aber trotzdem nicht so gut wie bei PyTorch \cite{pytorch}.
+
+
+\newpage
+
+\section{Vergleich der Ergebnisse mit dem Paper von Pawara et al. \cite{pawaraPaper}}
+Insgesamt decken sich die in dieser Arbeit produzierten Ergebnisse mit denen aus dem Paper von Pawara et al. \cite{pawaraPaper}. In beiden Arbeiten zeichnet sich besonders bei kleineren Datensätzen bzw. Trainsizes eine Verbesserung der Ergebnisse durch das OvO Klassifikationsschema bei einem Training \textit{from Scratch} ab. Für Finetuning Experimente ist der OvA Ansatz dem OvO Ansatz aus oben genannten Gründen (s. Kapitel \ref{ch:diskussionSvsF}) überlegen (vgl. Abb. \ref{fig:ScatterplotGesamt}).
+
+Auch die Beobachtung, dass das Training mit Hilfe des OvO Ansatzes stabiler verläuft (s. Kapitel \ref{ch:Beispiele}), stimmt mit den Ergebnissen von Pawara et al. (vgl. \cite{pawaraPaper} Kapitel 5.7 Discussion) überein.\\\\
+
+Allerdings konnten manche Ergebnisse aus dem Paper \cite{pawaraPaper} nicht reproduziert werden. Besonders bei dem \textit{Pawara-Monkey10} Datensatz, der abgesehen von dem zufälligen Ziehen der Teilmengen für die Trainsizes genau in der gleichen Form verwendet wird wie in dem Paper von Pawara et al. \cite{pawaraPaper} liegen meine Ergebnisse deutlich unter denen aus dem Paper \cite{pawaraPaper}. Selbst bei Verwendung des kompletten Datensatzes, also 100 Prozent Trainsize, sind meine Ergebnisse um ungefähr 2-3 Prozentpunkte schlechter.\\
+
+Es lässt sich also festhalten, dass meine Ergebnisse sehr ähnlich zu denen von Pawara et al. \cite{pawaraPaper} sind. Ihre Ergebnisse sprechen jedoch wesentlich stärker für die Verwendung des OvO Klassifikationsschemas. Während bei meinen Ergebnissen zwar auch überwiegend eine Verbesserung durch den OvO Ansatz erzielt werden konnte, treten teilweise auch negative Effekte auf, die die Ergebnisse des OvO Ansatzes schlechter ausfallen lassen als die des OvA Klassifikationsschemas (s. Abb. \ref{fig:ScatterplotGesamt}). Pawara et al. \cite{pawaraPaper} treffen in ihrem Paper die Aussage, dass bei Scratch Experimenten in 37 von 100 Fällen der OvO Ansatz signifikant besser ist als OvA, jedoch niemals signifikant schlechter (vgl. \cite{pawaraPaper} Kapitel 5.7 Discussion).
+Anhand von Abbildung \ref{fig:ScatterplotGesamt} wird deutlich, dass meine Ergebnisse zwar auch in eine ähnliche Richtung deuten, jedoch gibt es bei meinen Ergebnissen auch vereinzelt Fälle, in denen der OvO Ansatz bei Scratch Experimenten deutlich schlechter abschneidet als das OvA Klassifikationsschema.\\
+Daher habe ich mich bewusst für eine Visualisierung der Unterschiede zwischen dem OvO und OvA Klassifikationsschema (s. Abb. \ref{fig:ScatterplotGesamt}) entschieden, um einen guten Überblick über die Ergebnisse zu bekommen und eine Gesamtaussage zu formulieren, die nicht von dem verwendeten statistischen Test und Signifikanzniveau abhängt.
