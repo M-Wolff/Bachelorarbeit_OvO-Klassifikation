@@ -25,7 +25,7 @@ Da alle $y_i$ außer einem den Wert $0$ besitzen und somit alle Summanden bis au
 \[L_{CE} = - y_k * \log{(\widehat{y}_k)} = -1 * \log{(\widehat{y}_k)} = - \log{(\widehat{y}_k)}\]
 mit $k$ als Klassennummer des Trainingsbeispiels, zu der es tatsächlich gehört.
 
-Da die Logarithmusfunktion zwischen 0 und 1 streng monoton steigt, aber in diesem Intervall einen negativen Wertebereich produziert und sich bei\\ $log(1)=0$ ihr Maximum in dem von der Softmax Funktion produzierten Wertebereich von $[0, 1]$ befindet, wird durch Minimierung der Fehlerfunktion $L_{CE}$ effektiv die Wahrscheinlichkeit $\widehat{y}_k$ für die tatsächliche Klasse $k$ maximiert.
+Da die Logarithmusfunktion zwischen 0 und 1 streng monoton steigt, aber in diesem Intervall einen negativen Wertebereich produziert und sich bei\\ $log(1)=0$ ihr Maximum in dem von der \textit{Softmax}-Funktion produzierten Wertebereich von $[0, 1]$ befindet, wird durch Minimierung der Fehlerfunktion $L_{CE}$ effektiv die Wahrscheinlichkeit $\widehat{y}_k$ für die tatsächliche Klasse $k$ maximiert.
 
 
 \subsection{OvO Kodierung}
@@ -63,7 +63,7 @@ Da bei dem OvO Klassifikationsschema kein Wahrscheinlichkeitsvektor, in dem sich
 \label{fig:tanh}
 \end{figure}
 
-Da keine One-Hot Kodierung mehr verwendet wird, kann die \textit{Cross Entropy Loss}-Funktion nicht mehr als Fehlerfunktion verwendet werden. Pawara et al. haben in ihrem Paper \cite{pawaraPaper} eine angepasste Variante der \textit{Cross Entropy} Loss-Funktion entwickelt. Für die Berechnung müssen zuerst die Einträge des Zielvektors $\overrightarrow{y_{OvO}}$ und der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ auf das Intervall $[0, 1]$ skaliert werden:
+Da keine One-Hot-Kodierung mehr verwendet wird, kann die \textit{Cross Entropy Loss}-Funktion nicht mehr als Fehlerfunktion verwendet werden. Pawara et al. haben in ihrem Paper \cite{pawaraPaper} eine angepasste Variante der \textit{Cross Entropy} Loss-Funktion entwickelt. Für die Berechnung müssen zuerst die Einträge des Zielvektors $\overrightarrow{y_{OvO}}$ und der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ auf das Intervall $[0, 1]$ skaliert werden:
 \begin{figure}[H]
 \[y_{ivsj}^{'} = \frac{y_{ivsj} + 1}{2}\]
 \[\widehat{y}_{ivsj}^{'} = \frac{\widehat{y}_{ivsj} + 1}{2}\]
@@ -180,12 +180,12 @@ lautet, wird durch $\overrightarrow{z} = M_{OvO} * \overrightarrow{\widehat{y}} 
 Als Vorteile des OvO Klassifikationsschemas werden bessere Ergebnisse erwartet, da bei $K$ Klassen die einzelnen $\frac{K*(K-1)}{2}$ Klassifikatoren innerhalb des Netzes eine simplere Entscheidungsgrenze erlernen müssen als bei dem OvA Ansatz (vgl. \cite{pawaraPaper}).
 Dafür müssen im Vergleich zu den $K$ Klassifikatoren bei dem OvA Klassifikationsschema wesentlich mehr Klassifikatoren, $\frac{K*(K-1)}{2}$ Stück, erlernt werden. Besonders bei Datensätzen mit vielen Klassen kann dadurch ein nicht zu vernachlässigender Mehraufwand entstehen.\\
 
-Außerdem ist zu erwarten, dass das Training mit Hilfe der OvO Klassifikation stabiler verläuft, da im Gegensatz zu dem OvA Ansatz die einzelnen Klassifikatoren innerhalb des Netzes unabhängiger voneinander sind (vgl. \cite{pawaraPaper}). Dies liegt daran, dass bei dem OvA Ansatz alle Werte in der Netzausgabe aufgrund der \textit{Softmax} Funktion zusammen aufsummiert $1$ ergeben müssen. Somit muss zwangsläufig die Wahrscheinlichkeit für eine andere Klasse sinken, wenn eine andere Klassenwahrscheinlichkeit steigt. Bei OvO hingegen steht in der Netzausgabe jedes Klassifikationsergebnis der $\frac{K*(K-1)}{2}$ Klassifikatoren für sich alleine und Veränderungen an diesen Werten wirken sich nicht so direkt auf andere Werte in der Netzausgabeschicht aus wie es bei dem OvA Ansatz der Fall ist.
+Außerdem ist zu erwarten, dass das Training mit Hilfe der OvO Klassifikation stabiler verläuft, da im Gegensatz zu dem OvA Ansatz die einzelnen Klassifikatoren innerhalb des Netzes unabhängiger voneinander sind (vgl. \cite{pawaraPaper}). Dies liegt daran, dass bei dem OvA Ansatz alle Werte in der Netzausgabe aufgrund der \textit{Softmax}-Funktion zusammen aufsummiert $1$ ergeben müssen. Somit muss zwangsläufig die Wahrscheinlichkeit für eine andere Klasse sinken, wenn eine andere Klassenwahrscheinlichkeit steigt. Bei dem OvO Ansatz hingegen steht in der Netzausgabe jedes Klassifikationsergebnis der $\frac{K*(K-1)}{2}$ Klassifikatoren für sich alleine und Veränderungen an diesen Werten wirken sich nicht so direkt auf andere Werte in der Netzausgabeschicht aus wie es bei dem OvA Ansatz der Fall ist.
 \newpage
 \subsection{Alternative Kodierungsmethoden}
-Als Alternative zu dem OvA und OvO Klassifikationsschema existiert das Verfahren des \textbf{Attribute Learning} \cite{attributeLearning, attributeLearningChinese}, bei dem die Klassifikationsbeispiele nicht in einzelne Klassen eingeteilt werden, sondern ihnen mehrere Attribute zugeschrieben werden. Dadurch steigt der Aufwand bei der Erstellung der Label für einen Datensatz, da die zum Training zu verwendenden Attribute sorgfältig ausgewählt werden müssen (vgl. \cite{pawaraPaper}). Jedoch kann mit \textit{Attribute Learning} sehr gut generalisiert werden, da Attribute über verschiedene Klassen von Trainingsbeispielen hinweg erlernt werden. So können sich z.B. die Trainingsbeispiele für die Klassen \textit{Hund}, \textit{Katze} und \textit{Kaninchen} das Attribut \enquote{besitzt Fell} teilen und das neuronale Netz kann das Attribut \enquote{Fell} in verschiedenen Ausprägungsformen erlernen um es  später einer anderen Klasse von Klassifikationsbeispielen, wie z.B. \textit{Schaf}, die es vorher noch nie gesehen hat zuschreiben zu können (vgl. \cite{attributeLearning}). Dies ist besonders nützlich, wenn wie z.B. bei der Erkennung chinesischer Schriftzeichen mehrere zehntausend verschiedene Klassen existieren und eine One-Hot Kodierung all dieser Klassen nicht praktikabel ist (vgl. \cite{attributeLearningChinese}).\\
+Als Alternative zu den OvA und OvO Klassifikationsschemata existiert das Verfahren des \textbf{Attribute Learning} \cite{attributeLearning, attributeLearningChinese}, bei dem die Klassifikationsbeispiele nicht in einzelne Klassen eingeteilt werden, sondern ihnen mehrere Attribute zugeschrieben werden. Dadurch steigt der Aufwand bei der Erstellung der Label für einen Datensatz, da die zum Training zu verwendenden Attribute sorgfältig ausgewählt werden müssen (vgl. \cite{pawaraPaper}). Jedoch kann mit \textit{Attribute Learning} sehr gut generalisiert werden, da Attribute über verschiedene Klassen von Trainingsbeispielen hinweg erlernt werden. So können sich z.B. die Trainingsbeispiele für die Klassen \textit{Hund}, \textit{Katze} und \textit{Kaninchen} das Attribut \enquote{besitzt Fell} teilen und das neuronale Netz kann das Attribut \enquote{Fell} in verschiedenen Ausprägungsformen erlernen, um es später einer anderen Klasse von Klassifikationsbeispielen, wie z.B. \textit{Schaf}, die es vorher noch nie gesehen hat, zuschreiben zu können (vgl. \cite{attributeLearning}). Dies ist besonders nützlich, wenn wie z.B. bei der Erkennung chinesischer Schriftzeichen mehrere zehntausend verschiedene Klassen existieren und eine One-Hot-Kodierung all dieser Klassen nicht praktikabel ist (vgl. \cite{attributeLearningChinese}).\\
 
-Einen ähnlichen Ansatz stellen \textbf{Error-Correcting Output Codes} \cite{errorCorrectingCodes} dar. Bei ihnen werden Eigenschaften der Klassen festgelegt und ihr Vorhandensein in Binärform, also mit 1 oder 0, kodiert. Im Paper von Dietterich et al. \cite{errorCorrectingCodes} teilen sich 10 Klassen 6 Merkmale in verschiedenen Kombinationen (vgl. \cite{errorCorrectingCodes}, Table 1 \& 2). Durch die binäre Kodierung ergeben sich $2^6 = 64$ mögliche Merkmalskombinationen, von denen jedoch nur 10 Stück, eine pro Klasse, genutzt werden. Die 10 verschiedenen Klassen tragen als Label jeweils ein sogenanntes binäres \textit{Codeword} aus 6 Bit, die zueinander möglichst unterschiedlich sein sollen (vgl. \cite{errorCorrectingCodes}). Bei der Klassifikation produziert ein neuronales Netz ein binäres \textit{Codeword} aus 6 Bit und das Klassifikationsbeispiel wird zu der Klasse zugewiesen, dessen binäres 6-Bit \textit{Codeword}-Label nach einer Distanzfunktion am nächsten an der Netzausgabe liegt (vgl. \cite{errorCorrectingCodes}). Durch diesen Vergleich mittels Distanzfunktion können einige Fehler, die möglicherweise bei der Klassifikation entstehen, ausgeglichen werden (vgl. \cite{errorCorrectingCodes}).\\
+Einen ähnlichen Ansatz stellen \textbf{Error-Correcting Output Codes} \cite{errorCorrectingCodes} dar. Bei ihnen werden Eigenschaften der Klassen festgelegt und ihr Vorhandensein in Binärform, also mit 1 oder 0, kodiert. Im Paper von Dietterich et al. \cite{errorCorrectingCodes} teilen sich 10 Klassen 6 Merkmale in verschiedenen Kombinationen (vgl. \cite{errorCorrectingCodes}, Table 1 u. 2). Durch die binäre Kodierung ergeben sich $2^6 = 64$ mögliche Merkmalskombinationen, von denen jedoch nur 10 Stück, eine pro Klasse, genutzt werden. Die 10 verschiedenen Klassen tragen als Label jeweils ein sogenanntes binäres \textit{Codeword} aus 6 Bit, die zueinander möglichst unterschiedlich sein sollen (vgl. \cite{errorCorrectingCodes}). Bei der Klassifikation produziert ein neuronales Netz ein binäres \textit{Codeword} aus 6 Bit und das Klassifikationsbeispiel wird zu der Klasse zugewiesen, dessen binäres 6-Bit \textit{Codeword}-Label nach einer Distanzfunktion am nächsten an der Netzausgabe liegt (vgl. \cite{errorCorrectingCodes}). Durch diesen Vergleich mittels Distanzfunktion können einige Fehler, die möglicherweise bei der Klassifikation entstehen, ausgeglichen werden (vgl. \cite{errorCorrectingCodes}).\\
 
 
 Außerdem versprechen \textbf{hierarchische Herangehensweisen}, bei denen die Daten entlang eines binären Baumes an jedem Knoten durch jeweils einen Klassifikator in zwei Gruppen aufgeteilt werden, eine vergleichbare Genauigkeit bei teilweise deutlich kürzeren Rechenzeiten für die Klassifikation im Vergleich zu dem OvO Ansatz (vgl. \cite{hierarchischeMethoden}).
@@ -198,14 +198,14 @@ Für die Experimente wurden 5 verschiedene Datensätze verwendet: Agrilplant \ci
 Für jeden Datensatz existieren Exemplare mit verschiedenen Anzahlen an Klassen (s. Abb. \ref{fig:DatensatzKlassen}), die zukünftig jeweils mit $<$Datensatzname$><$Klassenanzahl$>$ wie z.B. Agrilplant10 bezeichnet werden.
 Die Datensätze mit geringerer Klassenanzahl sind Teilmengen des gesamten Datensatzes, bei denen nur die ersten $k$ Klassen verwendet werden.
 
-Zusätzlich zu den im Paper von Pawara et al. \cite{pawaraPaper} verwendeten Teilmengen mit geringerer Klassenanzahl wird in dieser Bachelorarbeit mit einer Klassenanzahl von $K=3$ experimentiert, da dann für OvO und OvA die Ausgabeschichten mit $\frac{3*(3-1)}{2} = 3$ die gleiche Dimension haben. Die beiden Klassifikationsschemata unterscheiden sich dann lediglich in der Loss- und Aktivierungsfunktion der letzten Schicht und es ist zu erwarten, dass beide Ansätze in etwa gleich gute Ergebnisse liefern.
+Zusätzlich zu den im Paper von Pawara et al. \cite{pawaraPaper} verwendeten Teilmengen mit geringerer Klassenanzahl wird in dieser Bachelorarbeit mit einer Klassenanzahl von $K=3$ experimentiert, da dann für OvO und OvA die Ausgabeschichten mit $\frac{3*(3-1)}{2} = 3$ die gleiche Dimension haben. Die beiden Klassifikationsschemata unterscheiden sich dann lediglich in der Loss- und Aktivierungsfunktion der letzten Schicht. Es ist zu erwarten, dass beide Ansätze in etwa gleich gute Ergebnisse liefern.
 
-Bei allen Datensätzen außer SwedishLeaves (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wird eine 5-Fold Cross Validation angewendet, es werden also 5 Aufteilungen in Train- und Testdaten im Verhältnis 80:20 erstellt, sodass sich jedes Bild genau in einem Fold im Testsplit und in 4 Folds im Trainsplit befindet.
+Bei allen Datensätzen außer SwedishLeaves (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wird eine 5-Fold Cross Validation angewendet. Es werden also 5 Aufteilungen in Train- und Testdaten im Verhältnis 80:20 erstellt, sodass sich jedes Bild genau in einem Fold im Testsplit und in 4 Folds im Trainsplit befindet.
 
 Für die Datensätze Tropic10 und Monkey10 stehen auf der Homepage der Autorin \cite{pawaraWebsiteDatensaetze} die von ihr verwendeten Einteilungen in 5 Folds zur Verfügung. Diese Datensätze, die mit der exakt gleichen Einteilung in 5 Folds verwendet wurden, werden im weiteren Verlauf dieser Arbeit mit dem Präfix\\ \enquote{Pawara-} kenntlich gemacht. Da die gleiche Einteilung in 5 Folds verwendet wurde wie im Paper von Pawara et al. \cite{pawaraPaper} ist die Vergleichbarkeit der reproduzierten Ergebnisse höher.
 
 Für alle anderen Datensätze musste die Einteilung in 5 bzw. für SwedishLeaves 3 Folds neu erstellt werden.
-Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erstellt, da die von der Autorin zur Verfügung gestellte Einteilung (s. \cite{pawaraWebsiteDatensaetze}) fehlerhaft ist. Ihre sogenannte 5-Fold Cross Validation besteht bei Tropic10 vermutlich aus fünfmaligem, zufälligem Ziehen eines Verhältnisses 70:30 für Trainings und Testdaten. Dies führt dazu, dass ein eventuell schwierig zu klassifizierendes Bild in mehr als einem Fold im Testsplit vorkommen und somit das Ergebnis abhängig vom Zufall beeinflussen kann. Außerdem gestaltet sich das Training bei einem Verhältnis von 70:30 schwieriger und es werden schlechtere Ergebnisse erwartet, da weniger Trainingsdaten zur Verfügung stehen als bei einem Verhältnis von 80:20 bei 5-Fold Cross Validation (s. Kapitel \ref{ch:ergebnisseOvOOvA}).
+Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erstellt, da die von der Autorin zur Verfügung gestellte Einteilung (s. \cite{pawaraWebsiteDatensaetze}) fehlerhaft ist. Ihre sogenannte 5-Fold Cross Validation besteht bei Tropic10 vermutlich aus fünfmaligem, zufälligem Ziehen eines Verhältnisses 70:30 für Trainings- und Testdaten. Dies führt dazu, dass ein eventuell schwierig zu klassifizierendes Bild in mehr als einem Fold im Testsplit vorkommen und somit das Ergebnis abhängig vom Zufall beeinflussen kann. Außerdem gestaltet sich das Training bei einem Verhältnis von 70:30 schwieriger. Dadurch werden schlechtere Ergebnisse erwartet, da weniger Trainingsdaten zur Verfügung stehen als bei einem Verhältnis von 80:20 bei 5-Fold Cross Validation (s. Kapitel \ref{ch:ergebnisseOvOOvA}).
 
 
 In allen Fällen wird Data-Augmentation verwendet. Dabei wird wie bei Pawara et al. \cite{pawaraPaper, pawaraWebsiteCode} zufällig bis zu 10 Prozent der Bildgröße nach oben und unten bzw. links und rechts verschoben und das Bild abhängig vom Zufall horizontal gespiegelt.
@@ -233,7 +233,7 @@ Es existieren 10 verschiedene Klassen: Apfel, Banane, Traube, Jackfruit, Orange,
 Zum Training wurden zusätzlich zu Agrilplant10 noch zwei weitere Teilmengen des Datensatzes, Agrilplant5 und Agrilplant3, verwendet.
 
 Der Datensatz Agrilplant10 besteht aus 300 Bildern je Klasse, also insgesamt 3000 Bilder, und ist damit perfekt ausbalanciert (s. Abb. \ref{fig:Agrilplant10Zusammensetzung}).
-Die Bilder haben eine Auflösung von ca. 200-500 Pixeln. \\
+Die Bilder haben eine Auflösung von ca. 200 bis 500 Pixeln. \\
 
 \begin{figure}[H]
 \includegraphics[scale=0.2]{img/2_agrilplant-image.jpg}
@@ -258,28 +258,28 @@ Da die zum Training verwendeten Netze für Bilder in einer Auflösung von 224 bz
 
 Durch die große Anzahl an Bildern und die starke Hochskalierung benötigt das Training sehr viel Zeit und Ressourcen, weshalb Cifar10 nur bei Experimenten mit ResNet-50 Scratch verwendet wird.
 
-Dieser Datensatz wurde zusätzlich zu den anderen ausgewählt um die Aussagekraft der Ergebnisse zu erhöhen, da sich die anderen Datensätze lediglich auf Pflanzen und Affen beschränken. Im wissenschaftlichen Paper von Pawara et al. \cite{pawaraPaper} wird dieser Datensatz nicht behandelt.
+Dieser Datensatz wurde zusätzlich zu den anderen ausgewählt, um die Aussagekraft der Ergebnisse zu erhöhen, da sich die anderen Datensätze lediglich auf Pflanzen und Affen beschränken. Im wissenschaftlichen Paper von Pawara et al. \cite{pawaraPaper} wird dieser Datensatz nicht behandelt.
 
 \begin{figure}[H]
 \begin{adjustbox}{width=1.4\textwidth, center}
 \includesvg{img/2_cifar10_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des Cifar10 Datensatzes \cite{cifar10} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des Datensatzes Cifar10 \cite{cifar10} in Train- und Testsplits je Fold.}
 \label{fig:Cifar10Zusammensetzung}
 \end{figure}
 
 
 \subsection{Monkey}
-Für den Monkey Datensatz existieren 2 Versionen: Pawara-Monkey10 und Pawara-uMonkey10 mit absichtlich nicht ausbalancierten Anzahlen an Bildern je Klasse, um zu untersuchen wie die beiden Klassifikationsschemata auf schlecht ausbalancierten Datensätzen abschneiden (vgl. \cite{pawaraWebsiteDatensaetze}). Beide Versionen bestehen aus Bildern von 10 verschiedenen Affenarten aufgenommen in freier Wildbahn aus unterschiedlichen Perspektiven (s. Abb. \ref{fig:monkeyUeberblick}) und wurden in genau der gleichen Aufteilung in Folds bei den Experimenten im Paper von Pawara et al. \cite{pawaraPaper} verwendet.
+Für den Datensatz Monkey \cite{pawaraWebsiteDatensaetze} existieren 2 Versionen: Pawara-Monkey10 und Pawara-uMonkey10 mit absichtlich nicht ausbalancierten Anzahlen an Bildern je Klasse, um zu untersuchen, wie die beiden Klassifikationsschemata auf schlecht ausbalancierten Datensätzen abschneiden (vgl. \cite{pawaraWebsiteDatensaetze}). Beide Versionen bestehen aus Bildern von 10 verschiedenen Affenarten, aufgenommen in freier Wildbahn aus unterschiedlichen Perspektiven (s. Abb. \ref{fig:monkeyUeberblick}), und wurden in genau der gleichen Aufteilung in Folds bei den Experimenten im Paper von Pawara et al. \cite{pawaraPaper} verwendet.
 Die Bilder haben eine Auflösung von ca. 180 bis zu 6.000 Pixeln.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.08]{img/2_monkey10-image.jpg}
-\caption{Überblick über die verschiedenen Klassen des Monkey10 Datensatzes \cite{pawaraMonkey}.}
+\caption{Überblick über die verschiedenen Klassen des Datensatzes Monkey10 \cite{pawaraMonkey}.}
 \label{fig:monkeyUeberblick}
 \end{figure}
 
-Der Pawara-Monkey10 Datensatz besteht aus insgesamt 1370 Bildern und ist mit 131 bis 152 Bildern je Klasse noch relativ gut ausbalanciert (s. Abb \ref{fig:Pawara-Monkey10Zusammensetzung}).\\
+Der Datensatz Pawara-Monkey10 besteht aus insgesamt 1370 Bildern und ist mit 131 bis 152 Bildern je Klasse noch relativ gut ausbalanciert (s. Abb. \ref{fig:Pawara-Monkey10Zusammensetzung}).\\
 
 Im Gegensatz dazu ist der Datensatz Pawara-uMonkey10 weder in der Anzahl an Bildern pro Klasse noch in der Größe der Folds im Trainsplit ausbalanciert (s. Abb. \ref{fig:Pawara-uMonkey10Zusammensetzung}). 
 
@@ -288,14 +288,14 @@ Im Gegensatz dazu ist der Datensatz Pawara-uMonkey10 weder in der Anzahl an Bild
 \begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-monkey10_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des Pawara-Monkey10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des Datensatzes Pawara-Monkey10 \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:Pawara-Monkey10Zusammensetzung}
 \end{figure}
 \begin{figure}[H]
 \begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-umonkey10_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des unbalancierten Pawara-uMonkey10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des unbalancierten Datensatzes Pawara-uMonkey10 \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:Pawara-uMonkey10Zusammensetzung}
 \end{figure}
 
@@ -305,18 +305,18 @@ Im Gegensatz dazu ist der Datensatz Pawara-uMonkey10 weder in der Anzahl an Bild
 
 \subsection{SwedishLeaves}
 \label{ch:methodik_SwedishLeaves}
-Der SwedishLeaves Datensatz \cite{swedishLeaves} besteht aus Bildern von Blättern schwedischer Bäume, die zentriert auf einem weißen Hintergrund liegen (s. Abb. \ref{fig:swedishLeavesUeberblick}). Dadurch besitzen Bilder innerhalb einer Klasse eine hohe Ähnlichkeit.
+Der Datensatz SwedishLeaves \cite{swedishLeaves} besteht aus Bildern von Blättern schwedischer Bäume, die zentriert auf einem weißen Hintergrund liegen (s. Abb. \ref{fig:swedishLeavesUeberblick}). Dadurch besitzen Bilder innerhalb einer Klasse eine hohe Ähnlichkeit.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{img/2_swedishLeaves-image.jpg}
-\caption{Überblick über die verschiedenen Klassen des SwedishLeaf Datensatzes \cite{pawaraMonkey}.}
+\caption{Überblick über die verschiedenen Klassen des Datensatzes SwedishLeaf \cite{pawaraMonkey}.}
 \label{fig:swedishLeavesUeberblick}
 \end{figure}
 
 In den Experimenten von Pawara et al. \cite{pawaraPaper} wurde fünfmal ein Verhältnis von 1:2 für Trainings- und Testdaten aus den 75 Bildern pro Klasse gezogen (vgl. \cite{pawaraPaper} Kapitel 3.1.3), sodass im Testsplit doppelt so viele Bilder sind wie im Trainsplit.
 
-Da hierbei offensichtlich Doppelungen zwischen den Folds entstehen können und die verwendete Einteilung der Autorin des Papers \cite{pawaraPaper} nicht verfügbar ist, habe ich mich dafür entschieden die 75 Bilder pro Klasse in 3 Gruppen zu je 25 Bildern auf zu teilen und daraus 3 Folds mit einem Verhältnis von 1:2 für Trainings und Testdaten zu mischen. Dabei gelangt jedes Bild genau in einem Fold in den Trainsplit und in zwei Folds in den Testsplit. Es entsteht quasi eine 3-Fold Cross Validation mit vertauschtem Train- und Testsplit (s. Abb. \ref{fig:swedishLeavesZusammensetzung}).
+Da hierbei offensichtlich Doppelungen zwischen den Folds entstehen können und die verwendete Einteilung der Autorin des Papers \cite{pawaraPaper} nicht verfügbar ist, habe ich mich dafür entschieden, die 75 Bilder pro Klasse in 3 Gruppen zu je 25 Bildern aufzuteilen und daraus 3 Folds mit einem Verhältnis von 1:2 für Trainings- und Testdaten zu mischen. Dabei gelangt jedes Bild genau in einem Fold in den Trainsplit und in zwei Folds in den Testsplit. Es entsteht quasi eine 3-Fold Cross Validation mit vertauschtem Train- und Testsplit (s. Abb. \ref{fig:swedishLeavesZusammensetzung}).
 
 Zusätzlich zu SwedishLeaves15 wurde mit drei weiteren Teilmengen des Datensatzes gearbeitet: SwedishLeaves10, SwedishLeaves5 und SwedishLeaves3.
 
@@ -324,24 +324,24 @@ Zusätzlich zu SwedishLeaves15 wurde mit drei weiteren Teilmengen des Datensatze
 \begin{adjustbox}{width=1.4\textwidth, center}
 \includesvg{img/2_swedishLeaves15_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des SwedishLeaves15 Datensatzes \cite{swedishLeaves} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des Datensatzes SwedishLeaves15 \cite{swedishLeaves} in Train- und Testsplits je Fold.}
 \label{fig:swedishLeavesZusammensetzung}
 \end{figure}
 \newpage
 \subsection{Tropic}
 \label{ch:methodik_Tropic}
-In dem Tropic Datensatz \cite{pawaraWebsiteDatensaetze} befinden sich 20 Klassen mit Bildern tropischer Pflanzen und deren Blättern, Blüten und Früchten (s. Abb. \ref{fig:tropicUeberblick}). Da unterschiedliche Teile der Pflanzen aus verschiedenen Blickwinkeln vor vielfältigen Hintergründen wie z.B. Erde, Himmel, Straßen oder Häusern fotografiert wurden ist die Klassifikation im Vergleich zum SwedishLeaves Datensatz \cite{swedishLeaves} (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wesentlich anspruchsvoller.
+In dem Datensatz Tropic \cite{pawaraWebsiteDatensaetze} befinden sich 20 Klassen mit Bildern tropischer Pflanzen und deren Blättern, Blüten und Früchten (s. Abb. \ref{fig:tropicUeberblick}). Da unterschiedliche Teile der Pflanzen aus verschiedenen Blickwinkeln vor vielfältigen Hintergründen wie z.B. Erde, Himmel, Straßen oder Häusern fotografiert wurden, ist die Klassifikation im Vergleich zum Datensatz SwedishLeaves \cite{swedishLeaves} (s. Kapitel \ref{ch:methodik_SwedishLeaves}) wesentlich anspruchsvoller.
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.14]{img/2_tropic10-image.jpg}
 \caption{Überblick über die verschiedenen Klassen des\\
-Tropic Datensatzes \cite{pawaraTropic}.}
+Datensatzes Tropic \cite{pawaraTropic}.}
 \label{fig:tropicUeberblick}
 \end{figure}
 
-Pro Klasse existieren 221-371 Bilder (s. Abb. \ref{fig:tropic20Zusammensetzung} und Abb. \ref{fig:pawaraTropic10Zusammensetzung}) in einer Auflösung von 250x250 Pixeln.
+Pro Klasse existieren 221 bis 371 Bilder (s. Abb. \ref{fig:tropic20Zusammensetzung} und Abb. \ref{fig:pawaraTropic10Zusammensetzung}) in einer Auflösung von 250x250 Pixeln.
 
 Es wurden Teilmengen von diesem Datensatz mit 20, 10, 5 und 3 Klassen zum Vergleich der beiden Klassifikationsschemata verwendet. Außerdem wurde die von Pawara et al. im Paper \cite{pawaraPaper} verwendete Einteilung in Folds \textit{Pawara-Tropic10} \cite{pawaraWebsiteDatensaetze} benutzt, bei der die 5-Fold Cross Validation aus fünfmaligem, zufälligem Ziehen eines Verhältnisses 70:30 für Trainings- und Testdaten besteht (s. Abb. \ref{fig:pawaraTropic10Zusammensetzung}).
 Zusätzlich existiert noch ein Tropic52 Datensatz \cite{pawaraWebsiteDatensaetze} mit 52 Klassen, der aber weder im Paper von Pawara et al. \cite{pawaraPaper} noch in dieser Bachelorarbeit behandelt wird.
@@ -350,23 +350,22 @@ Zusätzlich existiert noch ein Tropic52 Datensatz \cite{pawaraWebsiteDatensaetze
 \begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_tropic20_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des Tropic20 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des Datensatzes Tropic20 \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:tropic20Zusammensetzung}
 \end{figure}
 \begin{figure}[H]
 \begin{adjustbox}{width=1.2\textwidth, center}
 \includesvg{img/2_pawara-tropic10_Zusammensetzung}
 \end{adjustbox}
-\caption{Aufteilung des Pawara-Tropic10 Datensatzes \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
+\caption{Aufteilung des Datensatzes Pawara-Tropic10 \cite{pawaraWebsiteDatensaetze} in Train- und Testsplits je Fold.}
 \label{fig:pawaraTropic10Zusammensetzung}
 \end{figure}
 
 
 \section{Trainingsparameter}
 \label{ch:methodik_parameter}
-Um zu untersuchen wie OvO und OvA im Vergleich zueinander in verschiedenen Situationen abschneiden, werden die folgenden Trainingsparameter für beide Klassifikationsschemata variiert.
+Um zu untersuchen, wie OvO und OvA im Vergleich zueinander in verschiedenen Situationen abschneiden, werden die folgenden Trainingsparameter für beide Klassifikationsschemata variiert.
 Dadurch kann eine allgemeinere Aussage über die Vor- und Nachteile der OvO und OvA Klassifikation getroffen werden, da man durch die Variation der Trainingsparameter einen größeren Bereich an potentiellen Anwendungsfällen abdeckt.
-
 Außerdem kann durch die verschiedenen Trainingsparameter analysiert werden, in welchen Situationen die OvO Klassifikation seine theoretischen Vorteile in der Praxis besonders gut ausnutzen kann und wann sich eine Implementation des OvO Klassifikationsschemas eher nicht lohnt.
 
 
@@ -382,7 +381,7 @@ Framework & \{TF1.13.1, TF2.4.1, torch\} & 3\\
 Datensatz & s. Kapitel \ref{ch:methodik_datensaetze} & 15\\
 \hline 
 \multirow{2}{*}{Netztyp} & \{ResNet-50, InceptionV3, & \multirow{2}{*}{3} \\
- & Pawara-InceptionV3\} & \\
+ & InceptionV3-Pawara\} & \\
 \hline
 Trainsize (\%) & \{10, 20, 50, 80, 100\}& 5 \\
 \hline
@@ -402,11 +401,11 @@ Für jede der beiden TensorFlow \cite{tensorflow} Versionen ergibt sich folgende
 \begin{adjustbox}{width=\textwidth, center}
 10 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 5 Folds * 2 Klassifikationsschemata = \textbf{3000} Netze\\
 \end{adjustbox}
-Zusätzlich dazu kommen die 4 SwedishLeaves \cite{swedishLeaves} Datensätze mit 3-Fold Cross Validation:\\
+Zusätzlich dazu kommen die 4 Datensätze für SwedishLeaves \cite{swedishLeaves} mit 3-Fold Cross Validation:\\
 \begin{adjustbox}{width=\textwidth, center}
 4 Datensätze * 3 Netztypen * 5 Trainsizes * 2 Gewichte * 3 Folds * 2 Klassifikationsschemata = \textbf{720} Netze\\
 \end{adjustbox}
-Außerdem wurde Cifar10 \cite{cifar10} nur auf Resnet-50 Scratch trainiert:\\
+Außerdem wurde Cifar10 \cite{cifar10} nur auf ResNet-50 Scratch trainiert:\\
 \begin{adjustbox}{width=\textwidth, center}
 1 Datensatz * 1 Netztyp * 5 Trainsizes * 1 Gewicht (Scratch) * 5 Folds * 2 Klassifikationsschemata = \textbf{50} Netze\\
 \end{adjustbox}
@@ -427,36 +426,31 @@ Die Autoren haben leider nicht angegeben, mit welcher Version von TensorFlow \ci
 Somit wurden zusätzlich die gleichen Experimente erneut mit der auf Palma II \cite{palma2} bereits vorinstallierten TensorFlow \cite{tensorflow} Version 1.13.1 durchgeführt.
 
 Da zwischen diesen beiden Versionen von TensorFlow \cite{tensorflow} bereits erhebliche Diskrepanzen aufgetreten sind, wurden zum Schluss erneut die gleichen Experimente in PyTorch 1.9.0 \cite{pytorch} durchgeführt.
-Damit soll sichergestellt werden, dass die Aussage über die Auswirkung der OvO oder OvA Klassifikation nicht nur auf bestimmte Versionen von TensorFlow \cite{tensorflow} zutrifft sondern möglichst allgemeingültig auf andere Machine-Learning Frameworks übertragen werden kann.
+Damit soll sichergestellt werden, dass die Aussage über die Auswirkung der OvO oder OvA Klassifikation nicht nur auf bestimmte Versionen von TensorFlow \cite{tensorflow} zutrifft, sondern möglichst allgemeingültig auf andere Machine-Learning Frameworks übertragen werden kann.
 
-Es ist erwähnenswert, dass die Implementierung von PyTorch \cite{pytorch} im Falle von InceptionV3 $0.07$ und für ResNet $0.11$ Prozent weniger trainierbare Parameter besitzt verglichen mit der Implementierung der Netze von TensorFlow \cite{tensorflow} (s. \cite{githubRepo} Netz-Implementierungen). Dieser geringfügige Unterschied sollte allerdings keinen bemerkenswerten Einfluss auf die Ergebnisse haben.
+Es ist erwähnenswert, dass die Implementierung von PyTorch \cite{pytorch} im Falle von InceptionV3 $0.07$ und für ResNet-50 $0.11$ Prozent weniger trainierbare Parameter besitzt verglichen mit der Implementierung der Netze von TensorFlow \cite{tensorflow} (s. \cite{githubRepo} Netz-Implementierungen). Dieser geringfügige Unterschied sollte allerdings keinen bemerkenswerten Einfluss auf die Ergebnisse haben.
 
 \subsection{Netztypen}
 \label{ch:methodik_netze}
 Für das Training werden die zwei beliebten Netzarchitekturen \textbf{ResNet-50} und \textbf{InceptionV3} verwendet. Als Auflösung der Bilder für die Netze wurde bei \textit{ResNet-50} standardmäßig 224x224 Pixel und bei \textit{InceptionV3} 299x299 Pixel verwendet. Größere oder kleinere Bilder in den Datensätzen wurden entsprechend skaliert.
 
-Für das Netz \textit{Inception V3} hat die Autorin in dem auf Ihrer Webseite zur Verfügung gestellten Quellcode \cite{pawaraWebsiteCode} einige Änderungen an den letzten Schichten des Netzes vorgenommen. So wird beispielsweise eine zusätzliche \textit{BatchNormalization}-Schicht und eine \textit{Dropout}-Schicht eingefügt, die es in der Standardimplementierung von \textit{InceptionV3} nicht gibt (s. Abb. \ref{fig:inceptionAenderungen}). Diese veränderte Version des \textit{InceptionV3} Netzes wird im weiteren Verlauf als \textbf{Pawara-InceptionV3} bezeichnet.
+Für das Netz \textit{InceptionV3} hat die Autorin in dem auf Ihrer Webseite zur Verfügung gestellten Quellcode \cite{pawaraWebsiteCode} einige Änderungen an den letzten Schichten des Netzes vorgenommen. So wird beispielsweise eine zusätzliche \textit{BatchNormalization}-Schicht und eine \textit{Dropout}-Schicht eingefügt, die es in der Standardimplementierung von \textit{InceptionV3} nicht gibt (s. Abb. \ref{fig:inceptionAenderungen}). Diese veränderte Version des \textit{InceptionV3} Netzes wird im weiteren Verlauf als \textbf{InceptionV3-Pawara} bezeichnet.
 
 Die letzte Schicht, die \textit{Dense} oder \textit{Fully Connected} Schicht, wurde für OvO und OvA jeweils auf die entsprechende Anzahl an Klassifikatoren angepasst. Für die OvA Klassifikation hat das Netz genau so viele Ausgabewerte wie es Klassen gibt, für OvO gibt das Netz bei $K$ Klassen $\frac{K(K-1)}{2}$ Werte entsprechend des OvO Kodierungsschemas (s. Kapitel \ref{ch:methodik_kodierung}) aus.
 
 \begin{figure}[H]
 
-\begin{minipage}{.5\textwidth}
-\begin{figure}[H]
-\begin{adjustbox}{width=\textwidth, center}
-\includegraphics[scale=1]{img/3_inception-standard.jpg}
-\end{adjustbox}
-\end{figure}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-\begin{figure}[H]
-\begin{adjustbox}{width=\textwidth, center}
-\includegraphics[scale=1]{img/3_inception-pawara.jpg}
-\end{adjustbox}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{img/3_inception-standard.jpg}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{img/3_inception-pawara.jpg}
+\end{subfigure}
 
-\end{figure}
-\end{minipage}
-\caption{Standardmäßiger Aufbau des \textit{Inception V3} Netzes (links) und Änderungen an den letzten Schichten des \textit{Inception V3} Netzes von Pawara et al. \cite{pawaraWebsiteCode, pawaraPaper} (rechts).}
+
+
+\caption{Standardmäßiger Aufbau des \textit{InceptionV3} Netzes (links) und Änderungen an den letzten Schichten des \textit{InceptionV3} Netzes von Pawara et al. \cite{pawaraWebsiteCode, pawaraPaper} (rechts).}
 \label{fig:inceptionAenderungen}
 \end{figure}
 
@@ -480,12 +474,13 @@ Die initiale Learning-Rate beträgt wie bei den Experimenten von Pawara et al. \
 \section{Ausführung der Jobs auf Palma II}
 \label{ch:methodik_palma}
 Da durch die hohe Anzahl an verschiedenen Trainingsparametern (s. Kapitel \ref{ch:methodik_parameter}) sehr viele verschiedene Netze trainiert werden müssen, wurden für das Training die Grafikkarten (s. Tabelle \ref{tab:palmaGPUs}) des High-Performance-Computing Clusters \textit{Palma II} der Universität Münster \cite{palma2} verwendet.\\
-Auf Grund von laufenden Berechnungen anderer Benutzer und technischen Ausfällen waren nicht immer alle Grafikkarten verfügbar. So standen während meinen Experimenten wegen Hardwareproblemen beispielsweise leider nur die Hälfte der insgesamt 40 RTX 2080 Grafikkarten zur Verfügung.
+Aufgrund von laufenden Berechnungen anderer Benutzer und technischen Ausfällen waren nicht immer alle Grafikkarten verfügbar. So standen während meinen Experimenten wegen Hardwareproblemen beispielsweise leider nur die Hälfte der insgesamt 40 RTX 2080 Grafikkarten zur Verfügung.
 
 Außerdem konnten für die Experimente mit TensorFlow \cite{tensorflow} die Titan XP GPUs gar nicht verwendet werden, da der dort installierte Grafiktreiber nicht die erforderliche CUDA-Version unterstützt hat.
 
 \begin{table}[H]
 \centering
+\begin{adjustbox}{scale=.9, center}
 \begin{tabular}{|c|c|}
 \hline 
 Grafikkarten-Modell & Anzahl \\ 
@@ -499,9 +494,11 @@ NVIDIA TITAN RTX 24GB & 4\\
 NVIDIA TITAN Xp 12 GB & 8\\
 \hline
 \end{tabular} 
+\end{adjustbox}
 \caption{Maximale Anzahl an zur Verfügung stehenden Grafikkarten auf Palma II \cite{palma2}.}
 \label{tab:palmaGPUs}
 \end{table}
+
 
 Zum Training wurde für jede Kombination an Trainingsparametern (s. Kapitel \ref{ch:methodik_parameter}) ein Job mit Hilfe des Slurm Workload Managers \cite{slurm} gestartet, dem dann zum frühestmöglichen Zeitpunkt irgendeine der freien Grafikkarten zugewiesen wurde. Die zur Verfügung stehende Prozessorleistung von 6 Kernen pro Job war für alle Experimente ausreichend und stellte keinen limitierenden Faktor dar.
 

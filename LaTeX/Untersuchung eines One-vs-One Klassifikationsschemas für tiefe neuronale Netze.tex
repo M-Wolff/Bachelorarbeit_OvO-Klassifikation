@@ -55,7 +55,14 @@
 \usepackage{listings} % Für Code-Listings
 \usepackage{adjustbox} % ähnlich wie ResizeBox (plus centering)
 \usepackage{multirow} %Tabellenfelder über 2 Zeilen
-\usepackage{appendix}
+\usepackage{appendix} %Anhang-Paket
+
+
+%\usepackage{fancyhdr}
+% Hier kann der Seitentitel (Im Header) angepasst werden Even/Odd und Right/Left
+%\fancyhead[ER]{\rightmark}
+
+
 \renewcommand{\appendixtocname}{Anhang}
 %\usepackage[style=authortitle-icomp, backend=bibtex]{biblatex}
 \renewcommand{\lstlistingname}{Quelltext} %Ändert die Überschrift von Listing nach Quelltext
@@ -84,22 +91,28 @@
 \include{chapter/Methodik}
 
 \include{chapter/Ergebnisse}
-
+\newpage\null\newpage
 \include{chapter/Diskussion}
-
+\newpage\null\newpage
 \include{chapter/Fazit}
 
 % Literaturverzeichnis
 \bibliographystyle{unsrtdin}
 \bibliography{Quellen}
 
-% Anhang
+% Anhang (Seitenränder vorher verringern)
+\newgeometry{left=35mm,right=35mm,top=5mm,bottom=5mm, includeheadfoot}
+% Auswirkungen von let\clearpage\... bleiben innerhalb der Gruppe
+\begingroup
 \appendix
 \addappheadtotoc
-\let\cleardoublepage\clearpage % Ansonsten werden zwischen Anhangkapiteln **2** aufeinanderfolgende Leerseiten, also ein beidseitig leeres Blatt, eingefügt.
 \include{chapter/Anhang}
+\endgroup
+\restoregeometry %Normale Seitenränder wiederherstellen
 
 % Eidesstattliche Erklärung
 \include{chapter/EidesstattlicheErklaerung}
+
+
 
 \end{document}
