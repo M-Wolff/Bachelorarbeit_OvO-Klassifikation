@@ -14,11 +14,11 @@ Dabei summieren sich alle Werte im Ausgabevektor $\overrightarrow{\widehat{y}_{O
 \[1 = \sum_{i=1}^K{\widehat{y}_i}\]
 Somit bilden sie einen Wahrscheinlichkeitsvektor, bei dem der Wert $\widehat{y}_i$ die Wahrscheinlichkeit angibt, mit der das zu klassifizierende Bild der Klasse $i$ zugewiesen wird.\\
 
-Als Fehlerfunktion wird, wie meistens üblich, die \textit{Cross Entropy Loss}-Funktion verwendet. Für den \textit{One-Hot}-kodierten Zielvektor \\
+Als Fehlerfunktion wird, wie meistens üblich, die \textit{Cross Entropy} Loss-Funktion verwendet. Für den \textit{One-Hot}-kodierten Zielvektor \\
 $\overrightarrow{y_{OvA}} = \begin{bmatrix} y_1 & y_2 & ... & y_i & ... & y_{K-i} & y_K \end{bmatrix}$ der Klasse $k$ gilt, dass alle Elemente des Vektors $0$ sind außer dem einem Eintrag $y_k$ an der Stelle $k$, der den Wert $1$ besitzt.
 
 
-Der Cross Entropy Loss wird dann elementweise für den Zielvektor $\overrightarrow{y_{OvA}}$ und die Netzausgabe $\overrightarrow{\widehat{y}_{OvA}}$ berechnet und aufsummiert:
+Der \textit{Cross Entropy} Loss wird dann elementweise für den Zielvektor $\overrightarrow{y_{OvA}}$ und die Netzausgabe $\overrightarrow{\widehat{y}_{OvA}}$ berechnet und aufsummiert:
 \[L_{CE} = - \sum_{i=1}^K{y_i * \log{(\widehat{y}_i})}\]
 
 Da alle $y_i$ außer einem den Wert $0$ besitzen und somit alle Summanden bis auf einen einzigen $0$ betragen, lässt sich die Summe auflösen zu 
@@ -63,7 +63,7 @@ Da bei dem OvO Klassifikationsschema kein Wahrscheinlichkeitsvektor, in dem sich
 \label{fig:tanh}
 \end{figure}
 
-Da keine One-Hot-Kodierung mehr verwendet wird, kann die \textit{Cross Entropy Loss}-Funktion nicht mehr als Fehlerfunktion verwendet werden. Pawara et al. haben in ihrem Paper \cite{pawaraPaper} eine angepasste Variante der \textit{Cross Entropy} Loss-Funktion entwickelt. Für die Berechnung müssen zuerst die Einträge des Zielvektors $\overrightarrow{y_{OvO}}$ und der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ auf das Intervall $[0, 1]$ skaliert werden:
+Da keine One-Hot-Kodierung mehr verwendet wird, kann die \textit{Cross Entropy} Loss-Funktion nicht mehr als Fehlerfunktion verwendet werden. Pawara et al. haben in ihrem Paper \cite{pawaraPaper} eine angepasste Variante der \textit{Cross Entropy} Loss-Funktion entwickelt. Für die Berechnung müssen zuerst die Einträge des Zielvektors $\overrightarrow{y_{OvO}}$ und der Netzausgabe $\overrightarrow{\widehat{y}_{OvO}}$ auf das Intervall $[0, 1]$ skaliert werden:
 \begin{figure}[H]
 \[y_{ivsj}^{'} = \frac{y_{ivsj} + 1}{2}\]
 \[\widehat{y}_{ivsj}^{'} = \frac{\widehat{y}_{ivsj} + 1}{2}\]
