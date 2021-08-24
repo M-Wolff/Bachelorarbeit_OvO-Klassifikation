@@ -316,7 +316,7 @@ def boxplot(save_path: Path, netz: str, weights: str, key="val_acc", key_label="
                     values = current_row[key]  # Nehme Werte aus Spalte `key`
                     color = "orangered" if ovo_ova == "OvO" else "royalblue"  # OvO orange-rot, OvA royalblau
                     # Scattere die Einzelnen Ergebnisse (ein Ergebnis pro Fold) im Pixel-Stil
-                    current_plot.scatter(x=len(values) * [x_pos], y=list(values), marker=",", s=1, color=color,
+                    current_plot.scatter(x=len(values) * [x_pos], y=list(values), marker=",", s=2, color=color,
                                          alpha=0.2)
                     # Zeichne Mittelwert ein mit `marker_style` als Markierung und `marker_size` als Größe der
                     # Markierung (s. Tupel in der Liste der Frameworks)
@@ -350,11 +350,11 @@ def boxplot(save_path: Path, netz: str, weights: str, key="val_acc", key_label="
     # Setze Haupt-Titel (Abkürzungen für Netz und Gewichte werden erst aufgelöst)
     netz_str = ""
     if netz == "R":
-        netz_str = "Resnet"
+        netz_str = "ResNet-50"
     elif netz == "IP":
-        netz_str = "Inception-Pawara"
+        netz_str = "InceptionV3-Pawara"
     elif netz == "I":
-        netz_str = "Inception"
+        netz_str = "InceptionV3"
     weights_str = "Finetune" if weights == "F" else "Scratch"
     plt.suptitle(netz_str + " " + weights_str, fontsize=20)
 
@@ -542,11 +542,11 @@ def plot_comparison():
         current_plot.hlines(0, -20, x - 15, color="k")
         # Baue Subplot-Titel (und erstelle Überschriften für Netztypen, grob mit Leertasten ausgerichtet)
         if framework == "TF1-13-1-detTS":
-            framework_str = "TF 1.13.1\n\n" + 9 * " " + "ResNet" + 17 * " " + "Inception" + 10 * " " + "Inception-Pawara "
+            framework_str = "TF 1.13.1\n\n" + 14 * " " + "ResNet-50" + 13 * " " + "InceptionV3" + 9 * " " + "InceptionV3-Pawara "
         elif framework == "TF2-4-1-detTS":
-            framework_str = "TF 2.4.1\n\n" + 9 * " " + "ResNet" + 17 * " " + "Inception" + 10 * " " + "Inception-Pawara "
+            framework_str = "TF 2.4.1\n\n" + 14 * " " + "ResNet-50" + 13 * " " + "InceptionV3" + 9 * " " + "InceptionV3-Pawara "
         else:
-            framework_str = framework + "\n\n" + 10 * " " + "ResNet" + 32 * " " + "Inception" + 5 * " "
+            framework_str = framework + "\n\n" + 14 * " " + "ResNet-50" + 28 * " " + "InceptionV3" + 5 * " "
         current_plot.set_title(framework_str, fontsize=12)
         # Beschränke X-Achse (sonst ist automatisch viel Rand vorhanden)
         current_plot.set_xlim(-20, x - 15)
@@ -660,7 +660,7 @@ def plot_train_history():
                 axs[row, col].set_xlabel("Epochen")
                 axs[row, col].tick_params(axis="both", labelsize=12)
                 axs[row, col].legend()
-        plt.suptitle("Trainingsverlauf \n" + beispiel, fontsize=20)
+        plt.suptitle("Trainingsverlauf", fontsize=20)
         plt.show()
 
         ### Confusion-Matrix plotten ###
@@ -725,7 +725,7 @@ def plot_train_history():
 
         axs[0, 2].set_title("TF 2.4.1 OvA", fontsize=12)
         axs[1, 2].set_title("TF 2.4.1 OvO", fontsize=12)
-        plt.suptitle("Confusion Matrizen \n" + beispiel, fontsize=20)
+        plt.suptitle("Confusion Matrizen", fontsize=20)
         plt.show()
 
 
@@ -735,13 +735,13 @@ def plot_train_history():
 # tables()
 
 # Erstellt BoxPlots zu einer Log Datei
-# boxplots()
+#boxplots()
 
 # Für die Loss-Graphen aus Kapitel 2.1.2
 # plot_loss_graphs()
 
 # Plottet die Differenzen zwischen OvO und OvA Mittelwerten sortiert nach Framework, Netztyp und Trainsizes
-#plot_comparison()
+plot_comparison()
 
 # Plottet ein konkretes Beispiel (Trainingsverlauf und Confusion Matrix)
-plot_train_history()
+#plot_train_history()
