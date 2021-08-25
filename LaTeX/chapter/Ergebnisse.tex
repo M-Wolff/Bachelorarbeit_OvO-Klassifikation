@@ -1,15 +1,15 @@
 \chapter{Ergebnisse}
 \label{ch:ergebnisse}
-In diesem Kapitel werden die interessantesten Ergebnisse \cite{githubRepo}, die beim Training erzielt wurden, vorgestellt und visualisiert. Der Übersichtlichkeit halber befindet sich ein Großteil der Graphen im Anhang (s. Anhang \ref{ch:Anhang_ScatterplotsAccuracies} und \ref{ch:Anhang_ScatterplotsDauer}) und wird im weiteren Verlauf dieses Kapitels lediglich beschrieben und referenziert.
+In diesem Kapitel werden die interessantesten Ergebnisse \cite{githubRepo}, die bei dem Training erzielt wurden, vorgestellt und visualisiert. Der Übersichtlichkeit halber befindet sich ein Großteil der Graphen im Anhang (s. Anhang \ref{ch:Anhang_ScatterplotsAccuracies} und \ref{ch:Anhang_ScatterplotsDauer}) und wird im weiteren Verlauf dieses Kapitels lediglich beschrieben und referenziert.
 Eine detaillierte tabellarische Auflistung der finalen Accuracies auf den Testdaten, jeweils über alle 5 bzw. 3 Folds gemittelt, befindet sich im Anhang (s. Anhang \ref{ch:Anhang_Tabellen}).
 
 \section{Unterschied zwischen OvO und OvA}
 \label{ch:ergebnisseOvOOvA}
-In Abbildungen \ref{fig:ScatterplotRS} und \ref{fig:ScatterplotRF} sowie im Anhang (s. Anhang \ref{ch:Anhang_ScatterplotsAccuracies}) befindet sich jeweils pro Datensatz und verwendeter Klassenanzahl ein Graph. Dieser besteht aus 5 mit dicken Linien voneinander abgegrenzten Bereichen, in denen jeweils nur ein Anteil von 10, 20, 50, 80 oder 100 Prozent der Trainingsdaten zum Training verwendet wurde. Innerhalb einem dieser 5 Bereiche existieren 3 mit dünnen Linien voneinander abgegrenzte Regionen. Diese stehen für die 3 verwendeten Frameworks: TensorFlow \cite{tensorflow} in der Version 1.13.1 und 2.4.1 sowie PyTorch \cite{pytorch} 1.9.0 in dieser Reihenfolge. Die hervorgehobene Markierung steht für den Mittelwert der jeweiligen 5- bzw. 3-Fold Cross Validation während die kleinen Punkte die Ergebnisse auf den einzelnen 5 bzw. 3 Folds repräsentieren.
+In Abbildungen \ref{fig:ScatterplotRS} und \ref{fig:ScatterplotRF} sowie im Anhang (s. Anhang \ref{ch:Anhang_ScatterplotsAccuracies}) befindet sich jeweils pro Datensatz und verwendeter Klassenanzahl ein Graph. Dieser besteht aus 5 mit dicken Linien voneinander abgegrenzten Bereichen, in denen jeweils nur ein Anteil von 10, 20, 50, 80 oder 100 Prozent der Trainingsdaten zum Training verwendet wurde. Innerhalb einem dieser 5 Bereiche existieren 3 mit dünnen Linien voneinander abgegrenzte Regionen. Diese stehen für die 3 verwendeten Frameworks: TensorFlow in der Version 1.13.1 und 2.4.1 \cite{tensorflow} sowie PyTorch 1.9.0 \cite{pytorch} in dieser Reihenfolge. Die hervorgehobene Markierung steht für den Mittelwert der jeweiligen 5- bzw. 3-Fold Cross Validation während die kleinen Punkte die Ergebnisse auf den einzelnen 5 bzw. 3 Folds repräsentieren.
 
 In den Gruppierungen von Graphen (Abb. \ref{fig:ScatterplotRS}, \ref{fig:ScatterplotRF} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}) sind die einzelnen Datensätze farblich hervorgehoben, sodass in Beziehung miteinander stehende Graphen leichter erkennbar sind.\\
 
-Alle Trainingsdurchläufe für einen Datensatz in Kombination mit einer Klassenanzahl und Trainsize verwenden in allen Fällen die exakt gleichen Trainingsdaten (vgl. Kapitel \ref{ch:methodik_trainsize}). So werden beispielsweise bei Fold 1 für Agrilplant3 in ResNet-50 Scratch unter Verwendung von TensorFlow 1.13.1 \cite{tensorflow} (s. Abb. \ref{fig:ScatterplotRS}) die genau gleichen Trainingsdaten verwendet wie bei Fold 1 von Agrilplant3 in InceptionV3 Finetune und PyTorch \cite{pytorch} als Framework (s. Abb. \ref{fig:ScatterplotIF} im Anhang \ref{ch:Anhang_ScatterplotsAccuracies}). Die genaue Aufteilung der Bilder im Datensatz in die verschiedenen Teilmengen ist in dem GitHub-Repository zu dieser Bachelorarbeit \cite{githubRepo} aufgelistet, sodass die von mir erzielten Ergebnisse mit Ausnahme der zufälligen Initialisierung der Gewichte im Netz sowie der zufällig auftretenden Data-Augmentation möglichst gut reproduzierbar sind.\\
+Alle Trainingsdurchläufe für einen Datensatz in Kombination mit einer Klassenanzahl und Trainsize verwenden in allen Fällen die exakt gleichen Trainingsdaten (s. Kapitel \ref{ch:methodik_trainsize}). So werden beispielsweise bei Fold 1 für Agrilplant3 in ResNet-50 Scratch unter Verwendung von TensorFlow 1.13.1 \cite{tensorflow} (s. Abb. \ref{fig:ScatterplotRS}) die genau gleichen Trainingsdaten verwendet wie bei Fold 1 von Agrilplant3 in InceptionV3 Finetune und PyTorch \cite{pytorch} als Framework (s. Abb. \ref{fig:ScatterplotIF} im Anhang \ref{ch:Anhang_ScatterplotsAccuracies}). Die genaue Aufteilung der Bilder im Datensatz in die verschiedenen Teilmengen ist in dem GitHub-Repository zu dieser Bachelorarbeit \cite{githubRepo} aufgelistet, sodass die von mir erzielten Ergebnisse mit Ausnahme der zufälligen Initialisierung der Gewichte im Netz sowie der zufällig auftretenden Data-Augmentation möglichst gut reproduzierbar sind.\\
 
 Durch diese Wiederverwendung der Teilmengen der Datensätze werden zufällig auftretende Schwankungen, die besonders bei niedrigen Trainsizes mit ohnehin kleinen Datensätzen auftreten, vermieden und eine gute Vergleichbarkeit der Ergebnisse wird sichergestellt.\\
 
@@ -18,12 +18,12 @@ Der Datensatz Cifar10 \cite{cifar10} wird, wie in Kapitel \ref{ch:methodik_daten
 
 \subsection{ResNet-50 Scratch}
 \label{ch:ergebnisseOvOOvA-RS}
-In Abbildung \ref{fig:ScatterplotRS} fällt auf, dass besonders für niedrige Trainsizes, also Prozentsätze der tatsächlich verwendeten Trainingsdaten, das OvO Klassifikationsschema für TensorFlow 1.13.1 \cite{tensorflow} und PyTorch \cite{pytorch} in den meisten Fällen bessere Ergebnisse produziert als OvA. Je höher der Anteil der verwendeten Trainingsdaten geht, umso mehr nähern sich die Accuracies der beiden Klassifikationsschemata aneinander an. Es zeichnet sich zudem der Trend ab, dass PyTorch \cite{pytorch} fast immer Ergebnisse produziert, die genau so gut oder besser als die beiden von TensorFlow \cite{tensorflow} sind.
+In Abbildung \ref{fig:ScatterplotRS} fällt auf, dass besonders für niedrige Trainsizes, also Prozentsätze der tatsächlich verwendeten Trainingsdaten, das OvO Klassifikationsschema für TensorFlow 1.13.1 \cite{tensorflow} und PyTorch \cite{pytorch} in den meisten Fällen bessere Ergebnisse produziert als OvA. Je höher der Anteil der verwendeten Trainingsdaten ist, umso mehr nähern sich die Accuracies der beiden Klassifikationsschemata aneinander an. Es zeichnet sich zudem der Trend ab, dass PyTorch \cite{pytorch} fast immer Ergebnisse produziert, die genau so gut oder besser als die beiden von TensorFlow \cite{tensorflow} sind.
 
 
 Für Cifar10 \cite{cifar10} erlangt man allerdings genau gegenteilige Ergebnisse. Dort ist OvO immer deutlich schlechter als OvA und die Ergebnisse von PyTorch \cite{pytorch} liegen in fast allen Fällen deutlich unter denen von TensorFlow \cite{tensorflow}. Beide Versionen von TensorFlow \cite{tensorflow} sind in etwa gleich gut.
 
-Bei allen anderen Datensätzen fällt außerdem auf, dass die Ergebnisse für OvA in der neueren Version 2.4.1 etwas besser geworden sind. Für OvO im Vergleich zu Version 1.13.1 ist die neue Version von TensorFlow \cite{tensorflow} fast immer deutlich schlechter. Dadurch nähern sich in Version 2.4.1 die Ergebnisse von OvO und OvA aneinander an und der Unterschied zwischen den beiden Klassifikationsschemata, wie er in Version 2.4.1 existiert, verschwindet in den meisten Fällen nahezu komplett bzw. kehrt sich um, sodass OvA besser ist als OvO.
+Bei allen anderen Datensätzen fällt außerdem auf, dass die Ergebnisse für OvA in der neueren Version 2.4.1 etwas besser geworden sind. Für OvO im Vergleich zu Version 1.13.1 ist die neue Version von TensorFlow \cite{tensorflow} fast immer deutlich schlechter. Dadurch nähern sich in Version 2.4.1 die Ergebnisse von OvO und OvA aneinander an und der Unterschied zwischen den beiden Klassifikationsschemata, wie er in Version 1.13.1 existiert, verschwindet in den meisten Fällen nahezu komplett bzw. kehrt sich um, sodass OvA besser ist als OvO.
 
 Besonders auffällig sind die Ausreißer für TensorFlow 2.4.1 \cite{tensorflow} bei den SwedishLeaves \cite{swedishLeaves} Datensätzen. Hierbei werden für niedrige Anzahlen an Klassen in Kombination mit einer kleinen Trainsize, also dem tatsächlich verwendeten Anteil an Trainingsdaten, mit beiden Klassifikationsschemata sehr schlechte Ergebnisse produziert, die teilweise nicht besser sind als zufälliges Raten.
 \begin{figure}[H]
@@ -36,7 +36,7 @@ Besonders auffällig sind die Ausreißer für TensorFlow 2.4.1 \cite{tensorflow}
 \newpage
 
 \subsection{InceptionV3 Scratch}
-In der Abbildung \ref{fig:ScatterplotIS} zu InceptionV3 Scratch sind alle Frameworks ungefähr gleich gut, lediglich die in Kapitel \ref{ch:ergebnisseOvOOvA-RS} bereits beschriebenen Ausreißer bei \textit{swedishLeaves} \cite{swedishLeaves} treten hier in gleicher Form auf.
+In der Abbildung \ref{fig:ScatterplotIS} zu InceptionV3 Scratch sind alle Frameworks ungefähr gleich gut, lediglich die in Kapitel \ref{ch:ergebnisseOvOOvA-RS} bereits beschriebenen Ausreißer bei SwedishLeaves \cite{swedishLeaves} treten hier in gleicher Form auf.
 
 Der OvO Ansatz ist in allen Fällen gleich gut oder sogar besser als der OvA Ansatz, nur bei Agrilplant3 erzeugt das standardmäßige OvA Klassifikationsschema bessere Ergebnisse im Vergleich zu OvO.
 
@@ -45,11 +45,11 @@ Besonders die Tropic und Monkey \cite{pawaraWebsiteDatensaetze} Datensätze prof
 
 \subsection{InceptionV3-Pawara Scratch}
 \label{ch:ergebnisseOvOOvA-IPS}
-Für das Netz InceptionV3 mit den Änderungen an den letzten Schichten aus dem Quellcode von Pawara et al. \cite{pawaraWebsiteCode} (vgl. Abb. \ref{fig:inceptionAenderungen}) ergeben sich nahezu identische Ergebnisse wie bei dem Standard InceptionV3-Netz ohne Änderungen. Vergleicht man Abbildung \ref{fig:ScatterplotIS} und \ref{fig:ScatterplotIPS} fällt auf, dass die Ergebnisse bei dem Netz InceptionV3-Pawara, also mit den Änderungen von Pawara et al., geringfügig über denen von der Standard InceptionV3 Implementierung liegen. So beginnt beispielsweise die automatisch erzeugte Beschriftung der Y-Achsen bei \textit{Pawara-Monkey10} und \textit{Pawara-Tropic10} erst bei einem höheren Wert. Ansonsten lassen sich aber kaum Unterschiede zur Standard InceptionV3 Variante erkennen.
+Für das Netz InceptionV3 mit den Änderungen an den letzten Schichten aus dem Quellcode von Pawara et al. \cite{pawaraWebsiteCode} (s. Abb. \ref{fig:inceptionAenderungen}) ergeben sich nahezu identische Ergebnisse wie bei dem Standard InceptionV3-Netz ohne Änderungen. Vergleicht man Abbildung \ref{fig:ScatterplotIS} und \ref{fig:ScatterplotIPS} fällt auf, dass die Ergebnisse bei dem Netz InceptionV3-Pawara, also mit den Änderungen von Pawara et al., geringfügig über denen von der Standard InceptionV3 Implementierung liegen. So beginnt beispielsweise die automatisch erzeugte Beschriftung der Y-Achsen bei Pawara-Monkey10 und Pawara-Tropic10 erst bei einem höheren Wert. Ansonsten lassen sich aber kaum Unterschiede zur Standard InceptionV3 Variante erkennen.
 
 
 \subsection{ResNet-50 Finetune}
-Für ResNet-50 Finetune (s. Abb. \ref{fig:ScatterplotRF}) fällt erneut auf, dass bei der neuen TensorFlow \cite{tensorflow} Version 2.4.1 bei beiden Klassifikationsschemata gleichermaßen starke Ausreißer nach unten auftreten, sodass die Genauigkeit der Klassifikation teilweise ähnlich schlecht wird wie bei zufälligem Raten. Diese Ausreißer treten überraschenderweise nun sogar häufiger auf als bei ResNet-50 Scratch (vgl. Abb. \ref{fig:ScatterplotRS}), aber wieder nur bei kleineren Trainsizes und Datensätzen mit wenigen Trainingsdaten.
+Für ResNet-50 Finetune (s. Abb. \ref{fig:ScatterplotRF}) fällt erneut auf, dass bei der neuen TensorFlow Version 2.4.1 \cite{tensorflow} bei beiden Klassifikationsschemata gleichermaßen starke Ausreißer nach unten auftreten, sodass die Genauigkeit der Klassifikation teilweise ähnlich schlecht wird wie bei zufälligem Raten. Diese Ausreißer treten überraschenderweise nun sogar häufiger auf als bei ResNet-50 Scratch (s. Abb. \ref{fig:ScatterplotRS}), aber wieder nur bei kleineren Trainsizes und Datensätzen mit wenigen Trainingsdaten.
 
 Ansonsten ist das standardmäßige OvA Klassifikationsschema bei einem Großteil der Ergebnisse deutlich besser als OvO. Alle 3 Frameworks produzieren mit Ausnahme der Ausreißer von TensorFlow 2.4.1 \cite{tensorflow} ähnlich gute Ergebnisse.
 \begin{figure}[H]
@@ -79,7 +79,7 @@ Im Gegensatz zu InceptionV3 Finetune lässt sich hier jedoch beobachten, dass de
 Analog zu den in Kapitel \ref{ch:ergebnisseOvOOvA} gezeigten und beschriebenen Grafiken wird in diesem Kapitel die benötigte Trainingsdauer der verschiedenen Frameworks miteinander verglichen. Weitere Scatterplots neben Abbildung \ref{fig:ScatterplotRS-dauer} befinden sich im Anhang \ref{ch:Anhang_ScatterplotsDauer}.\\
 
 Die Rohwerte der Trainingsdauer sind nicht repräsentativ, da zum Training verschiedene Grafikkarten-Modelle mit jeweils verschiedenen Leistungsfähigkeiten zur Verfügung standen (s. Kapitel \ref{ch:methodik_palma}). Deswegen hängt die Trainingsdauer zudem von der zum Training verwendeten Grafikkarte ab.
-Um dem entgegen zu wirken und einen guten Vergleich zu ermöglichen, wurde die Trainingsdauer in den Scatterplots (s. Abb. \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}) auf das GPU-Modell \textit{RTX 2080} normalisiert. Dabei wird abhängig von den GFLOPs der jeweiligen GPU ein Faktor zur Normalisierung verwendet, der die Trainingsdauer von schnelleren Grafikkarten-Modellen länger macht und von langsameren Grafikkarten-Modellen verkürzt, sodass alle benötigten Trainingszeiten auf dem Niveau einer RTX 2080 und damit miteinander vergleichbar sind (vgl. Tabelle \ref{tab:GPUNormalisierung}).
+Um dem entgegen zu wirken und einen guten Vergleich zu ermöglichen, wurde die Trainingsdauer in den Scatterplots (s. Abb. \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}) auf das GPU-Modell \textit{RTX 2080} normalisiert. Dabei wird abhängig von den GFLOPs der jeweiligen GPU ein Faktor zur Normalisierung verwendet, der die Trainingsdauer von schnelleren Grafikkarten-Modellen länger macht und von langsameren Grafikkarten-Modellen verkürzt, sodass alle benötigten Trainingszeiten auf dem Niveau einer RTX 2080 und damit miteinander vergleichbar sind (s. Tabelle \ref{tab:GPUNormalisierung}).
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -130,7 +130,7 @@ Jeder dieser Graphen ist durch dicke vertikale Trennlinien in 3 bzw. 2 Abschnitt
 Wiederum jeder dieser Abschnitte ist in 2 durch eine dünne vertikale Linie voneinander getrennte Bereiche eingeteilt, jeweils einer für Scratch und Finetune.
 
 Auf der Y-Achse wurde die Differenz zwischen den Ergebnissen für OvO und OvA aufgetragen. Dabei wird je Klassifikationsschema über alle 3 bzw. 5 Folds ein Mittelwert gebildet und die Differenz dieser beiden Mittelwerte wird eingezeichnet. Ein Kreuz bei einem positiven Y-Wert von z.B. 2 bedeutet deshalb, dass das OvO Klassifikationsschema gemittelt über alle Folds um 2 Prozentpunkte besser ist als der OvA Ansatz. Ein Kreuz im negativen Bereich bedeutet, dass das OvA Klassifikationsschema besser ist als der OvO Ansatz.
-Innerhalb der Scratch bzw. Finetune Bereiche sind die Kreuze nach zunehmender Trainsize sortiert. Es lassen sich somit immer 5 \textit{Säulen} mit Kreuzen innerhalb der Scratch bzw. Finetune Bereiche erkennen, die erste Säule mit allen Ergebnissen mit einer Trainsize von 10 Prozent, die zweite Säule mit 20 Prozent bis hin zu der fünften Säule mit 100 Prozent Trainsize. Mit zunehmender Trainsize werden die Kreuze außerdem farblich heller dargestellt.
+Innerhalb der Scratch bzw. Finetune Bereiche sind die Kreuze nach zunehmender Trainsize sortiert. Es lassen sich somit immer 5 Säulen mit Kreuzen innerhalb der Scratch bzw. Finetune Bereiche erkennen, die erste Säule mit allen Ergebnissen mit einer Trainsize von 10 Prozent, die zweite Säule mit 20 Prozent bis hin zu der fünften Säule mit 100 Prozent Trainsize. Mit zunehmender Trainsize werden die Kreuze außerdem farblich heller dargestellt.
 
 
 Für \textbf{Finetune} (s. Abb. \ref{fig:ScatterplotGesamt}) lässt sich in allen drei Frameworks und Netztypen beobachten, dass die Differenz zwischen OvO und OvA nahezu symmetrisch um $y=0$ verteilt ist und meistens keine allzu große Differenz zwischen den beiden Klassifikationsschemata besteht. Die Streuung der Verteilung um $y=0$ ist also eher gering.
@@ -138,7 +138,7 @@ Tendenziell ist die symmetrische Verteilung der Differenzen für Finetune allerd
 
 Für \textbf{Scratch} (s. Abb. \ref{fig:ScatterplotGesamt}) lässt sich besonders für InceptionV3 mit TensorFlow 1.13.1 \cite{tensorflow} und PyTorch \cite{pytorch} eine Verteilung beobachten, die fast ausschließlich im positiven Wertebereich liegt. Auch für die anderen Netztypen bei diesen beiden Frameworks liegt ein Großteil der Kreuze überhalb der X-Achse bei $y=0$. Bei TensorFlow 2.4.1 \cite{tensorflow} befinden sich abgesehen von ResNet-50 ebenfalls deutlich mehr Markierungen oberhalb von $y=0$ als unterhalb, lediglich bei ResNet-50 tritt dort eine näherungsweise symmetrische Verteilung um $y=0$ auf.\\
 
-Es lässt sich somit festhalten, dass der OvO Ansatz für Scratch-Versuche, abgesehen von ResNet-50 in Kombination von TensorFlow 2.4.1 \cite{tensorflow}, meistens bessere Accuracies produziert als der OvA Ansatz. Für Finetune Experimente kehrt sich dieser Trend jedoch um und das standardmäßige OvA Klassifikationsschema erzeugt bessere Ergebnisse.
+Es lässt sich somit festhalten, dass der OvO Ansatz für Scratch-Versuche, abgesehen von ResNet-50 in Kombination mit TensorFlow 2.4.1 \cite{tensorflow}, meistens bessere Accuracies produziert als der OvA Ansatz. Für Finetune Experimente kehrt sich dieser Trend jedoch um und das standardmäßige OvA Klassifikationsschema erzeugt bessere Ergebnisse.
 
 \begin{figure}[H]
 \begin{adjustbox}{width=1.4\textwidth, center}
@@ -158,7 +158,7 @@ Um die klassenweise Genauigkeit der Ergebnisse zu veranschaulichen wird zusätzl
 \subsection{Tropic10 InceptionV3 Scratch mit 10 Prozent Trainsize}
 \label{ch:BeispielA}
 Für InceptionV3 Scratch mit dem ersten Fold des Tropic10 Datensatzes und 10 Prozent Trainsize können mit Hilfe des OvO Klassifikationsschemas deutlich bessere Ergebnisse erzielt werden als mit dem OvA Ansatz (s. Abb. \ref{fig:ScatterplotIS}).
-In Abbildung \ref{fig:TrainingsverlaufA} liegt die Accuracy des OvO Ansatzes daher jeweils deutlich über der des OvA Klassifikationsschemas. Auffällig ist, dass alle 3 Frameworks genau bei Epoche 50 einen sprunghaften Anstieg der Accuracy Werte produzieren. Bei Epoche 50 wird, wie in Kapitel \ref{ch:methodik_gewichte} bereits beschrieben, die Learning-Rate um einen Faktor von $0.1$ verringert, was wahrscheinlich zu diesem starken Anstieg führt. Generell schwankt der Loss-Wert für die OvO Klassifikation weniger und das Training wirkt stabiler. Besonders in den beiden TensorFlow \cite{tensorflow} Versionen entstehen bis Epoche 50 sehr starke Schwankungen bei den Loss-Werten, bei Version 2.4.1 steigt der Loss-Wert zeitweise sogar auf über 300 an.
+In Abbildung \ref{fig:TrainingsverlaufA} liegt die Accuracy des OvO Ansatzes daher jeweils deutlich über der des OvA Klassifikationsschemas. Auffällig ist, dass alle 3 Frameworks genau bei Epoche 50 einen sprunghaften Anstieg der Accuracy-Werte produzieren. Bei Epoche 50 wird, wie in Kapitel \ref{ch:methodik_gewichte} bereits beschrieben, die Learning-Rate um einen Faktor von $0.1$ verringert, was wahrscheinlich zu diesem starken Anstieg führt. Generell schwankt der Loss-Wert für die OvO Klassifikation weniger und das Training wirkt stabiler. Besonders in den beiden TensorFlow \cite{tensorflow} Versionen entstehen bis Epoche 50 sehr starke Schwankungen bei den Loss-Werten, bei Version 2.4.1 steigt der Loss-Wert zeitweise sogar auf über 300 an.
 
 Anhand der Confusion Matrix (s. Abb. \ref{fig:ConfusionMatrixA}) kann man erkennen, dass der OvO Ansatz in allen 3 Frameworks einen positiven Einfluss auf die klassenweise Genauigkeit hat, da in den Confusion Matrizen zu dem OvO Klassifikationsschema die Felder auf der Diagonalen dunkler und alle anderen Felder tendenziell heller werden. Somit steigt der Anteil der korrekt klassifizierten Bilder je Klasse und es werden seltener Bilder der falschen Klasse zugeordnet.
 \begin{figure}[H]
@@ -177,23 +177,23 @@ Anhand der Confusion Matrix (s. Abb. \ref{fig:ConfusionMatrixA}) kann man erkenn
 \label{fig:ConfusionMatrixA}
 \end{figure}
 
-\subsection{SwedishLeaves3Folds5 ResNet-50 Scratch mit 10 Prozent Trainsize}
+\subsection{SwedishLeaves5 ResNet-50 Scratch mit 10 Prozent Trainsize}
 \label{ch:BeispielB}
-Bei diesem Beispiel mit Fold 1 des SwedishLeaves3Folds5 Datensatzes mit 10 Prozent Trainsize, trainiert mit ResNet-50 Scratch, wird deutlich, dass die beiden Versionen von TensorFlow \cite{tensorflow} deutlich unterschiedliche Ergebnisse produzieren und die neuere Version tatsächlich schlechter ist als eine ältere Version (s. Abb. \ref{fig:TrainingsverlaufB}).
+Bei diesem Beispiel mit Fold 1 des SwedishLeaves5 Datensatzes mit 10 Prozent Trainsize, trainiert mit ResNet-50 Scratch, wird deutlich, dass die beiden Versionen von TensorFlow \cite{tensorflow} deutlich unterschiedliche Ergebnisse produzieren und die neuere Version tatsächlich schlechter ist als eine ältere Version (s. Abb. \ref{fig:TrainingsverlaufB}).
 
 Im Falle von PyTorch \cite{pytorch} fallen die Ergebnisse ähnlich wie bei dem 1. Beispiel in Kapitel \ref{ch:BeispielA} aus. Diesmal sind beide Klassifikationsansätze jedoch in etwa gleich gut, dafür schwankt der Loss-Wert für das OvA Klassifikationsschema anfänglich sehr stark.
 
 Für TensorFlow 1.13.1 \cite{tensorflow} läuft das Training sehr stabil ab. Es treten kaum Schwankungen oder Ausreißer auf, stattdessen wird ungefähr ab Epoche 50 die Genauigkeit der Ergebnisse kontinuierlich besser. Dabei wird jedoch eine um ca. 20 Prozentpunkte geringere finale Accuracy als bei PyTorch \cite{pytorch} erzeugt.
 
 TensorFlow 2.4.1 \cite{tensorflow} fällt bei diesem Beispiel komplett aus dem bisherigen Muster. Für OvA bleibt die Accuracy, abgesehen von einem schmalen Spike bei Epoche 50, konstant auf ungefähr 20 Prozent Genauigkeit, was bei 5 Klassen nicht besser ist als pures Raten. Für den OvO Ansatz lässt sich ungefähr ab Epoche 150 ein Anstieg der Genauigkeit feststellen, jedoch erreicht diese mit ungefähr 30 Prozent kurz danach bereits ihren Höhepunkt und fällt danach wieder deutlich ab.
-Seltsamerweise \textit{steigt} der zu minimierende Loss-Wert für beide Klassifikationsschemata im Verlauf des Trainings nahezu kontinuierlich an.
+Seltsamerweise steigt der zu minimierende Loss-Wert für beide Klassifikationsschemata im Verlauf des Trainings nahezu kontinuierlich an.
 
 Bei den Confusion Matrizen (s. Abb. \ref{fig:ConfusionMatrixB}) lässt sich zumindest für PyTorch \cite{pytorch} und TensorFlow 1.13.1 \cite{tensorflow} eine geringfügige Verbesserung der klassenweisen Genauigkeiten durch den OvO Ansatz beobachten. Für TensorFlow 2.4.1 \cite{tensorflow} hingegen werden im Falle der OvA Klassifikation \textbf{alle} Bilder fälschlicherweise der Klasse mit dem Label 4 zugeordnet, bei OvO werden die Bilder größtenteils der Klasse 0 zugeordnet, teilweise aber auch Klasse 4. Das trainierte Netz zur Klassifikation hat für die OvA und OvO Klassifikation eine vergleichbare Genauigkeit mit purem Raten und es wurden bei dem Training des Netzes offensichtlich keine Eigenschaften der Klassen erlernt.
 \begin{figure}[H]
 \begin{adjustbox}{width=1.4\textwidth, center}
 \includesvg{img/3_Trainingsverlauf-2}
 \end{adjustbox}
-\caption{Verlauf der Loss und Accuracy Metriken für OvO (rot) und OvA (blau) während des Trainings mit SwedishLeaves3Folds5 Fold 1 und 10 Prozent Trainsize auf ResNet-50 Scratch.}
+\caption{Verlauf der Loss und Accuracy Metriken für OvO (rot) und OvA (blau) während des Trainings mit SwedishLeaves5 Fold 1 und 10 Prozent Trainsize auf ResNet-50 Scratch.}
 \label{fig:TrainingsverlaufB}
 \end{figure}
 
@@ -201,7 +201,7 @@ Bei den Confusion Matrizen (s. Abb. \ref{fig:ConfusionMatrixB}) lässt sich zumi
 \begin{adjustbox}{width=1.1\textwidth, center}
 \includesvg{img/3_ConfusionMatrix-2}
 \end{adjustbox}
-\caption{Normalisierte Confusion Matrizen für ResNet-50 Scratch auf SwedishLeaves3Folds5 Fold 1 mit 10 Prozent Trainsize.}
+\caption{Normalisierte Confusion Matrizen für ResNet-50 Scratch auf SwedishLeaves5 Fold 1 mit 10 Prozent Trainsize.}
 \label{fig:ConfusionMatrixB}
 \end{figure}
 
@@ -211,17 +211,9 @@ Als drittes Beispiel wird der Trainingsverlauf von ResNet-50 Finetune auf Fold 1
 Hierbei schneidet das OvA Klassifikationsschema etwas besser ab als der OvO Ansatz. Auffällig ist wiederum, dass die Loss-Werte in allen 3 Frameworks für OvA wesentlich stärkere Schwankungen und Spikes bilden als bei dem OvO Ansatz. Ab Epoche 50 stabilisieren sich die Loss-Werte zumindest für TensorFlow \cite{tensorflow}.
 Bei den Accuracies ist zu erwähnen, dass TensorFlow 2.4.1 \cite{tensorflow} am Anfang trotz vor-trainierter Gewichte in beiden Klassifikationsschemata mit einer sehr niedrigen Genauigkeit startet, die dann aber relativ schnell auf den finalen Wert ansteigt. Für TensorFlow 1.13.1 \cite{tensorflow} tritt bei Epoche 35 ein überraschender Spike sowohl im Loss- als auch im Accuracy-Graphen auf.
 
-Diese beiden Umstände lassen den Anschein erwecken, dass PyTorch \cite{pytorch} bei den Accuracy Werten stärker schwankt, dies liegt jedoch lediglich an dem wesentlich kleineren angezeigten Wertebereich von $0.92$ bis $0.99$. Die anderen beiden Frameworks produzieren ähnlich starke Schwankungen, die in der Abbildung \ref{fig:TrainingsverlaufC} jedoch aufgrund der Skalierung wesentlich kleiner wirken.
+Diese beiden Umstände lassen den Anschein erwecken, dass PyTorch \cite{pytorch} bei den Accuracy-Werten stärker schwankt, dies liegt jedoch lediglich an dem wesentlich kleineren angezeigten Wertebereich von $0.92$ bis $0.99$. Die anderen beiden Frameworks produzieren ähnlich starke Schwankungen, die in der Abbildung \ref{fig:TrainingsverlaufC} jedoch aufgrund der Skalierung wesentlich kleiner wirken.
 
 Bei den Confusion Matrizen in Abbildung \ref{fig:ConfusionMatrixC} lassen sich zwischen dem OvO und OvA Ansatz keine größeren Unterschiede feststellen.
-
-\begin{figure}[H]
-\begin{adjustbox}{width=1.4\textwidth, center}
-\includesvg{img/3_Trainingsverlauf-3}
-\end{adjustbox}
-\caption{Verlauf der Loss- und Accuracy-Metriken für OvO (rot) und OvA (blau) während des Trainings mit Agrilplant10 Fold 1 und 100 Prozent Trainsize auf ResNet-50 Finetune.}
-\label{fig:TrainingsverlaufC}
-\end{figure}
 
 \begin{figure}[H]
 \begin{adjustbox}{width=1.1\textwidth, center}
@@ -231,13 +223,21 @@ Bei den Confusion Matrizen in Abbildung \ref{fig:ConfusionMatrixC} lassen sich z
 \label{fig:ConfusionMatrixC}
 \end{figure}
 
+\begin{figure}[H]
+\begin{adjustbox}{width=1.4\textwidth, center}
+\includesvg{img/3_Trainingsverlauf-3}
+\end{adjustbox}
+\caption{Verlauf der Loss- und Accuracy-Metriken für OvO (rot) und OvA (blau) während des Trainings mit Agrilplant10 Fold 1 und 100 Prozent Trainsize auf ResNet-50 Finetune.}
+\label{fig:TrainingsverlaufC}
+\end{figure}
+\newpage
 \section{Zusammenfassung der Ergebnisse}
-Abschließend kann festgehalten werden, dass der OvO Ansatz bei Scratch-Experimenten, also dem Training mit zufällig initialisierten Gewichten, häufig bessere Ergebnisse erzielt als das standardmäßige OvA Klassifikationsschema. Bei den Finetune-Experimenten führte die Verwendung des OvO Klassifikationsschemas jedoch überwiegend zu einer Verschlechterung der Genauigkeit verglichen mit dem OvA Ansatz (vgl. \ref{fig:ScatterplotGesamt}).\\
+Abschließend kann festgehalten werden, dass der OvO Ansatz bei Scratch-Experimenten, also dem Training mit zufällig initialisierten Gewichten, häufig bessere Ergebnisse erzielt als das standardmäßige OvA Klassifikationsschema. Bei den Finetune-Experimenten führte die Verwendung des OvO Klassifikationsschemas jedoch überwiegend zu einer Verschlechterung der Genauigkeit verglichen mit dem OvA Ansatz (s. Abb. \ref{fig:ScatterplotGesamt}).\\
 
-Bei den unterschiedlichen Frameworks fällt auf, dass unter Verwendung von TensorFlow 2.4.1 \cite{tensorflow} überwiegend schlechtere Ergebnisse produziert wurden als bei der älteren Version 1.13.1. Vereinzelt ist die neue Version allerdings zumindest bei der OvA Klassifikation geringfügig besser als die alte Version 1.13.1, die Ergebnisse für den OvO Ansatz liegen dafür fast ausschließlich unter denen der alten Version. Es treten besonders bei Trainingsdurchläufen mit wenigen Trainingsdaten starke und unerklärliche Ausreißer nach unten in der Version 2.4.1 von TensorFlow \cite{tensorflow} auf, während die ältere Version 1.13.1 keine solchen Probleme aufweist (vgl. Kapitel \ref{ch:ergebnisseOvOOvA} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}).
+Bei den unterschiedlichen Frameworks fällt auf, dass unter Verwendung von TensorFlow 2.4.1 \cite{tensorflow} überwiegend schlechtere Ergebnisse produziert wurden als bei der älteren Version 1.13.1. Vereinzelt ist die neue Version allerdings zumindest bei der OvA Klassifikation geringfügig besser als die alte Version 1.13.1, die Ergebnisse für den OvO Ansatz liegen dafür fast ausschließlich unter denen der alten Version. Es treten besonders bei Trainingsdurchläufen mit wenigen Trainingsdaten starke und unerklärliche Ausreißer nach unten in der Version 2.4.1 von TensorFlow \cite{tensorflow} auf, während die ältere Version 1.13.1 keine solchen Probleme aufweist (s. Kapitel \ref{ch:ergebnisseOvOOvA} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}).\\
 
-Der Verlauf des Trainings wirkt im Falle der OvO Klassifikation deutlich stabiler mit weniger Schwankungen im Vergleich zu dem herkömmlichen OvA Ansatz (vgl. Kapitel \ref{ch:Beispiele}).
+Der Verlauf des Trainings wirkt im Falle der OvO Klassifikation deutlich stabiler mit weniger Schwankungen im Vergleich zu dem herkömmlichen OvA Ansatz (s. Kapitel \ref{ch:Beispiele}).\\
 
-Außerdem scheinen die von Pawara et al. \cite{pawaraWebsiteCode} vorgenommenen Änderungen an den letzten Schichten des Netzes InceptionV3 nur eine minimale Verbesserung der Ergebnisse zu verursachen (vgl. Kapitel \ref{ch:ergebnisseOvOOvA-RS}).
+Außerdem scheinen die von Pawara et al. \cite{pawaraWebsiteCode} vorgenommenen Änderungen an den letzten Schichten des Netzes InceptionV3 nur eine minimale Verbesserung der Ergebnisse zu verursachen (s. Kapitel \ref{ch:ergebnisseOvOOvA-RS}).\\
 
-Bei der Betrachtung der benötigten Zeiten für das Training fällt auf, dass PyTorch \cite{pytorch} bei Trainingsdurchläufen mit vielen Bildern deutlich schneller die 200 bzw. 100 Epochen vollendet als beide Versionen von TensorFlow \cite{tensorflow}. Dabei ist PyTorch \cite{pytorch} teilweise sogar doppelt so schnell. Bei einzelnen Datensätzen, wie z.B. SwedishLeaves, benötigt das Framework hingegen jedoch bis zu doppelt so lange im Vergleich zu den beiden Versionen von TensorFlow \cite{tensorflow} (vgl. Kapitel \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}).\\\\
+Bei der Betrachtung der benötigten Zeiten für das Training fällt auf, dass PyTorch \cite{pytorch} bei Trainingsdurchläufen mit vielen Bildern deutlich schneller die 200 bzw. 100 Epochen vollendet als beide Versionen von TensorFlow \cite{tensorflow}. Dabei ist PyTorch \cite{pytorch} teilweise sogar doppelt so schnell. Bei einzelnen Datensätzen, wie z.B. SwedishLeaves, benötigt das Framework hingegen jedoch bis zu doppelt so lange im Vergleich zu den beiden Versionen von TensorFlow \cite{tensorflow} (s. Kapitel \ref{ch:ergebnisseOvOOvA-Dauer} und Anhang \ref{ch:Anhang_ScatterplotsDauer}).\\\\

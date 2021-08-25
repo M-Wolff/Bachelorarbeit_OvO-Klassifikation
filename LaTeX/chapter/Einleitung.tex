@@ -1,7 +1,5 @@
 \chapter{Einleitung}
 \label{ch:einleitung}
-
-
 Diese Bachelorarbeit befasst sich mit dem Thema der sogenannten \textit{One-vs-One} (OvO) Klassifikation in tiefen neuronalen Netzen im Vergleich zu der herkömmlichen \textit{One-vs-All} (OvA) Klassifikation. Als Grundlage für diese Arbeit dient das wissenschaftliche Paper \enquote{One-vs-One classification for deep neural networks} von Pawara et al. \cite{pawaraPaper}.\\
 
 In neuronalen Netzen zur Klassifikation wird fast immer standardmäßig eine OvA Klassifikation angewendet. Die letzte Schicht des Netzes produziert dabei einen Wahrscheinlichkeitsvektor, in dem jeder Klasse eine Wahrscheinlichkeit zugewiesen wird, mit der das Bild zu der jeweiligen Klasse gehört. Alle Wahrscheinlichkeiten zusammen summieren sich dabei zu 100 \% auf. Durch die OvA Klassifikation muss das neuronale Netz lernen, jeweils eine einzige Klasse von allen anderen Klassen gleichzeitig zu unterscheiden und somit genau so viele Klassifikatoren erlernen wie Klassen existieren. Diese Aufgabe ist sehr anspruchsvoll, da komplexe Entscheidungsgrenzen von dem neuronalen Netz erlernt werden müssen (vgl. \cite{pawaraPaper}).\\
@@ -13,12 +11,12 @@ Dadurch, dass nun ein Klassifikator jeweils nur zwei Klassen paarweise voneinand
 Bei $K$ Klassen müssen für die OvO Klassifikation in dem neuronalen Netz $\frac{K(K-1)}{2}$ Klassifikatoren erlernt werden, bei OvA lediglich $K$ Stück, was besonders bei vielen Klassen, also großem $K$, einen erheblichen Mehraufwand bedeuten kann (vgl. \cite{pawaraPaper}).\\
 
 Da bei der OvO Klassifikation jeweils eine Klasse von nur einer einzigen anderen Klasse abgegrenzt werden muss, wird jeder Klassifikator bei in etwa gleicher Anzahl an Trainingsdaten je Klasse mit einem ausbalancierten Datensatz trainiert. Die Trainingsbeispiele der einen Klasse dienen hierbei als positive und die der anderen Klasse als negative Trainingsbeispiele.
-Im Gegensatz dazu wird bei der herkömmlichen OvA Klassifikation jeder Klassifikator mit den Daten einer einzigen Klasse als positive Trainingsbeispiele und mit den Daten der restlichen $k-1$ Klassen als negative Trainingsbeispiele, also einem unbalancierten Datensatz, trainiert (vgl. \cite{pawaraPaper}).\\
+Im Gegensatz dazu wird bei der herkömmlichen OvA Klassifikation jeder Klassifikator mit den Daten einer einzigen Klasse als positive Trainingsbeispiele und mit den Daten der restlichen $k-1$ Klassen als negative Trainingsbeispiele, also einem unbalancierten Datensatz, trainiert (vgl. \cite{pawaraPaper}, 1. Introduction).\\
 
 Daher ist die Motivation bei der Untersuchung eines OvO Klassifikationsschemas ein stabileres Training durch ausbalancierte Trainingsdaten mit denen jeder Klassifikator trainiert wird und eine bessere Performance der Netze durch die weniger komplizierte  Entscheidungsgrenze, die jeder Klassifikator erlernen muss.\\
 
-Um diesen vielversprechenden aber bisher selten benutzten Ansatz der OvO Klassifikation im Vergleich zu der herkömmlichen OvA Klassifikation zu vergleichen wurden im Paper von Pawara et al. \cite{pawaraPaper} verschiedene Datensätze (s. Kapitel \ref{ch:methodik_datensaetze}) mit verschiedenen Parametern (s. Kapitel \ref{ch:methodik_parameter}) sowohl mit der OvO als auch mit der OvA Klassifikation trainiert und ausgewertet.
-Die Autoren kommen zu dem Fazit, dass der OvO Ansatz in 37 von 100 Experimenten signifikant besser ist als der herkömmliche OvA Ansatz und niemals signifikant schlechter wenn die Netze von Grund auf trainiert werden und keine vor-trainierten Gewichte verwendet werden (vgl. \cite{pawaraPaper} Kapitel 5.7 Discussion).\\
+Um diesen vielversprechenden aber bisher selten benutzten Ansatz der OvO Klassifikation im Vergleich zu der herkömmlichen OvA Klassifikation zu untersuchen, wurden im Paper von Pawara et al. \cite{pawaraPaper} verschiedene Datensätze (s. Kapitel \ref{ch:methodik_datensaetze}) mit verschiedenen Parametern (s. Kapitel \ref{ch:methodik_parameter}) sowohl mit der OvO als auch mit der OvA Klassifikation trainiert und ausgewertet.
+Die Autoren kommen zu dem Fazit, dass der OvO Ansatz in 37 von 100 Experimenten signifikant besser ist als der herkömmliche OvA Ansatz und niemals signifikant schlechter wenn die Netze von Grund auf trainiert werden und keine vor-trainierten Gewichte verwendet werden (vgl. \cite{pawaraPaper}, 5.7 Discussion).\\
 
 In dieser Arbeit werden die gleichen Experimente wie im Paper von Pawara et al. \cite{pawaraPaper} durchgeführt und ausgewertet, um die dort erzielten Ergebnisse zu verifizieren. Außerdem werden darüber hinaus noch weitere Experimente angestellt (s. Kapitel \ref{ch:methodik}) und die Ergebnisse anschaulich visualisiert (s. Kapitel \ref{ch:ergebnisse}).\\
 
