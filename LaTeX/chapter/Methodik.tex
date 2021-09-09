@@ -1,9 +1,16 @@
 \chapter{Methodik}
 \label{ch:methodik}
-
+In diesem Kapitel werden der Versuchsaufbau und die Herangehensweise an die Untersuchung der beiden Klassifikationsschemata beschrieben. Dazu wird zuerst die unterschiedliche Kodierung für die OvA und OvO Klassifikation vorgestellt (s. Kapitel \ref{ch:methodik_kodierung}), dann werden die verwendeten Datensätze und ihre Eigenschaften detailliert betrachtet (s. Kapitel \ref{ch:methodik_datensaetze}), danach werden die verschiedenen Parameter für das Training der neuronalen Netze erläutert (s. Kapitel \ref{ch:methodik_parameter}) und abschließend wird die Ausführung des Trainings der neuronalen Netze auf dem High-Performance-Computing Cluster \textit{Palma II} \cite{palma2} beschrieben (s. Kapitel \ref{ch:methodik_palma}).
 \section{Kodierung}
 \label{ch:methodik_kodierung}
+Die beiden Klassifikationsschemata unterscheiden sich in der verwendeten Kodierung der Klassifikationsergebnisse in der letzten Schicht des neuronalen Netzes. Bei der OvA Klassifikation wird jeweils eine Klasse von allen anderen gleichzeitig getrennt, während bei dem OvO Ansatz immer genau zwei Klassen paarweise voneinander abgegrenzt werden.
+Durch diese grundsätzlich voneinander verschiedenen Ansätze werden ebenfalls Anpassungen der Loss- und Aktivierungsfunktion nötig.
+
+In diesem Abschnitt werden sowohl die unterschiedlichen Ansätze für die Kodierung der Klassifikationsergebnisse als auch die verwendete Loss- und Aktivierungsfunktion je Klassifikationsschema ausführlich beschrieben und mathematisch betrachtet (s. Kapitel \ref{ch:methodik_ova} u. \ref{ch:methodik_ovo}).
+Danach werden die Vor- und Nachteile der beiden Klassifikationsschemata behandelt (s. Kapitel \ref{ch:methodik_vorNachteile}) und alternative Kodierungsmöglichkeiten vorgestellt (s. Kapitel \ref{ch:methodik_alternativen}).
+\newpage
 \subsection{OvA Kodierung}
+\label{ch:methodik_ova}
 Bei der standardmäßig verwendeten One-vs-All Kodierung befindet sich am Ende des Netzes eine \textit{Softmax}-Schicht, die bei $K$ Klassen $K$ Ausgabewerte produziert.
 Die Netzausgabe hat die folgende Form:
 \[\overrightarrow{\widehat{y}_{OvA}} = \begin{bmatrix}
@@ -26,8 +33,10 @@ mit $k$ als Klassennummer des Trainingsbeispiels, zu der es tatsächlich gehört
 
 Da die Logarithmusfunktion zwischen 0 und 1 streng monoton steigt, aber in diesem Intervall einen negativen Wertebereich produziert und sich bei\\ $log(1)=0$ ihr Maximum in dem von der \textit{Softmax}-Funktion produzierten Wertebereich von $[0, 1]$ befindet, wird durch Minimierung der Fehlerfunktion $L_{CE}$ effektiv die Wahrscheinlichkeit $\widehat{y}_k$ für die tatsächliche Klasse $k$ maximiert.
 
+\newpage
 
 \subsection{OvO Kodierung}
+\label{ch:methodik_ovo}
 Bei der OvO Klassifikation soll die Netzausgabe für $K$ Klassen folgende Form haben:
 \[\overrightarrow{\widehat{y}_{OvO}} = \begin{bmatrix}
 \widehat{y}_{1vs2} & \widehat{y}_{1vs3} & ... & \widehat{y}_{1vsK} & \widehat{y}_{2vs3} &... & \widehat{y}_{(K-2)vs K} & \widehat{y}_{(K-1)vsK}
@@ -67,7 +76,7 @@ Da keine \textit{One-Hot}-Kodierung mehr verwendet wird, kann die \textit{Cross 
 \label{gl:pawaraSkalierung}
 \end{figure}
 
-Anschließend wird gemäß der Formel von Pawara et al. der Loss-Wert ausgerechnet (s. Abb. \ref{gl:pawaraLoss}).
+Anschließend wird gemäß der Formel von Pawara et al. (vgl. \cite{pawaraPaper}) der Loss-Wert ausgerechnet (s. Abb. \ref{gl:pawaraLoss}).
 
 \begin{figure}[H]
 \[L_{OvO} = - \frac{1}{L} \sum_{l=1}^{L}((y_{l}^{'} * \log{(\widehat{y}_{l}^{'})}) + (1 - y_{l}^{'}) * \log{(1-\widehat{y}_{l}^{'})})\]
@@ -85,7 +94,7 @@ $\boldsymbol{\widehat{y}_{l}^{'}}:$ auf $[0, 1]$ skalierter Eintrag des Netzausg
 \label{gl:pawaraLoss}
 \end{figure}
 Es wird also für jeden Eintrag $\widehat{y}_{l}^{'}$ in dem Netzausgabe-Vektor mit Hilfe des zugehörigen Eintrages $y_{l}^{'}$ im Zielvektor ein Loss-Wert berechnet und über alle $L$ Einträge in den Vektoren gemittelt. Der Wertebereich der Einträge beider Vektoren liegt wegen der Skalierung (s. Abb. \ref{gl:pawaraSkalierung}) im Intervall $[0,1]$. Da dies jedoch zu numerischen Problemen führt, da z.B. $\log{(0)}$ nicht definiert ist, muss der Wertebereich auf $(0, 1)$ bzw. näherungsweise auf $[0.00001, 0.99999]$ beschränkt werden (vgl. \cite{pawaraPaper}, 2.2 The proposed One-vs-One approach).
-In dem auf $[0, 1]$ skalierten Zielvektor sind daher abgesehen von der näherungsweisen Beschränkung des Wertebereichs Einträge mit folgenden Werten möglich:
+In dem auf das Intervall $[0, 1]$ skalierten Zielvektor sind daher abgesehen von der näherungsweisen Beschränkung des Wertebereichs Einträge mit folgenden Werten möglich:
 \[
 y_{ivsj}^{'}=
 \begin{cases}
@@ -107,7 +116,6 @@ Für $y_{l}^{'} = 0.5$, also für den Fall dass der aktuell betrachtete Klassifi
 und die Netzausgabe wird durch Minimierung der Loss-Funktion zu $\widehat{y}_{l}^{'}=0.5$ (s. Abb. \ref{fig:OvOLoss-y05}).
 
 Die Loss-Funktion erfüllt also ihren Zweck und sorgt dafür, dass sich die Netzausgabe $\widehat{y}_{l}^{'}$ durch Minimierung der Loss-Funktion dem erwarteten Wert $y_{l}^{'}$ annähert (s. Abb. \ref{fig:OvOLoss}). Bemerkenswert hierbei ist, dass die von Pawara et al. entwickelte Loss-Funktion (vgl. \cite{pawaraPaper}), anders als die \textit{Cross Entropy Loss}-Funktion, ebenfalls die sogenannten \textit{Don't Care Werte} für den Fall, dass der aktuell betrachtete Klassifikator zwischen Klasse $i$ und $j$ trennt aber das Trainingsbeispiel tatsächlich aus Klasse $m$ kommt, mit $i\neq m \neq j$, mit einbezieht. Dadurch wird der aktuell betrachtete Klassifikator dazu gezwungen nur für Klassifikationsbeispiele aus einer der beiden Klassen zwischen denen er trennt eine unskalierte Ausgabe von $1$ bzw. $-1$ zu produzieren, ansonsten immer $0$.
-
 \begin{figure}[H]
 \centering
 \begin{subfigure}{.3\textwidth}
@@ -168,21 +176,20 @@ lautet, wird durch
 -0.8 & 3.5 & -0.9 & -0.9 & -0.9
 \end{bmatrix}\]
 und anschließendes Anwenden von $argmax$ die Klasse $2$ vorhergesagt, da in $\overrightarrow{z}$ an Stelle 2 der größte Eintrag steht.
-
 \subsection{Vor- und Nachteile der beiden Klassifikationsschemata}
+\label{ch:methodik_vorNachteile}
 Als Vorteile des OvO Klassifikationsschemas werden bessere Ergebnisse erwartet, da bei $K$ Klassen die einzelnen $\frac{K*(K-1)}{2}$ Klassifikatoren innerhalb des Netzes eine simplere Entscheidungsgrenze erlernen müssen als bei dem OvA Ansatz (vgl. \cite{pawaraPaper}).
 Dafür müssen im Vergleich zu den $K$ Klassifikatoren bei dem OvA Klassifikationsschema wesentlich mehr Klassifikatoren, $\frac{K*(K-1)}{2}$ Stück, erlernt werden. Besonders bei Datensätzen mit vielen Klassen kann dadurch ein nicht zu vernachlässigender Mehraufwand entstehen.
 
 Außerdem ist zu erwarten, dass das Training mit Hilfe der OvO Klassifikation stabiler verläuft, da im Gegensatz zu dem OvA Ansatz die einzelnen Klassifikatoren innerhalb des Netzes unabhängiger voneinander sind (vgl. \cite{pawaraPaper}). Dies liegt daran, dass bei dem OvA Ansatz alle Werte in der Netzausgabe aufgrund der \textit{Softmax}-Funktion zusammen aufsummiert $1$ ergeben müssen. Somit muss zwangsläufig die Wahrscheinlichkeit für eine andere Klasse sinken, wenn eine andere Klassenwahrscheinlichkeit steigt. Bei dem OvO Ansatz hingegen steht in der Netzausgabe jedes Klassifikationsergebnis der $\frac{K*(K-1)}{2}$ Klassifikatoren für sich alleine und Veränderungen an diesen Werten wirken sich nicht so direkt auf andere Werte in der Netzausgabeschicht aus wie es bei dem OvA Ansatz der Fall ist.
-\newpage
 \subsection{Alternative Kodierungsmethoden}
+\label{ch:methodik_alternativen}
 Als Alternative zu den OvA und OvO Klassifikationsschemata existiert das Verfahren des \textbf{Attribute Learning} \cite{attributeLearning, attributeLearningChinese}, bei dem die Klassifikationsbeispiele nicht in einzelne Klassen eingeteilt werden, sondern ihnen mehrere Attribute zugeschrieben werden. Dadurch steigt der Aufwand bei der Erstellung der Label für einen Datensatz, da die zum Training zu verwendenden Attribute sorgfältig ausgewählt werden müssen (vgl. \cite{pawaraPaper}, 1. Introduction). Jedoch kann mit \textit{Attribute Learning} sehr gut generalisiert werden, da Attribute über verschiedene Klassen von Trainingsbeispielen hinweg erlernt werden. So können sich z.B. die Trainingsbeispiele für die Klassen \textit{Hund}, \textit{Katze} und \textit{Kaninchen} das Attribut \enquote{besitzt Fell} teilen und das neuronale Netz kann das Attribut \enquote{Fell} in verschiedenen Ausprägungsformen erlernen, um es später einer anderen Klasse von Klassifikationsbeispielen, wie z.B. \textit{Schaf}, die es vorher noch nie gesehen hat, zuschreiben zu können (vgl. \cite{attributeLearning}). Dies ist besonders nützlich, wenn wie z.B. bei der Erkennung chinesischer Schriftzeichen mehrere zehntausend verschiedene Klassen existieren und eine \textit{One-Hot}-Kodierung all dieser Klassen nicht praktikabel ist (vgl. \cite{attributeLearningChinese}).\\
 
 Einen ähnlichen Ansatz stellen \textbf{Error-Correcting Output Codes} \cite{errorCorrectingCodes} dar. Bei ihnen werden Eigenschaften der Klassen festgelegt und ihr Vorhandensein in Binärform, also mit 1 oder 0, kodiert. Im Paper von Dietterich et al. \cite{errorCorrectingCodes} teilen sich 10 Klassen 6 Merkmale in verschiedenen Kombinationen (vgl. \cite{errorCorrectingCodes}, Table 1 u. 2). Durch die binäre Kodierung ergeben sich $2^6 = 64$ mögliche Merkmalskombinationen, von denen jedoch nur 10 Stück, eine pro Klasse, genutzt werden. Die 10 verschiedenen Klassen tragen als Label jeweils ein sogenanntes binäres \textit{Codeword} aus 6 Bit, die zueinander möglichst unterschiedlich sein sollen (vgl. \cite{errorCorrectingCodes}). Bei der Klassifikation produziert ein neuronales Netz ein binäres \textit{Codeword} aus 6 Bit und das Klassifikationsbeispiel wird zu der Klasse zugewiesen, dessen binäres 6-Bit \textit{Codeword}-Label nach einer Distanzfunktion am nächsten an der Netzausgabe liegt (vgl. \cite{errorCorrectingCodes}). Durch diesen Vergleich mittels Distanzfunktion können einige Fehler, die möglicherweise bei der Klassifikation entstehen, ausgeglichen werden (vgl. \cite{errorCorrectingCodes}).\\
 
 
 Außerdem versprechen \textbf{hierarchische Herangehensweisen}, bei denen die Daten entlang eines binären Baumes an jedem Knoten durch jeweils einen Klassifikator in zwei Gruppen aufgeteilt werden, eine vergleichbare Genauigkeit bei teilweise deutlich kürzeren Rechenzeiten für die Klassifikation im Vergleich zu dem OvO Ansatz (vgl. \cite{hierarchischeMethoden}).
-
 \newpage
 \section{Datensätze}
 \label{ch:methodik_datensaetze}
@@ -203,7 +210,7 @@ Außerdem wurde für Tropic10 ebenfalls eine eigene 5-Fold Cross Validation erst
 
 In allen Fällen wird Data-Augmentation verwendet. Dabei wird wie bei Pawara et al. \cite{pawaraPaper, pawaraWebsiteCode} zufällig bis zu 10 Prozent der Bildgröße nach oben und unten bzw. links und rechts verschoben und das Bild abhängig vom Zufall horizontal gespiegelt.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
@@ -219,7 +226,6 @@ Tropic & X & X & X & & X \\
 \caption{Zum Training verwendete Anzahl an Klassen je Datensatz}
 \label{fig:DatensatzKlassen}
 \end{table}
-
 \subsection{Agrilplant}
 Der Datensatz Agrilplant \cite{pawaraWebsiteDatensaetze} besteht aus Bildern von Blüten, Früchten und Blättern von Agrarpflanzen.
 Es existieren 10 verschiedene Klassen: Apfel, Banane, Traube, Jackfruit, Orange, Papaya, Kaki, Ananas, Sonnenblume und Tulpe (vgl. \cite{pawaraWebsiteDatensaetze}).
@@ -454,7 +460,7 @@ Um zu untersuchen, wie sich die Anzahl der zur Verfügung stehenden Trainingsdat
 
 Im Quellcode von Pawara et al. \cite{pawaraWebsiteCode} wird bei jedem Trainingsdurchlauf eine neue Teilmenge zufällig bestimmt, was zu zufällig auftretenden Ausreißern durch gut oder schlecht gewählte Teilmengen führt.
 Daher werden die Einteilungen in Teilmengen in dieser Bachelorarbeit einmalig zufällig bestimmt und für alle Trainingsdurchläufe in gleicher Form benutzt. So wird z.B. bei dem Training des ResNet-50 Netzes und einer 20-prozentigen Trainsize die gleiche Teilmenge des Datensatzes verwendet wie bei dem Training von \textit{InceptionV3} mit 20 Prozent Trainsize. Die Vergleichbarkeit der Ergebnisse verschiedener Netze und der beiden Klassifikationsschemata ist daher hoch und es kommt nicht zu zufälligen Ausreißern.
-
+\newpage
 \subsection{Vor-trainierte Gewichte}
 \label{ch:methodik_gewichte}
 Als weiterer Trainingsparameter wird unterschieden, ob die Netze von Grund auf, also \textit{from \textbf{Scratch}}, oder mit bereits vorab trainierten Gewichten initialisiert werden und lediglich ein \textbf{Finetuning} stattfindet. Die vorab trainierten Gewichte wurden auf dem Datensatz ImageNet \cite{imagenet} trainiert.

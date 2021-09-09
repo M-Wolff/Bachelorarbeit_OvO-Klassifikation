@@ -1,13 +1,14 @@
 \chapter{Fazit}
 \label{ch:fazit}
-Alles in allem konnten in dieser Arbeit die Ergebnisse von Pawara et al. \cite{pawaraPaper} bestätigt werden.\\
+Alles in allem konnten in dieser Arbeit die Ergebnisse von Pawara et al. \cite{pawaraPaper} bestätigt werden.
 Durch die vielen Kombinationen an Parametern für das Training wurden der OvO und OvA Ansatz unter verschiedensten Bedingungen untersucht und miteinander verglichen.
 
 Dabei ist die Verwendung eines OvO Klassifikationsschemas besonders bei Trainingsdurchläufen \textit{from Scratch}, also mit zufällig initialisierten Gewichten, und wenigen Trainingsbeispielen vielversprechend und kann sowohl zu einem stabileren Trainingsverlauf als auch zu besseren Ergebnissen beitragen.
 
 Darüber hinaus gestaltet sich die Implementation eines OvO Klassifikationsschemas vergleichsweise einfach (s. Kapitel \ref{ch:methodik}). Somit ist es bei dem Training von tiefen neuronalen Netzen \textit{from Scratch} eindeutig ratsam, das OvO Klassifikationsschema anzuwenden bzw. zu untersuchen, ob der OvO Ansatz bei der konkreten Problemstellung von Vorteil ist. Besonders wenn das Training mit wenigen Trainingsdaten durchgeführt werden muss, bringt das OvO Klassifikationsschema in fast allen Fällen eine Verbesserung der Ergebnisse im Vergleich zu dem standardmäßig verwendeten OvA Ansatz (s. Kapitel \ref{ch:diskussionOvOvsOvA}) mit sich. Die Wahl des Klassifikationsschemas kann also als ein weiterer möglicher Hyperparameter für das Training tiefer neuronaler Netze verstanden werden.\\\\
 
-Leider musste in dieser Arbeit aber auch festgestellt werden, dass die Wahl des Frameworks erheblichen Einfluss auf die Qualität der Ergebnisse haben kann. So schneidet TensorFlow 2.4.1 \cite{tensorflow} im Vergleich zu den anderen beiden Frameworks eher schlecht ab. Nur dort treten unerklärliche Ausreißer nach unten und sehr instabile Trainingsverläufe auf. Es wirkt so, als wäre TensorFlow \cite{tensorflow} von Version 1.13.1 zu Version 2.4.1 zumindest bei den in dieser Arbeit durchgeführten Experimenten tatsächlich schlechter geworden.\\
+Leider musste in dieser Arbeit aber auch festgestellt werden, dass die Wahl des Frameworks erheblichen Einfluss auf die Qualität der Ergebnisse haben kann. So schneidet TensorFlow 2.4.1 \cite{tensorflow} im Vergleich zu den anderen beiden Frameworks eher schlecht ab. Nur dort treten unerklärliche Ausreißer nach unten und sehr instabile Trainingsverläufe auf. Es wirkt so, als wäre TensorFlow \cite{tensorflow} von Version 1.13.1 zu Version 2.4.1 zumindest bei den in dieser Arbeit durchgeführten Experimenten tatsächlich schlechter geworden.
+
 PyTorch \cite{pytorch} hingegen scheint eine sehr gute Wahl zu sein, da die Ergebnisse auf einem vergleichbar guten Niveau wie bei TensorFlow 1.13.1 \cite{tensorflow} liegen, während die Trainingsdauer bedingt durch die bessere Auslastung der Grafikkarte größtenteils wesentlich kürzer ist als die von TensorFlow \cite{tensorflow} (s. Kapitel \ref{ch:diskussionFrameworks}).\\\\
 
 \newpage

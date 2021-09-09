@@ -8,16 +8,23 @@
 \let\cleardoublepage\relax
 \chapter{Tabellen mit Ergebnissen}
 \label{ch:Anhang_Tabellen}
+Nachfolgend werden die detaillierten Ergebnisse, gruppiert nach verwendetem Framework und Netztyp sowie verwendeten initialen Gewichten, tabellarisch aufgelistet.
+Für jeden Datensatz werden dabei die über alle 5 bzw. 3 Folds gemittelten Accuracies inklusive der resultierenden Standardabweichung je verwendeter Trainsize dargestellt.
 \input{chapter/AnhangTabellen/Tabellen.tex}%
 %\restoregeometry %Normale Seitenränder wiederherstellen
 %\let\@makechapterhead\savedchap % Platz vor Chapter-Überschrift auf Standard zurücksetzen
-\null\newpage%
+\newpage\null\newpage%
+\vspace*{-1cm}
 \chapter{Scatterplots - Accuracies}
 \label{ch:Anhang_ScatterplotsAccuracies}
+\vspace*{-0.5cm}
+In diesem Kapitel befinden sich die weiteren Abbildungen mit den Scatterplots der Accuracies, die in Kapitel \ref{ch:ergebnisseOvOOvA} referenziert und beschrieben werden.
 \section{InceptionV3 Scratch}
+\vspace*{-0.8cm}
 \begin{figure}[H]
 \hspace*{-1.5cm}
 \includesvg[width=18cm]{img/3_I-S}
+\vspace*{-2.5cm}
 \caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata in allen 3 Frameworks für InceptionV3 Scratch.}
 \label{fig:ScatterplotIS}
 \end{figure}%
@@ -45,13 +52,18 @@
 \caption{Scatterplot der erzielten Accuracies mit beiden Klassifikationsschemata unter Verwendung von beiden TensorFlow \cite{tensorflow} Versionen für InceptionV3-Pawara Finetune.}
 \label{fig:ScatterplotIPF}
 \end{figure}%
-%\newpage%
+\newpage
+\vspace*{-1cm}
 \chapter{Scatterplots - Trainingsdauer}
 \label{ch:Anhang_ScatterplotsDauer}
+\vspace*{-0.5cm}
+In diesem Kapitel befinden sich die weiteren Scatterplots mit der Trainingsdauer je Framework und initialen Gewichten, die in Kapitel \ref{ch:ergebnisseOvOOvA-Dauer} referenziert und beschrieben werden.
 \section{ResNet-50 Finetune}
+\vspace*{-0.8cm}
 \begin{figure}[H]
 \hspace*{-1.5cm}
 \includesvg[width=17.5cm]{img/3_R-F-dauer}
+\vspace*{-2.5cm}
 \caption{Scatterplot der benötigten Trainingszeit in Minuten für beide Klassifikationsschemata in allen 3 Frameworks für ResNet-50 Finetune.}
 \label{fig:ScatterplotRF-dauer}
 \end{figure}%

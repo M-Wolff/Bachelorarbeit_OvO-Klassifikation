@@ -15,8 +15,9 @@ Um sicher zu stellen, dass die im Paper von Pawara et al. \cite{pawaraPaper} ver
 In diesem Fall mit $K=3$ Klassen haben die Netze für beide Klassifikationsschemata die gleichen Dimensionen und die gleiche Anzahl an Parametern, da die Ausgabeschicht in beiden Fällen aus $3$ Werten besteht. Sie unterscheiden sich lediglich in der verwendeten Aktivierungsfunktion und der Kodierung. Außerdem wird durch die niedrige Klassenanzahl das Training im Falle des OvA Klassifikationsschemas für jeden OvA Klassifikator innerhalb eines Netzes erleichtert, da er eine Klasse von nun nur noch zwei anderen Klassen trennen muss. Damit nähert sich das Verhalten des OvA Klassifikators dem eines OvO Klassifikators an und die beiden Ansätze sind ungefähr gleichwertig.
 
 
-Wie erwartet produzieren für $K=3$ Klassen beide Klassifikationsschemata, abgesehen von ein paar Schwankungen, ähnliche Ergebnisse (s. Abb. \ref{fig:ScatterplotRS}, \ref{fig:ScatterplotRF} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}). \\
+Wie erwartet produzieren für $K=3$ Klassen beide Klassifikationsschemata, abgesehen von ein paar Schwankungen, ähnliche Ergebnisse (s. Abb. \ref{fig:ScatterplotRS}, \ref{fig:ScatterplotRF} und Anhang \ref{ch:Anhang_ScatterplotsAccuracies}).
 
+\newpage
 
 Experimente mit $K=2$ Klassen wurden nicht unternommen, da es sich dann nicht mehr um ein sogenanntes \textit{Multi-Class} Klassifikationsproblem, sondern nur noch um ein binäres Klassifikationsproblem handeln würde.
 
@@ -24,8 +25,7 @@ Insgesamt ist das Training mit dem OvO Ansatz stabiler als bei dem OvA Klassifik
 
 \section{Scratch vs. Finetune}
 \label{ch:diskussionSvsF}
-In Abbildung \ref{fig:ScatterplotGesamt} wird deutlich, dass der OvO Ansatz hauptsächlich bei dem Training \textit{from Scratch} bessere Ergebnisse erzielt hat als das standardmäßig verwendete OvA Klassifikationsschema. Bei \textit{Finetune} Experimenten hat die Verwendung des OvO Klassifikationsschemas hingegen sogar einen überwiegend negativen Einfluss auf die Güte der Ergebnisse.\\
-
+In Abbildung \ref{fig:ScatterplotGesamt} wird deutlich, dass der OvO Ansatz hauptsächlich bei dem Training \textit{from Scratch} bessere Ergebnisse erzielt hat als das standardmäßig verwendete OvA Klassifikationsschema. Bei \textit{Finetune} Experimenten hat die Verwendung des OvO Klassifikationsschemas hingegen sogar einen überwiegend negativen Einfluss auf die Güte der Ergebnisse.
 
 Diese Auffälligkeit lässt sich, wie auch schon im Paper von Pawara et al. \cite{pawaraPaper}, damit erklären, dass bei Experimenten mit Finetune vor-trainierte Gewichte geladen werden und das Training von diesen vor-trainierten Gewichten lediglich fortgeführt wird. Diese vor-trainierten Gewichte stammen von Modellen, die auf dem ImageNet \cite{imagenet} Datensatz trainiert wurden. Dabei wurde für das Vor-Trainieren der standardmäßige OvA Ansatz verwendet, weshalb die Experimente, die das Training mit dem OvA Ansatz fortführen, bessere Ergebnisse produzieren im Vergleich zu Experimenten mit dem OvO Klassifikationsschema.
 
