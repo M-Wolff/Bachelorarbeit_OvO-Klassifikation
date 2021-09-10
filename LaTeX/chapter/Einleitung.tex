@@ -11,7 +11,7 @@ Dadurch, dass nun ein Klassifikator jeweils nur zwei Klassen paarweise voneinand
 Bei $K$ Klassen müssen für die OvO Klassifikation in dem neuronalen Netz $\frac{K(K-1)}{2}$ Klassifikatoren erlernt werden, bei OvA lediglich $K$ Stück, was besonders bei vielen Klassen, also großem $K$, einen erheblichen Mehraufwand bedeuten kann (vgl. \cite{pawaraPaper}).\\
 
 Da bei der OvO Klassifikation jeweils eine Klasse von nur einer einzigen anderen Klasse abgegrenzt werden muss, wird jeder Klassifikator bei in etwa gleicher Anzahl an Trainingsdaten je Klasse mit einem ausbalancierten Datensatz trainiert. Die Trainingsbeispiele der einen Klasse dienen hierbei als positive und die der anderen Klasse als negative Trainingsbeispiele.
-Im Gegensatz dazu wird bei der herkömmlichen OvA Klassifikation jeder Klassifikator mit den Daten einer einzigen Klasse als positive Trainingsbeispiele und mit den Daten der restlichen $k-1$ Klassen als negative Trainingsbeispiele, also einem unbalancierten Datensatz, trainiert (vgl. \cite{pawaraPaper}, 1. Introduction).\\
+Im Gegensatz dazu wird bei der herkömmlichen OvA Klassifikation jeder Klassifikator mit den Daten einer einzigen Klasse als positive Trainingsbeispiele und mit den Daten der restlichen $K-1$ Klassen als negative Trainingsbeispiele, also einem unbalancierten Datensatz, trainiert (vgl. \cite{pawaraPaper}, 1. Introduction).\\
 
 Daher ist die Motivation bei der Untersuchung eines OvO Klassifikationsschemas ein stabileres Training durch ausbalancierte Trainingsdaten mit denen jeder Klassifikator trainiert wird und eine bessere Performance der Netze durch die weniger komplizierte  Entscheidungsgrenze, die jeder Klassifikator erlernen muss.\\
 
