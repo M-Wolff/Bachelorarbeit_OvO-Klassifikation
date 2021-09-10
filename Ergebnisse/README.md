@@ -61,3 +61,5 @@ Darin befinden sich jeweils 7 Dateien:
     - Learningrate
     - Loss (Train & Test)
     - Accuracy (Train & Test)
+
+In dem Ordner [Beispiele](Beispiele) befinden sich jeweils `historySave.dat`, `predicted_classes_test.npy` und `true_classes_test.npy` für die drei in der Bachelorarbeit ausführlich beschriebenen Beispiele (s. Kapitel 3.4) je Framework.
